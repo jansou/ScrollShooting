@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     //Backgroundコンポーネント
     Background background;
 
+	Transform shotposition;
+
 	IEnumerator Start()
 	{
 		//Spaceshipコンポーネントを取得
@@ -23,9 +25,11 @@ public class Player : MonoBehaviour
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
         background = FindObjectOfType<Background>();
 
+		shotposition = transform.GetChild(0);
+
 		while (true) 
 		{
-			spaceship.Shot(transform);
+			spaceship.Shot(shotposition);
 			//Instantiate(bullet, transform.position,transform.rotation);
 
 			GetComponent<AudioSource>().Play();
