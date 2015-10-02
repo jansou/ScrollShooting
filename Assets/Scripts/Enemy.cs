@@ -21,8 +21,8 @@ public class Enemy : MonoBehaviour
 		//ローカル座標のX軸のマイナス方向に移動する
 		//spaceship.Move (transform.up * -1);
 
-        Debug.Log("right:" + transform.right + ", up:" + transform.up);
-        Move(transform.up*-1);
+        //Debug.Log("right:" + transform.right + ", up:" + transform.up);
+        Move(transform.right*-1);
 
 		//canShotがfalseの場合、ここでコルーチンを終了させる
 		if (spaceship.canShot == false) 
