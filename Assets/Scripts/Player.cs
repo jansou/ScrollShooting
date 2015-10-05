@@ -7,7 +7,11 @@ public class Player : MonoBehaviour
 	// 移動スピード
 	public float speed = 5;
 
-    public float hp = 10;
+    public int level = 1;
+
+    public int hp = 10;
+
+    public int shotPower=1;
 
 	//public GameObject bullet;
 
@@ -21,6 +25,8 @@ public class Player : MonoBehaviour
 
 	IEnumerator Start()
 	{
+        hp *= level;
+
 		//Spaceshipコンポーネントを取得
 		spaceship = GetComponent<Spaceship> ();
 
@@ -31,7 +37,7 @@ public class Player : MonoBehaviour
 
 		while (true) 
 		{
-			spaceship.Shot(shotposition);
+			spaceship.Shot(shotposition,shotPower);
 			//Instantiate(bullet, transform.position,transform.rotation);
 
 			GetComponent<AudioSource>().Play();
@@ -136,7 +142,7 @@ public class Player : MonoBehaviour
 
             Bullet bullet = enemyBulletTransform.GetComponent<Bullet>();
 
-            hp = hp - bullet.power;
+            hp = hp - bullet.getDamage();//bullet.power;
 
             if (layerName == "Bullet(Enemy)")
             {
