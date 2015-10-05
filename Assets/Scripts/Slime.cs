@@ -22,7 +22,7 @@ public class Slime : MonoBehaviour {
 				shotPosition.localRotation = Quaternion.Euler(0,0,60+Random.Range(0,60)); 
 				
 				//ShotPositionの位置/角度で弾を撃つ
-				spaceship.Shot(shotPosition);
+				spaceship.Shot(shotPosition,1);
 			}
 			
 			//shotDelay秒待つ
