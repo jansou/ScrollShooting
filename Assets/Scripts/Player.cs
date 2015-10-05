@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 	// 移動スピード
 	public float speed = 5;
 
+    public float hp = 10;
+
 	//public GameObject bullet;
 
 	//Spaceshipコンポーネント
@@ -119,23 +121,40 @@ public class Player : MonoBehaviour
 		//レイヤー名を取得
 		string layerName = LayerMask.LayerToName (c.gameObject.layer);
 
+        /*
 		//レイヤー名がBullet(Enemy)の時は弾を削除
 		if (layerName == "Bullet(Enemy)") 
 		{
 			// 弾の削除
 			Destroy(c.gameObject);
 		}
+         */
 
 		if (layerName == "Bullet(Enemy)" || layerName == "Enemy") 
 		{
-			//Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
-			FindObjectOfType<Manager>().GameOver();
+            Transform enemyBulletTransform = c.transform;
 
-			//爆発する
-			spaceship.Explosion();
+            Bullet bullet = enemyBulletTransform.GetComponent<Bullet>();
 
-			//プレイヤー削除
-			Destroy(gameObject);
+            hp = hp - bullet.power;
+
+            if (layerName == "Bullet(Enemy)")
+            {
+                // 弾の削除
+                Destroy(c.gameObject);
+            }
+
+            if (hp <= 0)
+            {
+                //Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+                FindObjectOfType<Manager>().GameOver();
+
+                //爆発する
+                spaceship.Explosion();
+
+                //プレイヤー削除
+                Destroy(gameObject);
+            }
 		}
 
 	}
