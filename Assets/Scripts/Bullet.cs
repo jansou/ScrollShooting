@@ -11,7 +11,10 @@ public class Bullet : MonoBehaviour
 	//ゲームオブジェクト生成から削除するまでの時間
 	public float liftTime=5;
 
-    public int power = 1;
+    public int shotPower = 1;
+
+    //ダメージ倍率
+    public float magnification = 1;
 
 	void Start () 
 	{
@@ -26,4 +29,9 @@ public class Bullet : MonoBehaviour
 	void Update () {
 	
 	}
+
+    public int getDamage()
+    {
+        return Mathf.RoundToInt(shotPower * magnification);
+    }
 }

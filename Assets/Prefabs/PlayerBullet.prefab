@@ -153,7 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   liftTime: 1
-  power: 1
+  shotPower: 1
+  magnification: 1
 --- !u!212 &21215668
 SpriteRenderer:
   m_ObjectHideFlags: 1
