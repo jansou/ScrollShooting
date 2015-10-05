@@ -155,6 +155,10 @@ public class Player : MonoBehaviour
                 //プレイヤー削除
                 Destroy(gameObject);
             }
+            else
+            {
+                spaceship.GetAnimator().SetTrigger("Damage");
+            }
 		}
 
 	}
