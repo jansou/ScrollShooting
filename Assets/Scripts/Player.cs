@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     public int shotPower=1;
 
+    public int exp=0;
+
 	//public GameObject bullet;
 
 	//Spaceshipコンポーネント
@@ -168,5 +170,10 @@ public class Player : MonoBehaviour
 		}
 
 	}
+
+    public void addExp(int point)
+    {
+        exp += point;
+    }
 
 }
