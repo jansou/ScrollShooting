@@ -577,6 +577,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreGUIText: {fileID: 1030447092}
   highScoreGUIText: {fileID: 561184786}
+--- !u!1 &637861173 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 167368, guid: a0672f1315746b44fabc76bbfba83037, type: 2}
+  m_PrefabInternal: {fileID: 990664765}
+--- !u!95 &637861174
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637861173}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23ef81e7458f2e3478f5dec95f738207, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &694317328
 GameObject:
   m_ObjectHideFlags: 0
