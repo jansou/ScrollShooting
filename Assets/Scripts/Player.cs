@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 	Spaceship spaceship;
 
     //Backgroundコンポーネント
-    Background background;
+    //Background background;
 
 	Transform shotposition;
 
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 		spaceship = GetComponent<Spaceship> ();
 
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
-        background = FindObjectOfType<Background>();
+        //background = FindObjectOfType<Background>();
 
 		shotposition = transform.GetChild(0);
 
@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
 
 	void Update ()
 	{
+        /*
 		// 右・左
 		//float x = Input.GetAxisRaw ("Horizontal");
         float x = CrossPlatformInputManager.GetAxisRaw("Horizontal");
@@ -70,19 +71,21 @@ public class Player : MonoBehaviour
 
 		//移動の制限(だめな例)
 		//Clamp ();
+         */
 	}
 
+    /*
 	void Move(Vector3 direction)
 	{
         //背景のスケール
         Vector2 scale = background.transform.localScale;
-        /*
+        
 		//画面左下のワールド座標をビューポートから取得
-		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
+		//Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
 
 		//画面右上のワールド座標をビューポートから取得
-		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
-        */
+		//Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
+        
 
         Vector2 min = scale * -0.5f;
 
@@ -100,6 +103,7 @@ public class Player : MonoBehaviour
 		//制限をかけた値をプレイヤーの位置とする
 		transform.position = pos;
 	}
+    */
 
 	/*//画面外に一瞬はみ出してしまうため、よくない
 	void Clamp()
