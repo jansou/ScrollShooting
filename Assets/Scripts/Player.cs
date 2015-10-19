@@ -140,16 +140,26 @@ public class Player : MonoBehaviour
 
 		if (layerName == "Bullet(Enemy)" || layerName == "Enemy") 
 		{
-            Transform enemyBulletTransform = c.transform;
-
-            Bullet bullet = enemyBulletTransform.GetComponent<Bullet>();
-
-            hp = hp - bullet.getDamage();//bullet.power;
 
             if (layerName == "Bullet(Enemy)")
             {
+                Transform enemyBulletTransform = c.transform;
+
+                Bullet bullet = enemyBulletTransform.GetComponent<Bullet>();
+
+                hp = hp - bullet.getDamage();//bullet.power;
+
                 // 弾の削除
                 Destroy(c.gameObject);
+            }
+
+            if (layerName == "Enemy")
+            {
+                Transform enemyTransform = c.transform;
+
+                Enemy enemy = enemyTransform.GetComponent<Enemy>();
+
+                hp = hp - enemy.getTouchDamage();
             }
 
             if (hp <= 0)

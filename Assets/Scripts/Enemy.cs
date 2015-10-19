@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
     // スコアのポイント
     public int point = 100;
 
+    //接触時の攻撃力
+    public int touchDamage = 1;
+
 	//Spaceshipコンポーネント
 	Spaceship spaceship;
 
@@ -96,6 +99,8 @@ public class Enemy : MonoBehaviour
             spaceship.GetAnimator().SetTrigger("Damage");
         }
 	}
+
+    public int getTouchDamage() { return touchDamage; }
 
 	// Update is called once per frame
 	void Update () {
