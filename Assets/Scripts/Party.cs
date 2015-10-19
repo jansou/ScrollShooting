@@ -9,12 +9,26 @@ public class Party : MonoBehaviour {
 
     Background background;
 
+	public enum Formation{
+		Normal,
+		Line,
+	};
+
+	public Formation formation = Formation.Line;
+
+	Vector2 minPosition = new Vector2(-1,-1);
+	Vector2 maxPosition = new Vector2(1,1);
+
+
 	// Use this for initialization
 	void Start () 
     {
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
         background = FindObjectOfType<Background>();
 	
+		SetFormation(formation);
+
+
 	}
 	
 	// Update is called once per frame
@@ -39,6 +53,22 @@ public class Party : MonoBehaviour {
 
         //移動の制限(だめな例)
         //Clamp ();
+
+	}
+
+	void SetFormation(Formation formation){
+		switch(formation){
+		case Formation.Normal:
+			transform.GetChild(0).position = transform.position + new Vector3(0,-1,0);
+			transform.GetChild(1).position = transform.position + new Vector3(0,1,0);
+			break;
+		case Formation.Line:
+			transform.GetChild(0).position = transform.position + new Vector3(1,0,0);
+			transform.GetChild(1).position = transform.position + new Vector3(-1,0,0);
+			break;
+		}
+
+		this.formation = formation;
 	}
 
     void Move(Vector3 direction)
@@ -54,13 +84,20 @@ public class Party : MonoBehaviour {
         */
 
        
-        Vector2 min = scale * -0.5f;
 
+		Vector2 min = scale * -0.5f;
         Vector2 max = scale * 0.5f;
 
-        Debug.Log("scale:" + scale);
-        Debug.Log("min:" + min);
-        Debug.Log("max:" + max);
+		min.x += 1;
+		max.x -= 1;
+
+		min -= minPosition;
+		max -= maxPosition;
+
+		Debug.Log(min);
+		Debug.Log (max);
+
+
         //プレイヤー座標の取得
         Vector3 pos = transform.position;
 
@@ -75,6 +112,15 @@ public class Party : MonoBehaviour {
         //制限をかけた値をプレイヤーの位置とする
         transform.position = pos;
     }
+
+	public void ChangeFormation(){
+		if(formation == Formation.Normal){
+			SetFormation(Formation.Line);
+		}
+		else if(formation == Formation.Line){
+			SetFormation(Formation.Normal);
+		}
+	}
 
     public void addExp(int point)
     {
