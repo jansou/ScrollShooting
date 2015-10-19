@@ -54,6 +54,14 @@ public class Party : MonoBehaviour {
         //移動の制限(だめな例)
         //Clamp ();
 
+		//GameOver判定(子オブジェクトが０になったら)
+		if (this.transform.childCount==0)
+		{
+			//Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+			FindObjectOfType<Manager>().GameOver();
+			Destroy(this.gameObject);
+		}
+
 	}
 
 	void SetFormation(Formation formation){
@@ -94,8 +102,6 @@ public class Party : MonoBehaviour {
 		min -= minPosition;
 		max -= maxPosition;
 
-		Debug.Log(min);
-		Debug.Log (max);
 
 
         //プレイヤー座標の取得
