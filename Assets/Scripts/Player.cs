@@ -169,7 +169,7 @@ public class Player : MonoBehaviour
             if (hp <= 0)
             {
                 //Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
-                FindObjectOfType<Manager>().GameOver();
+                //FindObjectOfType<Manager>().GameOver();
 
                 //爆発する
                 spaceship.Explosion();

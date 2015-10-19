@@ -319,6 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 11
   point: 100
+  touchDamage: 1
+  shotPower: 1
 --- !u!114 &11428700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,6 +366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 11
   point: 100
+  touchDamage: 1
+  shotPower: 1
 --- !u!114 &11464764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,6 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 11
   point: 100
+  touchDamage: 1
+  shotPower: 1
 --- !u!114 &11493926
 MonoBehaviour:
   m_ObjectHideFlags: 1
