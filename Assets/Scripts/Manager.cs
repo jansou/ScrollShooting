@@ -4,7 +4,7 @@ using System.Collections;
 public class Manager : MonoBehaviour 
 {
 	//playerプレハブ
-	public GameObject player;
+	public GameObject party;
 
 	//タイトル
 	private GameObject title;
@@ -91,7 +91,7 @@ public class Manager : MonoBehaviour
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
         title.SetActive(false);
 
-		Instantiate (player, player.transform.position, player.transform.rotation);
+		Instantiate (party, party.transform.position, party.transform.rotation);
 	}
 
 	public bool IsPlaying()

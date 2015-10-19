@@ -50,6 +50,8 @@ public class Score : MonoBehaviour
     public void AddPoint(int point)
     {
         score = score + point;
+
+        FindObjectOfType<Party>().addExp(point);
     }
 
     // ハイスコアの保存
