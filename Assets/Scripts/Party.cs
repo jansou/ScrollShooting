@@ -102,8 +102,6 @@ public class Party : MonoBehaviour {
 		min -= minPosition;
 		max -= maxPosition;
 
-		Debug.Log(min);
-		Debug.Log (max);
 
 
         //プレイヤー座標の取得
