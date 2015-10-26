@@ -83,11 +83,12 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if (spaceship == null)
+            if (spaceship != null)
             {
-                Debug.Log("non exist");
+                //Debug.Log("non exist");
+                spaceship.GetAnimator().SetTrigger("Damage");
             }
-            spaceship.GetAnimator().SetTrigger("Damage");
+            //spaceship.GetAnimator().SetTrigger("Damage");
         }
 	}
 
