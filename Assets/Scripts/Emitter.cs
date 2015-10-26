@@ -37,8 +37,10 @@ public class Emitter : MonoBehaviour
 			//WaveをEmitterの子要素にする
 			wave.transform.parent=transform;
 
+            WaveInfo waveInfo = wave.GetComponent<WaveInfo>();
+
 			//Waveの子要素のEnemyが全て削除されるまで待機する
-			while (wave.transform.childCount != 0)
+            while (!waveInfo.GetIsDestroyed() /*wave.transform.childCount != 0*/)
 			{
 				yield return new WaitForEndOfFrame();
 			}
@@ -55,7 +57,8 @@ public class Emitter : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 	
 	}
 }

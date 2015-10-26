@@ -46,6 +46,7 @@ GameObject:
   - 114: {fileID: 11495832}
   - 60: {fileID: 6075514}
   - 114: {fileID: 11402322}
+  - 114: {fileID: 11495172}
   m_Layer: 9
   m_Name: EnemyMonkey
   m_TagString: Untagged
@@ -184,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .809171617, y: -1.39357281, z: 0}
+  m_LocalPosition: {x: -.625449896, y: -2.109653, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 432822}
@@ -276,6 +277,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d364f3f6041bfaf4e83b7af4ef122da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11495172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ddd9630bae58049a155d51e87bf5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11495832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,7 +341,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1551091497
+  m_SortingLayerID: -1693172163
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5f63c3ec7817356488d7883f81cb7703, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -355,7 +367,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1551091497
+  m_SortingLayerID: 2062899691
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 05f1262a271237641abcc73de5147dbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

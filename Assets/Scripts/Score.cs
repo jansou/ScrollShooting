@@ -51,7 +51,11 @@ public class Score : MonoBehaviour
     {
         score = score + point;
 
-        FindObjectOfType<Party>().addExp(point);
+        Party party = FindObjectOfType<Party>();
+        if(party)
+        {
+            party.addExp(point);
+        }
     }
 
     // ハイスコアの保存

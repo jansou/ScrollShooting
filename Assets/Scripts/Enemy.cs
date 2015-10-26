@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
 	// Use this for initialization
 	IEnumerator Start () 
 	{
+        Debug.Log("creating spaceship");
 		//Spaceshipコンポーネントを取得
 		spaceship = GetComponent<Spaceship> ();
 
@@ -76,11 +77,16 @@ public class Enemy : MonoBehaviour
             //爆発
             spaceship.Explosion();
 
+
             //エネミーの削除
             Destroy(gameObject);
         }
         else
         {
+            if (spaceship == null)
+            {
+                Debug.Log("non exist");
+            }
             spaceship.GetAnimator().SetTrigger("Damage");
         }
 	}
