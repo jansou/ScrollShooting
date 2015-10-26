@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11494954}
   - 60: {fileID: 6051016}
   - 114: {fileID: 11443630}
+  - 114: {fileID: 11459004}
   m_Layer: 9
   m_Name: EnemySlime 1
   m_TagString: Untagged
@@ -52,6 +53,7 @@ GameObject:
   - 114: {fileID: 11491664}
   - 60: {fileID: 6047314}
   - 114: {fileID: 11477536}
+  - 114: {fileID: 11478762}
   m_Layer: 9
   m_Name: EnemyMonkey 1
   m_TagString: Untagged
@@ -74,6 +76,7 @@ GameObject:
   - 114: {fileID: 11417916}
   - 60: {fileID: 6054674}
   - 114: {fileID: 11496220}
+  - 114: {fileID: 11412984}
   m_Layer: 9
   m_Name: EnemyMonkey
   m_TagString: Untagged
@@ -124,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.80859339, y: .288370013, z: 0}
+  m_LocalPosition: {x: 1.6054368, y: 1.21799004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475084}
@@ -279,6 +282,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11412984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ddd9630bae58049a155d51e87bf5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11417916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,6 +335,17 @@ MonoBehaviour:
   bullet: {fileID: 112916, guid: ca3973d7f597a18478aca1a714d6f6e1, type: 2}
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
+--- !u!114 &11459004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ddd9630bae58049a155d51e87bf5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11467842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -346,6 +371,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 683cd9848e6167e4ba791e68cfff00bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11478762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ddd9630bae58049a155d51e87bf5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11489402
