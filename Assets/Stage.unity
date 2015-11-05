@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 183972, guid: 97d22740c9232f14f9035e178b69aba1, type: 2}
+  - {fileID: 165204, guid: cec47e96d3af28c408a5c9b5fd37fe48, type: 2}
   - {fileID: 183972, guid: 97d22740c9232f14f9035e178b69aba1, type: 2}
   manager: {fileID: 0}
 --- !u!4 &269916570

@@ -36,10 +36,11 @@ public class Spaceship : MonoBehaviour
 	}
 
 	//弾の作成
-	public void Shot(Transform origin, int shotPower)
+	public void Shot(Transform origin, int shotPower,int shotSpeed=2)
 	{
 		GameObject a = (GameObject)Instantiate(bullet,origin.position,origin.rotation);
         a.GetComponent<Bullet>().shotPower = shotPower;
+		a.GetComponent<Bullet>().speed = shotSpeed;
 	}
 
     public Animator GetAnimator()

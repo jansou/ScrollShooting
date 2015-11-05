@@ -42,7 +42,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 114064, guid: 9b5323a634c447240aa8388203648189, type: 2}
   enemypositions:
-  - {x: 5, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

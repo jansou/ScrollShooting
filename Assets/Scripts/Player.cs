@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
 		while (true) 
 		{
-			spaceship.Shot(shotposition,shotPower);
+			spaceship.Shot(shotposition,shotPower,10);
 			//Instantiate(bullet, transform.position,transform.rotation);
 
 			GetComponent<AudioSource>().Play();
