@@ -45,6 +45,8 @@ public class Emitter : MonoBehaviour
 				yield return new WaitForEndOfFrame();
 			}
 
+			yield return new WaitForSeconds(1);
+
 			//Waveの削除
 			Destroy(wave);
 

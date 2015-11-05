@@ -78,8 +78,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .847395897, y: -.0884552002, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.83591592, y: .673074365, z: 0}
+  m_LocalScale: {x: -1.83256745, y: 1.83256745, z: 1.83256745}
   m_Children:
   - {fileID: 448630}
   m_Father: {fileID: 0}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 11
+  hp: 50
   point: 100
   touchDamage: 1
   shotPower: 1
@@ -257,7 +257,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2062899691
+  m_SortingLayerID: 1551091497
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 05f1262a271237641abcc73de5147dbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -309,8 +309,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1693172163
-  m_SortingOrder: 0
+  m_SortingLayerID: 1551091497
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5f63c3ec7817356488d7883f81cb7703, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &100100000

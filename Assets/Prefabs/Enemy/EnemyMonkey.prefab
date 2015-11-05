@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 11
+  hp: 20
   point: 100
   touchDamage: 1
   shotPower: 1
