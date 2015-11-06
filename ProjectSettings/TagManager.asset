@@ -46,6 +46,12 @@ TagManager:
   - name: UI
     uniqueID: 1551091497
     locked: 0
+  - name: HP_Bar
+    uniqueID: 2601795133
+    locked: 0
+  - name: HP_Gage
+    uniqueID: 2062899691
+    locked: 0
   - name: Enemy
     uniqueID: 2651391111
     locked: 0
