@@ -22,11 +22,14 @@ public class Spaceship : MonoBehaviour
 
     //アニメーターコンポーネント
     private Animator animator;
+	
+	public BulletManager bulletManager;
 
     void Start()
     {
         //アニメコンポーネントを取得
         animator = GetComponent<Animator>();
+		bulletManager = FindObjectOfType<BulletManager>();
     }
 
 	//爆発の作成
@@ -36,10 +39,15 @@ public class Spaceship : MonoBehaviour
 	}
 
 	//弾の作成
-	public void Shot(Transform origin, int shotPower)
+	public void Shot(Transform origin, int shotPower,int shotSpeed=2,BulletManager.BulletType type = BulletManager.BulletType.Normal)
 	{
+		bulletManager.Shot(origin,shotPower,shotSpeed,type);
+
+		/*
 		GameObject a = (GameObject)Instantiate(bullet,origin.position,origin.rotation);
         a.GetComponent<Bullet>().shotPower = shotPower;
+		a.GetComponent<Bullet>().speed = shotSpeed;
+		*/
 	}
 
     public Animator GetAnimator()

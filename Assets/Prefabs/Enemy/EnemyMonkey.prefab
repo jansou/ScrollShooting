@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.625449896, y: -2.109653, z: 0}
+  m_LocalPosition: {x: 3.27488351, y: 1.83197892, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 432822}
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 140832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d046f0e0239d46e419bf13be2af01b0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 683cd9848e6167e4ba791e68cfff00bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11430880
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 11
+  hp: 20
   point: 100
   touchDamage: 1
   shotPower: 1
@@ -315,10 +315,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .300000012
-  shotDelay: .300000012
+  shotDelay: 1.5
   bullet: {fileID: 112916, guid: ca3973d7f597a18478aca1a714d6f6e1, type: 2}
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
+  bulletManager: {fileID: 0}
 --- !u!212 &21203014
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -341,8 +342,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1693172163
-  m_SortingOrder: 0
+  m_SortingLayerID: 1551091497
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5f63c3ec7817356488d7883f81cb7703, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!212 &21230954
@@ -367,7 +368,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2062899691
+  m_SortingLayerID: 1551091497
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 05f1262a271237641abcc73de5147dbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

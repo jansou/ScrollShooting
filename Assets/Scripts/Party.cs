@@ -65,15 +65,23 @@ public class Party : MonoBehaviour {
 	}
 
 	void SetFormation(Formation formation){
+		Vector3[] positions = null;
 		switch(formation){
 		case Formation.Normal:
-			transform.GetChild(0).position = transform.position + new Vector3(0,-1,0);
-			transform.GetChild(1).position = transform.position + new Vector3(0,1,0);
+			positions = new Vector3[]{
+				transform.position + new Vector3(0,-1,0),
+				transform.position + new Vector3(0,1,0)
+			};
 			break;
 		case Formation.Line:
-			transform.GetChild(0).position = transform.position + new Vector3(1,0,0);
-			transform.GetChild(1).position = transform.position + new Vector3(-1,0,0);
+			positions = new Vector3[]{
+				transform.position + new Vector3(1,0,0),
+				transform.position + new Vector3(-1,0,0)
+			};
 			break;
+		}
+		for(int i=0; i<transform.childCount; ++i){
+			transform.GetChild(i).position = positions[i];
 		}
 
 		this.formation = formation;

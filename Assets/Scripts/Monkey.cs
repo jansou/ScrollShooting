@@ -12,14 +12,11 @@ public class Monkey : MonoBehaviour {
 		common.Init();
 
 		Transform s1 = common.CreateShotPosition();
-		Transform s2 = common.CreateShotPosition();
 		
 		while (true) 
 		{
 			s1.localRotation = Quaternion.Euler(0,0,60+Random.Range(0,60));
-			spaceship.Shot(s1,1);
-			s2.localRotation = Quaternion.Euler(0,0,60+Random.Range(0,60));
-			spaceship.Shot(s2,1);
+			spaceship.Shot(s1,1,2,BulletManager.BulletType.Slash);
 						
 			//shotDelay秒待つ
 			yield return new WaitForSeconds(spaceship.shotDelay);
