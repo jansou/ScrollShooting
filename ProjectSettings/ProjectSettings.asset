@@ -75,7 +75,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 0
-  bundleIdentifier: com.kyusyukeigo.test
+  bundleIdentifier: com.mayonage.partyshooters
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -84,7 +84,7 @@ PlayerSettings:
   productGUID: 25786f404ad304ee39e0286958734e78
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
-  AndroidPreferredInstallLocation: 1
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
   apiCompatibilityLevel: 2
   iPhoneStrippingLevel: 2
@@ -143,7 +143,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: e923554872e0c274ea6a9accebb615ae, type: 3}
       m_Size: 128
   - m_BuildTarget: iPhone
     m_Icons:
@@ -167,6 +167,9 @@ PlayerSettings:
     m_DynamicBatching: 1
   - m_BuildTarget: Web
     m_StaticBatching: 0
+    m_DynamicBatching: 1
+  - m_BuildTarget: Android
+    m_StaticBatching: 1
     m_DynamicBatching: 1
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}

@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BossMonkey.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Party.cs">
     <Files>
-      <File FileName="Assets\Scripts\Spaceship.cs" Line="43" Column="3" />
-      <File FileName="Assets\Scripts\BossMonkey.cs" Line="17" Column="36" />
-      <File FileName="Assets\Scripts\BulletManager.cs" Line="13" Column="2" />
-      <File FileName="Assets\Scripts\Player.cs" Line="43" Column="4" />
+      <File FileName="Assets\Scripts\Party.cs" Line="68" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
