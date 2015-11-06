@@ -17,6 +17,8 @@ public class BossMonkey : MonoBehaviour {
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
+		yield return new WaitForEndOfFrame();
+
 		StartCoroutine("Attack1");
 		StartCoroutine("Attack2");
 
@@ -26,9 +28,12 @@ public class BossMonkey : MonoBehaviour {
 	IEnumerator Attack1(){
 		while (true) 
 		{
-			Vector3 v = pt.position - transform.position;
+			Vector3 v = Vector3.left;
+			if(pt){
+				v = pt.position - transform.position;
+			}
 			s2.localRotation = Quaternion.FromToRotation(Vector3.up,v);
-			spaceship.Shot(s2,1,3);
+			spaceship.Shot(s2,1,3,BulletManager.BulletType.Slash);
 
 			//shotDelay秒待つ
 			yield return new WaitForSeconds(spaceship.shotDelay + 0.5f);
