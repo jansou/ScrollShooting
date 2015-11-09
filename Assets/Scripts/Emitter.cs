@@ -12,6 +12,8 @@ public class Emitter : MonoBehaviour
 	//Managerコンポーネント
 	public Manager manager;
 
+	bool reset = false;
+
 	IEnumerator Start()
 	{
 		//Waveが存在しなければコルーチンを終了する
@@ -29,6 +31,7 @@ public class Emitter : MonoBehaviour
 			{
 				yield return new WaitForEndOfFrame();
 			}
+			reset = false;
 
 			//Waveを作成する
 			GameObject wave=(GameObject)Instantiate(
@@ -50,8 +53,12 @@ public class Emitter : MonoBehaviour
 			//Waveの削除
 			Destroy(wave);
 
+			if(reset){
+				currentWave = 0;
+				reset = false;
+			}
 			//格納されているWaveを全て実行したらcurrentWaveを0にする(最初->ループ)
-			if(waves.Length <= ++currentWave)
+			else if(waves.Length <= ++currentWave)
 			{
 				currentWave=0;
 			}
@@ -62,5 +69,8 @@ public class Emitter : MonoBehaviour
 	void Update () 
     {
 	
+	}
+	public void ResetWave(){
+		reset = true;
 	}
 }

@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Slime.cs" />
      <Compile Include="Assets\Scripts\Spaceship.cs" />
+     <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\WaveInfo.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">

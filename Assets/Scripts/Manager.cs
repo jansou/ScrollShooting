@@ -71,22 +71,27 @@ public class Manager : MonoBehaviour
 	{
         //delete enemy bullet
         GameObject[] enemyBullets;
-
         enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
-
         foreach (GameObject enemyBullet in enemyBullets)
         {
             Destroy(enemyBullet);
         }
+
         //delete player bullet
         GameObject[] playerBullets;
-
         playerBullets = GameObject.FindGameObjectsWithTag("PlayerBullet");
-
         foreach (GameObject playerBullet in playerBullets)
         {
             Destroy(playerBullet);
         }
+
+		GameObject[] enemies;
+		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			Destroy(enemy);
+		}
+		FindObjectOfType<Emitter>().ResetWave();
 
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
         title.SetActive(false);

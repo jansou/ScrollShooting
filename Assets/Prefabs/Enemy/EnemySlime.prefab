@@ -34,7 +34,7 @@ GameObject:
   - 114: {fileID: 11473818}
   m_Layer: 9
   m_Name: EnemySlime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,6 +308,7 @@ MonoBehaviour:
   bullet: {fileID: 112916, guid: ca3973d7f597a18478aca1a714d6f6e1, type: 2}
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
+  bulletManager: {fileID: 0}
 --- !u!114 &11480392
 MonoBehaviour:
   m_ObjectHideFlags: 1
