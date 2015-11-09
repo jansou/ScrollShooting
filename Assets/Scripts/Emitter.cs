@@ -60,7 +60,9 @@ public class Emitter : MonoBehaviour
 			//格納されているWaveを全て実行したらcurrentWaveを0にする(最初->ループ)
 			else if(waves.Length <= ++currentWave)
 			{
-				currentWave=0;
+				manager.GameClear();
+				yield return new WaitForSeconds(3);
+				Application.LoadLevel("Home");
 			}
 		}
 	}

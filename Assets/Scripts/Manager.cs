@@ -9,11 +9,15 @@ public class Manager : MonoBehaviour
 	//タイトル
 	private GameObject title;
 
+	private GameObject clear;
+
 	// Use this for initialization
 	void Start () 
 	{
 		//Titleゲームオブジェクトを検索し取得する
 		title=GameObject.Find("Title");
+		clear=GameObject.Find("ClearCanvas");
+		clear.SetActive(false);
 	}
 	
     void OnGUI()
@@ -67,6 +71,12 @@ public class Manager : MonoBehaviour
 		title.SetActive (true);
 	}
 
+	public void GameClear()
+	{
+		clear.SetActive(true);
+		FindObjectOfType<Score>().Save();
+	}
+
 	void GameStart()
 	{
         //delete enemy bullet
@@ -102,6 +112,6 @@ public class Manager : MonoBehaviour
 	public bool IsPlaying()
 	{
 		//ゲーム中かどうかはタイトルの表示/非表示で判断する
-		return title.activeSelf == false;
+		return title.activeSelf == false && clear.activeSelf == false;
 	}
 }

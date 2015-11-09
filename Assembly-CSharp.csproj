@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\EnemyHP_Render.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\FormationButton.cs" />
+     <Compile Include="Assets\Scripts\Home\HomeManager.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\Monkey.cs" />
      <Compile Include="Assets\Scripts\Party.cs" />
