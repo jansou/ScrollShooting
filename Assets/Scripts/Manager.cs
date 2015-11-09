@@ -11,13 +11,20 @@ public class Manager : MonoBehaviour
 
 	private GameObject clear;
 
+	private GameObject pause;
+
+	bool paused = false;
+
 	// Use this for initialization
 	void Start () 
 	{
 		//Titleゲームオブジェクトを検索し取得する
 		title=GameObject.Find("Title");
 		clear=GameObject.Find("ClearCanvas");
+		pause=GameObject.Find("PauseCanvas");
+
 		clear.SetActive(false);
+		pause.SetActive(false);
 	}
 	
     void OnGUI()
@@ -113,5 +120,18 @@ public class Manager : MonoBehaviour
 	{
 		//ゲーム中かどうかはタイトルの表示/非表示で判断する
 		return title.activeSelf == false && clear.activeSelf == false;
+	}
+
+	public void GamePause(){
+		if(paused){
+			paused = false;
+			pause.SetActive(false);
+			Time.timeScale = 1;
+		}
+		else{
+			paused = true;
+			pause.SetActive(true);
+			Time.timeScale = 0;
+		}
 	}
 }
