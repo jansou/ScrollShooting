@@ -18,10 +18,13 @@ public class HomeManager : MonoBehaviour
 	
     void OnGUI()
     {
-        //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
+        if (tapHit() == "StartButton")
         {
-            GameStart();
+            //ゲーム中ではなく、マウスクリックされたらtrueを返す。
+            //if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
+            {
+                GameStart();
+            }
         }
     }
 
@@ -96,6 +99,24 @@ public class HomeManager : MonoBehaviour
 		Instantiate (party, party.transform.position, party.transform.rotation);
          */
 	}
+
+    public static string tapHit()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D collition2d = Physics2D.OverlapPoint(tapPoint);
+            if (collition2d)
+            {
+                RaycastHit2D hitObject = Physics2D.Raycast(tapPoint, -Vector2.up);
+                if (hitObject)
+                {
+                    return hitObject.collider.gameObject.name;
+                }
+            }
+        }
+        return "none";
+    }
 
 	public bool IsPlaying()
 	{

@@ -69,7 +69,7 @@ public class TitleManager : MonoBehaviour
 
 	void GameStart()
 	{
-        Application.LoadLevel("Stage");
+        Application.LoadLevel("Home");
         /*
         //delete enemy bullet
         GameObject[] enemyBullets;
