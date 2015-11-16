@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Party.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\Slime.cs" />
      <Compile Include="Assets\Scripts\Spaceship.cs" />
      <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
