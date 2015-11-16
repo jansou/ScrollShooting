@@ -5,6 +5,7 @@ public class Manager : MonoBehaviour
 {
 	//playerプレハブ
 	public GameObject party;
+	GameObject createdParty;
 
 	//タイトル
 	private GameObject title;
@@ -113,7 +114,7 @@ public class Manager : MonoBehaviour
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
         title.SetActive(false);
 
-		Instantiate (party, party.transform.position, party.transform.rotation);
+		createdParty = (GameObject)Instantiate (party, party.transform.position, party.transform.rotation);
 	}
 
 	public bool IsPlaying()
@@ -132,6 +133,21 @@ public class Manager : MonoBehaviour
 			paused = true;
 			pause.SetActive(true);
 			Time.timeScale = 0;
+		}
+	}
+
+	public void SetPartyForm(int formnum){
+		if(createdParty){
+			Party.Formation form = Party.Formation.Normal;
+			switch(formnum){
+			case 0:
+				form = Party.Formation.Normal;
+				break;
+			case 1:
+				form = Party.Formation.Line;
+				break;
+			}
+			createdParty.GetComponent<Party>().SetFormation(form);
 		}
 	}
 }

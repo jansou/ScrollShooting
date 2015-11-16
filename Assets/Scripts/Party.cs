@@ -14,21 +14,25 @@ public class Party : MonoBehaviour {
 		Line,
 	};
 
-	public Formation formation = Formation.Line;
+	public Formation formation = Formation.Normal;
 
 	Vector2 minPosition = new Vector2(-1,-1);
 	Vector2 maxPosition = new Vector2(1,1);
 
+	GameObject shieldObject;
 
 	// Use this for initialization
 	void Start () 
     {
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
         background = FindObjectOfType<Background>();
+
+		shieldObject = transform.GetChild(0).FindChild("shield").gameObject;
 	
 		SetFormation(formation);
 
 
+		Debug.Log (shieldObject != null);
 	}
 	
 	// Update is called once per frame
@@ -64,7 +68,7 @@ public class Party : MonoBehaviour {
 
 	}
 
-	void SetFormation(Formation formation){
+	public void SetFormation(Formation formation){
 		Vector3[] positions = null;
 		switch(formation){
 		case Formation.Normal:
@@ -85,6 +89,15 @@ public class Party : MonoBehaviour {
 		}
 
 		this.formation = formation;
+
+		if(shieldObject){
+			if(formation == Formation.Line){
+				shieldObject.SetActive(true);
+			}
+			else{
+				shieldObject.SetActive(false);
+			}
+		}
 	}
 
     void Move(Vector3 direction)
