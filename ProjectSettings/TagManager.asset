@@ -62,6 +62,9 @@ TagManager:
   - name: Player
     uniqueID: 149062815
     locked: 0
+  - name: Effect
+    uniqueID: 722853317
+    locked: 0
   - name: BlackScreen
     uniqueID: 3826932373
     locked: 0

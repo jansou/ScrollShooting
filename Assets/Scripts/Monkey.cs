@@ -12,7 +12,8 @@ public class Monkey : MonoBehaviour {
 		common.Init();
 
 		Transform s1 = common.CreateShotPosition();
-		
+
+		yield return new WaitForEndOfFrame();
 		while (true) 
 		{
 			s1.localRotation = Quaternion.Euler(0,0,60+Random.Range(0,60));

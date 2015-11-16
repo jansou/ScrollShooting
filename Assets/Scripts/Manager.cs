@@ -30,7 +30,7 @@ public class Manager : MonoBehaviour
     void OnGUI()
     {
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
+        if (IsPlaying() == false && clear.activeSelf == false && Event.current.type == EventType.MouseDown)
         {
             GameStart();
         }
