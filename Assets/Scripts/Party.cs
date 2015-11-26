@@ -85,6 +85,9 @@ public class Party : MonoBehaviour {
 			break;
 		}
 		for(int i=0; i<transform.childCount; ++i){
+			if(i >= positions.Length){
+				break;
+			}
 			transform.GetChild(i).position = positions[i];
 		}
 

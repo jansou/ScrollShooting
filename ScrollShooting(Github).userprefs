@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Party.cs">
     <Files>
-      <File FileName="Assets\Scripts\Manager.cs" Line="147" Column="32" />
-      <File FileName="Assets\Scripts\Party.cs" Line="98" Column="4" />
+      <File FileName="Assets\Scripts\Party.cs" Line="88" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
