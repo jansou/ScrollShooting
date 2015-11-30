@@ -10,16 +10,13 @@ public class Slime : MonoBehaviour {
 		common = GetComponent<EnemyCommon>();
 		common.Init();
 
-
 		Transform s1 = common.CreateShotPosition();
 
 		yield return new WaitForEndOfFrame();
 		while (true) 
 		{
-			s1.localRotation = Quaternion.Euler(0,0,60+Random.Range(0,60));
-			spaceship.Shot(s1,1);
-			
-			//shotDelay秒待つ
+			common.Shot(s1,60+Random.Range (0,60),1);
+
 			yield return new WaitForSeconds(spaceship.shotDelay);
 		}
 	}

@@ -28,13 +28,7 @@ public class BossMonkey : MonoBehaviour {
 	IEnumerator Attack1(){
 		while (true) 
 		{
-			Vector3 v = Vector3.left;
-			if(pt){
-				v = pt.position - transform.position;
-				v += new Vector3(Random.Range (-1.0f,1.0f),Random.Range (-1.0f,1.0f),0);
-			}
-			s2.localRotation = Quaternion.FromToRotation(Vector3.up,v);
-			spaceship.Shot(s2,1,3,BulletManager.BulletType.Slash);
+			common.ShotAim(s2,pt,1,3,BulletManager.BulletType.Slash);
 
 			//shotDelay秒待つ
 			yield return new WaitForSeconds(spaceship.shotDelay + 0.5f);
@@ -44,8 +38,7 @@ public class BossMonkey : MonoBehaviour {
 		while (true) 
 		{
 			for(int i=0; i<3; ++i){
-				s2.localRotation = Quaternion.Euler(0,0,60+30*i);
-				spaceship.Shot(s2,1,2);
+				common.Shot(s2, 60+30*i,1,2);
 			}
 			
 			//shotDelay秒待つ
