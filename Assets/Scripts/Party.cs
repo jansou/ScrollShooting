@@ -10,11 +10,14 @@ public class Party : MonoBehaviour {
     Background background;
 
 	public enum Formation{
-		Normal,
-		Line,
+		Alex,
+		Guylus,
+		Nely,
+		Rinmaru,
+		Medhu
 	};
 
-	public Formation formation = Formation.Normal;
+	public Formation formation = Formation.Alex;
 
 	Vector2 minPosition = new Vector2(-1,-1);
 	Vector2 maxPosition = new Vector2(1,1);
@@ -27,7 +30,7 @@ public class Party : MonoBehaviour {
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
         background = FindObjectOfType<Background>();
 
-		shieldObject = transform.GetChild(0).FindChild("shield").gameObject;
+		shieldObject = transform.GetChild(1).FindChild("shield").gameObject;
 	
 		SetFormation(formation);
 
@@ -70,17 +73,59 @@ public class Party : MonoBehaviour {
 
 	public void SetFormation(Formation formation){
 		Vector3[] positions = null;
+		/*
+		 * positions = new Vector3[]{
+		 *  alex
+		 *  guylus,
+		 *  nely,
+		 *  rinmaru,
+		 *  medhu
+		 * };
+		*/
 		switch(formation){
-		case Formation.Normal:
+		case Formation.Alex:
 			positions = new Vector3[]{
-				transform.position + new Vector3(0,-1,0),
-				transform.position + new Vector3(0,1,0)
+				new Vector3(1,0,0),
+				new Vector3(0.5f,0.5f,0),
+				new Vector3(0,0,0),
+				new Vector3(0.5f,-0.5f,0),
+				new Vector3(-1,0,0)
 			};
 			break;
-		case Formation.Line:
+		case Formation.Guylus:
 			positions = new Vector3[]{
-				transform.position + new Vector3(1,0,0),
-				transform.position + new Vector3(-1,0,0)
+				new Vector3(-0.2f,0.5f,0),
+				new Vector3(0.8f,0,0),
+				new Vector3(-0.2f,0,0),
+				new Vector3(-0.2f,-0.5f,0),
+				new Vector3(-0.6f,0,0)
+			};
+			break;
+		case Formation.Nely:
+			positions = new Vector3[]{
+				new Vector3(-0.1f,0.5f,0),
+				new Vector3(-0.5f,0.2f,0),
+				new Vector3(0.5f,0,0),
+				new Vector3(-0.1f,-0.5f,0),
+				new Vector3(-0.5f,-0.2f,0)
+			};
+			break;
+		case Formation.Rinmaru:
+			positions = new Vector3[]{
+				new Vector3(0.4f,0.4f,0),
+				new Vector3(-0.4f,0.4f,0),
+				new Vector3(0.4f,-0.4f,0),
+				new Vector3(0,0,0),
+				new Vector3(-0.4f,-0.4f,0)
+			};
+			break;
+		case Formation.Medhu:
+			positions = new Vector3[]{
+				new Vector3(0.1f,0.3f,0),
+				new Vector3(-0.3f,0.3f,0),
+				new Vector3(0.1f,-0.3f,0),
+				new Vector3(-0.3f,-0.3f,0),
+				new Vector3(0.4f,0,0)
 			};
 			break;
 		}
@@ -88,13 +133,13 @@ public class Party : MonoBehaviour {
 			if(i >= positions.Length){
 				break;
 			}
-			transform.GetChild(i).position = positions[i];
+			transform.GetChild(i).position = transform.position + positions[i];
 		}
 
 		this.formation = formation;
 
 		if(shieldObject){
-			if(formation == Formation.Line){
+			if(formation == Formation.Guylus){
 				shieldObject.SetActive(true);
 			}
 			else{
@@ -144,11 +189,20 @@ public class Party : MonoBehaviour {
     }
 
 	public void ChangeFormation(){
-		if(formation == Formation.Normal){
-			SetFormation(Formation.Line);
+		if(formation == Formation.Alex){
+			SetFormation(Formation.Guylus);
 		}
-		else if(formation == Formation.Line){
-			SetFormation(Formation.Normal);
+		else if(formation == Formation.Guylus){
+			SetFormation(Formation.Nely);
+		}
+		else if(formation == Formation.Nely){
+			SetFormation(Formation.Rinmaru);
+		}
+		else if(formation == Formation.Rinmaru){
+			SetFormation(Formation.Medhu);
+		}
+		else{
+			SetFormation(Formation.Alex);
 		}
 	}
 

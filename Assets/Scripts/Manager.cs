@@ -138,13 +138,13 @@ public class Manager : MonoBehaviour
 
 	public void SetPartyForm(int formnum){
 		if(createdParty){
-			Party.Formation form = Party.Formation.Normal;
+			Party.Formation form = Party.Formation.Alex;
 			switch(formnum){
 			case 0:
-				form = Party.Formation.Normal;
+				form = Party.Formation.Alex;
 				break;
 			case 1:
-				form = Party.Formation.Line;
+				form = Party.Formation.Guylus;
 				break;
 			}
 			createdParty.GetComponent<Party>().SetFormation(form);
