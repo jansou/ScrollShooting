@@ -455,7 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   level: 1
-  hp: 20
+  hp: 100
   shotPower: 1
   exp: 0
 --- !u!114 &11424450
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   level: 1
-  hp: 20
+  hp: 150
   shotPower: 1
   exp: 0
 --- !u!114 &11477862

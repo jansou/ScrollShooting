@@ -85,6 +85,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 				newPos.y = delta;
 			}
 			transform.position = new Vector3(m_StartPos.x + newPos.x, m_StartPos.y + newPos.y, m_StartPos.z + newPos.z);
+			Debug.Log(newPos);
 			UpdateVirtualAxes(transform.position);
 		}
 
