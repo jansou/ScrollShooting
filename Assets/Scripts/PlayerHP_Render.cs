@@ -27,8 +27,8 @@ public class PlayerHP_Render : MonoBehaviour
 
 	public void InitHP(int maxHP){
 		maxhp = maxHP;
-		hp = maxhp;
-		SetHP ((int)hp);
+		hp = maxHP;
+		SetHP (maxHP);
 	}
 
 	public void SetHP(int nowHP){

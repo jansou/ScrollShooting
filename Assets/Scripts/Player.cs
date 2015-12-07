@@ -145,60 +145,47 @@ public class Player : MonoBehaviour
 		//レイヤー名を取得
 		string layerName = LayerMask.LayerToName (c.gameObject.layer);
 
-        /*
-		//レイヤー名がBullet(Enemy)の時は弾を削除
-		if (layerName == "Bullet(Enemy)") 
-		{
-			// 弾の削除
-			Destroy(c.gameObject);
-		}
-         */
-
 		if (layerName == "Bullet(Enemy)" || layerName == "Enemy") 
 		{
+			int damage = 0;
 
             if (layerName == "Bullet(Enemy)")
             {
-                Transform enemyBulletTransform = c.transform;
+                Bullet bullet = c.transform.GetComponent<Bullet>();
+				damage = bullet.getDamage();
 
-                Bullet bullet = enemyBulletTransform.GetComponent<Bullet>();
-
-                hp = hp - bullet.getDamage();//bullet.power;
-
-                // 弾の削除
                 Destroy(c.gameObject);
             }
 
             if (layerName == "Enemy")
             {
-                Transform enemyTransform = c.transform;
-
-                Enemy enemy = enemyTransform.GetComponent<Enemy>();
-
-                hp = hp - enemy.getTouchDamage();
+                Enemy enemy = c.transform.GetComponent<Enemy>();
+				damage = enemy.getTouchDamage();
             }
 
-			//hpBar.setHP(hp);
-
-            if (hp <= 0)
-            {
-                //Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
-                //FindObjectOfType<Manager>().GameOver();
-
-                //爆発する
-                spaceship.Explosion();
-
-                //プレイヤー削除
-                Destroy(gameObject);
-            }
-            else
-            {
-                spaceship.GetAnimator().SetTrigger("Damage");
-            }
-
-			hpRenderer.SetHP(hp);
+			damageHP(damage);
 		}
+	}
 
+	public void damageHP(int damage){
+		hp = hp - damage;
+		if (hp <= 0)
+		{
+			//Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+			//FindObjectOfType<Manager>().GameOver();
+			
+			//爆発する
+			spaceship.Explosion();
+			
+			//プレイヤー削除
+			Destroy(gameObject);
+		}
+		else
+		{
+			spaceship.GetAnimator().SetTrigger("Damage");
+		}
+		
+		hpRenderer.SetHP(hp);
 	}
 
     public void addExp(int point)

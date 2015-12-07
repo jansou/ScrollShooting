@@ -28,7 +28,7 @@ public class BossMonkey : MonoBehaviour {
 	IEnumerator Attack1(){
 		while (true) 
 		{
-			common.ShotAim(s2,pt,1,3,BulletManager.BulletType.Slash);
+			common.ShotAim(s2,pt,2,3,BulletManager.BulletType.Slash);
 
 			//shotDelay秒待つ
 			yield return new WaitForSeconds(spaceship.shotDelay + 0.5f);

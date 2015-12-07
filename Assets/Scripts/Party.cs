@@ -33,9 +33,6 @@ public class Party : MonoBehaviour {
 		shieldObject = transform.GetChild(1).FindChild("shield").gameObject;
 	
 		SetFormation(formation);
-
-
-		Debug.Log (shieldObject != null);
 	}
 	
 	// Update is called once per frame
@@ -85,17 +82,17 @@ public class Party : MonoBehaviour {
 		switch(formation){
 		case Formation.Alex:
 			positions = new Vector3[]{
-				new Vector3(1,0,0),
-				new Vector3(0.5f,0.5f,0),
+				new Vector3(0.7f,0,0),
+				new Vector3(0.3f,0.5f,0),
 				new Vector3(0,0,0),
-				new Vector3(0.5f,-0.5f,0),
-				new Vector3(-1,0,0)
+				new Vector3(0.3f,-0.5f,0),
+				new Vector3(-0.6f,0,0)
 			};
 			break;
 		case Formation.Guylus:
 			positions = new Vector3[]{
 				new Vector3(-0.2f,0.5f,0),
-				new Vector3(0.8f,0,0),
+				new Vector3(0.5f,0,0),
 				new Vector3(-0.2f,0,0),
 				new Vector3(-0.2f,-0.5f,0),
 				new Vector3(-0.6f,0,0)
