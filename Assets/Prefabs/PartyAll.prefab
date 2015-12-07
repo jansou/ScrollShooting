@@ -990,6 +990,7 @@ MonoBehaviour:
   hp: 2
   shotPower: 1
   exp: 0
+  playerUIName: 2ndPlayer
 --- !u!114 &11411242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1006,6 +1007,7 @@ MonoBehaviour:
   hp: 2
   shotPower: 1
   exp: 0
+  playerUIName: 1stPlayer
 --- !u!114 &11418536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1039,6 +1041,7 @@ MonoBehaviour:
   hp: 2
   shotPower: 1
   exp: 0
+  playerUIName: 3rdPlayer
 --- !u!114 &11456022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1119,6 +1122,7 @@ MonoBehaviour:
   hp: 2
   shotPower: 1
   exp: 0
+  playerUIName: 4thPlayer
 --- !u!114 &11476326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1163,6 +1167,7 @@ MonoBehaviour:
   hp: 2
   shotPower: 1
   exp: 0
+  playerUIName: 5thPlayer
 --- !u!212 &21222942
 SpriteRenderer:
   m_ObjectHideFlags: 1

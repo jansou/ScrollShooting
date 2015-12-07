@@ -146,6 +146,15 @@ public class Manager : MonoBehaviour
 			case 1:
 				form = Party.Formation.Guylus;
 				break;
+			case 2:
+				form = Party.Formation.Nely;
+				break;
+			case 3:
+				form = Party.Formation.Rinmaru;
+				break;
+			case 4:
+				form = Party.Formation.Medhu;
+				break;
 			}
 			createdParty.GetComponent<Party>().SetFormation(form);
 		}

@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
 
 	Transform shotposition;
 
+	PlayerHP_Render hpRenderer;
+	public string playerUIName;
+
 	IEnumerator Start()
 	{
         hp *= level;
@@ -37,6 +40,9 @@ public class Player : MonoBehaviour
 
 		shotposition = transform.GetChild(0);
 
+		hpRenderer = getHPGauge(playerUIName);
+		hpRenderer.InitHP(hp);
+
 		yield return new WaitForEndOfFrame();// for SpaceShip.Start()
 
 		while (true) 
@@ -48,6 +54,10 @@ public class Player : MonoBehaviour
 
 			yield return new WaitForSeconds(spaceship.shotDelay);
 		}
+	}
+
+	PlayerHP_Render getHPGauge(string playeUIName){
+		return GameObject.Find (playerUIName).transform.FindChild("PlayerHP_Gage").transform.FindChild("HP").GetComponent<PlayerHP_Render>();
 	}
 
 
@@ -168,6 +178,8 @@ public class Player : MonoBehaviour
                 hp = hp - enemy.getTouchDamage();
             }
 
+			//hpBar.setHP(hp);
+
             if (hp <= 0)
             {
                 //Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
@@ -183,6 +195,8 @@ public class Player : MonoBehaviour
             {
                 spaceship.GetAnimator().SetTrigger("Damage");
             }
+
+			hpRenderer.SetHP(hp);
 		}
 
 	}
