@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
 	// Use this for initialization
 	IEnumerator Start () 
 	{
-        Debug.Log("creating spaceship");
 		//Spaceshipコンポーネントを取得
 		spaceship = GetComponent<Spaceship> ();
 

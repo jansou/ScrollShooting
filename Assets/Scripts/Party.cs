@@ -23,6 +23,7 @@ public class Party : MonoBehaviour {
 	Vector2 maxPosition = new Vector2(1,1);
 
 	GameObject shieldObject;
+	GameObject recoveryObject;
 
 	// Use this for initialization
 	void Start () 
@@ -31,6 +32,7 @@ public class Party : MonoBehaviour {
         background = FindObjectOfType<Background>();
 
 		shieldObject = transform.GetChild(1).FindChild("shield").gameObject;
+		recoveryObject = transform.GetChild(4).FindChild("recoveryField").gameObject;
 	
 		SetFormation(formation);
 	}
@@ -134,6 +136,9 @@ public class Party : MonoBehaviour {
 		}
 
 		this.formation = formation;
+		for(int i=0; i<transform.childCount; ++i){
+			transform.GetChild(i).GetComponent<Player>().SetFormation(formation);
+		}
 
 		if(shieldObject){
 			if(formation == Formation.Guylus){
@@ -141,6 +146,14 @@ public class Party : MonoBehaviour {
 			}
 			else{
 				shieldObject.SetActive(false);
+			}
+		}
+		if(recoveryObject){
+			if(formation == Formation.Medhu){
+				recoveryObject.SetActive(true);
+			}
+			else{
+				recoveryObject.SetActive(false);
 			}
 		}
 	}

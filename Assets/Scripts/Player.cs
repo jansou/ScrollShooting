@@ -4,16 +4,27 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour 
 {
+	public enum Type{
+		Alex,
+		Guylus,
+		Nely,
+		Rinmaru,
+		Medhu
+	};
+	public Type type;
 	// 移動スピード
 	public float speed = 5;
 
     public int level = 1;
 
     public int hp = 10;
+	int maxHP;
 
     public int shotPower=1;
 
     public int exp=0;
+
+	Party.Formation formation = Party.Formation.Alex;
 
 	//public GameObject bullet;
 
@@ -31,6 +42,7 @@ public class Player : MonoBehaviour
 	IEnumerator Start()
 	{
         hp *= level;
+		maxHP = hp;
 
 		//Spaceshipコンポーネントを取得
 		spaceship = GetComponent<Spaceship> ();
@@ -47,12 +59,75 @@ public class Player : MonoBehaviour
 
 		while (true) 
 		{
-			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			Attack();
 			//Instantiate(bullet, transform.position,transform.rotation);
 
 			GetComponent<AudioSource>().Play();
 
 			yield return new WaitForSeconds(spaceship.shotDelay);
+		}
+	}
+
+	public void SetFormation(Party.Formation form){
+		formation = form;
+	}
+
+	void Attack(){
+		switch(formation){
+		case Party.Formation.Alex:
+			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
+			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			shotposition.rotation = Quaternion.AngleAxis(270+30,Vector3.forward);
+			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			shotposition.rotation = Quaternion.AngleAxis(270-30,Vector3.forward);
+			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			break;
+		case Party.Formation.Guylus:
+			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
+			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			break;
+		case Party.Formation.Nely:
+			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
+			spaceship.Shot(shotposition,shotPower,5,BulletManager.BulletType.PHoming);
+			break;
+		case Party.Formation.Rinmaru:
+			if(type == Type.Rinmaru){
+				shotposition.rotation = Quaternion.AngleAxis(0,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				shotposition.rotation = Quaternion.AngleAxis(90,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				shotposition.rotation = Quaternion.AngleAxis(180,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+			}
+			else if(type == Type.Guylus){
+				shotposition.rotation = Quaternion.AngleAxis(45,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+			}
+			else if(type == Type.Medhu){
+				shotposition.rotation = Quaternion.AngleAxis(135,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+			}
+			else if(type == Type.Nely){
+				shotposition.rotation = Quaternion.AngleAxis(225,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+			}
+			else if(type == Type.Alex){
+				shotposition.rotation = Quaternion.AngleAxis(315,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+			}
+			else{
+				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+			}
+			break;
+		case Party.Formation.Medhu:
+			break;
+		default:
+			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
+			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			break;
 		}
 	}
 
@@ -185,6 +260,10 @@ public class Player : MonoBehaviour
 			spaceship.GetAnimator().SetTrigger("Damage");
 		}
 		
+		hpRenderer.SetHP(hp);
+	}
+	public void recoveryHP(int recover){
+		hp = Mathf.Min(hp+recover,maxHP);
 		hpRenderer.SetHP(hp);
 	}
 
