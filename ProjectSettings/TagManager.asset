@@ -22,7 +22,7 @@ TagManager:
   - Bullet(Player)
   - Bullet(Enemy)
   - DestroyArea
-  - 
+  - BackGround
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 3335841591
     locked: 0
   - name: UI
     uniqueID: 1551091497
