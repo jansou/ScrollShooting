@@ -18,7 +18,7 @@ public class HomeManager : MonoBehaviour
 	
     void OnGUI()
     {
-        if (tapHit() == "StartButton")
+        if (tapHit() == "ContinueButton")//それぞれのボタンを設定する
         {
             //ゲーム中ではなく、マウスクリックされたらtrueを返す。
             //if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
