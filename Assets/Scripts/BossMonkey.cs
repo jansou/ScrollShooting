@@ -17,6 +17,8 @@ public class BossMonkey : MonoBehaviour {
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
+		FindObjectOfType<MessageWindow>().showMessage("メテオ");
+
 		yield return new WaitForEndOfFrame();
 
 		StartCoroutine("Attack1");
@@ -28,10 +30,11 @@ public class BossMonkey : MonoBehaviour {
 	IEnumerator Attack1(){
 		while (true) 
 		{
+			spaceship.GetAnimator().SetTrigger("Skill");
 			common.ShotAim(s2,pt,2,3,BulletManager.BulletType.Slash);
 
 			//shotDelay秒待つ
-			yield return new WaitForSeconds(spaceship.shotDelay + 0.5f);
+			yield return new WaitForSeconds(spaceship.shotDelay + 2.5f);
 		}
 	}
 	IEnumerator Attack2(){
