@@ -330,7 +330,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ef0d042b5e7522f4a87939859a55e098, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -345,7 +345,7 @@ SpriteRenderer:
   m_SortingLayerID: -1643576185
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e923554872e0c274ea6a9accebb615ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .501960814, g: .501960814, b: .501960814, a: 1}
 --- !u!212 &21240602
 SpriteRenderer:
   m_ObjectHideFlags: 1

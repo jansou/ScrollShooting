@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\TextPopup.cs" />
      <Compile Include="Assets\Scripts\Background.cs" />
      <Compile Include="Assets\Scripts\BossMonkey.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
@@ -65,6 +66,8 @@
      <Compile Include="Assets\Scripts\Party.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerHP_Render.cs" />
+     <Compile Include="Assets\Scripts\PopUp.cs" />
+     <Compile Include="Assets\Scripts\PopUpTest.cs" />
      <Compile Include="Assets\Scripts\RecoveryField.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
