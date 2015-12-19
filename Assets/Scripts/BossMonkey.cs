@@ -31,6 +31,7 @@ public class BossMonkey : MonoBehaviour {
 		while (true) 
 		{
 			spaceship.GetAnimator().SetTrigger("Skill");
+			yield return new WaitForSeconds(0.5f);
 			common.ShotAim(s2,pt,2,3,BulletManager.BulletType.Slash);
 
 			//shotDelay秒待つ
