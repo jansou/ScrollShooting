@@ -64,6 +64,9 @@ public class Enemy : MonoBehaviour
         //ヒットポイントを減らす
         hp = hp - bullet.getDamage();
 
+		Vector3 range = new Vector3(Random.Range(-0.1f,0.1f),Random.Range(-0.1f,0.1f),0);
+		FindObjectOfType<PopUp>().CreateText(transform.position+range,bullet.getDamage());
+
 		//弾の削除
 		Destroy (c.gameObject);
 
