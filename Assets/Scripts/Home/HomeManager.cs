@@ -1,106 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class HomeManager : MonoBehaviour 
 {
-	//playerプレハブ
-	public GameObject party;
+	public Text stageText;
+	public Image stageBack;
 
-	//タイトル
-	private GameObject title;
+	public Sprite back1;
+	public Sprite back2;
+
+	int selectnum = 0;
+
+
+	TextAsset tasset;
 
 	// Use this for initialization
 	void Start () 
 	{
-		//Titleゲームオブジェクトを検索し取得する
-		title=GameObject.Find("Title");
+
 	}
 	
     void OnGUI()
     {
+
         if (tapHit() == "ContinueButton")//それぞれのボタンを設定する
-        {
-            //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-            //if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
-            {
-                GameStart();
-            }
-        }
-    }
-
-    /*
-	// Update is called once per frame
-	void Update () 
-	{
-        for (int i = 0; i < Input.touchCount; ++i)
-        {
-            //タッチ情報を取得する
-            Touch touch = Input.GetTouch(i);
-
-            //ゲーム中ではなく、タッチ直後であればtrueを返す。
-            if (IsPlaying() == false && touch.phase==TouchPhase.Began)
-            {
-                GameStart();
-            }
-        }
-
-        //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && Input.GetMouseButtonDown(0))
         {
             GameStart();
         }
-
-        /*
-            //ゲーム中ではなく、Xキーを押されたらtrueを返す。
-            if (IsPlaying() == false && Input.GetKeyDown(KeyCode.X))
-            {
-                GameStart();
-            }
-         
-	}
-    */
-
-
-	public void GameOver()
+    }
+	
+	public void GameStart()
 	{
-        // ハイスコアの保存
-        FindObjectOfType<Score>().Save();
-
-		//ゲームオーバー時に、タイトルを表示する
-		title.SetActive (true);
+		switch(selectnum){
+		case 0:
+        	Application.LoadLevel("Stage");
+			break;
+		default:
+			Application.LoadLevel("Stage");
+			break;
+		}
 	}
 
-	void GameStart()
-	{
-        Application.LoadLevel("Stage");
-        /*
-        //delete enemy bullet
-        GameObject[] enemyBullets;
-
-        enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
-
-        foreach (GameObject enemyBullet in enemyBullets)
-        {
-            Destroy(enemyBullet);
-        }
-        //delete player bullet
-        GameObject[] playerBullets;
-
-        playerBullets = GameObject.FindGameObjectsWithTag("PlayerBullet");
-
-        foreach (GameObject playerBullet in playerBullets)
-        {
-            Destroy(playerBullet);
-        }
-
-        //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
-        title.SetActive(false);
-
-		Instantiate (party, party.transform.position, party.transform.rotation);
-         */
-	}
-
-    public static string tapHit()
+    string tapHit()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -118,9 +60,28 @@ public class HomeManager : MonoBehaviour
         return "none";
     }
 
-	public bool IsPlaying()
-	{
-		//ゲーム中かどうかはタイトルの表示/非表示で判断する
-		return title.activeSelf == false;
+	public void SelectStage(int num){
+		selectnum = num;
+		string textPath = "none";
+
+		//stageBack.sprite =  
+		switch(num){
+		case 0:
+			stageBack.sprite = back1;
+			textPath = "Stage1";
+			break;
+		default:
+			stageBack.sprite = back2;
+			textPath = "Stage2";
+			break;
+		}
+
+		tasset = (TextAsset)Resources.Load(textPath);
+		if(tasset){
+			stageText.text = tasset.text;
+		}
+		else{
+			stageText.text = "テキストが存在していません。";
+		}
 	}
 }

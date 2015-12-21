@@ -116,11 +116,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2038166660}
-  m_RootOrder: 1
+  m_Father: {fileID: 1073722998}
+  m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 366, y: -192}
+  m_AnchoredPosition: {x: 248.899994, y: 169.199997}
   m_SizeDelta: {x: 82, y: 77}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &7149070
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 7149071}
   m_OnClick:
     m_PersistentCalls:
@@ -1499,8 +1499,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -235, y: 171}
-  m_SizeDelta: {x: 279, y: 41}
+  m_AnchoredPosition: {x: -180, y: 218}
+  m_SizeDelta: {x: 279, y: 38}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &591161703
 GameObject:
@@ -2186,9 +2186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 7fdb1f8ea5eb7ab489f00301751048ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45601cfbe0f662947b15b513d932b8e1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2214,8 +2214,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -147, y: -179}
-  m_SizeDelta: {x: 107, y: 142}
+  m_AnchoredPosition: {x: -147, y: -190}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &853755770
 Prefab:
@@ -2589,7 +2589,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 276, y: 185}
+  m_AnchoredPosition: {x: -195.5, y: 178.5}
   m_SizeDelta: {x: 248, y: 41}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1030447092
@@ -2750,6 +2750,7 @@ RectTransform:
   - {fileID: 203915842}
   - {fileID: 1392434898}
   - {fileID: 905853526}
+  - {fileID: 7149069}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_AnchorMin: {x: 0, y: 0}
@@ -3234,7 +3235,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 336, y: 143}
+  m_AnchoredPosition: {x: 340, y: 166.5}
   m_SizeDelta: {x: 82, y: 77}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1401030284
@@ -3933,8 +3934,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -38, y: -188}
-  m_SizeDelta: {x: 116, y: 154}
+  m_AnchoredPosition: {x: -43, y: -191}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1719073480
 MonoBehaviour:
@@ -4002,7 +4003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 45601cfbe0f662947b15b513d932b8e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d47368da6ab84f24996f701d8d1b772a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4136,7 +4137,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!114 &1731002274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4507,8 +4508,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 69, y: -179}
-  m_SizeDelta: {x: 107, y: 142}
+  m_AnchoredPosition: {x: 67, y: -193}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2029001950
 MonoBehaviour:
@@ -4576,7 +4577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 1125ac1e88ecb9644b7f9f1be4ee2f49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 531825c6748d8124dada8ac501107f77, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4668,7 +4669,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 840506602}
-  - {fileID: 7149069}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
