@@ -15,11 +15,15 @@ public class PopUp : MonoBehaviour {
 	void Update () {
 	
 	}
-	public void CreateText(Vector3 position,int num){
+	public void CreateText(Vector3 position,string str){
 		GameObject o = (GameObject)Instantiate(textObj);
 		o.transform.position = Camera.main.WorldToScreenPoint(position);
 		o.transform.SetParent(drawCanvas.transform);
 		
-		o.GetComponent<Text>().text = num.ToString();
+		o.GetComponent<Text>().text = str;
+	}
+
+	public void CreateText(Vector3 position,int num){
+		CreateText(position,num.ToString());
 	}
 }

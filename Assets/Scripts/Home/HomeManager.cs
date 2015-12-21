@@ -18,7 +18,7 @@ public class HomeManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-
+		SelectStage (0);
 	}
 	
     void OnGUI()

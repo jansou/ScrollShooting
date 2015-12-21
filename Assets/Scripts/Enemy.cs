@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
 	Spaceship spaceship;
 
     public int shotPower = 1;
-
+	
 	// Use this for initialization
 	IEnumerator Start () 
 	{
