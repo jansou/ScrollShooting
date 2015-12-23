@@ -267,9 +267,18 @@ public class Player : MonoBehaviour
 		hpRenderer.SetHP(hp);
 	}
 
+	int nextLevel(){
+		return 100 * level * level;
+	}
+
     public void addExp(int point)
     {
         exp += point;
+		if(exp >= nextLevel()){
+			++level;
+			FindObjectOfType<PopUp>().CreateText(transform.position,"LEVEL UP");
+		}
+
     }
 
 }

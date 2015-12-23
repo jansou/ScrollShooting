@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\WaveInfo.cs" />
      <None Include="Assets\Materials\Sprites-Custom.shader" />
+     <None Include="Assets\Resources\Stage1.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
