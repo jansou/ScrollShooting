@@ -11,6 +11,6 @@ public class TextPopup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(0,1,0);
+		transform.Translate(0,Time.deltaTime*40,0);
 	}
 }
