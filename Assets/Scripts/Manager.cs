@@ -79,6 +79,11 @@ public class Manager : MonoBehaviour
 		title.SetActive (true);
 	}
 
+	public void GameExit(){
+		Time.timeScale = 1; // for pause
+		Application.LoadLevel("Home");
+	}
+
 	public void GameClear()
 	{
 		clear.SetActive(true);
