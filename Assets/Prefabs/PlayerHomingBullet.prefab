@@ -29,7 +29,7 @@ GameObject:
   - 212: {fileID: 21244724}
   - 58: {fileID: 5869490}
   m_Layer: 10
-  m_Name: Slash
+  m_Name: NellyShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2108894639
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5dbf8d6df91dfe84581036518469bd16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b61b979e0340ef41991c3dc081fce2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
