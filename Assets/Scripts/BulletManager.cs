@@ -25,7 +25,7 @@ public class BulletManager : MonoBehaviour {
 		PHoming
 	};
 
-	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal)
+	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
 	{
 		GameObject b = bullet;
 		switch(type){
@@ -46,7 +46,7 @@ public class BulletManager : MonoBehaviour {
 			break;
 		}
 
-		GameObject a = (GameObject)Instantiate(b,origin.position,origin.rotation);
+		GameObject a = (GameObject)Instantiate(b,origin.position + new Vector3(offsetx,offsety),origin.rotation);
 		a.GetComponent<Bullet>().shotPower = shotPower;
 		a.GetComponent<Bullet>().speed = shotSpeed;
 	}

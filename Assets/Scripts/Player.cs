@@ -86,9 +86,9 @@ public class Player : MonoBehaviour
 			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
             shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
-			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player,0,-0.3f);
             shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
-			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player,0,0.3f);
 			break;
 		case Party.Formation.Nely:
 			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
