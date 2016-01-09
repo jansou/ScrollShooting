@@ -4,7 +4,8 @@ using System.Collections;
 public class Monkey : MonoBehaviour {
 	Spaceship spaceship;
 	EnemyCommon common;
-	
+    public int power = 2;
+
 	IEnumerator Start () {
 		spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
@@ -15,7 +16,7 @@ public class Monkey : MonoBehaviour {
 		yield return new WaitForEndOfFrame();
 		while (true) 
 		{
-			common.Shot(s1,60+Random.Range(0,60),1,2,BulletManager.BulletType.Slash); 
+			common.Shot(s1,60+Random.Range(0,60),power,2,BulletManager.BulletType.BananaSlash); 
 
 			yield return new WaitForSeconds(spaceship.shotDelay);
 		}

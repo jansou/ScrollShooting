@@ -249,7 +249,7 @@ public class Player : MonoBehaviour
 	}
 
 	public void damageHP(int damage){
-		hp = hp - damage;
+		hp = Mathf.Max(0, hp - damage);
 		if (hp <= 0)
 		{
 			//Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
