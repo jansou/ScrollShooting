@@ -1319,6 +1319,7 @@ MonoBehaviour:
   playerHomingBullet: {fileID: 131826, guid: be46787b3e241ec4b860693388a917b5, type: 2}
   playerGuylusBullet: {fileID: 119190, guid: ceb0446f64cfefb4fa37d8dc70820adf, type: 2}
   bananaSlash: {fileID: 103208, guid: 4a4f347b1187a6342a5d820f9d7d5ae6, type: 2}
+  slimeBullet: {fileID: 113122, guid: e4658e5f0991d2440989a6a61ef5fd66, type: 2}
 --- !u!4 &553328421
 Transform:
   m_ObjectHideFlags: 0

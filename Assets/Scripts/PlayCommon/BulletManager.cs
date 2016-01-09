@@ -9,6 +9,7 @@ public class BulletManager : MonoBehaviour {
 	public GameObject playerHomingBullet;
 	public GameObject playerGuylusBullet;
     public GameObject bananaSlash;
+    public GameObject slimeBullet;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class BulletManager : MonoBehaviour {
 		PHoming,
 		PGuylus,
         BananaSlash,
+        SlimeBullet,
 	};
 
 	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
@@ -53,6 +55,9 @@ public class BulletManager : MonoBehaviour {
 			break;
         case BulletType.BananaSlash:
             b = bananaSlash;
+            break;
+        case BulletType.SlimeBullet:
+            b = slimeBullet;
             break;
 		}
 

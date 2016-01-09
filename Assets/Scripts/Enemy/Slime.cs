@@ -4,6 +4,7 @@ using System.Collections;
 public class Slime : MonoBehaviour {
 	Spaceship spaceship;
 	EnemyCommon common;
+    public int power = 1;
 	
 	IEnumerator Start () {
 		spaceship = GetComponent<Spaceship> ();
@@ -15,7 +16,7 @@ public class Slime : MonoBehaviour {
 		yield return new WaitForEndOfFrame();
 		while (true) 
 		{
-			common.Shot(s1,60+Random.Range (0,60),1);
+            common.Shot(s1, 60 + Random.Range(0, 60), power, 1, BulletManager.BulletType.SlimeBullet);
 
 			yield return new WaitForSeconds(spaceship.shotDelay);
 		}
