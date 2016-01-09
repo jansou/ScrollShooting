@@ -4,6 +4,9 @@ using System.Collections;
 public class BossMonkey : MonoBehaviour {
 	Spaceship spaceship;
 	EnemyCommon common;
+    Enemy enemy;
+
+    public int power=2;
 
 	Transform s2;
 	Transform pt;
@@ -12,6 +15,7 @@ public class BossMonkey : MonoBehaviour {
 	IEnumerator Start () {
 		spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
+        enemy = GetComponent<Enemy>();
 		common.Init();
 
 		s2 = common.CreateShotPosition();
@@ -21,24 +25,57 @@ public class BossMonkey : MonoBehaviour {
 
 		yield return new WaitForEndOfFrame();
 
+        StartCoroutine("Stop");
 		StartCoroutine("Attack1");
-		StartCoroutine("Attack2");
+		//StartCoroutine("Attack2");
 
 		yield break;
 	}
 
-	IEnumerator Attack1(){
+    IEnumerator Stop()
+    {
+        FindObjectOfType<MessageWindow>().showMessage("ボスザル");
+        yield return new WaitForSeconds(2);
+        enemy.MoveStop();
+    }
+
+	IEnumerator Attack1(){//banana
 		while (true) 
 		{
+            for (int n=0; n<10;++n )
+            {
+                common.ShotAim(s2, pt, power, 3, BulletManager.BulletType.BananaSlash);
+                
+                //shotDelay秒待つ
+                yield return new WaitForSeconds(spaceship.shotDelay);
+            }
+
+
+
+            FindObjectOfType<MessageWindow>().showMessage("バナナラッシュ！");
+
 			spaceship.GetAnimator().SetTrigger("Skill");
 			yield return new WaitForSeconds(0.5f);
-			common.ShotAim(s2,pt,2,3,BulletManager.BulletType.Slash);
+
+            for (int m = 0; m < 2; ++m)
+            {
+                for (int n = 0; n < 4; ++n)
+                {
+                    for (int i = 0; i < 6; ++i)
+                    {
+                        common.Shot(s2, -45+ 75*m + 30 * i, power, 4 - n, BulletManager.BulletType.BananaSlash);
+                    }
+
+                }
+                yield return new WaitForSeconds(spaceship.shotDelay + 1.0f);
+            }
 
 			//shotDelay秒待つ
 			yield return new WaitForSeconds(spaceship.shotDelay + 2.5f);
 		}
 	}
-	IEnumerator Attack2(){
+    /*
+	IEnumerator Attack2(){//3way
 		while (true) 
 		{
 			for(int i=0; i<3; ++i){
@@ -49,7 +86,7 @@ public class BossMonkey : MonoBehaviour {
 			yield return new WaitForSeconds(spaceship.shotDelay);
 		}
 	}
-	
+	*/
 	// Update is called once per frame
 	void Update () {
 		

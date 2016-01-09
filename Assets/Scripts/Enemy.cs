@@ -46,6 +46,11 @@ public class Enemy : MonoBehaviour
         //Debug.Log("direction:" + direction + ", spaceship: " + spaceship.speed + "move:" + direction * spaceship.speed);
     }
 
+    public void MoveStop()
+    {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
 	void OnTriggerEnter2D(Collider2D c)
 	{
 		//レイヤー名を取得

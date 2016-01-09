@@ -8,6 +8,7 @@ public class BulletManager : MonoBehaviour {
 	public GameObject playerSlashBullet;
 	public GameObject playerHomingBullet;
 	public GameObject playerGuylusBullet;
+    public GameObject bananaSlash;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +25,8 @@ public class BulletManager : MonoBehaviour {
 		Player,
 		PSlash,
 		PHoming,
-		PGuylus
+		PGuylus,
+        BananaSlash,
 	};
 
 	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
@@ -49,6 +51,9 @@ public class BulletManager : MonoBehaviour {
 		case BulletType.PGuylus:
 			b = playerGuylusBullet;
 			break;
+        case BulletType.BananaSlash:
+            b = bananaSlash;
+            break;
 		}
 
 		GameObject a = (GameObject)Instantiate(b,origin.position + new Vector3(offsetx,offsety),origin.rotation);
