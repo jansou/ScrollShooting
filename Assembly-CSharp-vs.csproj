@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\PopUp.cs" />
      <Compile Include="Assets\Scripts\PopUpTest.cs" />
      <Compile Include="Assets\Scripts\RecoveryField.cs" />
+     <Compile Include="Assets\Scripts\SaveManager.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\Slime.cs" />

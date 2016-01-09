@@ -8,7 +8,7 @@ public class RecoveryField : MonoBehaviour {
 	public int recoveryInterval = 60;
 	// Use this for initialization
 	void Start () {
-	
+		party = transform.parent.parent.GetComponent<Party>();
 	}
 	
 	// Update is called once per frame

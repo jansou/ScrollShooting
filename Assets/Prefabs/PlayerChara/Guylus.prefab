@@ -22,6 +22,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &163458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 449520}
+  - 212: {fileID: 21203072}
+  - 114: {fileID: 11442862}
+  - 58: {fileID: 5899422}
+  - 50: {fileID: 5003182}
+  m_Layer: 0
+  m_Name: shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &197718
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,12 +63,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36024952, y: -.439795583, z: 0}
+  m_LocalPosition: {x: 5.15647554, y: -.0632475019, z: 0}
   m_LocalScale: {x: 1.6099999, y: 1.6099999, z: 1.6099999}
   m_Children:
   - {fileID: 469182}
+  - {fileID: 449520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &449520
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .621118069, y: .621118069, z: .621118069}
+  m_Children: []
+  m_Father: {fileID: 401350}
+  m_RootOrder: 1
 --- !u!4 &469182
 Transform:
   m_ObjectHideFlags: 1
@@ -62,6 +94,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 401350}
   m_RootOrder: 0
+--- !u!50 &5003182
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163458}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!50 &5008338
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -77,6 +124,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5899422
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163458}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 1.1920929e-07}
+  serializedVersion: 2
+  m_Radius: .74000001
 --- !u!61 &6158154
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -187,11 +247,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515913ad02d104f429604759a16ae512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   speed: 5
   level: 1
   hp: 10
   shotPower: 1
   exp: 0
+  playerUIName: 2ndPlayer
 --- !u!114 &11414810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,10 +266,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  shotDelay: .0500000007
+  shotDelay: .5
   bullet: {fileID: 124870, guid: 6cff7765def03ad47a6be5a69742c948, type: 2}
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
+  bulletManager: {fileID: 0}
+--- !u!114 &11442862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92cb415497b253c4fa4e542942fdf66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400432}
+--- !u!212 &21203072
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163458}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 722853317
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1a032c9cb5ede4c41a92068f7dd2da7f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21260248
 SpriteRenderer:
   m_ObjectHideFlags: 1
