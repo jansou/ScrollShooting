@@ -1317,6 +1317,7 @@ MonoBehaviour:
   playerBullet: {fileID: 124870, guid: 6cff7765def03ad47a6be5a69742c948, type: 2}
   playerSlashBullet: {fileID: 131826, guid: 224d96662942adc47b70ff5ac7472044, type: 2}
   playerHomingBullet: {fileID: 131826, guid: be46787b3e241ec4b860693388a917b5, type: 2}
+  playerGuylusBullet: {fileID: 119190, guid: ceb0446f64cfefb4fa37d8dc70820adf, type: 2}
 --- !u!4 &553328421
 Transform:
   m_ObjectHideFlags: 0
