@@ -187,11 +187,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515913ad02d104f429604759a16ae512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   speed: 5
   level: 1
   hp: 10
   shotPower: 1
   exp: 0
+  playerUIName: 3rdPlayer
 --- !u!114 &11459218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  shotDelay: .0500000007
+  shotDelay: .5
   bullet: {fileID: 124870, guid: 6cff7765def03ad47a6be5a69742c948, type: 2}
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}

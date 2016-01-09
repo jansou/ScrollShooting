@@ -25,16 +25,38 @@ public class Party : MonoBehaviour {
 	GameObject shieldObject;
 	GameObject recoveryObject;
 
+	public GameObject alex;
+	public GameObject guylus;
+	public GameObject nely;
+	public GameObject rinmaru;
+	public GameObject medhu;
+	
+	public bool nelyJoin = true;
+	public bool rinmaruJoin = true;
+	public bool medhuJoin = true;
+
 	// Use this for initialization
 	void Start () 
     {
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
         background = FindObjectOfType<Background>();
 
-		shieldObject = transform.GetChild(1).FindChild("shield").gameObject;
-		recoveryObject = transform.GetChild(4).FindChild("recoveryField").gameObject;
-	
+		CreateMember(alex);
+		CreateMember(guylus);
+		if(nelyJoin) CreateMember(nely);
+		if(rinmaruJoin) CreateMember(rinmaru);
+		if(medhuJoin) CreateMember(medhu);
+
+		shieldObject = transform.FindChild("Guylus(Clone)").FindChild("shield").gameObject;
+		if(medhuJoin){
+			recoveryObject = transform.FindChild("Medhu(Clone)").FindChild("recoveryField").gameObject;
+		}
 		SetFormation(formation);
+	}
+
+	void CreateMember(GameObject chara){
+		GameObject o = (GameObject)Instantiate(chara);
+		o.transform.SetParent(transform);
 	}
 	
 	// Update is called once per frame
