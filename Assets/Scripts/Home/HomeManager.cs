@@ -7,6 +7,8 @@ public class HomeManager : MonoBehaviour
 	public Text stageText;
 	public Image stageBack;
 
+	public Transform buttonContent;
+
 	public Sprite back1;
 	public Sprite back2;
 
@@ -60,21 +62,38 @@ public class HomeManager : MonoBehaviour
         return "none";
     }
 
-	public void SelectStage(int num){
-		selectnum = num;
-		string textPath = "none";
+	public Color normalButtonColor;
+	public Color selectedButtonColor;
 
+	string GetStagePath(int num){
+		/*
+		switch(num){
+		case 0:
+			return "Stage1";
+		default:
+			return "Stage2";
+		}
+	*/
+		return "Stage" + (num+1).ToString();
+	}
+
+	public void SelectStage(int num){	
 		//stageBack.sprite =  
 		switch(num){
 		case 0:
 			stageBack.sprite = back1;
-			textPath = "Stage1";
 			break;
 		default:
 			stageBack.sprite = back2;
-			textPath = "Stage2";
 			break;
 		}
+
+		string textPath = GetStagePath(num);
+		string prevPath = GetStagePath(selectnum);
+
+		buttonContent.FindChild(prevPath).GetComponent<Image>().color = normalButtonColor;
+		buttonContent.FindChild(textPath).GetComponent<Image>().color = selectedButtonColor;
+		selectnum = num;
 
 		tasset = (TextAsset)Resources.Load(textPath);
 		if(tasset){
