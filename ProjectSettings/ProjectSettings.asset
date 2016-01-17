@@ -129,8 +129,8 @@ PlayerSettings:
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/akira/Desktop/UnityProjects/ScroleShooting/user.keystore
+  AndroidKeyaliasName: mayonage
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
