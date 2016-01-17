@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .300000012
-  shotDelay: .300000012
+  shotDelay: .699999988
   bullet: {fileID: 112916, guid: ca3973d7f597a18478aca1a714d6f6e1, type: 2}
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d046f0e0239d46e419bf13be2af01b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power: 1
 --- !u!212 &21230808
 SpriteRenderer:
   m_ObjectHideFlags: 1
