@@ -7,6 +7,7 @@ public class BossGeneral : MonoBehaviour {
     Enemy enemy;
 
     public int power=2;
+    public int shotSpeed = 3;
 
 	Transform s2;
 	Transform pt;
@@ -44,7 +45,7 @@ public class BossGeneral : MonoBehaviour {
 		{
             for (int n=0; n<10;++n )
             {
-                common.ShotAim(s2, pt, power, 3, BulletManager.BulletType.BananaSlash);
+                common.ShotAim(s2, pt, power, shotSpeed, BulletManager.BulletType.BananaSlash);
                 
                 //shotDelay秒待つ
                 yield return new WaitForSeconds(spaceship.shotDelay);

@@ -16,6 +16,12 @@ public class Manager : MonoBehaviour
 
 	bool paused = false;
 
+    public bool joinAlex = false;
+    public bool joinGuylus = false;
+    public bool joinNely = false;
+    public bool joinRinmaru = false;
+    public bool joinMedhu = false;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -119,8 +125,24 @@ public class Manager : MonoBehaviour
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
         title.SetActive(false);
 
-		createdParty = (GameObject)Instantiate (party, party.transform.position, party.transform.rotation);
+        CreateParty();
+		//createdParty = (GameObject)Instantiate (party, party.transform.position, party.transform.rotation);
 	}
+
+    void CreateParty()
+    {
+        //
+        //
+
+        createdParty = (GameObject)Instantiate(party, party.transform.position, party.transform.rotation);
+        createdParty.GetComponent<Party>().alexJoin = joinAlex;
+        createdParty.GetComponent<Party>().guylusJoin = joinGuylus;
+        createdParty.GetComponent<Party>().nelyJoin = joinNely;
+        createdParty.GetComponent<Party>().rinmaruJoin = joinRinmaru;
+        createdParty.GetComponent<Party>().medhuJoin = joinMedhu;
+
+        createdParty.GetComponent<Party>().SetMember();
+    }
 
 	public bool IsPlaying()
 	{

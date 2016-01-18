@@ -9,6 +9,7 @@ public class Party : MonoBehaviour {
 
     Background background;
 
+    ///陣形の位置情報
 	public enum Formation{
 		Alex,
 		Guylus,
@@ -17,6 +18,44 @@ public class Party : MonoBehaviour {
 		Medhu
 	};
 
+    //Alex
+    public Vector3 AlexPos0;// = new Vector3(0.7f,0,0);
+	public Vector3 AlexPos1;// = new Vector3(0.3f,0.5f,0);
+	public Vector3 AlexPos2;// = new Vector3(0,0,0);
+    public Vector3 AlexPos3;// = new Vector3(0.3f, -0.5f, 0);
+	public Vector3 AlexPos4;// = new Vector3(-0.6f,0,0);
+
+    //Guylus
+	public Vector3 GuylusPos0;// = new Vector3(-0.2f,0.5f,0);
+	public Vector3 GuylusPos1;// = new Vector3(0.5f,0,0);
+	public Vector3 GuylusPos2;// = new Vector3(-0.2f,0,0);
+	public Vector3 GuylusPos3;// = new Vector3(-0.2f,-0.5f,0);
+    public Vector3 GuylusPos4;// = new Vector3(-0.6f, 0, 0);
+
+    //Nely
+	public Vector3 NelyPos0;// = new Vector3(-0.1f,0.5f,0);
+	public Vector3 NelyPos1;// = new Vector3(-0.5f,0.2f,0);
+	public Vector3 NelyPos2;// = new Vector3(0.5f,0,0);
+	public Vector3 NelyPos3;// = new Vector3(-0.1f,-0.5f,0);
+    public Vector3 NelyPos4;// = new Vector3(-0.5f, -0.2f, 0);
+
+    //Rinmaru
+	public Vector3 RinmaruPos0 = new Vector3(0.4f,0.4f,0);
+	public Vector3 RinmaruPos1 = new Vector3(-0.4f,0.4f,0);
+	public Vector3 RinmaruPos2 = new Vector3(0.4f,-0.4f,0);
+	public Vector3 RinmaruPos3 = new Vector3(0,0,0);
+    public Vector3 RinmaruPos4 = new Vector3(-0.4f, -0.4f, 0);
+
+    //Vector3[] RinmaruPositions = new Vector3[]{ RinmaruPos0, RinmaruPos1, RinmaruPos2, RinmaruPos3, RinmaruPos4 };
+
+    //Medhu
+	public Vector3 MedhuPos0 = new Vector3(0.1f,0.3f,0);
+    public Vector3 MedhuPos1 = new Vector3(-0.3f, 0.3f, 0);
+	public Vector3 MedhuPos2 = new Vector3(0.1f,-0.3f,0);
+	public Vector3 MedhuPos3 = new Vector3(-0.3f,-0.3f,0);
+	public Vector3 MedhuPos4 = new Vector3(0.4f,0,0);
+    /// /////////////////////////////////////////////////////////
+   
 	public Formation formation = Formation.Alex;
 
 	Vector2 minPosition = new Vector2(-1,-1);
@@ -30,7 +69,9 @@ public class Party : MonoBehaviour {
 	public GameObject nely;
 	public GameObject rinmaru;
 	public GameObject medhu;
-	
+
+    public bool alexJoin = true;
+    public bool guylusJoin = true;
 	public bool nelyJoin = true;
 	public bool rinmaruJoin = true;
 	public bool medhuJoin = true;
@@ -41,9 +82,11 @@ public class Party : MonoBehaviour {
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
         background = FindObjectOfType<Background>();
 
+        /*
 		CreateMember(alex);
 		CreateMember(guylus);
-		if(nelyJoin) CreateMember(nely);
+		
+        if(nelyJoin) CreateMember(nely);
 		if(rinmaruJoin) CreateMember(rinmaru);
 		if(medhuJoin) CreateMember(medhu);
 
@@ -52,7 +95,24 @@ public class Party : MonoBehaviour {
 			recoveryObject = transform.FindChild("Medhu(Clone)").FindChild("recoveryField").gameObject;
 		}
 		SetFormation(formation);
+        */
 	}
+
+    public void SetMember()
+    {
+        if (alexJoin) CreateMember(alex);
+        if (guylusJoin) CreateMember(guylus);
+        if (nelyJoin) CreateMember(nely);
+        if (rinmaruJoin) CreateMember(rinmaru);
+        if (medhuJoin) CreateMember(medhu);
+
+        shieldObject = transform.FindChild("Guylus(Clone)").FindChild("shield").gameObject;
+        if (medhuJoin)
+        {
+            recoveryObject = transform.FindChild("Medhu(Clone)").FindChild("recoveryField").gameObject;
+        }
+        SetFormation(formation);
+    }
 
 	void CreateMember(GameObject chara){
 		GameObject o = (GameObject)Instantiate(chara);
@@ -106,47 +166,52 @@ public class Party : MonoBehaviour {
 		switch(formation){
 		case Formation.Alex:
 			positions = new Vector3[]{
-				new Vector3(0.7f,0,0),
-				new Vector3(0.3f,0.5f,0),
-				new Vector3(0,0,0),
-				new Vector3(0.3f,-0.5f,0),
-				new Vector3(-0.6f,0,0)
+                
+				AlexPos0,//new Vector3(0.7f,0,0),
+				AlexPos1,//new Vector3(0.3f,0.5f,0),
+				AlexPos2,//new Vector3(0,0,0),
+				AlexPos3,//new Vector3(0.3f,-0.5f,0),
+				AlexPos4,//new Vector3(-0.6f,0,0)
+                
 			};
 			break;
 		case Formation.Guylus:
 			positions = new Vector3[]{
-				new Vector3(-0.2f,0.5f,0),
-				new Vector3(0.5f,0,0),
-				new Vector3(-0.2f,0,0),
-				new Vector3(-0.2f,-0.5f,0),
-				new Vector3(-0.6f,0,0)
+				GuylusPos0 ,//new Vector3(-0.2f,0.5f,0),
+				GuylusPos1 ,//new Vector3(0.5f,0,0),
+				GuylusPos2 ,//new Vector3(-0.2f,0,0),
+				GuylusPos3 ,//new Vector3(-0.2f,-0.5f,0),
+				GuylusPos4 ,//new Vector3(-0.6f,0,0)
 			};
 			break;
 		case Formation.Nely:
 			positions = new Vector3[]{
-				new Vector3(-0.1f,0.5f,0),
-				new Vector3(-0.5f,0.2f,0),
-				new Vector3(0.5f,0,0),
-				new Vector3(-0.1f,-0.5f,0),
-				new Vector3(-0.5f,-0.2f,0)
+				NelyPos0,//new Vector3(-0.1f,0.5f,0),
+				NelyPos1,//new Vector3(-0.5f,0.2f,0),
+				NelyPos2,//new Vector3(0.5f,0,0),
+				NelyPos3,//new Vector3(-0.1f,-0.5f,0),
+				NelyPos4,//new Vector3(-0.5f,-0.2f,0)
 			};
 			break;
 		case Formation.Rinmaru:
-			positions = new Vector3[]{
-				new Vector3(0.4f,0.4f,0),
-				new Vector3(-0.4f,0.4f,0),
-				new Vector3(0.4f,-0.4f,0),
-				new Vector3(0,0,0),
-				new Vector3(-0.4f,-0.4f,0)
+            positions = //RinmaruPositions;
+               
+            new Vector3[]{
+				RinmaruPos0,//new Vector3(0.4f,0.4f,0),
+				RinmaruPos1,//new Vector3(-0.4f,0.4f,0),
+				RinmaruPos2,//new Vector3(0.4f,-0.4f,0),
+				RinmaruPos3,//new Vector3(0,0,0),
+				RinmaruPos4,//new Vector3(-0.4f,-0.4f,0)
 			};
+             
 			break;
 		case Formation.Medhu:
 			positions = new Vector3[]{
-				new Vector3(0.1f,0.3f,0),
-				new Vector3(-0.3f,0.3f,0),
-				new Vector3(0.1f,-0.3f,0),
-				new Vector3(-0.3f,-0.3f,0),
-				new Vector3(0.4f,0,0)
+				MedhuPos0,//new Vector3(0.1f,0.3f,0),
+				MedhuPos1,//new Vector3(-0.3f,0.3f,0),
+				MedhuPos2,//new Vector3(0.1f,-0.3f,0),
+				MedhuPos3,//new Vector3(-0.3f,-0.3f,0),
+				MedhuPos4,//new Vector3(0.4f,0,0)
 			};
 			break;
 		}
