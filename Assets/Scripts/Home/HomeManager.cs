@@ -14,13 +14,27 @@ public class HomeManager : MonoBehaviour
 
 	int selectnum = 0;
 
+	public GameObject fadeObject;
+	Image fadeImage;
 
 	TextAsset tasset;
+
+	int alpha = 0;
 
 	// Use this for initialization
 	void Start () 
 	{
 		SelectStage (0);
+	
+		fadeImage = fadeObject.GetComponent<Image>();
+		fadeObject.SetActive(false);
+	}
+
+	void Update()
+	{
+		if(alpha > 250){
+			LoadStage();
+		}
 	}
 	
     void OnGUI()
@@ -28,15 +42,19 @@ public class HomeManager : MonoBehaviour
 
         if (tapHit() == "ContinueButton")//それぞれのボタンを設定する
         {
-            GameStart();
+			GameStart();
         }
     }
 	
 	public void GameStart()
 	{
+		StartCoroutine("FadeStart");
+	}
+
+	void LoadStage(){
 		switch(selectnum){
 		case 0:
-        	Application.LoadLevel("Stage");
+			Application.LoadLevel("Stage");
 			break;
 		default:
 			Application.LoadLevel("Stage");
@@ -61,6 +79,15 @@ public class HomeManager : MonoBehaviour
         }
         return "none";
     }
+
+	IEnumerator FadeStart(){
+		fadeObject.SetActive(true);
+		while(true){
+			fadeImage.color = new Color(1,1,1,alpha/255.0f);
+			alpha += 5;
+			yield return new WaitForEndOfFrame();
+		}
+	}
 
 	public Color normalButtonColor;
 	public Color selectedButtonColor;

@@ -51,12 +51,29 @@ MonoBehaviour:
   GuylusPos2: {x: -.200000003, y: .5, z: 0}
   GuylusPos3: {x: -.200000003, y: -.5, z: 0}
   GuylusPos4: {x: -.600000024, y: 0, z: 0}
+  NelyPos0: {x: 0, y: 0, z: 0}
+  NelyPos1: {x: 0, y: 0, z: 0}
+  NelyPos2: {x: 0, y: 0, z: 0}
+  NelyPos3: {x: 0, y: 0, z: 0}
+  NelyPos4: {x: 0, y: 0, z: 0}
+  RinmaruPos0: {x: .400000006, y: .400000006, z: 0}
+  RinmaruPos1: {x: -.400000006, y: .400000006, z: 0}
+  RinmaruPos2: {x: .400000006, y: -.400000006, z: 0}
+  RinmaruPos3: {x: 0, y: 0, z: 0}
+  RinmaruPos4: {x: -.400000006, y: -.400000006, z: 0}
+  MedhuPos0: {x: .100000001, y: .300000012, z: 0}
+  MedhuPos1: {x: -.300000012, y: .300000012, z: 0}
+  MedhuPos2: {x: .100000001, y: -.300000012, z: 0}
+  MedhuPos3: {x: -.300000012, y: -.300000012, z: 0}
+  MedhuPos4: {x: .400000006, y: 0, z: 0}
   formation: 0
-  alex: {fileID: 101552, guid: 0d53a2e773736c14bb0eaed59cae6ad5, type: 2}
-  guylus: {fileID: 107536, guid: 6eecae04afc611d4e873480808adac59, type: 2}
-  nely: {fileID: 148366, guid: 52ba5026fdf3f0546af531ac99313e61, type: 2}
-  rinmaru: {fileID: 114312, guid: 62a2964582cfee5479d0316747a70e6c, type: 2}
-  medhu: {fileID: 199114, guid: ea9a761a06746a243aa3aa1fbe5a1be1, type: 2}
+  alexPrefab: {fileID: 101552, guid: 0d53a2e773736c14bb0eaed59cae6ad5, type: 2}
+  guylusPrefab: {fileID: 107536, guid: 6eecae04afc611d4e873480808adac59, type: 2}
+  nelyPrefab: {fileID: 148366, guid: 52ba5026fdf3f0546af531ac99313e61, type: 2}
+  rinmaruPrefab: {fileID: 114312, guid: 62a2964582cfee5479d0316747a70e6c, type: 2}
+  medhuPrefab: {fileID: 199114, guid: ea9a761a06746a243aa3aa1fbe5a1be1, type: 2}
+  alexJoin: 1
+  guylusJoin: 1
   nelyJoin: 0
   rinmaruJoin: 0
   medhuJoin: 0

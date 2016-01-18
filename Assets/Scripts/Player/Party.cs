@@ -64,11 +64,16 @@ public class Party : MonoBehaviour {
 	GameObject shieldObject;
 	GameObject recoveryObject;
 
-	public GameObject alex;
-	public GameObject guylus;
-	public GameObject nely;
-	public GameObject rinmaru;
-	public GameObject medhu;
+	public GameObject alexPrefab;
+	public GameObject guylusPrefab;
+	public GameObject nelyPrefab;
+	public GameObject rinmaruPrefab;
+	public GameObject medhuPrefab;
+	GameObject alex;
+	GameObject guylus;
+	GameObject nely;
+	GameObject rinmaru;
+	GameObject medhu;
 
     public bool alexJoin = true;
     public bool guylusJoin = true;
@@ -100,11 +105,21 @@ public class Party : MonoBehaviour {
 
     public void SetMember()
     {
-        if (alexJoin) CreateMember(alex);
-        if (guylusJoin) CreateMember(guylus);
-        if (nelyJoin) CreateMember(nely);
-        if (rinmaruJoin) CreateMember(rinmaru);
-        if (medhuJoin) CreateMember(medhu);
+		if (alexJoin){
+			alex = CreateMember(alexPrefab);
+		}
+		if (guylusJoin){
+			guylus = CreateMember(guylusPrefab);
+		}
+		if (nelyJoin){
+			nely = CreateMember(nelyPrefab);
+		}
+		if (rinmaruJoin){
+			rinmaru = CreateMember(rinmaruPrefab);
+		}
+		if (medhuJoin){
+			medhu = CreateMember(medhuPrefab);
+		}
 
         shieldObject = transform.FindChild("Guylus(Clone)").FindChild("shield").gameObject;
         if (medhuJoin)
@@ -114,9 +129,10 @@ public class Party : MonoBehaviour {
         SetFormation(formation);
     }
 
-	void CreateMember(GameObject chara){
+	GameObject CreateMember(GameObject chara){
 		GameObject o = (GameObject)Instantiate(chara);
 		o.transform.SetParent(transform);
+		return o;
 	}
 	
 	// Update is called once per frame
@@ -215,11 +231,21 @@ public class Party : MonoBehaviour {
 			};
 			break;
 		}
-		for(int i=0; i<transform.childCount; ++i){
-			if(i >= positions.Length){
-				break;
-			}
-			transform.GetChild(i).position = transform.position + positions[i];
+
+		if(alex){
+			alex.transform.position = transform.position + positions[0];
+		}
+		if(guylus){
+			guylus.transform.position = transform.position + positions[1];
+		}
+		if(nely){
+			nely.transform.position = transform.position + positions[2];
+		}
+		if(rinmaru){
+			rinmaru.transform.position = transform.position + positions[3];
+		}
+		if(medhu){
+			medhu.transform.position = transform.position + positions[4];
 		}
 
 		this.formation = formation;

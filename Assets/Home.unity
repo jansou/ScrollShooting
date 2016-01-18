@@ -492,6 +492,7 @@ RectTransform:
   - {fileID: 388669390}
   - {fileID: 1616945205}
   - {fileID: 140228167}
+  - {fileID: 1849407761}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
@@ -1029,6 +1030,7 @@ MonoBehaviour:
   buttonContent: {fileID: 1665297753}
   back1: {fileID: 21300000, guid: b2de2bd576ddde544b5f121d03edb85c, type: 3}
   back2: {fileID: 21300000, guid: 1db4090a333140e46aa2d777bf73a177, type: 3}
+  fadeObject: {fileID: 1849407759}
   normalButtonColor: {r: .941176474, g: .482352942, b: .352941185, a: 1}
   selectedButtonColor: {r: .941176474, g: .295659244, b: .1135903, a: 1}
 --- !u!4 &694317330
@@ -2411,6 +2413,67 @@ Transform:
   - {fileID: 986832326}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1849407759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1849407761}
+  - 222: {fileID: 1849407762}
+  - 114: {fileID: 1849407760}
+  m_Layer: 5
+  m_Name: fadeImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1849407760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849407759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .0147058964, g: .0147058964, b: .0147058964, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!224 &1849407761
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849407759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 211603625}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: -.00150200003}
+  m_SizeDelta: {x: 959, y: 600}
+  m_Pivot: {x: .5, y: .5}
+--- !u!222 &1849407762
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849407759}
 --- !u!1001 &1971812582
 Prefab:
   m_ObjectHideFlags: 0
