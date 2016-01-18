@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f179a24527454a498cbdda57a6198f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .300000012
+  speed: 1
   shotDelay: .699999988
   bullet: {fileID: 112916, guid: ca3973d7f597a18478aca1a714d6f6e1, type: 2}
   canShot: 1
@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c09b9cbd0a8494e8174a4669a0382c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 1
 --- !u!212 &21200462
 SpriteRenderer:
   m_ObjectHideFlags: 1

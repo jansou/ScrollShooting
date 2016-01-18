@@ -40,9 +40,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 106550, guid: 530cd9b05f3e15f4999e454e6e730a9a, type: 2}
+  - {fileID: 177734, guid: 09a5e3e62aebdd445b29f1735c533108, type: 2}
   enemypositions:
-  - {x: 2, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
   isBoss: 0
 --- !u!1001 &100100000
 Prefab:
