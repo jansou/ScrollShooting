@@ -285,8 +285,8 @@ public class Party : MonoBehaviour {
 
        
 
-		Vector2 min = new Vector2(scale.x * -0.5f,scale.y *-0.3f );
-        Vector2 max = scale * 0.5f;
+		Vector2 min = new Vector2(scale.x * -0.55f,scale.y *-0.3f );
+        Vector2 max = new Vector2(scale.x * 0.55f, scale.y * 0.5f); 
 
 		min.x += 1;
 		max.x -= 1;

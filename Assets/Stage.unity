@@ -1892,8 +1892,8 @@ MonoBehaviour:
   joinAlex: 1
   joinGuylus: 1
   joinNely: 1
-  joinRinmaru: 1
-  joinMedhu: 1
+  joinRinmaru: 0
+  joinMedhu: 0
 --- !u!4 &694317330
 Transform:
   m_ObjectHideFlags: 0

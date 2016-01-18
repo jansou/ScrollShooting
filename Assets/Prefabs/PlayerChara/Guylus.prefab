@@ -32,8 +32,8 @@ GameObject:
   - 4: {fileID: 449520}
   - 212: {fileID: 21203072}
   - 114: {fileID: 11442862}
-  - 58: {fileID: 5899422}
   - 50: {fileID: 5003182}
+  - 60: {fileID: 6025266}
   m_Layer: 0
   m_Name: shield
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.15647554, y: -.0632475019, z: 0}
+  m_LocalPosition: {x: -3.25300002, y: -.150000006, z: 0}
   m_LocalScale: {x: 1.6099999, y: 1.6099999, z: 1.6099999}
   m_Children:
   - {fileID: 469182}
@@ -77,8 +77,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .621118069, y: .621118069, z: .621118069}
+  m_LocalPosition: {x: .338, y: 0, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: .621118069}
   m_Children: []
   m_Father: {fileID: 401350}
   m_RootOrder: 1
@@ -124,19 +124,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5899422
-CircleCollider2D:
+--- !u!60 &6025266
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163458}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1.1920929e-07}
-  serializedVersion: 2
-  m_Radius: .74000001
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -.375, y: .773301959}
+      - {x: -.375, y: -.76553452}
+      - {x: .00616395473, y: -.605628967}
+      - {x: -.0271383524, y: .587861717}
 --- !u!61 &6158154
 BoxCollider2D:
   m_ObjectHideFlags: 1
