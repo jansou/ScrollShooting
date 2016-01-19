@@ -77,9 +77,9 @@ public class Player : MonoBehaviour
 		case Party.Formation.Alex:
 			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
-			shotposition.rotation = Quaternion.AngleAxis(270+30,Vector3.forward);
+			shotposition.rotation = Quaternion.AngleAxis(270+15,Vector3.forward);
 			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
-			shotposition.rotation = Quaternion.AngleAxis(270-30,Vector3.forward);
+			shotposition.rotation = Quaternion.AngleAxis(270-15,Vector3.forward);
 			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
 			break;
 		case Party.Formation.Guylus:
