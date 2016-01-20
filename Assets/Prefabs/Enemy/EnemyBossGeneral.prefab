@@ -200,6 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
+  shotSpeed: 3
+  soldier: {fileID: 177734, guid: 09a5e3e62aebdd445b29f1735c533108, type: 2}
 --- !u!114 &11468500
 MonoBehaviour:
   m_ObjectHideFlags: 1

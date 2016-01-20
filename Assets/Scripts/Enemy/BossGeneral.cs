@@ -11,6 +11,9 @@ public class BossGeneral : MonoBehaviour {
 
 	Transform s2;
 	Transform pt;
+
+    //召喚するやつ
+    public GameObject soldier;
 	
 	// Use this for initialization
 	IEnumerator Start () {
@@ -45,10 +48,12 @@ public class BossGeneral : MonoBehaviour {
 		{
             for (int n=0; n<10;++n )
             {
-                common.ShotAim(s2, pt, power, shotSpeed, BulletManager.BulletType.BananaSlash);
+                Instantiate(soldier, transform.position, Quaternion.identity);
+
+                //common.ShotAim(s2, pt, power, shotSpeed, BulletManager.BulletType.BananaSlash);
                 
                 //shotDelay秒待つ
-                yield return new WaitForSeconds(spaceship.shotDelay);
+                yield return new WaitForSeconds(3.0f);
             }
 
 
