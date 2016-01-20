@@ -46,6 +46,12 @@ public class Enemy : MonoBehaviour
         //Debug.Log("direction:" + direction + ", spaceship: " + spaceship.speed + "move:" + direction * spaceship.speed);
     }
 
+	public void MoveAim(Vector3 from, Vector3 to, float speed){
+		Vector3 v = to-from;
+		Quaternion q = Quaternion.FromToRotation(Vector3.up,v);
+		Move(q * Vector3.up * speed);
+	}
+
     public void MoveStop()
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
