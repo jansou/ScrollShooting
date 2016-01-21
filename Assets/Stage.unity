@@ -1712,6 +1712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7176ab93b53bb6747ad6a0710d8f3817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrivedStage: 0
 --- !u!4 &630442173
 Transform:
   m_ObjectHideFlags: 0
@@ -1897,8 +1898,8 @@ MonoBehaviour:
   joinAlex: 1
   joinGuylus: 1
   joinNely: 1
-  joinRinmaru: 0
-  joinMedhu: 0
+  joinRinmaru: 1
+  joinMedhu: 1
 --- !u!4 &694317330
 Transform:
   m_ObjectHideFlags: 0

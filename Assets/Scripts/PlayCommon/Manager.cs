@@ -87,6 +87,7 @@ public class Manager : MonoBehaviour
 
 	public void GameExit(){
 		Time.timeScale = 1; // for pause
+		createdParty.GetComponent<Party>().SaveParty();
 		Application.LoadLevel("Home");
 	}
 
@@ -94,6 +95,7 @@ public class Manager : MonoBehaviour
 	{
 		clear.SetActive(true);
 		FindObjectOfType<Score>().Save();
+		createdParty.GetComponent<Party>().SaveParty();
 	}
 
 	void GameStart()

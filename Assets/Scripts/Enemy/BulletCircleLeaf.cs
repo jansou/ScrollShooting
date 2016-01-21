@@ -21,7 +21,7 @@ public class BulletCircleLeaf : MonoBehaviour {
 		if(transform.childCount == 0){
 			Destroy (this.gameObject);
 		}
-		transform.Translate(0,0.05f,0);
+		transform.Translate(0,2f*Time.deltaTime,0);
 		//transform.Rotate(0,0,5);
 	}
 }
