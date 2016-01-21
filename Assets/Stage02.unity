@@ -759,11 +759,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 155598, guid: 4333781cd4e73524d9aefaf7ea20fdde, type: 2}
-  - {fileID: 155598, guid: d082983365a25e747b173a2efe14e233, type: 2}
-  - {fileID: 180922, guid: 15030f964f84cf946b2ee91aa31103af, type: 2}
-  - {fileID: 155598, guid: 5010a6939486e1948806743bb9b1bef9, type: 2}
-  - {fileID: 165204, guid: bace32e5b9478844187b9357ad978575, type: 2}
+  - {fileID: 155598, guid: 190087bd592068b479e9ce2677e8c5a9, type: 2}
+  - {fileID: 180922, guid: 2065bfc18d435f2468af808f868ac946, type: 2}
+  - {fileID: 155598, guid: c0c062c92c83b4041a5dd6832113662a, type: 2}
+  - {fileID: 155598, guid: 3613db3c713eb4b44a5629c19dab6970, type: 2}
+  - {fileID: 165204, guid: 77844a4f81127ae49a6d73d2fe6efc61, type: 2}
   manager: {fileID: 0}
 --- !u!4 &269916570
 Transform:
