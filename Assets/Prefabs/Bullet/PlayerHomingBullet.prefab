@@ -30,7 +30,7 @@ GameObject:
   - 58: {fileID: 5869490}
   m_Layer: 10
   m_Name: NellyShot
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

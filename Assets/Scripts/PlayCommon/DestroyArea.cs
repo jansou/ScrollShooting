@@ -6,6 +6,7 @@ public class DestroyArea : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+		/*
         // 画面右上のワールド座標をビューポートから取得
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
 
@@ -14,6 +15,7 @@ public class DestroyArea : MonoBehaviour {
 
         // BoxCollider2Dのサイズを変更
         GetComponent<BoxCollider2D>().size = size;
+        */
 	}
 	
 	// Update is called once per frame
@@ -23,6 +25,11 @@ public class DestroyArea : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D c)
 	{
-		Destroy (c.gameObject);
+		if(c.tag == "PlayerBullet"){
+			Destroy(c.transform.parent.gameObject);
+		}
+		else{
+			Destroy (c.gameObject);
+		}
 	}
 }

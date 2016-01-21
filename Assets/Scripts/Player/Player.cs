@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour 
 {
@@ -38,6 +39,9 @@ public class Player : MonoBehaviour
 
 	PlayerHP_Render hpRenderer;
 	public string playerUIName;
+	Text hpText;
+	Text levelText;
+
 
 	IEnumerator Start()
 	{
@@ -54,6 +58,11 @@ public class Player : MonoBehaviour
 
 		hpRenderer = getHPGauge(playerUIName);
 		hpRenderer.InitHP(hp);
+		hpText = getHPText(playerUIName);
+		levelText = getLevelText(playerUIName);
+
+		hpText.text = hp.ToString()+"/"+maxHP.ToString();
+		levelText.text = "Lv" + level.ToString();
 
 		yield return new WaitForEndOfFrame();// for SpaceShip.Start()
 
@@ -149,6 +158,12 @@ public class Player : MonoBehaviour
 
 	PlayerHP_Render getHPGauge(string playeUIName){
 		return GameObject.Find (playerUIName).transform.FindChild("PlayerHP_Gage").transform.FindChild("HP").GetComponent<PlayerHP_Render>();
+	}
+	Text getHPText(string playerUIName){
+		return GameObject.Find (playerUIName).transform.FindChild("HP").GetComponent<Text>();
+	}
+	Text getLevelText(string playerUIName){
+		return GameObject.Find (playerUIName).transform.FindChild("Level").GetComponent<Text>();
 	}
 
 
@@ -275,8 +290,10 @@ public class Player : MonoBehaviour
 		{
 			spaceship.GetAnimator().SetTrigger("Damage");
 		}
-		
+
+		FindObjectOfType<PopUp>().CreateText(transform.position+Vector3.up*0.2f,damage);
 		hpRenderer.SetHP(hp);
+		hpText.text = hp.ToString()+"/"+maxHP.ToString();
 	}
 	public void recoveryHP(int recover){
 		hp = Mathf.Min(hp+recover,maxHP);
@@ -293,6 +310,7 @@ public class Player : MonoBehaviour
 		if(exp >= nextLevel()){
 			++level;
 			FindObjectOfType<PopUp>().CreateText(transform.position,"LEVEL UP");
+			levelText.text = "Lv" + level.ToString();
 		}
 
     }
