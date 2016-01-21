@@ -10,7 +10,7 @@ public class BossGeneral : MonoBehaviour {
     public int shotSpeed = 3;
 
 	Transform s2;
-	Transform pt;
+	//Transform pt;
 
     //召喚するやつ
     public GameObject soldier;
@@ -23,7 +23,7 @@ public class BossGeneral : MonoBehaviour {
 		common.Init();
 
 		s2 = common.CreateShotPosition();
-		pt = FindObjectOfType<Party>().transform;
+		//pt = FindObjectOfType<Party>().transform;
 
 		FindObjectOfType<MessageWindow>().showMessage("メテオ");
 

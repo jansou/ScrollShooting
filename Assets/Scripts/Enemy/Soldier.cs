@@ -2,19 +2,19 @@
 using System.Collections;
 
 public class Soldier : MonoBehaviour {
-	Spaceship spaceship;
+	//Spaceship spaceship;
 	EnemyCommon common;
 	Enemy enemy;
 	Transform pt;
 
 	IEnumerator Start () {
-		spaceship = GetComponent<Spaceship> ();
+		//spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
 		enemy = GetComponent<Enemy>();
 		common.Init();
 
 		pt = FindObjectOfType<Party>().transform;
-		Transform s1 = common.CreateShotPosition();
+		//Transform s1 = common.CreateShotPosition();
 
 		yield return new WaitForEndOfFrame();
 

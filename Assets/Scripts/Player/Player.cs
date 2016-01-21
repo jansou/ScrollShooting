@@ -81,6 +81,8 @@ public class Player : MonoBehaviour
 			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
 			shotposition.rotation = Quaternion.AngleAxis(270-15,Vector3.forward);
 			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+
+            //yield return new WaitForSeconds(spaceship.shotDelay);
 			break;
 		case Party.Formation.Guylus:
 			if(type != Type.Guylus){
@@ -91,10 +93,14 @@ public class Player : MonoBehaviour
 	            shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PGuylus,0,0.3f);
 			}
+
+            //yield return new WaitForSeconds(spaceship.shotDelay);
 			break;
 		case Party.Formation.Nely:
 			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 			spaceship.Shot(shotposition,shotPower,5,BulletManager.BulletType.PHoming);
+
+            //yield return new WaitForSeconds(spaceship.shotDelay);
 			break;
 		case Party.Formation.Rinmaru:
 			if(type == Type.Rinmaru){
@@ -127,12 +133,16 @@ public class Player : MonoBehaviour
 				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
 			}
+
+            //yield return new WaitForSeconds(spaceship.shotDelay);
 			break;
 		case Party.Formation.Medhu:
 			break;
 		default:
 			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 			spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.Player);
+
+            //yield return new WaitForSeconds(spaceship.shotDelay);
 			break;
 		}
 	}
