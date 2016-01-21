@@ -10,13 +10,23 @@ public class BossMonkey : MonoBehaviour {
 
 	Transform s2;
 	Transform pt;
-	
+
+    //SE関係
+    public AudioClip shootSE;
+    public AudioClip skillSE;
+    AudioSource audioSource;
+
 	// Use this for initialization
 	IEnumerator Start () {
 		spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
         enemy = GetComponent<Enemy>();
 		common.Init();
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = shootSE;
+        //
 
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
@@ -44,25 +54,28 @@ public class BossMonkey : MonoBehaviour {
 		{
             for (int n=0; n<10;++n )
             {
+                audioSource.PlayOneShot(shootSE);
                 common.ShotAim(s2, pt, power, 3, BulletManager.BulletType.BananaSlash);
                 
                 //shotDelay秒待つ
                 yield return new WaitForSeconds(spaceship.shotDelay);
             }
 
-
-
+            //audioSource.clip = skillSE;
+            audioSource.PlayOneShot(skillSE);
             FindObjectOfType<MessageWindow>().showMessage("バナナラッシュ！");
 
 			spaceship.GetAnimator().SetTrigger("Skill");
 			yield return new WaitForSeconds(0.5f);
 
+            //バナナラッシュ
             for (int m = 0; m < 2; ++m)
             {
                 for (int n = 0; n < 4; ++n)
                 {
                     for (int i = 0; i < 6; ++i)
                     {
+                        audioSource.PlayOneShot(shootSE);
                         common.Shot(s2, -45+ 75*m + 30 * i, power, 4 - n, BulletManager.BulletType.BananaSlash);
                     }
 

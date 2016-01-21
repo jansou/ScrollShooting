@@ -49,6 +49,7 @@ GameObject:
   - 60: {fileID: 6042724}
   - 114: {fileID: 11400572}
   - 114: {fileID: 11407528}
+  - 82: {fileID: 8203614}
   m_Layer: 9
   m_Name: EnemyBossMonkey
   m_TagString: Enemy
@@ -154,6 +155,75 @@ PolygonCollider2D:
       - {x: -.0979921818, y: .221476793}
       - {x: -.240340948, y: -.199841022}
       - {x: .244772792, y: -.191742539}
+--- !u!82 &8203614
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165376}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9573684
 Animator:
   serializedVersion: 3
@@ -182,6 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2fa304df399d0f48b5bd36a8c3b1121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power: 2
+  shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
+  skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
 --- !u!114 &11405882
 MonoBehaviour:
   m_ObjectHideFlags: 1
