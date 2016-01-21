@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 165376, guid: 25436f975ed7e9544989e8dc550caed5, type: 2}
+  - {fileID: 189406, guid: 1243c578835a03b4182075c896102947, type: 2}
   enemypositions:
   - {x: 4, y: .5, z: 0}
   isBoss: 1

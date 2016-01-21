@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
 		FindObjectOfType<PopUp>().CreateText(transform.position+range,bullet.getDamage());
 
 		//弾の削除
-		Destroy (c.gameObject);
+		Destroy (c.transform.parent.gameObject);
 
         //ヒットポイントが０以下で爆発
         if (hp <= 0)
