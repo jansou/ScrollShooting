@@ -42,25 +42,21 @@ public class EnemyCommon : MonoBehaviour {
 			Shot (origin,90,shotPower,shotSpeed,type);
 		}
 	}
-    public void ShotAimNway(Transform origin, Transform aim, int shotPower, int shotSpeed, BulletManager.BulletType type,int way=1,float spread=0.0f)
-    {
-        if (aim)
-        {
-            Vector3 v = aim.position - transform.position;
-            Quaternion q = Quaternion.FromToRotation(Vector3.up, v);
-            Debug.Log(q.z);
-            for (int i = 0; i < way; ++i)
-            {
-                float d = spread * (-(way / 2) + i);
-                origin.localRotation = Quaternion.Euler(0, 0, 360*q.z + d);
-                spaceship.Shot(origin, shotPower, shotSpeed, type);
-            }
-        }
-        else
-        {
-            Shot(origin, 90, shotPower, shotSpeed, type);
-        }
-    }
+	public void ShotAimNway(Transform origin,Transform aim, int shotPower,int shotSpeed, BulletManager.BulletType type,int way=1, float spread=0){
+		if(aim){
+			Vector3 v = aim.position - transform.position;
+			Quaternion q = Quaternion.FromToRotation(Vector3.up,v);
+			 
+			for(int i=0; i<way; ++i){
+				float d = spread * (i-(way/2));
+				origin.localRotation = Quaternion.Euler (0,0,q.eulerAngles.z+d);
+				spaceship.Shot(origin,shotPower,shotSpeed,type);
+			}
+		}
+		else{
+			Shot (origin,90,shotPower,shotSpeed,type);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
