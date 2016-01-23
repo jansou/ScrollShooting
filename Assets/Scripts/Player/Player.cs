@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 	Transform shotposition;
 
 	PlayerHP_Render hpRenderer;
+	PlayerEXP_Render expRenderer;
 	public string playerUIName;
 	Text hpText;
 	Text levelText;
@@ -73,6 +74,8 @@ public class Player : MonoBehaviour
 
 		hpRenderer = getHPGauge(playerUIName);
 		hpRenderer.InitHP(hp);
+		expRenderer = getEXPGauge(playerUIName);
+		expRenderer.InitEXP(preLevel(),exp,nextLevel());
 		hpText = getHPText(playerUIName);
 		levelText = getLevelText(playerUIName);
 
@@ -183,6 +186,9 @@ public class Player : MonoBehaviour
 	}
 	Text getLevelText(string playerUIName){
 		return GameObject.Find (playerUIName).transform.FindChild("Level").GetComponent<Text>();
+	}
+	PlayerEXP_Render getEXPGauge(string playeUIName){
+		return GameObject.Find (playerUIName).transform.FindChild("EXP_Gage").transform.FindChild("HP").GetComponent<PlayerEXP_Render>();
 	}
 
 
@@ -323,16 +329,26 @@ public class Player : MonoBehaviour
 	public void addExp(int point)
 	{
 		exp += point;
+		expRenderer.SetEXP(exp);
 		if(exp >= nextLevel()){
 			++level;
 			FindObjectOfType<PopUp>().CreateText(transform.position,"LEVEL UP");
 			levelText.text = "Lv" + level.ToString();
+
+			expRenderer.InitEXP(preLevel(),exp,nextLevel());
 		}
 		
 	}
 
+	int nextLevel(){
+		return needExpByLevel(level);
+	}
+	int preLevel(){
+		return needExpByLevel(level-1);
+	}
 
-//HP,Power by Charactere
+//HP,Power by Character
+//キャラクター毎の調整を以下で行う(HP,攻撃力,必要経験値)
 
 	int HPByLevel(int level){
 		switch(type){
@@ -350,11 +366,7 @@ public class Player : MonoBehaviour
 			return 1 + (level/4);
 		}
 	}
-
-	int nextLevel(){
+	int needExpByLevel(int level){
 		return 100 * level * level;
 	}
-
-    
-
 }

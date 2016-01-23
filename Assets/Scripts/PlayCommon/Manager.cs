@@ -10,11 +10,11 @@ public class Manager : MonoBehaviour
 	//タイトル
 	private GameObject title;
 
-	private GameObject clear;
+	public GameObject clear;
 
-	private GameObject gameover;
+	public GameObject gameover;
 
-	private GameObject pause;
+	public GameObject pause;
 
 	bool paused = false;
 
