@@ -41,6 +41,9 @@ public class Emitter : MonoBehaviour
 			wave.transform.parent=transform;
 
             WaveInfo waveInfo = wave.GetComponent<WaveInfo>();
+			if(waveInfo.isBoss){
+				FindObjectOfType<BGMManager>().SetBossBGM();
+			}
 
 			//Waveの子要素のEnemyが全て削除されるまで待機する
             while (!waveInfo.GetIsDestroyed() /*wave.transform.childCount != 0*/)
@@ -56,6 +59,7 @@ public class Emitter : MonoBehaviour
 			if(reset){
 				currentWave = 0;
 				reset = false;
+				FindObjectOfType<BGMManager>().SetStageBGM();
 			}
 			else if(waves.Length <= ++currentWave)
 			{
