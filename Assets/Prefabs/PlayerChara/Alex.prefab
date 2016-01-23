@@ -194,6 +194,9 @@ MonoBehaviour:
   shotPower: 1
   exp: 0
   playerUIName: 1stPlayer
+  init: 0
+  isPlayMode: 0
+  DamageSE: {fileID: 8300000, guid: 1c8fa9ad5f845154aaa84ba7f56a103e, type: 3}
 --- !u!114 &11467008
 MonoBehaviour:
   m_ObjectHideFlags: 1

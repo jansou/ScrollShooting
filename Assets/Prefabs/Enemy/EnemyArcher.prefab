@@ -342,6 +342,7 @@ MonoBehaviour:
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
   bulletManager: {fileID: 0}
+  DamageSE: {fileID: 0}
 --- !u!114 &11410254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,6 +358,7 @@ MonoBehaviour:
   point: 100
   touchDamage: 1
   shotPower: 1
+  DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
 --- !u!114 &11411304
 MonoBehaviour:
   m_ObjectHideFlags: 1

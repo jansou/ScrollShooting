@@ -16,7 +16,11 @@ public class Enemy : MonoBehaviour
 	Spaceship spaceship;
 
     public int shotPower = 1;
-	
+
+    //SE関係
+    public AudioClip DamageSE;
+    AudioSource audioSource;
+
 	// Use this for initialization
 	IEnumerator Start () 
 	{
@@ -28,6 +32,11 @@ public class Enemy : MonoBehaviour
 
         //Debug.Log("right:" + transform.right + ", up:" + transform.up);
         Move(transform.right*-1);
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = DamageSE;
+        //
 
 		//canShotがfalseの場合、ここでコルーチンを終了させる
 		if (spaceship.canShot == false) 
@@ -71,6 +80,9 @@ public class Enemy : MonoBehaviour
 
         //Bulletコンポーネントを取得
         Bullet bullet = playerBulletTransform.GetComponent<Bullet>();
+
+        //ダメージ音
+        audioSource.PlayOneShot(DamageSE);
 
         //ヒットポイントを減らす
         hp = hp - bullet.getDamage();

@@ -45,6 +45,10 @@ public class Player : MonoBehaviour
 	public bool init = false;
 	public bool isPlayMode = false;
 
+    //SE関係
+    public AudioClip DamageSE;
+    AudioSource audioSource;
+
 	IEnumerator Start()
 	{
 		while(init == false){
@@ -52,6 +56,11 @@ public class Player : MonoBehaviour
 		}
         hp *= level;
 		maxHP = hp;
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //audioSource.clip = DamageSE;
+        //
 
 		//Spaceshipコンポーネントを取得
 		spaceship = GetComponent<Spaceship> ();
@@ -262,6 +271,8 @@ public class Player : MonoBehaviour
 
 		if (layerName == "Bullet(Enemy)" || layerName == "Enemy") 
 		{
+            //ダメージ音
+            audioSource.PlayOneShot(DamageSE);
 			int damage = 0;
 
             if (layerName == "Bullet(Enemy)")
