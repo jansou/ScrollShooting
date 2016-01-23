@@ -54,7 +54,8 @@ public class Player : MonoBehaviour
 		while(init == false){
 			yield return new WaitForEndOfFrame();
 		}
-        hp *= level;
+		hp = HPByLevel(level);
+		shotPower = PowerByLevel(level);
 		maxHP = hp;
 
         //SE関係
@@ -319,20 +320,41 @@ public class Player : MonoBehaviour
 		hp = Mathf.Min(hp+recover,maxHP);
 		hpRenderer.SetHP(hp);
 	}
-
-	int nextLevel(){
-		return 100 * level * level;
-	}
-
-    public void addExp(int point)
-    {
-        exp += point;
+	public void addExp(int point)
+	{
+		exp += point;
 		if(exp >= nextLevel()){
 			++level;
 			FindObjectOfType<PopUp>().CreateText(transform.position,"LEVEL UP");
 			levelText.text = "Lv" + level.ToString();
 		}
+		
+	}
 
-    }
+
+//HP,Power by Charactere
+
+	int HPByLevel(int level){
+		switch(type){
+		case Type.Guylus:
+			return 15*level;
+		default:
+			return 10 * level;
+		}
+	}
+	int PowerByLevel(int level){
+		switch(type){
+		case Type.Alex:
+			return 1 + (level/2);
+		default:
+			return 1 + (level/4);
+		}
+	}
+
+	int nextLevel(){
+		return 100 * level * level;
+	}
+
+    
 
 }
