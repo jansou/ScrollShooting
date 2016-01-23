@@ -9,7 +9,7 @@ public class SaveManager : MonoBehaviour {
 	const string rinmaruPref = "Rinmaru";
 	const string medhuPref = "Medhu";
 
-	int arrivedStage;
+	public int arrivedStage;
 
 	public struct Status{
 		public int level;
@@ -17,10 +17,10 @@ public class SaveManager : MonoBehaviour {
 		public bool isJoining;
 	};
 	public Status alex;
-	Status guylus;
-	Status nely;
-	Status rinmaru;
-	Status medhu;
+	public Status guylus;
+	public Status nely;
+	public Status rinmaru;
+	public Status medhu;
 
 	Status GetStatus(string prefName){
 		Status st;
@@ -41,7 +41,9 @@ public class SaveManager : MonoBehaviour {
 		return prefName + "Exp";
 	}
 
-
+	void Awake(){
+		DontDestroyOnLoad(this);
+	}
 	// Use this for initialization
 	void Start () {
 		arrivedStage = PlayerPrefs.GetInt(stagePref,1);
@@ -62,11 +64,18 @@ public class SaveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		debugKey ();
 	}
 
-	void OnDestroy(){
-		/*
+	void debugKey(){
+		if(Input.GetKeyDown(KeyCode.D)){
+			PlayerPrefs.DeleteAll();
+			Debug.Log("All Saves Deleted.");
+			Start ();
+		}
+	}
+
+	public void SaveData(){
 		PlayerPrefs.SetInt(stagePref,arrivedStage);
 
 		SetStatus(alex,alexPref);
@@ -74,6 +83,7 @@ public class SaveManager : MonoBehaviour {
 		SetStatus(nely,nelyPref);
 		SetStatus(rinmaru,rinmaruPref);
 		SetStatus(medhu,medhuPref);
-		*/
+
+		Debug.Log ("Saved");
 	}
 }

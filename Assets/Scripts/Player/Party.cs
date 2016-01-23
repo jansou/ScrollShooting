@@ -74,6 +74,11 @@ public class Party : MonoBehaviour {
 	GameObject nely;
 	GameObject rinmaru;
 	GameObject medhu;
+	SaveManager.Status alexStatus;
+	SaveManager.Status guylusStatus;
+	SaveManager.Status nelyStatus;
+	SaveManager.Status rinmaruStatus;
+	SaveManager.Status medhuStatus;
 
     public bool alexJoin = true;
     public bool guylusJoin = true;
@@ -127,7 +132,66 @@ public class Party : MonoBehaviour {
             recoveryObject = transform.FindChild("Medhu(Clone)").FindChild("recoveryField").gameObject;
         }
         SetFormation(formation);
+
+		LoadPartyFromSave();
     }
+	public void SaveParty(){
+		SaveManager sm = FindObjectOfType<SaveManager>();
+		if(sm == null){
+			Debug.LogWarning("SaveManager can't found");
+			return;
+		}
+		if(alexJoin){
+			sm.alex = alexStatus;
+		}
+		if(guylusJoin){
+			sm.guylus = guylusStatus;
+		}
+		if(nelyJoin){
+			sm.nely = nelyStatus;
+		}
+		if(rinmaruJoin){
+			sm.rinmaru = rinmaruStatus;
+		}
+		if(medhuJoin){
+			sm.medhu = medhuStatus;
+		}
+		sm.SaveData();
+	}
+	SaveManager.Status GetCharaStatus(Player p){
+		SaveManager.Status st;
+		st.level = p.level;
+		st.exp = p.exp;
+		st.isJoining = true;
+		return st;
+	}
+	void LoadPartyFromSave(){
+		SaveManager sm = FindObjectOfType<SaveManager>();
+		if(alexJoin){
+			alexStatus = sm.alex;
+			LoadCharaFromSave(alex.GetComponent<Player>(),sm.alex);
+		}
+		if(guylusJoin){
+			guylusStatus = sm.guylus;
+			LoadCharaFromSave(guylus.GetComponent<Player>(),sm.guylus);
+		}
+		if(nelyJoin){
+			nelyStatus = sm.nely;
+			LoadCharaFromSave(nely.GetComponent<Player>(),sm.nely);
+		}
+		if(rinmaruJoin){
+			rinmaruStatus = sm.rinmaru;
+			LoadCharaFromSave(rinmaru.GetComponent<Player>(),sm.rinmaru);
+		}
+		if(medhuJoin){
+			medhuStatus = sm.medhu;
+			LoadCharaFromSave(medhu.GetComponent<Player>(),sm.medhu);
+		}
+	}
+	void LoadCharaFromSave(Player p,SaveManager.Status st){
+		p.level = st.level;
+		p.exp = st.exp;
+	}
 
 	GameObject CreateMember(GameObject chara){
 		GameObject o = (GameObject)Instantiate(chara);
@@ -341,5 +405,21 @@ public class Party : MonoBehaviour {
         {
             player.addExp(point);
         }
+
+		if(alex){
+			alexStatus = GetCharaStatus(alex.GetComponent<Player>());
+		}
+		if(guylus){
+			guylusStatus = GetCharaStatus(guylus.GetComponent<Player>());
+		}
+		if(nely){
+			nelyStatus = GetCharaStatus(nely.GetComponent<Player>());
+		}
+		if(rinmaru){
+			rinmaruStatus = GetCharaStatus(rinmaru.GetComponent<Player>());
+		}
+		if(medhu){
+			medhuStatus = GetCharaStatus(medhu.GetComponent<Player>());
+		}
     }
 }

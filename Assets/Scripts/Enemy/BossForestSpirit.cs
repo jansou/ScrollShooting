@@ -6,7 +6,7 @@ public class BossForestSpirit : MonoBehaviour
 	Spaceship spaceship;
 	EnemyCommon common;
     Enemy enemy;
-
+	
     public int power=2;
 
 	Transform s2;
@@ -35,7 +35,7 @@ public class BossForestSpirit : MonoBehaviour
 
     IEnumerator Stop()
     {
-        FindObjectOfType<MessageWindow>().showMessage("ボスザル");
+        FindObjectOfType<MessageWindow>().showMessage("森の精霊");
         yield return new WaitForSeconds(2);
         enemy.MoveStop();
     }
@@ -43,12 +43,12 @@ public class BossForestSpirit : MonoBehaviour
 	IEnumerator Attack1(){//banana
 		while (true) 
 		{
-            for (int n=0; n<10;++n )
+            for (int n=0; n<5;++n )
             {
-                common.ShotAim(s2, pt, power, 3, BulletManager.BulletType.BananaSlash);
+                common.ShotAim(s2, pt, power, 0, BulletManager.BulletType.CircleLeaf);
                 
                 //shotDelay秒待つ
-                yield return new WaitForSeconds(spaceship.shotDelay);
+                yield return new WaitForSeconds(spaceship.shotDelay+2.0f);
             }
 
 

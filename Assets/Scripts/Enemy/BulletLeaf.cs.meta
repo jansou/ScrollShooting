@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 844d8967c2316764895940005a3bd156
-timeCreated: 1453380206
+guid: 8e76c972f8a1f184a83fae17af3661f1
+timeCreated: 1453381120
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - circleLeaf: {fileID: 107020, guid: ccc1f027ec8abbb4d8d21eeb3c95bf13, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
