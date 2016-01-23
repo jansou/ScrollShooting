@@ -47,7 +47,7 @@ public class Archer : MonoBehaviour
 
         while (true)
         {
-            common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.BananaSlash);
+            common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.BananaSlash,3,20);
 
             yield return new WaitForSeconds(spaceship.shotDelay);
         }
