@@ -48,6 +48,8 @@ MonoBehaviour:
   bananaSlash: {fileID: 103208, guid: 4a4f347b1187a6342a5d820f9d7d5ae6, type: 2}
   slimeBullet: {fileID: 113122, guid: e4658e5f0991d2440989a6a61ef5fd66, type: 2}
   blossomBullet: {fileID: 171450, guid: cc6e67d01d54e754f845f1ca020aa161, type: 2}
+  circleLeafBullet: {fileID: 107020, guid: ccc1f027ec8abbb4d8d21eeb3c95bf13, type: 2}
+  leafBullet: {fileID: 102264, guid: 6a4b4be5726fec2408656a7880f06a4e, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

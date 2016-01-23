@@ -9,6 +9,11 @@ public class Armor : MonoBehaviour
     public int speed = 3;
     Enemy enemy;
 
+    //SE関係
+    public AudioClip shootSE;
+    //public AudioClip skillSE;
+    AudioSource audioSource;
+
     Transform s1;
     Transform pt;
 
@@ -18,6 +23,11 @@ public class Armor : MonoBehaviour
 		common = GetComponent<EnemyCommon>();
         enemy = GetComponent<Enemy>();
 		common.Init();
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //audioSource.clip = shootSE;
+        //
 
 		s1 = common.CreateShotPosition();
         pt = FindObjectOfType<Party>().transform;
@@ -32,8 +42,14 @@ public class Armor : MonoBehaviour
 
     IEnumerator Stop()
     {
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(1.0f);
+        while (this.transform.position.x > 3.0f)
+        { yield return new WaitForSeconds(1.0f); }
+
+        //audioSource.PlayOneShot(shootSE);
         enemy.MoveStop();
+        //enemy.MoveAim(transform.position, pt.position, 4);
+        yield return null;
     }
 
     IEnumerator Attack1()
@@ -41,7 +57,8 @@ public class Armor : MonoBehaviour
 
         while (true)
         {
-            common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.BananaSlash);
+            audioSource.PlayOneShot(shootSE);
+            common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
 
             yield return new WaitForSeconds(spaceship.shotDelay);
         }

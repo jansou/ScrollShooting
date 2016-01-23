@@ -25,7 +25,7 @@ public class BulletManager : MonoBehaviour {
 	}
 	public enum BulletType{
 		Normal,
-		Slash,
+		SlashBullet,
 		Player,
 		PSlash,
 		PHoming,
@@ -44,7 +44,7 @@ public class BulletManager : MonoBehaviour {
 		case BulletType.Normal:
 			b = bullet;
 			break;
-		case BulletType.Slash:
+        case BulletType.SlashBullet:
 			b = slashBullet;
 			break;
 		case BulletType.Player:
