@@ -342,7 +342,6 @@ MonoBehaviour:
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
   bulletManager: {fileID: 0}
-  DamageSE: {fileID: 0}
 --- !u!114 &11410254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,7 +392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 2
-  speed: 3
+  speed: 5
+  shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
+  readySE: {fileID: 8300000, guid: 848b5439042b4b3419095df96b64f19d, type: 3}
 --- !u!212 &21209438
 SpriteRenderer:
   m_ObjectHideFlags: 1

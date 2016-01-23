@@ -12,12 +12,21 @@ public class Archer : MonoBehaviour
     Transform s1;
     Transform pt;
 
+    //SE関係
+    public AudioClip shootSE;
+    public AudioClip readySE;
+    AudioSource audioSource;
+
 	IEnumerator Start () 
     {
 		spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
         enemy = GetComponent<Enemy>();
 		common.Init();
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //
 
 		s1 = common.CreateShotPosition();
         pt = FindObjectOfType<Party>().transform;
@@ -47,7 +56,11 @@ public class Archer : MonoBehaviour
 
         while (true)
         {
-            common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.BananaSlash,3,20);
+            audioSource.PlayOneShot(readySE);
+            yield return new WaitForSeconds(spaceship.shotDelay);
+
+            audioSource.PlayOneShot(shootSE);
+            common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.AllowBullet,3,20);
 
             yield return new WaitForSeconds(spaceship.shotDelay);
         }
