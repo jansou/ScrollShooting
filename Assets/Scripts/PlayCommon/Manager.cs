@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour 
 {
@@ -32,6 +33,18 @@ public class Manager : MonoBehaviour
 		clear=GameObject.Find("ClearCanvas");
 		pause=GameObject.Find("PauseCanvas");
 		gameover=GameObject.Find("GameOverCanvas");
+
+		Transform playerUIs = GameObject.Find("Players").transform;
+
+		if(!joinNely){
+			playerUIs.Find("filter3").GetComponent<Image>().enabled = true;
+		}
+		if(!joinRinmaru){
+			playerUIs.Find("filter4").GetComponent<Image>().enabled = true;
+		}
+		if(!joinMedhu){
+			playerUIs.Find("filter5").GetComponent<Image>().enabled = true;
+		}
 
 		gameover.SetActive(false);
 		clear.SetActive(false);
