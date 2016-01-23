@@ -56,10 +56,11 @@ public class Emitter : MonoBehaviour
 			//Waveの削除
 			Destroy(wave);
 
+            //BGM管理
 			if(reset){
 				currentWave = 0;
 				reset = false;
-				FindObjectOfType<BGMManager>().SetStageBGM();
+				//FindObjectOfType<BGMManager>().SetStageBGM();
 			}
 			else if(waves.Length <= ++currentWave)
 			{
@@ -67,6 +68,7 @@ public class Emitter : MonoBehaviour
 				yield return new WaitForSeconds(3);
 				Application.LoadLevel("Home");
 			}
+            ///////
 		}
 	}
 	

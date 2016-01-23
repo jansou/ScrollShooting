@@ -130,6 +130,8 @@ public class Manager : MonoBehaviour
 
 	void GameStart()
 	{
+        FindObjectOfType<BGMManager>().SetStageBGM();
+
         //delete enemy bullet
         GameObject[] enemyBullets;
         enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
