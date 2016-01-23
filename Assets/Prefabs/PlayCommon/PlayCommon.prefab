@@ -3007,7 +3007,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11415070}
         m_MethodName: GameExit
         m_Mode: 1
         m_Arguments:
@@ -3818,7 +3818,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11415070}
         m_MethodName: GamePause
         m_Mode: 1
         m_Arguments:
@@ -4177,7 +4177,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11415070}
         m_MethodName: GamePause
         m_Mode: 1
         m_Arguments:
@@ -4306,7 +4306,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11415070}
         m_MethodName: GamePause
         m_Mode: 1
         m_Arguments:

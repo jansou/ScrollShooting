@@ -28,6 +28,23 @@ public class HomeManager : MonoBehaviour
 	
 		fadeImage = fadeObject.GetComponent<Image>();
 		fadeObject.SetActive(false);
+
+		SaveManager sm = FindObjectOfType<SaveManager>();
+		if(!sm.IsLoaded()){
+			sm.Load();
+		}
+		Transform buttons = GameObject.Find("Content").transform;
+		if(sm.arrivedStage < 1){
+			setInvisible(buttons,"Stage2");
+		}
+		if(sm.arrivedStage < 2){
+			setInvisible(buttons,"Stage3");
+		}
+	}
+	void setInvisible(Transform buttons,string buttonName){
+		Transform b = buttons.FindChild(buttonName);
+		b.GetComponent<Button>().interactable = false;
+		b.GetComponentInChildren<Text>().text = "";
 	}
 
 	void Update()
