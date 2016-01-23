@@ -239,6 +239,7 @@ MonoBehaviour:
   point: 100
   touchDamage: 1
   shotPower: 1
+  DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
 --- !u!212 &21241996
 SpriteRenderer:
   m_ObjectHideFlags: 1
