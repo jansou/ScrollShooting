@@ -32,15 +32,39 @@ public class Manager : MonoBehaviour
 
 		clear.SetActive(false);
 		pause.SetActive(false);
+
+		CreateParty();
+		StartCoroutine ("AppearParty");
+	}
+	IEnumerator AppearParty(){
+		int f = 0;
+		while(f < 60){
+			createdParty.transform.Translate(0.03f,0,0);
+			++f;
+			yield return new WaitForEndOfFrame();
+		}
+		GameStart();
+	}
+	IEnumerator LeaveParty(){
+		int f = 0;
+		while(createdParty.transform.position.x < 7){
+			if(f > 50){
+				createdParty.transform.Translate(0.1f,0,0);
+			}
+			++f;
+			yield return new WaitForEndOfFrame();
+		}
 	}
 	
     void OnGUI()
     {
+		/*
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
         if (IsPlaying() == false && clear.activeSelf == false && Event.current.type == EventType.MouseDown)
         {
             GameStart();
         }
+        */
     }
 
     /*
@@ -95,7 +119,9 @@ public class Manager : MonoBehaviour
 	{
 		clear.SetActive(true);
 		FindObjectOfType<Score>().Save();
+		createdParty.GetComponent<Party>().SetPlayMode(false);
 		createdParty.GetComponent<Party>().SaveParty();
+		StartCoroutine("LeaveParty");
 	}
 
 	void GameStart()
@@ -127,7 +153,10 @@ public class Manager : MonoBehaviour
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
         title.SetActive(false);
 
-        CreateParty();
+		if(createdParty == null){
+        	CreateParty();
+		}
+		createdParty.GetComponent<Party>().SetPlayMode(true);
 		//createdParty = (GameObject)Instantiate (party, party.transform.position, party.transform.rotation);
 	}
 
@@ -135,7 +164,6 @@ public class Manager : MonoBehaviour
     {
         //
         //
-
         createdParty = (GameObject)Instantiate(party, party.transform.position, party.transform.rotation);
         createdParty.GetComponent<Party>().alexJoin = joinAlex;
         createdParty.GetComponent<Party>().guylusJoin = joinGuylus;

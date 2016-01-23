@@ -86,6 +86,15 @@ public class Party : MonoBehaviour {
 	public bool rinmaruJoin = true;
 	public bool medhuJoin = true;
 
+	public bool isPlayMode  =false; // true..start move and shot
+
+	public void SetPlayMode(bool b){
+		isPlayMode = b;
+		for(int i=0; i<transform.childCount; ++i){
+			transform.GetChild(i).GetComponent<Player>().isPlayMode = b;
+		}
+	}
+
 	// Use this for initialization
 	void Start () 
     {
@@ -167,6 +176,9 @@ public class Party : MonoBehaviour {
 	}
 	void LoadPartyFromSave(){
 		SaveManager sm = FindObjectOfType<SaveManager>();
+		if(!sm.IsLoaded()){
+			sm.Load();
+		}
 		if(alexJoin){
 			alexStatus = sm.alex;
 			LoadCharaFromSave(alex.GetComponent<Player>(),sm.alex);
@@ -191,6 +203,7 @@ public class Party : MonoBehaviour {
 	void LoadCharaFromSave(Player p,SaveManager.Status st){
 		p.level = st.level;
 		p.exp = st.exp;
+		p.init = true;
 	}
 
 	GameObject CreateMember(GameObject chara){
@@ -202,25 +215,28 @@ public class Party : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        // 右・左
-        //float x = Input.GetAxisRaw ("Horizontal");
-        float x = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+		if(isPlayMode){
+	        // 右・左
+	        //float x = Input.GetAxisRaw ("Horizontal");
+	        float x = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 
-        // 上・下
-        //float y = Input.GetAxisRaw ("Vertical");
-        float y = CrossPlatformInputManager.GetAxisRaw("Vertical");
+	        // 上・下
+	        //float y = Input.GetAxisRaw ("Vertical");
+	        float y = CrossPlatformInputManager.GetAxisRaw("Vertical");
 
-        // 移動する向きを求める
-        //Vector2 direction = new Vector2 (x, y).normalized;
-        Vector2 direction = new Vector2(x, y);
-        Move(direction);
+	        // 移動する向きを求める
+	        //Vector2 direction = new Vector2 (x, y).normalized;
+	        Vector2 direction = new Vector2(x, y);
+	        Move(direction);
+			
 
-        // 移動する向きとスピードを代入する
-        //GetComponent<Rigidbody2D>().velocity = direction * speed;
-        //spaceship.Move (direction);
+	        // 移動する向きとスピードを代入する
+	        //GetComponent<Rigidbody2D>().velocity = direction * speed;
+	        //spaceship.Move (direction);
 
-        //移動の制限(だめな例)
-        //Clamp ();
+	        //移動の制限(だめな例)
+	        //Clamp ();
+		}
 
 		//GameOver判定(子オブジェクトが０になったら)
 		if (this.transform.childCount==0)
