@@ -79,8 +79,10 @@ public class Player : MonoBehaviour
 		levelText.text = "Lv" + level.ToString();
 
 		while(isPlayMode == false){
-			yield return new WaitForEndOfFrame();// for SpaceShip.Start()
+			yield return new WaitForEndOfFrame();
 		}
+
+		yield return new WaitForEndOfFrame();// for SpaceShip.Start()
 
 		while (isPlayMode == true) 
 		{

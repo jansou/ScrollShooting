@@ -211,10 +211,20 @@ public class Party : MonoBehaviour {
 		o.transform.SetParent(transform);
 		return o;
 	}
-	
+
+	void debug(){
+		if(Input.GetKeyDown(KeyCode.R)){
+			for(int i=0; i<transform.childCount; ++i){
+				Debug.Log ("[Party.cs]All HP 1");
+				transform.GetChild(i).GetComponent<Player>().hp = 1;
+			}
+		}
+	}
 	// Update is called once per frame
 	void Update () 
     {
+		debug ();
+
 		if(isPlayMode){
 	        // 右・左
 	        //float x = Input.GetAxisRaw ("Horizontal");

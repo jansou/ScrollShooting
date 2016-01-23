@@ -73,6 +73,7 @@ public class SaveManager : MonoBehaviour {
 		rinmaru.isJoining = arrivedStage >= 6;
 		medhu.isJoining = arrivedStage >= 8;
 
+		Debug.Log ("Loaded");
 		loaded = true;
 	}
 	

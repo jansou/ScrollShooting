@@ -12,6 +12,8 @@ public class Manager : MonoBehaviour
 
 	private GameObject clear;
 
+	private GameObject gameover;
+
 	private GameObject pause;
 
 	bool paused = false;
@@ -29,12 +31,13 @@ public class Manager : MonoBehaviour
 		title=GameObject.Find("Title");
 		clear=GameObject.Find("ClearCanvas");
 		pause=GameObject.Find("PauseCanvas");
+		gameover=GameObject.Find("GameOverCanvas");
 
+		gameover.SetActive(false);
 		clear.SetActive(false);
 		pause.SetActive(false);
 
-		CreateParty();
-		StartCoroutine ("AppearParty");
+		GameStart();
 	}
 	IEnumerator AppearParty(){
 		int f = 0;
@@ -43,7 +46,8 @@ public class Manager : MonoBehaviour
 			++f;
 			yield return new WaitForEndOfFrame();
 		}
-		GameStart();
+		title.SetActive(false);
+		createdParty.GetComponent<Party>().SetPlayMode(true);
 	}
 	IEnumerator LeaveParty(){
 		int f = 0;
@@ -58,13 +62,13 @@ public class Manager : MonoBehaviour
 	
     void OnGUI()
     {
-		/*
+
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && clear.activeSelf == false && Event.current.type == EventType.MouseDown)
+        if (IsPlaying() == false && gameover.activeSelf == true && Event.current.type == EventType.MouseDown)
         {
             GameStart();
         }
-        */
+        
     }
 
     /*
@@ -104,9 +108,9 @@ public class Manager : MonoBehaviour
 	{
         // ハイスコアの保存
         FindObjectOfType<Score>().Save();
-
+		createdParty.GetComponent<Party>().SaveParty();
 		//ゲームオーバー時に、タイトルを表示する
-		title.SetActive (true);
+		gameover.SetActive (true);
 	}
 
 	public void GameExit(){
@@ -151,12 +155,15 @@ public class Manager : MonoBehaviour
 		FindObjectOfType<Emitter>().ResetWave();
 
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
-        title.SetActive(false);
+		title.SetActive(true);
+		gameover.SetActive(false);
 
 		if(createdParty == null){
-        	CreateParty();
+			CreateParty();
 		}
-		createdParty.GetComponent<Party>().SetPlayMode(true);
+		StartCoroutine("AppearParty");
+
+
 		//createdParty = (GameObject)Instantiate (party, party.transform.position, party.transform.rotation);
 	}
 
@@ -177,7 +184,7 @@ public class Manager : MonoBehaviour
 	public bool IsPlaying()
 	{
 		//ゲーム中かどうかはタイトルの表示/非表示で判断する
-		return title.activeSelf == false && clear.activeSelf == false;
+		return title.activeSelf == false && clear.activeSelf == false && gameover.activeSelf == false;
 	}
 
 	public void GamePause(){
