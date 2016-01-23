@@ -12,6 +12,7 @@ public class BulletManager : MonoBehaviour {
     public GameObject slimeBullet;
     public GameObject blossomBullet;
 	public GameObject circleLeafBullet;
+    public GameObject leafBullet;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +34,7 @@ public class BulletManager : MonoBehaviour {
         SlimeBullet,
         BlossomBullet,
 		CircleLeaf,
+        LeafBullet,
 	};
 
 	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
@@ -68,6 +70,9 @@ public class BulletManager : MonoBehaviour {
 			break;
 		case BulletType.CircleLeaf:
 			b = circleLeafBullet;
+            break;
+        case BulletType.LeafBullet:
+            b = leafBullet;
             break;
 		}
 

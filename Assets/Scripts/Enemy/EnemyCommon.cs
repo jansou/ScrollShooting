@@ -28,9 +28,9 @@ public class EnemyCommon : MonoBehaviour {
 		return o.transform;
 	}
 
-	public void Shot(Transform origin, int rotate, int shotPower, int shotSpeed=2, BulletManager.BulletType type = BulletManager.BulletType.Normal){
+	public void Shot(Transform origin, int rotate, int shotPower, int shotSpeed=2, BulletManager.BulletType type = BulletManager.BulletType.Normal,float offsetx=0,float offsety=0){
 		origin.localRotation = Quaternion.Euler(0,0,rotate);
-		spaceship.Shot(origin,shotPower,shotSpeed,type);
+		spaceship.Shot(origin,shotPower,shotSpeed,type,offsetx,offsety);
 	}
 	public void ShotAim(Transform origin,Transform aim, int shotPower,int shotSpeed, BulletManager.BulletType type){
 		if(aim){
