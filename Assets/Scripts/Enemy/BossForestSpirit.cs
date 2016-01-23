@@ -11,6 +11,12 @@ public class BossForestSpirit : MonoBehaviour
 
 	Transform s2;
 	Transform pt;
+
+    //SE関係
+    public AudioClip shootSE;
+    public AudioClip skillSE;
+    public AudioClip shootSE2;
+    AudioSource audioSource;
 	
 	// Use this for initialization
 	IEnumerator Start () {
@@ -18,6 +24,11 @@ public class BossForestSpirit : MonoBehaviour
 		common = GetComponent<EnemyCommon>();
         enemy = GetComponent<Enemy>();
 		common.Init();
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = shootSE;
+        //
 
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
@@ -40,39 +51,53 @@ public class BossForestSpirit : MonoBehaviour
         enemy.MoveStop();
     }
 
-	IEnumerator Attack1(){//banana
+	IEnumerator Attack1(){//
 		while (true) 
 		{
-            for (int n=0; n<5;++n )
+            
+            for (int n=0; n<4;++n )
             {
+                audioSource.PlayOneShot(shootSE);
                 common.ShotAim(s2, pt, power, 0, BulletManager.BulletType.CircleLeaf);
                 
                 //shotDelay秒待つ
-                yield return new WaitForSeconds(spaceship.shotDelay+2.0f);
+                yield return new WaitForSeconds(spaceship.shotDelay+1.5f);
             }
+            
 
 
-
-            FindObjectOfType<MessageWindow>().showMessage("バナナラッシュ！");
+            FindObjectOfType<MessageWindow>().showMessage("コガラシ！");
+            audioSource.PlayOneShot(skillSE);
 
 			spaceship.GetAnimator().SetTrigger("Skill");
 			yield return new WaitForSeconds(0.5f);
 
-            for (int m = 0; m < 2; ++m)
+            
+            for (int m = 0; m < 6; ++m)
             {
-                for (int n = 0; n < 4; ++n)
+                audioSource.PlayOneShot(shootSE2);
+
+                int a = Random.Range(0, 6);
+                float face = (a%2==0)?1.0f:-1.0f;
+                //face = (a % 3 == 0) ? 0.5f : face;
+
+                for (int n = 0; n < 6; ++n)
                 {
-                    for (int i = 0; i < 6; ++i)
-                    {
-                        common.Shot(s2, -45+ 75*m + 30 * i, power, 4 - n, BulletManager.BulletType.BananaSlash);
-                    }
+                    common.Shot(s2, 90, power, 4, BulletManager.BulletType.LeafBullet,1.0f,n*0.3f*face+transform.position.y);
+                    //common.Shot(s2, angle, power, 4 - n, BulletManager.BulletType.LeafBullet, 1, 1);
+
+                    //for (int i = 0; i < 6; ++i)
+                    //{
+                    //    int angle = -45 + 75 * m + 30 * i;
+                    //    common.Shot(s2,angle, power, 4 - n, BulletManager.BulletType.LeafBullet,1,1);
+                    //}
 
                 }
-                yield return new WaitForSeconds(spaceship.shotDelay + 1.0f);
+                yield return new WaitForSeconds(spaceship.shotDelay+0.3f);
             }
 
 			//shotDelay秒待つ
-			yield return new WaitForSeconds(spaceship.shotDelay + 2.5f);
+			yield return new WaitForSeconds(spaceship.shotDelay + 2.0f);
 		}
 	}
     /*

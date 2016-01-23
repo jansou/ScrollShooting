@@ -64,6 +64,7 @@ GameObject:
   - 60: {fileID: 6004004}
   - 114: {fileID: 11455504}
   - 114: {fileID: 11495498}
+  - 82: {fileID: 8241080}
   m_Layer: 9
   m_Name: EnemyBossForestSpirit
   m_TagString: Enemy
@@ -145,7 +146,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 189406}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -154,6 +155,75 @@ PolygonCollider2D:
       - {x: -.0979857072, y: .22147952}
       - {x: -.0941721946, y: -.227366313}
       - {x: .0681603551, y: -.229418784}
+--- !u!82 &8241080
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189406}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9518970
 Animator:
   serializedVersion: 3
@@ -182,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
+  hp: 60
   point: 100
   touchDamage: 1
   shotPower: 1
@@ -214,7 +284,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844d8967c2316764895940005a3bd156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 2
+  power: 4
+  shootSE: {fileID: 8300000, guid: 00fabb9103505cb43862a0df012e2667, type: 3}
+  skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
+  shootSE2: {fileID: 8300000, guid: f495be74c91b8f844bb27fca4ceb9c4b, type: 3}
 --- !u!114 &11495498
 MonoBehaviour:
   m_ObjectHideFlags: 1
