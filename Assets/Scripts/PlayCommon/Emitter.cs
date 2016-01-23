@@ -57,7 +57,6 @@ public class Emitter : MonoBehaviour
 				currentWave = 0;
 				reset = false;
 			}
-			//格納されているWaveを全て実行したらcurrentWaveを0にする(最初->ループ)
 			else if(waves.Length <= ++currentWave)
 			{
 				manager.GameClear();

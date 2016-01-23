@@ -42,9 +42,14 @@ public class Player : MonoBehaviour
 	Text hpText;
 	Text levelText;
 
+	public bool init = false;
+	public bool isPlayMode = false;
 
 	IEnumerator Start()
 	{
+		while(init == false){
+			yield return new WaitForEndOfFrame();
+		}
         hp *= level;
 		maxHP = hp;
 
@@ -64,9 +69,11 @@ public class Player : MonoBehaviour
 		hpText.text = hp.ToString()+"/"+maxHP.ToString();
 		levelText.text = "Lv" + level.ToString();
 
-		yield return new WaitForEndOfFrame();// for SpaceShip.Start()
+		while(isPlayMode == false){
+			yield return new WaitForEndOfFrame();// for SpaceShip.Start()
+		}
 
-		while (true) 
+		while (isPlayMode == true) 
 		{
 			Attack();
 			//Instantiate(bullet, transform.position,transform.rotation);

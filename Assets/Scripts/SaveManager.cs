@@ -22,6 +22,12 @@ public class SaveManager : MonoBehaviour {
 	public Status rinmaru;
 	public Status medhu;
 
+	bool loaded = false;
+	public bool IsLoaded(){
+		return loaded;
+	}
+
+
 	Status GetStatus(string prefName){
 		Status st;
 		st.level = PlayerPrefs.GetInt(GetLevelPref(prefName),1);
@@ -43,23 +49,31 @@ public class SaveManager : MonoBehaviour {
 
 	void Awake(){
 		DontDestroyOnLoad(this);
+
+		if(FindObjectsOfType<SaveManager>().Length > 1){
+			Destroy (gameObject);
+		}
 	}
 	// Use this for initialization
 	void Start () {
+
+	}
+	public void Load(){
 		arrivedStage = PlayerPrefs.GetInt(stagePref,1);
-
-
+		
 		alex = GetStatus(alexPref);
 		guylus = GetStatus(guylusPref);
 		nely = GetStatus(nelyPref);
 		rinmaru = GetStatus(rinmaruPref);
 		medhu = GetStatus(medhuPref);
-
+		
 		alex.isJoining = true;
 		guylus.isJoining = true;
 		nely.isJoining = arrivedStage >= 4;
 		rinmaru.isJoining = arrivedStage >= 6;
 		medhu.isJoining = arrivedStage >= 8;
+
+		loaded = true;
 	}
 	
 	// Update is called once per frame

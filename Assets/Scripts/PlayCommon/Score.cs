@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     // スコアを表示するGUIText
-    public Text scoreGUIText;
+    //public Text scoreGUIText;
 
     // ハイスコアを表示するGUIText
-    public Text highScoreGUIText;
+    //public Text highScoreGUIText;
 
     // スコア
     private int score;
@@ -32,8 +32,8 @@ public class Score : MonoBehaviour
         }
 
         // スコア・ハイスコアを表示する
-        scoreGUIText.text = score.ToString();
-        highScoreGUIText.text = "HighScore : " + highScore.ToString();
+        //scoreGUIText.text = score.ToString();
+        //highScoreGUIText.text = "HighScore : " + highScore.ToString();
     }
 
     // ゲーム開始前の状態に戻す
