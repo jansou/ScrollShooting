@@ -42,13 +42,11 @@ MonoBehaviour:
   enemies:
   - {fileID: 106550, guid: 530cd9b05f3e15f4999e454e6e730a9a, type: 2}
   - {fileID: 106550, guid: 530cd9b05f3e15f4999e454e6e730a9a, type: 2}
-  - {fileID: 106550, guid: 530cd9b05f3e15f4999e454e6e730a9a, type: 2}
   - {fileID: 193638, guid: 0d1ef50dbaeed3848ad4ead8b6a0088e, type: 2}
   enemypositions:
-  - {x: 2, y: 0, z: 0}
-  - {x: 2, y: 1, z: 0}
-  - {x: 2, y: 2, z: 0}
-  - {x: 4, y: 1, z: 0}
+  - {x: 3, y: .200000003, z: 0}
+  - {x: 3, y: .800000012, z: 0}
+  - {x: 4, y: .5, z: 0}
   isBoss: 0
 --- !u!1001 &100100000
 Prefab:

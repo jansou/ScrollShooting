@@ -271,7 +271,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 1
   shotSpeed: 3
+  skillSE: {fileID: 0}
   soldier: {fileID: 177734, guid: 09a5e3e62aebdd445b29f1735c533108, type: 2}
+  archer: {fileID: 129744, guid: ab0ef2f777ef70d4c843a518a2ce26f1, type: 2}
+  armor: {fileID: 106550, guid: 530cd9b05f3e15f4999e454e6e730a9a, type: 2}
 --- !u!114 &11468500
 MonoBehaviour:
   m_ObjectHideFlags: 1

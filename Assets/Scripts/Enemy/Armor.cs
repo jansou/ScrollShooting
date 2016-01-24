@@ -43,7 +43,7 @@ public class Armor : MonoBehaviour
     IEnumerator Stop()
     {
         //yield return new WaitForSeconds(1.0f);
-        while (this.transform.position.x > 3.0f)
+        while (this.transform.position.x > 2.0f)
         { yield return new WaitForSeconds(1.0f); }
 
         //audioSource.PlayOneShot(shootSE);
@@ -58,7 +58,13 @@ public class Armor : MonoBehaviour
         while (true)
         {
             audioSource.PlayOneShot(shootSE);
-            common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
+            //common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
+            //common.Shot(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
+            //common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.AllowBullet, 2, 20);
+
+            common.Shot(s1, 30, power, speed, BulletManager.BulletType.SlashBullet);
+            common.Shot(s1, 60 + 30, power, speed, BulletManager.BulletType.SlashBullet);
+            common.Shot(s1, 120 + 30, power, speed, BulletManager.BulletType.SlashBullet);
 
             yield return new WaitForSeconds(spaceship.shotDelay);
         }

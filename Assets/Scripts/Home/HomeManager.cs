@@ -54,8 +54,14 @@ public class HomeManager : MonoBehaviour
 	void LoadStage(){
 		switch(selectnum){
 		case 0:
-			Application.LoadLevel("Stage");
+			Application.LoadLevel("Stage01");
 			break;
+        case 1:
+            Application.LoadLevel("Stage02");
+            break;
+        case 2:
+            Application.LoadLevel("Stage03");
+            break;
 		default:
 			Application.LoadLevel("Stage");
 			break;
