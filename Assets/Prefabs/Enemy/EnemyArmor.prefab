@@ -79,7 +79,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 418.043365, y: 44.1891212, z: 0}
+  m_LocalPosition: {x: -88.3600998, y: 194.814606, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 495224}
@@ -166,7 +166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   point: 100
-  touchDamage: 1
-  shotPower: 1
+  touchDamage: 4
+  shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
 --- !u!114 &11495142
 MonoBehaviour:

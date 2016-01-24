@@ -166,7 +166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -271,10 +271,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 1
   shotSpeed: 3
-  skillSE: {fileID: 0}
-  soldier: {fileID: 177734, guid: 09a5e3e62aebdd445b29f1735c533108, type: 2}
-  archer: {fileID: 129744, guid: ab0ef2f777ef70d4c843a518a2ce26f1, type: 2}
-  armor: {fileID: 106550, guid: 530cd9b05f3e15f4999e454e6e730a9a, type: 2}
+  skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
+  soldier: {fileID: 101056, guid: 6564127ebe684b2418dba177859e4efd, type: 2}
+  archer: {fileID: 135542, guid: 4ddc17b82e06a344aab451194c98bf21, type: 2}
+  armor: {fileID: 124662, guid: f757f5d1bb283dc468a0f78c22b6260e, type: 2}
 --- !u!114 &11468500
 MonoBehaviour:
   m_ObjectHideFlags: 1

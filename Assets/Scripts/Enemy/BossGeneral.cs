@@ -101,7 +101,8 @@ public class BossGeneral : MonoBehaviour {
         //以下ループ行動
 		while (true) 
 		{
-            if (!GameObject.Find("EnemyArmor(Clone)"))
+            if (!GameObject.Find("EnemyArmor(Clone)")
+                && !GameObject.Find("EnemyArmorZero(Clone)"))
             {
                 spaceship.GetAnimator().SetTrigger("Skill");
                 audioSource.PlayOneShot(skillSE);
@@ -113,7 +114,8 @@ public class BossGeneral : MonoBehaviour {
                 //Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
                 Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
             }
-            else if (!GameObject.Find("EnemyArcher(Clone)"))
+            else if (!GameObject.Find("EnemyArcher(Clone)")
+                && !GameObject.Find("EnemyArcherZero(Clone)"))
             {
                 spaceship.GetAnimator().SetTrigger("Skill");
                 audioSource.PlayOneShot(skillSE);

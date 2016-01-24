@@ -130,6 +130,14 @@ Prefab:
       propertyPath: joinNely
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22429552, guid: 3604fbfc8603dce49a8226a589d102dd, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22429552, guid: 3604fbfc8603dce49a8226a589d102dd, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3604fbfc8603dce49a8226a589d102dd, type: 2}
   m_IsPrefabParent: 0
@@ -186,7 +194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -376,11 +384,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - {fileID: 165204, guid: a1e8d4e53d25b9a47a64bab47e7246bc, type: 2}
   - {fileID: 155598, guid: 4333781cd4e73524d9aefaf7ea20fdde, type: 2}
   - {fileID: 155598, guid: d082983365a25e747b173a2efe14e233, type: 2}
+  - {fileID: 165204, guid: 507a881ba83ca0743b83c0a66d06b2c6, type: 2}
   - {fileID: 180922, guid: 15030f964f84cf946b2ee91aa31103af, type: 2}
   - {fileID: 155598, guid: 5010a6939486e1948806743bb9b1bef9, type: 2}
   - {fileID: 165204, guid: bace32e5b9478844187b9357ad978575, type: 2}
+  - {fileID: 165204, guid: 41f6728351eb3354d83eb344c51c7b38, type: 2}
   manager: {fileID: 0}
 --- !u!4 &1401079014
 Transform:
