@@ -59,7 +59,7 @@ public class SaveManager : MonoBehaviour {
 
 	}
 	public void Load(){
-		arrivedStage = PlayerPrefs.GetInt(stagePref,1);
+		//arrivedStage = PlayerPrefs.GetInt(stagePref,1);
 		
 		alex = GetStatus(alexPref);
 		guylus = GetStatus(guylusPref);

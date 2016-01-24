@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 	Transform shotposition;
 
 	PlayerHP_Render hpRenderer;
+	PlayerEXP_Render expRenderer;
 	public string playerUIName;
 	Text hpText;
 	Text levelText;
@@ -54,7 +55,8 @@ public class Player : MonoBehaviour
 		while(init == false){
 			yield return new WaitForEndOfFrame();
 		}
-        hp *= level;
+		hp = HPByLevel(level);
+		shotPower = PowerByLevel(level);
 		maxHP = hp;
 
         //SE関係
@@ -72,6 +74,8 @@ public class Player : MonoBehaviour
 
 		hpRenderer = getHPGauge(playerUIName);
 		hpRenderer.InitHP(hp);
+		expRenderer = getEXPGauge(playerUIName);
+		expRenderer.InitEXP(preLevel(),exp,nextLevel());
 		hpText = getHPText(playerUIName);
 		levelText = getLevelText(playerUIName);
 
@@ -182,6 +186,9 @@ public class Player : MonoBehaviour
 	}
 	Text getLevelText(string playerUIName){
 		return GameObject.Find (playerUIName).transform.FindChild("Level").GetComponent<Text>();
+	}
+	PlayerEXP_Render getEXPGauge(string playeUIName){
+		return GameObject.Find (playerUIName).transform.FindChild("EXP_Gage").transform.FindChild("HP").GetComponent<PlayerEXP_Render>();
 	}
 
 
@@ -319,20 +326,47 @@ public class Player : MonoBehaviour
 		hp = Mathf.Min(hp+recover,maxHP);
 		hpRenderer.SetHP(hp);
 	}
-
-	int nextLevel(){
-		return 100 * level * level;
-	}
-
-    public void addExp(int point)
-    {
-        exp += point;
+	public void addExp(int point)
+	{
+		exp += point;
+		expRenderer.SetEXP(exp);
 		if(exp >= nextLevel()){
 			++level;
 			FindObjectOfType<PopUp>().CreateText(transform.position,"LEVEL UP");
 			levelText.text = "Lv" + level.ToString();
+
+			expRenderer.InitEXP(preLevel(),exp,nextLevel());
 		}
+		
+	}
 
-    }
+	int nextLevel(){
+		return needExpByLevel(level);
+	}
+	int preLevel(){
+		return needExpByLevel(level-1);
+	}
 
+//HP,Power by Character
+//キャラクター毎の調整を以下で行う(HP,攻撃力,必要経験値)
+
+	int HPByLevel(int level){
+		switch(type){
+		case Type.Guylus:
+			return 15*level;
+		default:
+			return 10 * level;
+		}
+	}
+	int PowerByLevel(int level){
+		switch(type){
+		case Type.Alex:
+			return 1 + (level/2);
+		default:
+			return 1 + (level/4);
+		}
+	}
+	int needExpByLevel(int level){
+		return 100 * level * level;
+	}
 }
