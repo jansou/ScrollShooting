@@ -76,11 +76,13 @@ public class Manager : MonoBehaviour
     void OnGUI()
     {
 
+		/*
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
         if (IsPlaying() == false && gameover.activeSelf == true && Event.current.type == EventType.MouseDown)
         {
-            GameStart();
+
         }
+        */
         
     }
 
@@ -116,6 +118,10 @@ public class Manager : MonoBehaviour
 	}
     */
 
+	public void GameRestart()
+	{
+		GameStart();
+	}
 
 	public void GameOver()
 	{
@@ -128,7 +134,9 @@ public class Manager : MonoBehaviour
 
 	public void GameExit(){
 		Time.timeScale = 1; // for pause
-		createdParty.GetComponent<Party>().SaveParty();
+		if(pause.activeSelf){
+			createdParty.GetComponent<Party>().SaveParty();
+		}
 		Application.LoadLevel("Home");
 	}
 
