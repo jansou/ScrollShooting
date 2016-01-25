@@ -1188,7 +1188,7 @@ GameObject:
   - 114: {fileID: 11497774}
   - 114: {fileID: 11481136}
   m_Layer: 5
-  m_Name: playButton
+  m_Name: retryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5683,7 +5683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 1f3a2027385d0e24cb38995ab0e895f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42d30b0671c293f4f878346556486442, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
