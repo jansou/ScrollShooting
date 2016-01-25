@@ -3068,6 +3068,7 @@ MonoBehaviour:
   circleLeafBullet: {fileID: 107020, guid: ccc1f027ec8abbb4d8d21eeb3c95bf13, type: 2}
   leafBullet: {fileID: 102264, guid: 6a4b4be5726fec2408656a7880f06a4e, type: 2}
   allowBullet: {fileID: 104094, guid: 514ba44e9507efd4984d1bc7b2cd83be, type: 2}
+  grandSlash: {fileID: 0}
 --- !u!114 &11421638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3686,8 +3687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: .00649104407, b: .941176474, a: 1}
-  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 19d3dc56f45aa2f4ba05e946fabc9569, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4969,7 +4970,7 @@ MonoBehaviour:
   pause: {fileID: 0}
   joinAlex: 1
   joinGuylus: 1
-  joinNely: 1
+  joinNely: 0
   joinRinmaru: 0
   joinMedhu: 0
 --- !u!114 &11486382
@@ -6478,13 +6479,13 @@ RectTransform:
   m_GameObject: {fileID: 164564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22464310}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.99999249, y: 272.749969}
+  m_AnchoredPosition: {x: -1, y: 260}
   m_SizeDelta: {x: 1026, y: 54.5}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22426476
@@ -7438,9 +7439,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22464310}
   m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -1, y: 272.749939}
+  m_AnchorMin: {x: 0, y: .5}
+  m_AnchorMax: {x: 1, y: .5}
+  m_AnchoredPosition: {x: -1, y: 258}
   m_SizeDelta: {x: 293, y: 42}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22481516
