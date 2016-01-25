@@ -24,6 +24,7 @@ public class Manager : MonoBehaviour
     public bool joinNely = false;
     public bool joinRinmaru = false;
     public bool joinMedhu = false;
+	public int stageNumber = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -145,6 +146,8 @@ public class Manager : MonoBehaviour
 		clear.SetActive(true);
 		FindObjectOfType<Score>().Save();
 		createdParty.GetComponent<Party>().SetPlayMode(false);
+		SaveManager sm = FindObjectOfType<SaveManager>();
+		sm.arrivedStage = Mathf.Max (stageNumber+1,sm.arrivedStage);
 		createdParty.GetComponent<Party>().SaveParty();
 		StartCoroutine("LeaveParty");
 	}
