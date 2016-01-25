@@ -14,6 +14,7 @@ public class BulletManager : MonoBehaviour {
 	public GameObject circleLeafBullet;
     public GameObject leafBullet;
     public GameObject allowBullet;
+    public GameObject grandSlash;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,7 @@ public class BulletManager : MonoBehaviour {
 		CircleLeaf,
         LeafBullet,
         AllowBullet,
+        GrandSlash,
 	};
 
 	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
@@ -78,6 +80,9 @@ public class BulletManager : MonoBehaviour {
             break;
         case BulletType.AllowBullet:
             b = allowBullet;
+            break;
+        case BulletType.GrandSlash:
+            b = grandSlash;
             break;
 		}
 

@@ -8,12 +8,13 @@ public class BossGeneral : MonoBehaviour {
 
     public int power=2;
     public int shotSpeed = 3;
+    private int count=0;
 
 	Transform s2;
-	//Transform pt;
+	Transform pt;
 
     //SE関係
-    //public AudioClip shootSE;
+    public AudioClip shootSE;
     public AudioClip skillSE;
     AudioSource audioSource;
 
@@ -35,7 +36,7 @@ public class BossGeneral : MonoBehaviour {
         //
 
 		s2 = common.CreateShotPosition();
-		//pt = FindObjectOfType<Party>().transform;
+		pt = FindObjectOfType<Party>().transform;
 
 		FindObjectOfType<MessageWindow>().showMessage("メテオ");
 
@@ -101,7 +102,30 @@ public class BossGeneral : MonoBehaviour {
         //以下ループ行動
 		while (true) 
 		{
-            if (!GameObject.Find("EnemyArmor(Clone)")
+            if(count == 2)
+            {
+               // while(true)
+                {
+                    spaceship.GetAnimator().SetTrigger("Skill");
+                    audioSource.PlayOneShot(skillSE);
+                    FindObjectOfType<MessageWindow>().showMessage("力を貯めている…");
+
+                    yield return new WaitForSeconds(5.0f);
+
+                    spaceship.GetAnimator().SetTrigger("Skill");
+                    audioSource.PlayOneShot(skillSE);
+                    FindObjectOfType<MessageWindow>().showMessage("剛烈剣!!!");
+                    
+                    common.ShotAim(s2, pt, power, 3, BulletManager.BulletType.GrandSlash);
+                    
+                    audioSource.PlayOneShot(shootSE);
+
+                    count = 0;
+
+                    yield return new WaitForSeconds(2.0f);
+                }
+            }
+            else if (!GameObject.Find("EnemyArmor(Clone)")
                 && !GameObject.Find("EnemyArmorZero(Clone)"))
             {
                 spaceship.GetAnimator().SetTrigger("Skill");
@@ -151,6 +175,8 @@ public class BossGeneral : MonoBehaviour {
                     //shotDelay秒待つ
                     yield return new WaitForSeconds(1.5f);
                 }
+
+                ++count;
             }
 
             yield return new WaitForSeconds(2.0f);

@@ -269,8 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58244457a17d99144bc07a18ba7d5a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 1
-  shotSpeed: 3
+  power: 20
+  shotSpeed: 2
+  shootSE: {fileID: 8300000, guid: 86b0de7d8e14edb488eff1a8be91474f, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   soldier: {fileID: 101056, guid: 6564127ebe684b2418dba177859e4efd, type: 2}
   archer: {fileID: 135542, guid: 4ddc17b82e06a344aab451194c98bf21, type: 2}
