@@ -8,10 +8,17 @@ public class TitleManager : MonoBehaviour
 
 	//タイトル
 	private GameObject title;
+    
+    AudioSource audioSource;
+    public AudioClip tapSE;
 
 	// Use this for initialization
 	void Start () 
 	{
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //
+
 		//Titleゲームオブジェクトを検索し取得する
 		title=GameObject.Find("Title");
 	}
@@ -21,6 +28,7 @@ public class TitleManager : MonoBehaviour
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
         if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
         {
+            audioSource.PlayOneShot(tapSE);
             GameStart();
         }
     }

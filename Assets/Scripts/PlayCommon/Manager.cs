@@ -169,6 +169,7 @@ public class Manager : MonoBehaviour
 
 	public void GameClear()
 	{
+        FindObjectOfType<BGMManager>().StopBGM();
         audioSource.PlayOneShot(gameclearSE);
 		clear.SetActive(true);
 		FindObjectOfType<Score>().Save();

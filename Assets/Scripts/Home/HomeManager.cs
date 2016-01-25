@@ -9,8 +9,14 @@ public class HomeManager : MonoBehaviour
 
 	public Transform buttonContent;
 
-	public Sprite back1;
-	public Sprite back2;
+    public Sprite back0;
+    public Sprite back1;
+    public Sprite back2;
+	public Sprite back3;
+	public Sprite backEX;
+
+    //おまけステージの番号
+    public int EXstageNum=4;
 
 	int selectnum = 0;
 
@@ -48,6 +54,10 @@ public class HomeManager : MonoBehaviour
 		if(sm.arrivedStage < 3){
 			setInvisible(buttons,"Stage3");
 		}
+        if (sm.arrivedStage < 4)
+        {
+            setInvisible(buttons, "StageEX");
+        }
 	}
 	void setInvisible(Transform buttons,string buttonName){
 		Transform b = buttons.FindChild(buttonName);
@@ -78,34 +88,38 @@ public class HomeManager : MonoBehaviour
 	}
 
 	void LoadStage(){
-		switch(selectnum){
-		case 0:
 
-                Application.LoadLevel("Stage0" + (selectnum).ToString());
-			//Application.LoadLevel("Stage01");
-			break;
-        case 1:
-            Application.LoadLevel("Stage0" + (selectnum).ToString());
-            //Application.LoadLevel("Stage02");
-            break;
-        case 2:
-            Application.LoadLevel("Stage0" + (selectnum).ToString());
-            //Application.LoadLevel("Stage03");
-            break;
-        case 3:
-            Application.LoadLevel("Stage0" + (selectnum).ToString());
-            //Application.LoadLevel("Stage03");
-            break;
-        /*
-            case 4:
-            Application.LoadLevel("Stage" + (num).ToString());
-            //Application.LoadLevel("Stage03");
-            break;
-         */
-		default:
-			Application.LoadLevel("Stage");
-			break;
-		}
+        if (EXstageNum == selectnum)
+        {
+            Application.LoadLevel("StageEX");
+
+        }
+        else
+        {
+            switch (selectnum)
+            {
+                case 0:
+
+                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    //Application.LoadLevel("Stage01");
+                    break;
+                case 1:
+                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    //Application.LoadLevel("Stage02");
+                    break;
+                case 2:
+                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    //Application.LoadLevel("Stage03");
+                    break;
+                case 3:
+                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    //Application.LoadLevel("Stage03");
+                    break;
+                default:
+                    Application.LoadLevel("Stage");
+                    break;
+            }
+        }
 	}
 
     string tapHit()
@@ -150,20 +164,44 @@ public class HomeManager : MonoBehaviour
 		}
 	*/
 		//return "Stage" + (num+1).ToString();
+        if (num == EXstageNum)
+        {
+            return "StageEX";
+        }
+
         return "Stage" + (num).ToString();
 	}
 
-	public void SelectStage(int num){
+	public void SelectStage(int num)
+    {
         audioSource.PlayOneShot(tapSE);
 		//stageBack.sprite =  
-		switch(num){
-		case 0:
-			stageBack.sprite = back1;
-			break;
-		default:
-			stageBack.sprite = back2;
-			break;
-		}
+
+        if (EXstageNum == num)
+        {
+            stageBack.sprite = backEX;
+        }
+        else
+        {
+            switch (num)
+            {
+                case 0:
+                    stageBack.sprite = back0;
+                    break;
+                case 1:
+                    stageBack.sprite = back1;
+                    break;
+                case 2:
+                    stageBack.sprite = back2;
+                    break;
+                case 3:
+                    stageBack.sprite = back3;
+                    break;
+                default:
+                    stageBack.sprite = back1;
+                    break;
+            }
+        }
 
 		string textPath = GetStagePath(num);
 		string prevPath = GetStagePath(selectnum);
