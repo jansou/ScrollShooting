@@ -21,9 +21,17 @@ public class HomeManager : MonoBehaviour
 
 	int alpha = 0;
 
+    public AudioClip tapSE;
+    public AudioClip startSE;
+    AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () 
 	{
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //
+
 		SelectStage (0);
 	
 		fadeImage = fadeObject.GetComponent<Image>();
@@ -34,10 +42,10 @@ public class HomeManager : MonoBehaviour
 			sm.Load();
 		}
 		Transform buttons = GameObject.Find("Content").transform;
-		if(sm.arrivedStage < 1){
+		if(sm.arrivedStage < 2){
 			setInvisible(buttons,"Stage2");
 		}
-		if(sm.arrivedStage < 2){
+		if(sm.arrivedStage < 3){
 			setInvisible(buttons,"Stage3");
 		}
 	}
@@ -65,20 +73,35 @@ public class HomeManager : MonoBehaviour
 	
 	public void GameStart()
 	{
+        audioSource.PlayOneShot(startSE);
 		StartCoroutine("FadeStart");
 	}
 
 	void LoadStage(){
 		switch(selectnum){
 		case 0:
-			Application.LoadLevel("Stage01");
+
+                Application.LoadLevel("Stage0" + (selectnum).ToString());
+			//Application.LoadLevel("Stage01");
 			break;
         case 1:
-            Application.LoadLevel("Stage02");
+            Application.LoadLevel("Stage0" + (selectnum).ToString());
+            //Application.LoadLevel("Stage02");
             break;
         case 2:
-            Application.LoadLevel("Stage03");
+            Application.LoadLevel("Stage0" + (selectnum).ToString());
+            //Application.LoadLevel("Stage03");
             break;
+        case 3:
+            Application.LoadLevel("Stage0" + (selectnum).ToString());
+            //Application.LoadLevel("Stage03");
+            break;
+        /*
+            case 4:
+            Application.LoadLevel("Stage" + (num).ToString());
+            //Application.LoadLevel("Stage03");
+            break;
+         */
 		default:
 			Application.LoadLevel("Stage");
 			break;
@@ -96,6 +119,8 @@ public class HomeManager : MonoBehaviour
                 RaycastHit2D hitObject = Physics2D.Raycast(tapPoint, -Vector2.up);
                 if (hitObject)
                 {
+
+                    
                     return hitObject.collider.gameObject.name;
                 }
             }
@@ -124,10 +149,12 @@ public class HomeManager : MonoBehaviour
 			return "Stage2";
 		}
 	*/
-		return "Stage" + (num+1).ToString();
+		//return "Stage" + (num+1).ToString();
+        return "Stage" + (num).ToString();
 	}
 
-	public void SelectStage(int num){	
+	public void SelectStage(int num){
+        audioSource.PlayOneShot(tapSE);
 		//stageBack.sprite =  
 		switch(num){
 		case 0:

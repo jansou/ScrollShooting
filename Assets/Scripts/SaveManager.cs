@@ -27,6 +27,8 @@ public class SaveManager : MonoBehaviour {
 		return loaded;
 	}
 
+    public bool isDebug=false;
+
 
 	Status GetStatus(string prefName){
 		Status st;
@@ -59,7 +61,7 @@ public class SaveManager : MonoBehaviour {
 
 	}
 	public void Load(){
-		arrivedStage = PlayerPrefs.GetInt(stagePref,0);
+        if(!isDebug) arrivedStage = PlayerPrefs.GetInt(stagePref,0);
 		
 		alex = GetStatus(alexPref);
 		guylus = GetStatus(guylusPref);

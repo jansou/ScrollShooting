@@ -18,6 +18,24 @@ public class BGMManager : MonoBehaviour {
         //
 	}
 
+    public void PauseBGM()
+    {
+        //GetComponent<AudioSource>().clip = bossBGM;
+        audioSource.Pause();
+    }
+
+    public void PlayBGM()
+    {
+        //GetComponent<AudioSource>().clip = bossBGM;
+        audioSource.Play();
+    }
+
+    public void StopBGM()
+    {
+        //GetComponent<AudioSource>().clip = bossBGM;
+        audioSource.Stop();
+    }
+
 	public void SetBossBGM(){
 		//GetComponent<AudioSource>().clip = bossBGM;
         audioSource.clip = bossBGM;

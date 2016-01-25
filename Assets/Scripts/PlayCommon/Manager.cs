@@ -26,9 +26,21 @@ public class Manager : MonoBehaviour
     public bool joinMedhu = false;
 	public int stageNumber = 0;
 
+    //SE関係
+    public AudioClip tapSE;
+    public AudioClip gamestartSE;
+    public AudioClip gameclearSE;
+    public AudioClip gameoverSE;
+    AudioSource audioSource;
+    ///
+
 	// Use this for initialization
 	void Start () 
 	{
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //
+
 		//Titleゲームオブジェクトを検索し取得する
 		title=GameObject.Find("Title");
 		clear=GameObject.Find("ClearCanvas");
@@ -63,6 +75,7 @@ public class Manager : MonoBehaviour
 		title.SetActive(false);
 		createdParty.GetComponent<Party>().SetPlayMode(true);
 	}
+
 	IEnumerator LeaveParty(){
 		int f = 0;
 		while(createdParty.transform.position.x < 7){
@@ -121,11 +134,16 @@ public class Manager : MonoBehaviour
 
 	public void GameRestart()
 	{
+        //audioSource.Stop(gameoverSE);
 		GameStart();
 	}
 
 	public void GameOver()
 	{
+        FindObjectOfType<BGMManager>().StopBGM();
+        //ゲームオーバー時のSE
+        audioSource.PlayOneShot(gameoverSE);
+
         // ハイスコアの保存
         FindObjectOfType<Score>().Save();
 		createdParty.GetComponent<Party>().SaveParty();
@@ -135,14 +153,23 @@ public class Manager : MonoBehaviour
 
 	public void GameExit(){
 		Time.timeScale = 1; // for pause
-		if(pause.activeSelf){
+
+        //だめかも
+        audioSource.PlayOneShot(tapSE);
+
+        /*
+        if(pause.activeSelf)
+        {
 			createdParty.GetComponent<Party>().SaveParty();
 		}
+         */
+
 		Application.LoadLevel("Home");
 	}
 
 	public void GameClear()
 	{
+        audioSource.PlayOneShot(gameclearSE);
 		clear.SetActive(true);
 		FindObjectOfType<Score>().Save();
 		createdParty.GetComponent<Party>().SetPlayMode(false);
@@ -154,6 +181,9 @@ public class Manager : MonoBehaviour
 
 	void GameStart()
 	{
+        //ゲーム開始のSE
+        audioSource.PlayOneShot(gamestartSE);
+
         FindObjectOfType<BGMManager>().SetStageBGM();
 
         //delete enemy bullet
@@ -213,23 +243,44 @@ public class Manager : MonoBehaviour
 		return title.activeSelf == false && clear.activeSelf == false && gameover.activeSelf == false;
 	}
 
-	public void GamePause(){
-		if(paused){
+	public void GamePause()
+    {
+		if(paused)
+        {
+            audioSource.PlayOneShot(tapSE);
+            FindObjectOfType<BGMManager>().PlayBGM();
 			paused = false;
 			pause.SetActive(false);
 			Time.timeScale = 1;
 		}
-		else{
+		else
+        {
+            FindObjectOfType<BGMManager>().PauseBGM();
+
+            //SE
+            audioSource.PlayOneShot(tapSE);
+
+
+
 			paused = true;
 			pause.SetActive(true);
 			Time.timeScale = 0;
 		}
 	}
 
-	public void SetPartyForm(int formnum){
-		if(createdParty){
+	public void SetPartyForm(int formnum)
+    {
+
+
+		if(createdParty)
+        {
 			Party.Formation form = Party.Formation.Alex;
-			switch(formnum){
+
+            //陣形変更SE
+            audioSource.PlayOneShot(tapSE);
+
+            switch(formnum)
+            {
 			case 0:
 				form = Party.Formation.Alex;
 				break;
