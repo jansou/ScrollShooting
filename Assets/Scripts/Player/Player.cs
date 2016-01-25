@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
 
 		shotposition = transform.GetChild(0);
 
+		SetUIWindowColor(new Color32(255,255,255,255));
 		hpRenderer = getHPGauge(playerUIName);
 		hpRenderer.InitHP(hp);
 		expRenderer = getEXPGauge(playerUIName);
@@ -190,6 +191,9 @@ public class Player : MonoBehaviour
 	PlayerEXP_Render getEXPGauge(string playeUIName){
 		return GameObject.Find (playerUIName).transform.FindChild("EXP_Gage").transform.FindChild("HP").GetComponent<PlayerEXP_Render>();
 	}
+	void SetUIWindowColor(Color32 c){
+		GameObject.Find (playerUIName).transform.FindChild("Image").GetComponent<Image>().color = c;
+	}
 
 
 	void Update ()
@@ -300,6 +304,8 @@ public class Player : MonoBehaviour
 		}
 	}
 
+
+
 	public void damageHP(int damage){
 		hp = Mathf.Max(0, hp - damage);
 		if (hp <= 0)
@@ -312,6 +318,8 @@ public class Player : MonoBehaviour
 			
 			//プレイヤー削除
 			Destroy(gameObject);
+
+			SetUIWindowColor(new Color32(255,59,59,255));
 		}
 		else
 		{
