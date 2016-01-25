@@ -210,6 +210,14 @@ public class HomeManager : MonoBehaviour
 		buttonContent.FindChild(textPath).GetComponent<Image>().color = selectedButtonColor;
 		selectnum = num;
 
+		//「遊び方」を選択した場合はボタン押せないように
+		if(num == 0){
+			GameObject.Find("startButton").GetComponent<Button>().interactable = false;
+		}
+		else{
+			GameObject.Find("startButton").GetComponent<Button>().interactable = true;
+		}
+
 		tasset = (TextAsset)Resources.Load(textPath);
 		if(tasset){
 			stageText.text = tasset.text;
