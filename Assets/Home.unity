@@ -1402,6 +1402,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11449828, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
+      propertyPath: m_Text
+      value: "\u7B2C1\u7AE0 \u59CB\u307E\u308A"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
   m_IsPrefabParent: 0
@@ -1774,7 +1778,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11449828, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_Text
-      value: "Stage 03 \u9B54\u5973\u30CD\u30EA\u30FC"
+      value: "\u7B2C3\u7AE0 \u9B54\u5973\u30CD\u30EA\u30FC"
       objectReference: {fileID: 0}
     - target: {fileID: 160614, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_Name
@@ -2518,7 +2522,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11449828, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_Text
-      value: "Stage 02 \u6728\u306E\u58C1"
+      value: "\u7B2C2\u7AE0 \u5B88\u3089\u308C\u3057\u3082\u306E"
       objectReference: {fileID: 0}
     - target: {fileID: 160614, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_Name
@@ -3048,7 +3052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrivedStage: 4
-  isDebug: 1
+  isDebug: 0
 --- !u!4 &1728293780
 Transform:
   m_ObjectHideFlags: 0

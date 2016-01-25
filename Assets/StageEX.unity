@@ -178,7 +178,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8df99acf45c3c4685af3936cf3ca74d8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: .5
   m_Pitch: 1
@@ -291,12 +291,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 138540, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
       propertyPath: m_Name
-      value: back_village
+      value: back_hall
       objectReference: {fileID: 0}
     - target: {fileID: 2391302, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5108660b6a1949d49a6d9fd21ee6ef69, type: 2}
+      objectReference: {fileID: 2100000, guid: ab839a63be4febb4684f256f15a2eb8b, type: 2}
+    - target: {fileID: 11420664, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
   m_IsPrefabParent: 0
