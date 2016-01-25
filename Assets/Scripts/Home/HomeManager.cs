@@ -14,9 +14,11 @@ public class HomeManager : MonoBehaviour
     public Sprite back2;
 	public Sprite back3;
 	public Sprite backEX;
+    public Sprite backCredit;
 
     //おまけステージの番号
     public int EXstageNum=4;
+    public int creditNum = 5;
 
 	int selectnum = 0;
 
@@ -168,6 +170,10 @@ public class HomeManager : MonoBehaviour
         {
             return "StageEX";
         }
+        if (num == creditNum)
+        {
+            return "Credit";
+        }
 
         return "Stage" + (num).ToString();
 	}
@@ -180,6 +186,10 @@ public class HomeManager : MonoBehaviour
         if (EXstageNum == num)
         {
             stageBack.sprite = backEX;
+        }
+        else if (creditNum == num)
+        {
+            stageBack.sprite = backCredit;
         }
         else
         {
@@ -211,7 +221,7 @@ public class HomeManager : MonoBehaviour
 		selectnum = num;
 
 		//「遊び方」を選択した場合はボタン押せないように
-		if(num == 0){
+		if(num == creditNum){
 			GameObject.Find("startButton").GetComponent<Button>().interactable = false;
 		}
 		else{

@@ -17,6 +17,9 @@ public class Manager : MonoBehaviour
 
 	public GameObject pause;
 
+    //闘技場用
+    public bool isArcade=false;
+
 	bool paused = false;
 
     public bool joinAlex = false;
@@ -144,11 +147,15 @@ public class Manager : MonoBehaviour
         //ゲームオーバー時のSE
         audioSource.PlayOneShot(gameoverSE);
 
-        // ハイスコアの保存
-        FindObjectOfType<Score>().Save();
-		createdParty.GetComponent<Party>().SaveParty();
+        if (!isArcade)//アーケードモードの場合は保存しない
+        {
+            // 経験値の保存
+            FindObjectOfType<Score>().Save();
+            createdParty.GetComponent<Party>().SaveParty();
+        }
 		//ゲームオーバー時に、タイトルを表示する
 		gameover.SetActive (true);
+
 	}
 
 	public void GameExit(){
@@ -172,11 +179,15 @@ public class Manager : MonoBehaviour
         FindObjectOfType<BGMManager>().StopBGM();
         audioSource.PlayOneShot(gameclearSE);
 		clear.SetActive(true);
-		FindObjectOfType<Score>().Save();
-		createdParty.GetComponent<Party>().SetPlayMode(false);
-		SaveManager sm = FindObjectOfType<SaveManager>();
-		sm.arrivedStage = Mathf.Max (stageNumber+1,sm.arrivedStage);
-		createdParty.GetComponent<Party>().SaveParty();
+        createdParty.GetComponent<Party>().SetPlayMode(false);
+
+        if (!isArcade)//アーケードモードの場合は保存しない
+        {
+            FindObjectOfType<Score>().Save();
+            SaveManager sm = FindObjectOfType<SaveManager>();
+            sm.arrivedStage = Mathf.Max(stageNumber + 1, sm.arrivedStage);
+            createdParty.GetComponent<Party>().SaveParty();
+        }
 		StartCoroutine("LeaveParty");
 	}
 
