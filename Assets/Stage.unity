@@ -210,6 +210,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 135052, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 167320, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
   m_IsPrefabParent: 0
@@ -355,10 +363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 155598, guid: 190087bd592068b479e9ce2677e8c5a9, type: 2}
-  - {fileID: 180922, guid: 2065bfc18d435f2468af808f868ac946, type: 2}
-  - {fileID: 155598, guid: c0c062c92c83b4041a5dd6832113662a, type: 2}
-  - {fileID: 155598, guid: 3613db3c713eb4b44a5629c19dab6970, type: 2}
   - {fileID: 165204, guid: 77844a4f81127ae49a6d73d2fe6efc61, type: 2}
   manager: {fileID: 0}
 --- !u!4 &1586937361
