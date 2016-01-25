@@ -65,6 +65,7 @@ GameObject:
   - 114: {fileID: 11455504}
   - 114: {fileID: 11495498}
   - 82: {fileID: 8241080}
+  - 114: {fileID: 11427658}
   m_Layer: 9
   m_Name: EnemyBossForestSpirit
   m_TagString: Enemy
@@ -257,6 +258,18 @@ MonoBehaviour:
   touchDamage: 1
   shotPower: 1
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
+--- !u!114 &11427658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f600dd5ff6bb548bea87ecf3f423bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
 --- !u!114 &11440476
 MonoBehaviour:
   m_ObjectHideFlags: 1

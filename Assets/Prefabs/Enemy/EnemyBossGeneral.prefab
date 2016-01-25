@@ -65,6 +65,7 @@ GameObject:
   - 114: {fileID: 11454770}
   - 114: {fileID: 11468500}
   - 82: {fileID: 8299542}
+  - 114: {fileID: 11464156}
   m_Layer: 9
   m_Name: EnemyBossGeneral
   m_TagString: Enemy
@@ -276,6 +277,18 @@ MonoBehaviour:
   soldier: {fileID: 101056, guid: 6564127ebe684b2418dba177859e4efd, type: 2}
   archer: {fileID: 135542, guid: 4ddc17b82e06a344aab451194c98bf21, type: 2}
   armor: {fileID: 124662, guid: f757f5d1bb283dc468a0f78c22b6260e, type: 2}
+--- !u!114 &11464156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f600dd5ff6bb548bea87ecf3f423bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
 --- !u!114 &11468500
 MonoBehaviour:
   m_ObjectHideFlags: 1

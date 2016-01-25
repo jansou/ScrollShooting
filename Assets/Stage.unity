@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 165204, guid: 77844a4f81127ae49a6d73d2fe6efc61, type: 2}
+  - {fileID: 183972, guid: 33df0b089ab53724abf0f9ee66dae09c, type: 2}
   manager: {fileID: 0}
 --- !u!4 &1586937361
 Transform:

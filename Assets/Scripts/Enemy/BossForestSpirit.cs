@@ -117,4 +117,5 @@ public class BossForestSpirit : MonoBehaviour
 	void Update () {
 		
 	}
+	
 }

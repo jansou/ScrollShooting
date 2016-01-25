@@ -117,6 +117,15 @@ public class Enemy : MonoBehaviour
         }
 	}
 
+	public void ExplodeSelf(){
+		//爆発
+		spaceship.Explosion();
+		
+		
+		//エネミーの削除
+		Destroy(gameObject);
+	}
+
     public int getTouchDamage() { return touchDamage; }
 
 	// Update is called once per frame
