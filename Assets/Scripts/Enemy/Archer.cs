@@ -29,7 +29,11 @@ public class Archer : MonoBehaviour
         //
 
 		s1 = common.CreateShotPosition();
-        pt = FindObjectOfType<Party>().transform;
+
+		Party p = FindObjectOfType<Party>();
+		if(p){
+	        pt = FindObjectOfType<Party>().transform;
+		}
 
 		yield return new WaitForEndOfFrame();
 
