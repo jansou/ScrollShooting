@@ -457,7 +457,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: stageNumber
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427760, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: MovementRange
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}

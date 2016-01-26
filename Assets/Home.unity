@@ -1184,7 +1184,7 @@ MonoBehaviour:
   stageText: {fileID: 388669391}
   stageBack: {fileID: 1616945206}
   buttonContent: {fileID: 1665297753}
-  back0: {fileID: 21300000, guid: 7416cb79a0fc4d94da1b53bbdf7157a2, type: 3}
+  back0: {fileID: 21300000, guid: b9a59113e235eb149b7b3e30bc436881, type: 3}
   back1: {fileID: 21300000, guid: b9a59113e235eb149b7b3e30bc436881, type: 3}
   back2: {fileID: 21300000, guid: 1db4090a333140e46aa2d777bf73a177, type: 3}
   back3: {fileID: 21300000, guid: ff9b5a6819b1d684992944c936b76169, type: 3}
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrivedStage: 4
-  isDebug: 1
+  isDebug: 0
 --- !u!4 &1728293780
 Transform:
   m_ObjectHideFlags: 0

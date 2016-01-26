@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     public bool isUndead = false;
 
+
 	//public GameObject bullet;
 
 	//Spaceshipコンポーネント
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
     //SE関係
     public AudioClip DamageSE;
     AudioSource audioSource;
+    public AudioClip levelUpSE;
 
 	IEnumerator Start()
 	{
@@ -200,7 +202,7 @@ public class Player : MonoBehaviour
 
 	void Update ()
 	{
-
+        
 	}
 
 	// ぶつかった瞬間に呼び出される
@@ -278,12 +280,19 @@ public class Player : MonoBehaviour
 	{
 		exp += point;
 		expRenderer.SetEXP(exp);
-		if(exp >= nextLevel()){
-			++level;
-			FindObjectOfType<PopUp>().CreateText(transform.position,"LEVEL UP");
-			levelText.text = "Lv" + level.ToString();
+		if(exp >= nextLevel())
+        {
+            audioSource.PlayOneShot(levelUpSE);
+            FindObjectOfType<PopUp>().CreateText(transform.position, "LEVEL UP");
+            levelText.text = "Lv" + level.ToString();
 
-			expRenderer.InitEXP(preLevel(),exp,nextLevel());
+            expRenderer.InitEXP(preLevel(), exp, nextLevel());
+            ++level;
+            shotPower = PowerByLevel(level);
+            maxHP = HPByLevel(level);
+
+            //体力全快
+            hp = maxHP;
 		}
 		
 	}
@@ -308,7 +317,7 @@ public class Player : MonoBehaviour
 		case Type.Guylus:
 			return 15 + 4*level;
         case Type.Nely:
-            return 8 + 2 * level;
+            return 10 + 2 * level;
 		default:
 			return 10 * level;
 		}

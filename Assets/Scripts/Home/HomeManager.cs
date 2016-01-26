@@ -111,6 +111,7 @@ public class HomeManager : MonoBehaviour
 
         if (tapHit() == "ContinueButton" && state != 0)//それぞれのボタンを設定する
         {
+            selectnum = FindObjectOfType<SaveManager>().arrivedStage;
 			GameStart();
         }
     }

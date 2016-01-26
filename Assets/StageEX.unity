@@ -454,7 +454,7 @@ Prefab:
         type: 3}
     - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: stageNumber
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: joinNely

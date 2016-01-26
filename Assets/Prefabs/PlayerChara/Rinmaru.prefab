@@ -210,10 +210,12 @@ MonoBehaviour:
   hp: 10
   shotPower: 1
   exp: 0
+  isUndead: 0
   playerUIName: 4thPlayer
   init: 0
   isPlayMode: 0
   DamageSE: {fileID: 8300000, guid: 1c8fa9ad5f845154aaa84ba7f56a103e, type: 3}
+  levelUpSE: {fileID: 8300000, guid: 3e38a380b05973c4c930f9821f8e33ee, type: 3}
 --- !u!212 &21271590
 SpriteRenderer:
   m_ObjectHideFlags: 1
