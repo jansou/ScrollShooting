@@ -225,6 +225,8 @@ public class Manager : MonoBehaviour
         createdParty.GetComponent<Party>().medhuJoin = joinMedhu;
 
         createdParty.GetComponent<Party>().SetMember();
+
+		SetPartyForm(0);
     }
 
 	public bool IsPlaying()
@@ -258,9 +260,18 @@ public class Manager : MonoBehaviour
 		}
 	}
 
+	void SetMark(Transform t,string UIName,bool b){
+		GameObject.Find("Players").transform.FindChild(UIName).FindChild("LeaderMark").GetComponent<Image>().enabled = b;
+	}
+
 	public void SetPartyForm(int formnum)
     {
-
+		Transform t = GameObject.Find("Players").transform;
+		SetMark (t,"1stPlayer",false);
+		SetMark (t,"2ndPlayer",false);
+		SetMark (t,"3rdPlayer",false);
+		SetMark (t,"4thPlayer",false);
+		SetMark (t,"5thPlayer",false);
 
 		if(createdParty)
         {
@@ -273,18 +284,23 @@ public class Manager : MonoBehaviour
             {
 			case 0:
 				form = Party.Formation.Alex;
+				SetMark (t,"1stPlayer",true);
 				break;
 			case 1:
 				form = Party.Formation.Guylus;
+				SetMark (t,"2ndPlayer",true);
 				break;
 			case 2:
 				form = Party.Formation.Nely;
+				SetMark (t,"3rdPlayer",true);
 				break;
 			case 3:
 				form = Party.Formation.Rinmaru;
+				SetMark (t,"4thPlayer",true);
 				break;
 			case 4:
 				form = Party.Formation.Medhu;
+				SetMark (t,"5thPlayer",true);
 				break;
 			}
 			createdParty.GetComponent<Party>().SetFormation(form);
