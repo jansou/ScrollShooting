@@ -322,10 +322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
-  point: 100
-  touchDamage: 1
-  shotPower: 1
+  hp: 60
+  point: 450
+  touchDamage: 5
+  shotPower: 20
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
 --- !u!212 &21241996
 SpriteRenderer:

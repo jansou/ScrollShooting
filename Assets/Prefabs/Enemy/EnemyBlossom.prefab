@@ -376,9 +376,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 15
-  point: 120
+  point: 70
   touchDamage: 1
-  shotPower: 1
+  shotPower: 3
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
 --- !u!114 &11498860
 MonoBehaviour:

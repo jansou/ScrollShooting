@@ -287,6 +287,10 @@ Prefab:
       propertyPath: gameoverSE
       value: 
       objectReference: {fileID: 8300000, guid: 10093cd2a85e4404698e3720aa7a75d3, type: 3}
+    - target: {fileID: 11427760, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: MovementRange
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
   m_IsPrefabParent: 0
