@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EnemyBoss : MonoBehaviour {
 	public GameObject explosion;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,6 +15,9 @@ public class EnemyBoss : MonoBehaviour {
 	
 	}
 	void OnDestroy(){
+		if(GetComponent<Enemy>().hp > 0){
+			return;
+		}
 		//delete enemy bullet
 		GameObject[] enemyBullets;
 		enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
