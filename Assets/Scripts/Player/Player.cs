@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
 	Party.Formation formation = Party.Formation.Alex;
 
+    public bool isUndead = false;
+
 	//public GameObject bullet;
 
 	//Spaceshipコンポーネント
@@ -306,9 +308,17 @@ public class Player : MonoBehaviour
 
 
 
-	public void damageHP(int damage){
-		hp = Mathf.Max(0, hp - damage);
-		if (hp <= 0)
+	public void damageHP(int damage)
+    {
+		
+        if(isUndead)
+        {
+            hp = Mathf.Max(1, hp - damage);
+        }
+        else hp = Mathf.Max(0, hp - damage);
+		
+        
+        if (hp <= 0)
 		{
 			//Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
 			//FindObjectOfType<Manager>().GameOver();
@@ -330,10 +340,13 @@ public class Player : MonoBehaviour
 		hpRenderer.SetHP(hp);
 		hpText.text = hp.ToString()+"/"+maxHP.ToString();
 	}
-	public void recoveryHP(int recover){
+
+    public void recoveryHP(int recover)
+    {
 		hp = Mathf.Min(hp+recover,maxHP);
 		hpRenderer.SetHP(hp);
 	}
+
 	public void addExp(int point)
 	{
 		exp += point;

@@ -18,6 +18,9 @@ public class Party : MonoBehaviour {
 		Medhu
 	};
 
+    public bool isArcade=false;
+    public bool isUndead = false;
+
     //Alex
     public Vector3 AlexPos0;// = new Vector3(0.7f,0,0);
 	public Vector3 AlexPos1;// = new Vector3(0.3f,0.5f,0);
@@ -100,21 +103,6 @@ public class Party : MonoBehaviour {
     {
         //Backgroundコンポーネントを取得。３つのうちどれか一つを取得する
         background = FindObjectOfType<Background>();
-
-        /*
-		CreateMember(alex);
-		CreateMember(guylus);
-		
-        if(nelyJoin) CreateMember(nely);
-		if(rinmaruJoin) CreateMember(rinmaru);
-		if(medhuJoin) CreateMember(medhu);
-
-		shieldObject = transform.FindChild("Guylus(Clone)").FindChild("shield").gameObject;
-		if(medhuJoin){
-			recoveryObject = transform.FindChild("Medhu(Clone)").FindChild("recoveryField").gameObject;
-		}
-		SetFormation(formation);
-        */
 	}
 
     public void SetMember()
@@ -200,15 +188,26 @@ public class Party : MonoBehaviour {
 			LoadCharaFromSave(medhu.GetComponent<Player>(),sm.medhu);
 		}
 	}
-	void LoadCharaFromSave(Player p,SaveManager.Status st){
-		p.level = st.level;
-		p.exp = st.exp;
-		p.init = true;
+
+	void LoadCharaFromSave(Player p,SaveManager.Status st)
+    {
+        if (!isArcade)
+        {
+            p.level = st.level;
+            p.exp = st.exp;
+        }
+
+        //体力が1未満にならない
+        p.isUndead = isUndead;
+
+        p.init = true;
 	}
 
-	GameObject CreateMember(GameObject chara){
+	GameObject CreateMember(GameObject chara)
+    {
 		GameObject o = (GameObject)Instantiate(chara);
 		o.transform.SetParent(transform);
+        
 		return o;
 	}
 

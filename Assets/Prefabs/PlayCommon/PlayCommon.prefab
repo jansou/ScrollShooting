@@ -3247,12 +3247,14 @@ MonoBehaviour:
   clear: {fileID: 0}
   gameover: {fileID: 0}
   pause: {fileID: 0}
+  isArcade: 0
   joinAlex: 1
   joinGuylus: 1
   joinNely: 0
   joinRinmaru: 0
   joinMedhu: 0
   stageNumber: 0
+  isUndead: 0
   tapSE: {fileID: 8300000, guid: 1987730595823184e9bc140f3343dd09, type: 3}
   gamestartSE: {fileID: 8300000, guid: 5e7cce28c2c2b7e4a94f560338ef9778, type: 3}
   gameclearSE: {fileID: 8300000, guid: 7a46fac2f22c0fa4ea143aa1c0392f16, type: 3}
@@ -3447,7 +3449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c3c865782347f41b6358d9fba14b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementRange: 15
+  MovementRange: 10
   axesToUse: 0
   horizontalAxisName: Horizontal
   verticalAxisName: Vertical

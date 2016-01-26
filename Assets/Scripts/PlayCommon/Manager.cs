@@ -29,6 +29,10 @@ public class Manager : MonoBehaviour
     public bool joinMedhu = false;
 	public int stageNumber = 0;
 
+    //チュートリアル用の不死設定
+    public bool isUndead=false;
+
+
     //SE関係
     public AudioClip tapSE;
     public AudioClip gamestartSE;
@@ -102,38 +106,6 @@ public class Manager : MonoBehaviour
         */
         
     }
-
-    /*
-	// Update is called once per frame
-	void Update () 
-	{
-        for (int i = 0; i < Input.touchCount; ++i)
-        {
-            //タッチ情報を取得する
-            Touch touch = Input.GetTouch(i);
-
-            //ゲーム中ではなく、タッチ直後であればtrueを返す。
-            if (IsPlaying() == false && touch.phase==TouchPhase.Began)
-            {
-                GameStart();
-            }
-        }
-
-        //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && Input.GetMouseButtonDown(0))
-        {
-            GameStart();
-        }
-
-        /*
-            //ゲーム中ではなく、Xキーを押されたらtrueを返す。
-            if (IsPlaying() == false && Input.GetKeyDown(KeyCode.X))
-            {
-                GameStart();
-            }
-         
-	}
-    */
 
 	public void GameRestart()
 	{
@@ -240,6 +212,12 @@ public class Manager : MonoBehaviour
         //
         //
         createdParty = (GameObject)Instantiate(party, party.transform.position, party.transform.rotation);
+
+        //
+        createdParty.GetComponent<Party>().isUndead = isUndead;
+        createdParty.GetComponent<Party>().isArcade = isArcade;
+        //
+
         createdParty.GetComponent<Party>().alexJoin = joinAlex;
         createdParty.GetComponent<Party>().guylusJoin = joinGuylus;
         createdParty.GetComponent<Party>().nelyJoin = joinNely;
