@@ -22,15 +22,17 @@ public class HomeManager : MonoBehaviour
 
 	int selectnum = 0;
 
+    //Fade関連
+    int alpha = 255;
 	public GameObject fadeObject;
 	Image fadeImage;
+    private int state = 0;
 
 	TextAsset tasset;
 
-	int alpha = 0;
-
     public AudioClip tapSE;
     public AudioClip startSE;
+    public AudioClip BGM;
     AudioSource audioSource;
 
 	// Use this for initialization
@@ -38,10 +40,13 @@ public class HomeManager : MonoBehaviour
 	{
         //SE関係
         audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = BGM;
+        audioSource.Play();
         //
 
 		SelectStage (0);
-	
+	    
+        //Fade関係
 		fadeImage = fadeObject.GetComponent<Image>();
 		fadeObject.SetActive(false);
 
@@ -60,7 +65,9 @@ public class HomeManager : MonoBehaviour
         {
             setInvisible(buttons, "StageEX");
         }
+        StartCoroutine("FadeIn");
 	}
+
 	void setInvisible(Transform buttons,string buttonName){
 		Transform b = buttons.FindChild(buttonName);
 		b.GetComponent<Button>().interactable = false;
@@ -69,15 +76,40 @@ public class HomeManager : MonoBehaviour
 
 	void Update()
 	{
-		if(alpha > 250){
+        if (alpha > 250 && state != 0)
+        {
 			LoadStage();
 		}
 	}
+
+    IEnumerator FadeIn()
+    {
+        while (true)
+        {
+            if (state == 0)
+            {
+                fadeObject.SetActive(true);
+
+                if (alpha < 5)
+                {
+                    state += 1;
+                    fadeObject.SetActive(false);
+                    yield return null;
+                }
+
+                fadeImage.color = new Color(1, 1, 1, alpha / 255.0f);
+                alpha -= 5;
+                yield return new WaitForEndOfFrame();
+            }
+
+            yield return null;
+        }
+    }
 	
     void OnGUI()
     {
 
-        if (tapHit() == "ContinueButton")//それぞれのボタンを設定する
+        if (tapHit() == "ContinueButton" && state != 0)//それぞれのボタンを設定する
         {
 			GameStart();
         }
@@ -85,6 +117,7 @@ public class HomeManager : MonoBehaviour
 	
 	public void GameStart()
 	{
+        audioSource.Stop();
         audioSource.PlayOneShot(startSE);
 		StartCoroutine("FadeStart");
 	}
@@ -144,7 +177,8 @@ public class HomeManager : MonoBehaviour
         return "none";
     }
 
-	IEnumerator FadeStart(){
+	IEnumerator FadeStart()
+    {
 		fadeObject.SetActive(true);
 		while(true){
 			fadeImage.color = new Color(1,1,1,alpha/255.0f);

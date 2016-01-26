@@ -372,14 +372,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 165204, guid: a1e8d4e53d25b9a47a64bab47e7246bc, type: 2}
-  - {fileID: 155598, guid: 4333781cd4e73524d9aefaf7ea20fdde, type: 2}
-  - {fileID: 155598, guid: d082983365a25e747b173a2efe14e233, type: 2}
-  - {fileID: 165204, guid: 507a881ba83ca0743b83c0a66d06b2c6, type: 2}
-  - {fileID: 180922, guid: 15030f964f84cf946b2ee91aa31103af, type: 2}
-  - {fileID: 155598, guid: 5010a6939486e1948806743bb9b1bef9, type: 2}
-  - {fileID: 165204, guid: bace32e5b9478844187b9357ad978575, type: 2}
-  - {fileID: 165204, guid: 41f6728351eb3354d83eb344c51c7b38, type: 2}
+  - {fileID: 120230, guid: 32c45058d0726ba47bd370c27b93108a, type: 2}
+  - {fileID: 121552, guid: 7369d0c4cbd45a34f9c7ca2b47a9c0ed, type: 2}
+  - {fileID: 190042, guid: 8a5db4f86703eb341b7787cc734748f6, type: 2}
+  - {fileID: 141126, guid: 795b6724e2ac71b4d97779b6db537486, type: 2}
+  - {fileID: 168052, guid: c11040c5f675fb84a999e08d7f1005db, type: 2}
+  - {fileID: 177088, guid: f9d74176e0a63444fa210cf08b87cf65, type: 2}
+  - {fileID: 115214, guid: 3f0dbf96f31725e45b6f66a9b1b71dff, type: 2}
+  - {fileID: 194428, guid: 135e514cff95c10479673a4b70247805, type: 2}
+  - {fileID: 138496, guid: 125ac4a8f99f8c745b7b9aba2140d8f4, type: 2}
+  - {fileID: 190124, guid: 2a6dfa2fb8e151548a3c77dbc72770a2, type: 2}
   manager: {fileID: 0}
 --- !u!4 &1401079014
 Transform:

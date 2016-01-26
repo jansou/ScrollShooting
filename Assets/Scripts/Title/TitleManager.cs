@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 
 public class TitleManager : MonoBehaviour 
 {
@@ -9,8 +11,16 @@ public class TitleManager : MonoBehaviour
 	//タイトル
 	private GameObject title;
     
+    //SE関係
     AudioSource audioSource;
     public AudioClip tapSE;
+
+    //Fade関係
+    public GameObject fadeObject;
+    Image fadeImage;
+    int alpha = 255;
+    private int state=0;
+
 
 	// Use this for initialization
 	void Start () 
@@ -19,19 +29,74 @@ public class TitleManager : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         //
 
+
+        //Fade関係
+        fadeImage = fadeObject.GetComponent<Image>();
+        fadeObject.SetActive(false);
+
 		//Titleゲームオブジェクトを検索し取得する
 		title=GameObject.Find("Title");
+
+        StartCoroutine("FadeIn");
 	}
+
+    IEnumerator FadeIn()
+    {
+        while (true)
+        {
+            if (state == 0)
+            {
+                fadeObject.SetActive(true);
+
+                if (alpha < 5)
+                {
+                    state += 1;
+                    yield return null;
+                }
+
+                fadeImage.color = new Color(1, 1, 1, alpha / 255.0f);
+                alpha -= 5;
+                yield return new WaitForEndOfFrame();
+            }
+
+            yield return null;
+        }
+    }
 	
     void OnGUI()
     {
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
+        if (IsPlaying() == false && Event.current.type == EventType.MouseDown && state != 0)
         {
-            audioSource.PlayOneShot(tapSE);
             GameStart();
         }
     }
+
+    public void GameStart()
+    {
+        audioSource.PlayOneShot(tapSE);
+        StartCoroutine("FadeStart");
+    }
+
+    IEnumerator FadeStart()
+    {
+        fadeObject.SetActive(true);
+        while (true)
+        {
+            fadeImage.color = new Color(1, 1, 1, alpha / 255.0f);
+            alpha += 5;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    	void Update()
+	{
+		if(alpha > 250)
+        {
+
+            Application.LoadLevel("Home");
+		}
+	}
 
     /*
 	// Update is called once per frame
@@ -75,9 +140,9 @@ public class TitleManager : MonoBehaviour
 		title.SetActive (true);
 	}
 
-	void GameStart()
-	{
-        Application.LoadLevel("Home");
+	//void GameStart()
+	//{
+      //  Application.LoadLevel("Home");
         /*
         //delete enemy bullet
         GameObject[] enemyBullets;
@@ -103,7 +168,7 @@ public class TitleManager : MonoBehaviour
 
 		Instantiate (party, party.transform.position, party.transform.rotation);
          */
-	}
+	//}
 
 	public bool IsPlaying()
 	{

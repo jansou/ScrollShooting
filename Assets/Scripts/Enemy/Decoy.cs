@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Monkey : MonoBehaviour {
+public class Decoy : MonoBehaviour {
 	Spaceship spaceship;
 	EnemyCommon common;
     public int power = 2;
@@ -19,7 +19,7 @@ public class Monkey : MonoBehaviour {
 		common.Init();
 
         shootSESource = gameObject.GetComponent<AudioSource>();
-        //shootSESource.clip = shootSE;
+        shootSESource.clip = shootSE;
 
         s1 = common.CreateShotPosition();
         pt = FindObjectOfType<Party>().transform;
@@ -28,7 +28,7 @@ public class Monkey : MonoBehaviour {
 		while (true) 
 		{
 			//common.Shot(s1,60+Random.Range(0,60),power,2,BulletManager.BulletType.BananaSlash);
-            common.ShotAim(s1, pt, power, 3, BulletManager.BulletType.BananaSlash);
+            common.ShotAim(s1, pt, power, 3, BulletManager.BulletType.SlashBullet);
                 
             shootSESource.PlayOneShot(shootSE);
 
