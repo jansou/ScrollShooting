@@ -22,8 +22,10 @@ public class Soldier : MonoBehaviour {
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = shootSE;
         //
-
-		pt = FindObjectOfType<Party>().transform;
+		Party p = FindObjectOfType<Party>();
+		if(p){
+			pt = p.transform;
+		}
 		//Transform s1 = common.CreateShotPosition();
 
 		yield return new WaitForEndOfFrame();
@@ -46,9 +48,11 @@ public class Soldier : MonoBehaviour {
         while (this.transform.position.x > 3.0f) 
         { yield return new WaitForSeconds(1.0f); }
         
-        audioSource.PlayOneShot(shootSE);
-        spaceship.speed *= 2;
-		enemy.MoveAim(transform.position,pt.position,4);
+		if(pt){
+        	audioSource.PlayOneShot(shootSE);
+        	spaceship.speed *= 2;
+			enemy.MoveAim(transform.position,pt.position,4);
+		}
         yield return null;
 	}
 	
