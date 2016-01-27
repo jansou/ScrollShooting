@@ -1,0 +1,16 @@
+・キャラのHPやPowerを変える
+  Player.cs一番下のHPByLevel, PowerByLevelの中身をいじる。
+　キャラの種類はtypeで(Type.Alexなど)
+
+・浮き出るテキストを足す
+1.既にあるText(PopupText,LevelUpTextとか)を元にプレハブ作成
+2.プレハブ内のTextPopup.csのDeleteTimeで消滅時間を調整(秒単位)
+3.PopUp.csにpublic GameObjectの変数を追加、Create○○Textみたいな関数を他のコピペとかしながら作成
+4.文字を出すタイミングでFindObjectOfType<PopupManager>().Create○○Text(...)
+5.PlayCommon内のPopUpManagerに作ったプレハブを入れる
+
+
+
+・デバッグ機能
+ [D]セーブデータ削除
+ [R]全プレイヤーのHPが1に
