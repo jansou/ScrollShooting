@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: ec8f2e58db32ff74ba89f575ffdcda17
-timeCreated: 1450510279
+timeCreated: 1453910578
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - drawCanvas: {instanceID: 0}
   - textObj: {fileID: 197912, guid: e74e54ae8e265cf48896904f87aee07c, type: 2}
+  - levelUpObj: {fileID: 172434, guid: 8be55e66e66c1f6418f6965cdcaf17e5, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

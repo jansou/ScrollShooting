@@ -283,7 +283,7 @@ public class Player : MonoBehaviour
 		if(exp >= nextLevel())
         {
             audioSource.PlayOneShot(levelUpSE);
-            FindObjectOfType<PopUp>().CreateText(transform.position, "LEVEL UP");
+			FindObjectOfType<PopUp>().CreateLevelUpText(transform.position);
 
             ++level;
             shotPower = PowerByLevel(level);
