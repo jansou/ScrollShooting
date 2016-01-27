@@ -11,8 +11,8 @@ PlayerSettings:
   targetIOSGraphics: -1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: Unity Technologies Japan G.K
-  productName: ShootingGame
+  companyName: "\u771F\u591C\u4E2D\u30B2\u30FC\u30E0\u30B9"
+  productName: "\u30B7\u30E5\u30FC\u30DE\u30C1"
   cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -82,7 +82,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 25786f404ad304ee39e0286958734e78
-  AndroidBundleVersionCode: 3
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -243,7 +243,6 @@ PlayerSettings:
   psp2NPTrophyPackPath: 
   psp2NPSupportGBMorGJP: 0
   psp2NPAgeRating: 12
-  psp2NPTitleDatPath: 
   psp2NPCommsID: 
   psp2NPCommunicationsID: 
   psp2NPCommsPassphrase: 
@@ -258,7 +257,6 @@ PlayerSettings:
   psp2PatchOriginalPackage: 
   psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
   psp2KeystoneFile: 
-  psp2MemoryExpansionMode: 0
   psp2DRMType: 0
   psp2StorageType: 0
   psp2MediaCapacity: 0
@@ -418,7 +416,6 @@ PlayerSettings:
   XboxOnePackagingOverridePath: 
   XboxOneAppManifestOverridePath: 
   XboxOnePackageEncryption: 0
-  XboxOnePackageUpdateGranularity: 2
   XboxOneDescription: 
   XboxOneIsContentPackage: 0
   XboxOneEnableGPUVariability: 0

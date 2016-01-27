@@ -3353,13 +3353,13 @@ MonoBehaviour:
   clear: {fileID: 0}
   gameover: {fileID: 0}
   pause: {fileID: 0}
-  isArcade: 1
+  isArcade: 0
   joinAlex: 1
   joinGuylus: 1
   joinNely: 1
   joinRinmaru: 0
   joinMedhu: 0
-  stageNumber: 4
+  stageNumber: 3
   isUndead: 0
   tapSE: {fileID: 8300000, guid: 1987730595823184e9bc140f3343dd09, type: 3}
   gamestartSE: {fileID: 8300000, guid: 5e7cce28c2c2b7e4a94f560338ef9778, type: 3}
@@ -4877,7 +4877,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawCanvas: {fileID: 22399202}
   textObj: {fileID: 197912, guid: e74e54ae8e265cf48896904f87aee07c, type: 2}
-  levelUpObj: {fileID: 172434, guid: 8be55e66e66c1f6418f6965cdcaf17e5, type: 2}
 --- !u!114 &11468178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7169,7 +7168,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -18, y: -25.0639992}
+  m_AnchoredPosition: {x: -18, y: -26}
   m_SizeDelta: {x: 72, y: 71.8720016}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22430640
