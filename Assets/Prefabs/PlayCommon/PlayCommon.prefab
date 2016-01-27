@@ -3356,10 +3356,10 @@ MonoBehaviour:
   isArcade: 0
   joinAlex: 1
   joinGuylus: 1
-  joinNely: 0
+  joinNely: 1
   joinRinmaru: 0
   joinMedhu: 0
-  stageNumber: 2
+  stageNumber: 3
   isUndead: 0
   tapSE: {fileID: 8300000, guid: 1987730595823184e9bc140f3343dd09, type: 3}
   gamestartSE: {fileID: 8300000, guid: 5e7cce28c2c2b7e4a94f560338ef9778, type: 3}
@@ -7168,7 +7168,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -18, y: -25.0639992}
+  m_AnchoredPosition: {x: -18, y: -26}
   m_SizeDelta: {x: 72, y: 71.8720016}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22430640
