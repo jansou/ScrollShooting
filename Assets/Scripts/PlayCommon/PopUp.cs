@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PopUp : MonoBehaviour {
 	public Canvas drawCanvas;
 	public GameObject textObj;
-
+	public GameObject levelUpObj;
 	// Use this for initialization
 	void Start () {
 	
@@ -21,6 +21,11 @@ public class PopUp : MonoBehaviour {
 		o.transform.SetParent(drawCanvas.transform);
 		
 		o.GetComponent<Text>().text = str;
+	}
+	public void CreateLevelUpText(Vector3 position){
+		GameObject o = (GameObject)Instantiate(levelUpObj);
+		o.transform.position = Camera.main.WorldToScreenPoint(position);
+		o.transform.SetParent(drawCanvas.transform);
 	}
 
 	public void CreateText(Vector3 position,int num){
