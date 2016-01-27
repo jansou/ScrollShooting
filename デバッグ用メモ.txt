@@ -1,7 +1,0 @@
-・キャラのHPやPowerを変える
-  Player.cs一番下のHPByLevel, PowerByLevelの中身をいじる。
-　キャラの種類はtypeで(Type.Alexなど)
-
-・デバッグ機能
- [D]セーブデータ削除
- [R]全プレイヤーのHPが1に
