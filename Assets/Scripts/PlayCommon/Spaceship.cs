@@ -41,7 +41,8 @@ public class Spaceship : MonoBehaviour
 	//弾の作成
 	public void Shot(Transform origin, int shotPower,int shotSpeed=2,BulletManager.BulletType type = BulletManager.BulletType.Normal,float offsetx=0,float offsety=0)
 	{
-		bulletManager.Shot(origin,shotPower,shotSpeed,type,offsetx,offsety);
+        if(canShot)
+    		bulletManager.Shot(origin,shotPower,shotSpeed,type,offsetx,offsety);
 
 		/*
 		GameObject a = (GameObject)Instantiate(bullet,origin.position,origin.rotation);
