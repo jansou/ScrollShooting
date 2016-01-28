@@ -35,6 +35,8 @@ public class HomeManager : MonoBehaviour
     public AudioClip BGM;
     AudioSource audioSource;
 
+	bool firstSelect = true;// for SelectStage's sound
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -115,6 +117,23 @@ public class HomeManager : MonoBehaviour
 			GameStart();
         }
     }
+
+	public void ReturnTitle()
+	{
+		audioSource.PlayOneShot(tapSE);
+		StartCoroutine("FadeReturn");
+		//Application.LoadLevel("Title");
+	}
+
+	IEnumerator FadeReturn(){
+		fadeObject.SetActive(true);
+		while(alpha < 250){
+			fadeImage.color = new Color(1,1,1,alpha/255.0f);
+			alpha = Mathf.Min(250,alpha+7);
+			yield return new WaitForEndOfFrame();
+		}
+		Application.LoadLevel("Title");
+	}
 	
 	public void GameStart()
 	{
@@ -215,7 +234,12 @@ public class HomeManager : MonoBehaviour
 
 	public void SelectStage(int num)
     {
-        audioSource.PlayOneShot(tapSE);
+		if(firstSelect){
+			firstSelect = false;
+		}
+		else{
+        	audioSource.PlayOneShot(tapSE);
+		}
 		//stageBack.sprite =  
 
         if (EXstageNum == num)
