@@ -8,11 +8,14 @@ public class PlayerHP_Render : MonoBehaviour
     float maxhp=0;
     float hp = 0;
 
-	float scalex; // default scaleX of gauge
+	float scalex=0; // default scaleX of gauge
 	// Use this for initialization
+
+	void Awake(){
+		scalex = transform.localScale.x;
+	}
 	void Start () 
     {
-
         //player = transform.parent.parent.GetComponent<Player>();
 
         //maxhp = player.hp;
@@ -22,10 +25,11 @@ public class PlayerHP_Render : MonoBehaviour
          //   Debug.Log("不正な体力値です");
         //}
 
-		scalex = transform.localScale.x;
+
 	}
 
 	public void InitHP(int maxHP){
+
 		maxhp = maxHP;
 		hp = maxHP;
 		SetHP (maxHP);

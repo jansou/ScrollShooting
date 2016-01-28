@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
 	Transform shotposition;
 
 	PlayerHP_Render hpRenderer;
+	PlayerHP_Render nearHpRenderer;
 	PlayerEXP_Render expRenderer;
 	public string playerUIName;
 	Text hpText;
@@ -77,6 +78,8 @@ public class Player : MonoBehaviour
 		shotposition = transform.GetChild(0);
 
 		SetUIWindowColor(new Color32(255,255,255,255));
+		nearHpRenderer = transform.FindChild("HP_Gage").FindChild("HP").GetComponent<PlayerHP_Render>();
+		nearHpRenderer.InitHP(hp);
 		hpRenderer = getHPGauge(playerUIName);
 		hpRenderer.InitHP(hp);
 		expRenderer = getEXPGauge(playerUIName);
@@ -266,6 +269,7 @@ public class Player : MonoBehaviour
 		}
 
 		FindObjectOfType<PopUp>().CreateText(transform.position+Vector3.up*0.2f,damage);
+		nearHpRenderer.SetHP(hp);
 		hpRenderer.SetHP(hp);
 		hpText.text = hp.ToString()+"/"+maxHP.ToString();
 	}
@@ -290,6 +294,7 @@ public class Player : MonoBehaviour
             maxHP = HPByLevel(level);
             //体力全快
             hp = maxHP;
+			nearHpRenderer.InitHP(maxHP);
 			hpRenderer.InitHP(maxHP);
 			expRenderer.InitEXP(preLevel(), exp, nextLevel());
 			levelText.text = "Lv" + level.ToString();
