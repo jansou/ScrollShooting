@@ -112,6 +112,8 @@ public class Party : MonoBehaviour {
 		}
 		if (guylusJoin){
 			guylus = CreateMember(guylusPrefab);
+
+            shieldObject = transform.FindChild("Guylus(Clone)").FindChild("shield").gameObject;
 		}
 		if (nelyJoin){
 			nely = CreateMember(nelyPrefab);
@@ -122,12 +124,11 @@ public class Party : MonoBehaviour {
 		if (medhuJoin){
 			medhu = CreateMember(medhuPrefab);
 		}
-
-        shieldObject = transform.FindChild("Guylus(Clone)").FindChild("shield").gameObject;
         if (medhuJoin)
         {
             recoveryObject = transform.FindChild("Medhu(Clone)").FindChild("recoveryField").gameObject;
         }
+
         SetFormation(formation);
 
 		LoadPartyFromSave();

@@ -255,7 +255,7 @@ MonoBehaviour:
   hp: 15
   point: 0
   touchDamage: 1
-  shotPower: 1
+  shotPower: 2
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
 --- !u!114 &11424564
 MonoBehaviour:

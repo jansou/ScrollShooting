@@ -82,7 +82,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 25786f404ad304ee39e0286958734e78
-  AndroidBundleVersionCode: 6
+  AndroidBundleVersionCode: 7
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -143,7 +143,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: e923554872e0c274ea6a9accebb615ae, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 8d98a5a360e025648b3bed300cd0827d, type: 3}
       m_Size: 128
   - m_BuildTarget: iPhone
     m_Icons:

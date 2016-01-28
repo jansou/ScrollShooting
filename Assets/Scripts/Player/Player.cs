@@ -346,6 +346,6 @@ public class Player : MonoBehaviour
 		}
 	}
 	int needExpByLevel(int level){
-		return 200 * level;
+        return (200 * (level*2 - 1));
 	}
 }

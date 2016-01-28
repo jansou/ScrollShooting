@@ -3072,7 +3072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrivedStage: 4
-  isDebug: 1
+  isDebug: 0
 --- !u!4 &1728293780
 Transform:
   m_ObjectHideFlags: 0
