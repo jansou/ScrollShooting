@@ -1,39 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &180922
+--- !u!1 &155598
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 475792}
-  - 114: {fileID: 11485144}
+  - 4: {fileID: 480304}
+  - 114: {fileID: 11425610}
   m_Layer: 0
-  m_Name: wave03
+  m_Name: wave2-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &475792
+--- !u!4 &480304
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180922}
+  m_GameObject: {fileID: 155598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.29034781, y: 1.39897943, z: 0}
+  m_LocalPosition: {x: 3.58416891, y: 1.56908607, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11485144
+--- !u!114 &11425610
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180922}
+  m_GameObject: {fileID: 155598}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f093de0aaabbaa04281eda050df92195, type: 3}
@@ -42,11 +42,11 @@ MonoBehaviour:
   enemies:
   - {fileID: 114064, guid: 9b5323a634c447240aa8388203648189, type: 2}
   - {fileID: 140832, guid: ba7e093202cede04eb351b765ec740e4, type: 2}
-  - {fileID: 114064, guid: 9b5323a634c447240aa8388203648189, type: 2}
+  - {fileID: 146372, guid: 1b30f2e5ff4f29b4ab2ad7dfb48cbcfc, type: 2}
   enemypositions:
-  - {x: 5, y: 1, z: 0}
-  - {x: 4, y: 0, z: 0}
-  - {x: 5, y: -.5, z: 0}
+  - {x: 6, y: 1, z: 0}
+  - {x: 5, y: 0, z: 0}
+  - {x: 4, y: -1, z: 0}
   isBoss: 0
 --- !u!1001 &100100000
 Prefab:
@@ -57,5 +57,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 180922}
+  m_RootGameObject: {fileID: 155598}
   m_IsPrefabParent: 1
