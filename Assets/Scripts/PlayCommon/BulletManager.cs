@@ -16,6 +16,7 @@ public class BulletManager : MonoBehaviour {
     public GameObject allowBullet;
     public GameObject grandSlash;
     public GameObject darknessCore;
+	public GameObject darkChaser;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +42,7 @@ public class BulletManager : MonoBehaviour {
         AllowBullet,
         GrandSlash,
         DarknessCore,
+		DarkChaser
 	};
 
 	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
@@ -89,6 +91,10 @@ public class BulletManager : MonoBehaviour {
         case BulletType.DarknessCore:
             b = darknessCore;
             break;
+		case BulletType.DarkChaser:
+			b = darkChaser;
+			break;
+		
 		}
 
 		GameObject a = (GameObject)Instantiate(b,origin.position + new Vector3(offsetx,offsety),origin.rotation);

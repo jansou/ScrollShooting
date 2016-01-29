@@ -13,6 +13,9 @@ public class Bullet : MonoBehaviour
 
     public int shotPower = 1;
 
+	//
+	public bool isPenetrate = false;
+
     //ダメージ倍率
     public float magnification = 1;
 
@@ -29,6 +32,7 @@ public class Bullet : MonoBehaviour
 	void Update () {
 	
 	}
+
 
     public int getDamage()
     {
