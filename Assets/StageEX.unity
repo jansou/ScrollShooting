@@ -116,14 +116,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 111348, guid: 3ce684ff7dd8ecd47a7b65505d3a5ad3, type: 2}
-  - {fileID: 155598, guid: 962bfc23855c2cc4f8e4036c57d10374, type: 2}
-  - {fileID: 180922, guid: eda116a99516fba4b87efbcdf24c902b, type: 2}
+  - {fileID: 180922, guid: 15030f964f84cf946b2ee91aa31103af, type: 2}
+  - {fileID: 155598, guid: 5010a6939486e1948806743bb9b1bef9, type: 2}
+  - {fileID: 165204, guid: bace32e5b9478844187b9357ad978575, type: 2}
+  - {fileID: 122268, guid: 1636bf91852d66d429a4a4663e4571b0, type: 2}
+  - {fileID: 155598, guid: c0c062c92c83b4041a5dd6832113662a, type: 2}
+  - {fileID: 155598, guid: 3613db3c713eb4b44a5629c19dab6970, type: 2}
+  - {fileID: 165204, guid: 77844a4f81127ae49a6d73d2fe6efc61, type: 2}
+  - {fileID: 122268, guid: 1636bf91852d66d429a4a4663e4571b0, type: 2}
   - {fileID: 180922, guid: 38b477abb4e96354a802418599e80657, type: 2}
-  - {fileID: 150216, guid: b2bb17fd3d1f2de43a6553b66b0b3962, type: 2}
   - {fileID: 155598, guid: 2b8a4b6ed86368e45b9fc15823a15d9b, type: 2}
   - {fileID: 155598, guid: d924fc7cffc830946818a2aa8cc8858f, type: 2}
   - {fileID: 183972, guid: 33df0b089ab53724abf0f9ee66dae09c, type: 2}
-  - {fileID: 118584, guid: 2860e46156a7bd9499bd94cda6195589, type: 2}
+  - {fileID: 122376, guid: 12e23d7788f3d364b85670dc36b19210, type: 2}
+  - {fileID: 122376, guid: 12e23d7788f3d364b85670dc36b19210, type: 2}
+  - {fileID: 122376, guid: 12e23d7788f3d364b85670dc36b19210, type: 2}
   manager: {fileID: 0}
 --- !u!4 &269916570
 Transform:
@@ -463,6 +470,10 @@ Prefab:
     - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: isArcade
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: isUndead
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
