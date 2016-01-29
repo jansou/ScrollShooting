@@ -11,7 +11,7 @@ PlayerSettings:
   targetIOSGraphics: -1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: "\u771F\u591C\u4E2D\u30B2\u30FC\u30E0\u30B9"
+  companyName: "\u30DE\u30E8\u30CA\u30AB\u30B2\u30FC\u30E0\u30B9"
   productName: "\u30B7\u30E5\u30FC\u30DE\u30C1"
   cloudProjectId: 
   defaultCursor: {fileID: 0}
@@ -82,7 +82,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 25786f404ad304ee39e0286958734e78
-  AndroidBundleVersionCode: 7
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 0
   aotOptions: 

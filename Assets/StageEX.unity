@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 116594, guid: 8588fb457b8c4da4cb4f4bcc0a3b67d3, type: 2}
+  - {fileID: 111348, guid: 3ce684ff7dd8ecd47a7b65505d3a5ad3, type: 2}
   - {fileID: 101506, guid: 03286476cf9fa094b8bbb2a3f5147788, type: 2}
   - {fileID: 116594, guid: 8588fb457b8c4da4cb4f4bcc0a3b67d3, type: 2}
   - {fileID: 109810, guid: 557a1a41b538efe468a680b932030f41, type: 2}
@@ -124,6 +124,10 @@ MonoBehaviour:
   - {fileID: 116594, guid: 8588fb457b8c4da4cb4f4bcc0a3b67d3, type: 2}
   - {fileID: 177740, guid: cf9ec9963cc71d348adde304b0acdb98, type: 2}
   - {fileID: 143146, guid: 46f6c1c1fd56e344fb321e5ef0fa4fc2, type: 2}
+  - {fileID: 126256, guid: 8e292ba8c673a6742ba7aeca01818c95, type: 2}
+  - {fileID: 100536, guid: 4a13bb38b06feb5448bd93807522c2ef, type: 2}
+  - {fileID: 117920, guid: d466c2fe7850f254ea4a6414308675de, type: 2}
+  - {fileID: 169732, guid: 9ca20d5332275c044b1f6baf1f21aeb5, type: 2}
   currentWave: 0
   manager: {fileID: 0}
 --- !u!4 &88390604
@@ -344,6 +348,14 @@ Prefab:
     - target: {fileID: 433130, guid: f98b3a9ad77963b49b69b4757d632d59, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: -.0800000131
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f98b3a9ad77963b49b69b4757d632d59, type: 2}
