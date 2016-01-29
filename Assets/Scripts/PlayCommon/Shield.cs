@@ -26,8 +26,9 @@ public class Shield : MonoBehaviour {
 			{
 				Bullet bullet = c.transform.GetComponent<Bullet>();
 				damage = bullet.getDamage() / 2;
-				
-				Destroy(c.gameObject);
+				if(bullet.isPenetrate == false){
+					Destroy(c.gameObject);
+				}
 			}
 			
 			if (layerName == "Enemy")

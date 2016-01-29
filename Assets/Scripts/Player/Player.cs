@@ -227,8 +227,9 @@ public class Player : MonoBehaviour
             {
                 Bullet bullet = c.transform.GetComponent<Bullet>();
 				damage = bullet.getDamage();
-
-                Destroy(c.gameObject);
+				if(bullet.isPenetrate == false){
+                	Destroy(c.gameObject);
+				}
             }
 
             if (layerName == "Enemy")
