@@ -7,7 +7,7 @@ public class Emitter : MonoBehaviour
 	public GameObject[] waves;
 
 	//現在のWave
-	private int currentWave;
+	public int currentWave;
 
 	//Managerコンポーネント
 	public Manager manager;
@@ -44,6 +44,11 @@ public class Emitter : MonoBehaviour
 			if(waveInfo.isBoss){
 				FindObjectOfType<BGMManager>().SetBossBGM();
 			}
+            if (waveInfo.useSpecialBGM)
+            {
+                FindObjectOfType<BGMManager>().SetSpecialBGM();
+            }
+            //else FindObjectOfType<BGMManager>().SetStageBGM();
 
 			//Waveの子要素のEnemyが全て削除されるまで待機する
             while (!waveInfo.GetIsDestroyed() /*wave.transform.childCount != 0*/)

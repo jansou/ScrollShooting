@@ -7,6 +7,7 @@ public class WaveInfo : MonoBehaviour
     public Vector3[] enemypositions;
     private bool isDestroyed = false;
     public bool isBoss = false;
+    public bool useSpecialBGM=false;
 
 	// Use this for initialization
 	void Start () 

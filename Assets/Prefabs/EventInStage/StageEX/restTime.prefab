@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11472738}
   - 82: {fileID: 8224976}
   m_Layer: 9
-  m_Name: "\u5C0F\u4F11\u6B62"
+  m_Name: restTime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
-  point: 100
-  touchDamage: 1
-  shotPower: 1
+  point: 0
+  touchDamage: 0
+  shotPower: 0
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
 --- !u!114 &11472738
 MonoBehaviour:

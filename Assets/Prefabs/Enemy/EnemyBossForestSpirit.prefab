@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844d8967c2316764895940005a3bd156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 4
+  power: 2
   shootSE: {fileID: 8300000, guid: 00fabb9103505cb43862a0df012e2667, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   shootSE2: {fileID: 8300000, guid: f495be74c91b8f844bb27fca4ceb9c4b, type: 3}

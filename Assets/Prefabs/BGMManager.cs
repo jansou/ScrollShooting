@@ -4,6 +4,7 @@ using System.Collections;
 public class BGMManager : MonoBehaviour {
 	public AudioClip stageBGM;
 	public AudioClip bossBGM;
+    public AudioClip specialBGM;
     AudioSource audioSource;
 
     void Awake()
@@ -41,11 +42,25 @@ public class BGMManager : MonoBehaviour {
         audioSource.clip = bossBGM;
         audioSource.Play();
 	}
+
+    public void SetSpecialBGM()
+    {
+        //GetComponent<AudioSource>().clip = bossBGM;
+        audioSource.clip = specialBGM;
+        audioSource.Play();
+    }
+
 	public void SetStageBGM(){
 		//GetComponent<AudioSource>().clip = stageBGM;
-        audioSource.clip = stageBGM;
-        audioSource.Play();
+
+
+        //if (audioSource.clip != stageBGM)
+        {
+            audioSource.clip = stageBGM;
+            audioSource.Play();
+        }
 	}
+
 	// Update is called once per frame
 	void Update () {
 	
