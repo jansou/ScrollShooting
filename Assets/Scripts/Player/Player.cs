@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
 
 	Transform shotposition;
 
+    //nearHpRenderer:頭上の体力バー
+
 	PlayerHP_Render hpRenderer;
 	PlayerHP_Render nearHpRenderer;
 	PlayerEXP_Render expRenderer;
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour
 
 		shotposition = transform.GetChild(0);
 
+        //HPgage関連
 		SetUIWindowColor(new Color32(255,255,255,255));
 		nearHpRenderer = transform.FindChild("HP_Gage").FindChild("HP").GetComponent<PlayerHP_Render>();
 		nearHpRenderer.InitHP(hp);
