@@ -80,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 173.70253, y: 45.1030197, z: 0}
+  m_LocalPosition: {x: 3.03070641, y: -1.53352118, z: 0}
   m_LocalScale: {x: -1.83256745, y: 1.83256745, z: 1.83256745}
   m_Children:
   - {fileID: 436698}
@@ -322,8 +322,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 2
   shootSE: {fileID: 8300000, guid: 9b5607de199197a4f8fc88ea571ef010, type: 3}
-  skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
-  shootSE2: {fileID: 0}
+  skillSE: {fileID: 8300000, guid: f495be74c91b8f844bb27fca4ceb9c4b, type: 3}
+  shootSE2: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
+  shootSE3: {fileID: 8300000, guid: 7548bea6bfe68bf4abc0494f9b721a7d, type: 3}
 --- !u!212 &21222350
 SpriteRenderer:
   m_ObjectHideFlags: 1

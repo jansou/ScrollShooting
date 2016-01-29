@@ -15,6 +15,7 @@ public class BossChampion : MonoBehaviour {
 	public AudioClip shootSE;
 	public AudioClip skillSE;
 	public AudioClip shootSE2;
+	public AudioClip shootSE3;
 	AudioSource audioSource;
 	
 	// Use this for initialization
@@ -64,15 +65,14 @@ public class BossChampion : MonoBehaviour {
 		{
 
 			for(int i=0; i<8; ++i){
-				audioSource.PlayOneShot(shootSE);
+
 				int r = Random.Range(0,40);
 				for (int n=0; n<9;++n )
 				{
-
 					common.Shot(s2,r+n*40,5,4,BulletManager.BulletType.GrandSlash);
 
 				}
-				
+				audioSource.PlayOneShot(shootSE2);
 				//shotDelay秒待つ
 				yield return new WaitForSeconds(0.7f);
 			}
@@ -80,17 +80,25 @@ public class BossChampion : MonoBehaviour {
 			spaceship.GetAnimator().SetTrigger("Skill");
 			FindObjectOfType<MessageWindow>().showMessage("「これはどうかな？」");
 			for(int i=0; i<6; ++i){
+				audioSource.PlayOneShot(shootSE3);
 				common.Shot(s2,Random.Range(0,180),2,3,BulletManager.BulletType.DarkChaser);
 				yield return new WaitForSeconds(1.0f);
 			}
-			for(int i=0; i<16; ++i){
+			for(int i=0; i<10; ++i){
+				audioSource.PlayOneShot(shootSE3);
 				common.Shot(s2,Random.Range(0,180),2,3,BulletManager.BulletType.DarkChaser);
 				yield return new WaitForSeconds(0.5f);
 			}
-
+			for(int i=0; i<8; ++i){
+				audioSource.PlayOneShot(shootSE3);
+				common.Shot(s2,Random.Range(0,180),2,3,BulletManager.BulletType.DarkChaser);
+				yield return new WaitForSeconds(0.3f);
+			}
+			yield return new WaitForSeconds(2f);
 
 			spaceship.GetAnimator().SetTrigger("Skill");
 			FindObjectOfType<MessageWindow>().showMessage("「これはかわせまい」");
+			audioSource.PlayOneShot(skillSE);
 			for(int i=0; i<80; ++i){
 				common.Shot(s2,Random.Range(45,135),2,3,BulletManager.BulletType.SlashBullet,0.5f,1);
 				common.Shot(s2,Random.Range(45,135),2,3,BulletManager.BulletType.SlashBullet,0.5f,-1);
@@ -101,9 +109,12 @@ public class BossChampion : MonoBehaviour {
 			FindObjectOfType<MessageWindow>().showMessage("「消え失せよ！」");
 			yield return new WaitForSeconds(0.7f);
 			for(int i=0; i<3; ++i){
+				audioSource.PlayOneShot(shootSE);
 				common.ShotAim(s2,pt,10,5,BulletManager.BulletType.DarknessCore);
 				yield return new WaitForSeconds(1f);
 			}
+
+			yield return new WaitForSeconds(2f);
 		}
 		//common.ShotAim(s2, pt, power, 0, BulletManager.BulletType.CircleLeaf);
 	}
