@@ -12,6 +12,12 @@ public class StandGameManager : MonoBehaviour
 
     public int state = 0;
 
+    public Image before;
+    public Sprite after;
+
+    public AudioClip SE;
+    AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,9 +25,12 @@ public class StandGameManager : MonoBehaviour
         fadeImage = fadeObject.GetComponent<Image>();
         fadeObject.SetActive(false);
 
+        audioSource = gameObject.GetComponent<AudioSource>();
+
         StartCoroutine("FadeIn");
         StartCoroutine("FadeOut");
         StartCoroutine("Show");
+        StartCoroutine("Show2");
         StartCoroutine("GameStart");
 	}
 
@@ -58,6 +67,26 @@ public class StandGameManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(2.0f);
 
+                audioSource.PlayOneShot(SE);
+                before.sprite = after;
+
+                state += 1;
+                
+            }
+            yield return null;
+        }
+    }
+
+
+    IEnumerator Show2()
+    {
+        while (true)
+        {
+            if (state == 2)
+            {
+
+                yield return new WaitForSeconds(2.0f);
+
                 state += 1;
 
             }
@@ -69,7 +98,7 @@ public class StandGameManager : MonoBehaviour
     {
         while (true)
         {
-            if (state == 2)
+            if (state == 3)
             {
                 fadeObject.SetActive(true);
 
@@ -94,7 +123,7 @@ public class StandGameManager : MonoBehaviour
     {
         while (true)
         {
-            if (state == 3)
+            if (state == 4)
             {
                 Application.LoadLevel("Title");
 

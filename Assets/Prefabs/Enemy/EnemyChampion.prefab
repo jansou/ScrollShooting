@@ -80,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 173.70253, y: 45.1030197, z: 0}
+  m_LocalPosition: {x: 17.1976395, y: -4.66797733, z: 0}
   m_LocalScale: {x: -1.83256745, y: 1.83256745, z: 1.83256745}
   m_Children:
   - {fileID: 436698}
@@ -93,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .184, z: 0}
+  m_LocalPosition: {x: 0, y: .261000007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455488}
@@ -152,10 +152,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: .0871590972, y: .221477032}
+    - - {x: .122359321, y: .221476912}
       - {x: -.0979921818, y: .221476793}
-      - {x: -.240340948, y: -.199841022}
-      - {x: .244772792, y: -.191742539}
+      - {x: -.099543795, y: -.446237057}
+      - {x: .132134587, y: -.445178807}
 --- !u!82 &8269718
 AudioSource:
   m_ObjectHideFlags: 1
@@ -323,7 +323,6 @@ MonoBehaviour:
   power: 2
   shootSE: {fileID: 8300000, guid: 9b5607de199197a4f8fc88ea571ef010, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
-  shootSE2: {fileID: 0}
 --- !u!212 &21222350
 SpriteRenderer:
   m_ObjectHideFlags: 1

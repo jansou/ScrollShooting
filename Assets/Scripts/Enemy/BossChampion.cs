@@ -14,7 +14,7 @@ public class BossChampion : MonoBehaviour {
 	//SE関係
 	public AudioClip shootSE;
 	public AudioClip skillSE;
-	public AudioClip shootSE2;
+	//public AudioClip shootSE2;
 	AudioSource audioSource;
 	
 	// Use this for initialization
