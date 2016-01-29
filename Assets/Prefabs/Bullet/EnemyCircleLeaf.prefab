@@ -58,7 +58,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   liftTime: 5
-  shotPower: 1
+  shotPower: 2
+  isPenetrate: 0
   magnification: 1
 --- !u!114 &11480114
 MonoBehaviour:

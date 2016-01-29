@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
 	//ゲームオブジェクト生成から削除するまでの時間
 	public float liftTime=5;
 
-    public int shotPower = 1;
+    public int shotPower = 2;
 
 	//
 	public bool isPenetrate = false;

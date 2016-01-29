@@ -7,6 +7,7 @@ public class BossChampion : MonoBehaviour {
 	Enemy enemy;
 	
 	public int power=2;
+    public int speed = 2;
 	
 	Transform s2;
 	Transform pt;
@@ -62,7 +63,7 @@ public class BossChampion : MonoBehaviour {
 
 		while (true) 
 		{
-
+            FindObjectOfType<MessageWindow>().showMessage("「力の差を見せてやろう」");
 			for(int i=0; i<8; ++i){
 				audioSource.PlayOneShot(shootSE);
 				int r = Random.Range(0,40);
@@ -97,11 +98,21 @@ public class BossChampion : MonoBehaviour {
 				yield return new WaitForSeconds(0.15f);
 			}
 
+            spaceship.GetAnimator().SetTrigger("Skill");
+            FindObjectOfType<MessageWindow>().showMessage("「これは防げまい」");
+            yield return new WaitForSeconds(1.0f);
+
+            spaceship.GetAnimator().SetTrigger("Skill");
+            FindObjectOfType<MessageWindow>().showMessage("闇の力が満ちる…");
+            yield return new WaitForSeconds(1.0f);
+
 			spaceship.GetAnimator().SetTrigger("Skill");
 			FindObjectOfType<MessageWindow>().showMessage("「消え失せよ！」");
-			yield return new WaitForSeconds(0.7f);
-			for(int i=0; i<3; ++i){
-				common.ShotAim(s2,pt,10,5,BulletManager.BulletType.DarknessCore);
+			yield return new WaitForSeconds(1.0f);
+
+            
+            for(int i=0; i<3; ++i){
+				common.ShotAim(s2,pt,power*2,speed,BulletManager.BulletType.DarknessCore);
 				yield return new WaitForSeconds(1f);
 			}
 		}
