@@ -1974,6 +1974,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &186372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 417522}
+  - 114: {fileID: 11493556}
+  m_Layer: 0
+  m_Name: TouchController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &188712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,8 +2336,21 @@ Transform:
   - {fileID: 22438198}
   - {fileID: 453564}
   - {fileID: 422760}
+  - {fileID: 417522}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &417522
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 78.5, y: 34.8300018, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 416704}
+  m_RootOrder: 16
 --- !u!4 &422760
 Transform:
   m_ObjectHideFlags: 1
@@ -3413,8 +3442,8 @@ MonoBehaviour:
   joinNely: 1
   joinRinmaru: 0
   joinMedhu: 0
-  stageNumber: 0
-  isUndead: 1
+  stageNumber: 3
+  isUndead: 0
   tapSE: {fileID: 8300000, guid: 1987730595823184e9bc140f3343dd09, type: 3}
   gamestartSE: {fileID: 8300000, guid: 5e7cce28c2c2b7e4a94f560338ef9778, type: 3}
   gameclearSE: {fileID: 8300000, guid: 7a46fac2f22c0fa4ea143aa1c0392f16, type: 3}
@@ -5571,6 +5600,7 @@ MonoBehaviour:
   allowBullet: {fileID: 104094, guid: 514ba44e9507efd4984d1bc7b2cd83be, type: 2}
   grandSlash: {fileID: 122868, guid: 36cb8be924cce8843a0774fd40c9d294, type: 2}
   darknessCore: {fileID: 173366, guid: 5b515b4d0a2a54f45a8a25bb513e058c, type: 2}
+  darkChaser: {fileID: 0}
 --- !u!114 &11485744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5878,6 +5908,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowActivationOnStandalone: 0
+--- !u!114 &11493556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d0364d44c2f314c99275d5a81ee40b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobileStick: {fileID: 105072}
 --- !u!114 &11494402
 MonoBehaviour:
   m_ObjectHideFlags: 1
