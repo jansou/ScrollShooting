@@ -21,6 +21,8 @@ public class TitleManager : MonoBehaviour
     int alpha = 255;
     private int state=0;
 
+	public Canvas dialogCanvas;
+
 
 	// Use this for initialization
 	void Start () 
@@ -36,6 +38,8 @@ public class TitleManager : MonoBehaviour
 
 		//Titleゲームオブジェクトを検索し取得する
 		title=GameObject.Find("Title");
+
+		dialogCanvas.enabled = false;
 
         StartCoroutine("FadeIn");
 	}
@@ -66,8 +70,9 @@ public class TitleManager : MonoBehaviour
     void OnGUI()
     {
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && Event.current.type == EventType.MouseDown && state != 0)
+        if (dialogCanvas.enabled == false && Event.current.type == EventType.MouseDown && state != 0)
         {
+			++state;
             GameStart();
         }
     }
@@ -77,6 +82,13 @@ public class TitleManager : MonoBehaviour
         audioSource.PlayOneShot(tapSE);
         StartCoroutine("FadeStart");
     }
+
+	public void GameRestart(){
+		dialogCanvas.enabled = false;
+	}
+	public void GameExit(){
+		Application.Quit();
+	}
 
     IEnumerator FadeStart()
     {
@@ -89,46 +101,17 @@ public class TitleManager : MonoBehaviour
         }
     }
 
-    	void Update()
+    void Update()
 	{
 		if(alpha > 250)
         {
-
             Application.LoadLevel("Home");
 		}
+
+		if(Input.GetKeyDown(KeyCode.Escape) /*&& Application.platform == RuntimePlatform.Android*/ && state == 1){
+			dialogCanvas.enabled = true;
+		}
 	}
-
-    /*
-	// Update is called once per frame
-	void Update () 
-	{
-        for (int i = 0; i < Input.touchCount; ++i)
-        {
-            //タッチ情報を取得する
-            Touch touch = Input.GetTouch(i);
-
-            //ゲーム中ではなく、タッチ直後であればtrueを返す。
-            if (IsPlaying() == false && touch.phase==TouchPhase.Began)
-            {
-                GameStart();
-            }
-        }
-
-        //ゲーム中ではなく、マウスクリックされたらtrueを返す。
-        if (IsPlaying() == false && Input.GetMouseButtonDown(0))
-        {
-            GameStart();
-        }
-
-        /*
-            //ゲーム中ではなく、Xキーを押されたらtrueを返す。
-            if (IsPlaying() == false && Input.GetKeyDown(KeyCode.X))
-            {
-                GameStart();
-            }
-         
-	}
-    */
 
 
 	public void GameOver()
@@ -139,36 +122,7 @@ public class TitleManager : MonoBehaviour
 		//ゲームオーバー時に、タイトルを表示する
 		title.SetActive (true);
 	}
-
-	//void GameStart()
-	//{
-      //  Application.LoadLevel("Home");
-        /*
-        //delete enemy bullet
-        GameObject[] enemyBullets;
-
-        enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
-
-        foreach (GameObject enemyBullet in enemyBullets)
-        {
-            Destroy(enemyBullet);
-        }
-        //delete player bullet
-        GameObject[] playerBullets;
-
-        playerBullets = GameObject.FindGameObjectsWithTag("PlayerBullet");
-
-        foreach (GameObject playerBullet in playerBullets)
-        {
-            Destroy(playerBullet);
-        }
-
-        //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
-        title.SetActive(false);
-
-		Instantiate (party, party.transform.position, party.transform.rotation);
-         */
-	//}
+	
 
 	public bool IsPlaying()
 	{

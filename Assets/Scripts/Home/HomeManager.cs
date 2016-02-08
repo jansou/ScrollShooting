@@ -82,6 +82,10 @@ public class HomeManager : MonoBehaviour
         {
 			LoadStage();
 		}
+
+		if(Input.GetKeyDown(KeyCode.Escape) && Application.platform == RuntimePlatform.Android){
+			ReturnTitle();
+		}
 	}
 
     IEnumerator FadeIn()
