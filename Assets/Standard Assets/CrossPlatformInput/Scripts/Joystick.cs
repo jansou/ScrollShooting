@@ -19,6 +19,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 		public string horizontalAxisName = "Horizontal"; // The name given to the horizontal axis for the cross platform input
 		public string verticalAxisName = "Vertical"; // The name given to the vertical axis for the cross platform input
 
+		Vector3 m_InitialPos;
 		Vector3 m_StartPos;
 		bool m_UseX; // Toggle for using the x axis
 		bool m_UseY; // Toggle for using the Y axis
@@ -27,13 +28,14 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		void Start()
 		{
+			m_InitialPos = transform.position;
 			m_StartPos = transform.position;
 			CreateVirtualAxes();
 		}
 
 		void UpdateVirtualAxes(Vector3 value)
 		{
-			var delta = m_StartPos - value;
+			var delta = m_InitialPos - value;
 			delta.y = -delta.y;
 			delta /= MovementRange;
 			if (m_UseX)
@@ -87,7 +89,30 @@ namespace UnityStandardAssets.CrossPlatformInput
 			transform.position = new Vector3(m_StartPos.x + newPos.x, m_StartPos.y + newPos.y, m_StartPos.z + newPos.z);
 			UpdateVirtualAxes(transform.position);
 		}
-
+		public void DrawByPos(Vector3 position){
+			Vector3 newPos = Vector3.zero;
+			
+			if (m_UseX)
+			{
+				int delta = (int)(position.x - m_StartPos.x);
+				delta = Mathf.Clamp(delta, - MovementRange, MovementRange);
+				newPos.x = delta;
+			}
+			
+			if (m_UseY)
+			{
+				int delta = (int)(position.y - m_StartPos.y);
+				delta = Mathf.Clamp(delta, -MovementRange, MovementRange);
+				newPos.y = delta;
+			}
+			transform.position = new Vector3(m_InitialPos.x + newPos.x, m_InitialPos.y + newPos.y, m_InitialPos.z + newPos.z);
+			UpdateVirtualAxes(transform.position);
+		}
+		public void SetStartPos(Vector3 position){
+			m_StartPos = position;
+			transform.position = m_InitialPos;
+			UpdateVirtualAxes(m_InitialPos);
+		}
 
 		public void OnPointerUp(PointerEventData data)
 		{
@@ -96,7 +121,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 		}
 
 
-		public void OnPointerDown(PointerEventData data) { }
+		public void OnPointerDown(PointerEventData data) {}
 
 		void OnDisable()
 		{
