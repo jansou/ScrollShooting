@@ -217,6 +217,12 @@ public class Player : MonoBehaviour
 		//レイヤー名を取得
 		string layerName = LayerMask.LayerToName (c.gameObject.layer);
 
+		//コイン取得
+		if(c.tag == "Coin"){
+			Destroy (c.gameObject);
+			return;
+		}
+
 		if (layerName == "Bullet(Enemy)" || layerName == "Enemy") 
 		{
             //ダメージ音
