@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
 
 		shotposition = transform.GetChild(0);
 
+		GameObject.Find(playerUIName).GetComponent<Button>().interactable = true;
         //HPgage関連
 		SetUIWindowColor(new Color32(255,255,255,255));
 		nearHpRenderer = transform.FindChild("HP_Gage").FindChild("HP").GetComponent<PlayerHP_Render>();
@@ -272,6 +273,9 @@ public class Player : MonoBehaviour
 			Destroy(gameObject);
 
 			SetUIWindowColor(new Color32(255,59,59,255));
+			GameObject.Find(playerUIName).GetComponent<Button>().interactable = false;
+
+			transform.parent.GetComponent<Party>().NotifyDeath(type);
 		}
 		else
 		{
