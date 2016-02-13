@@ -220,7 +220,8 @@ public class Player : MonoBehaviour
 
 		//コイン取得
 		if(c.tag == "Coin"){
-			Destroy (c.gameObject);
+			transform.parent.GetComponent<Party>().addMoney(c.GetComponent<Coin>().point);
+			Destroy(c.gameObject);
 			return;
 		}
 

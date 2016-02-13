@@ -21,6 +21,10 @@ public class Enemy : MonoBehaviour
     public AudioClip DamageSE;
     AudioSource audioSource;
 
+	public GameObject coin;
+	//撃破時のコイン
+	public int money = 10;
+
 	// Use this for initialization
 	IEnumerator Start () 
 	{
@@ -101,6 +105,9 @@ public class Enemy : MonoBehaviour
 
             //爆発
             spaceship.Explosion();
+
+			GameObject o = Instantiate(Resources.Load("Coin"),transform.position,Quaternion.identity) as GameObject;
+			o.GetComponent<Coin>().point = money;
 
 
             //エネミーの削除

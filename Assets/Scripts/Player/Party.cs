@@ -92,6 +92,9 @@ public class Party : MonoBehaviour {
 
 	public bool isPlayMode  =false; // true..start move and shot
 
+
+	int nowMoney = 0;
+
 	public void SetPlayMode(bool b){
 		isPlayMode = b;
 		for(int i=0; i<transform.childCount; ++i){
@@ -140,6 +143,9 @@ public class Party : MonoBehaviour {
 			Debug.LogWarning("SaveManager can't found");
 			return;
 		}
+
+		sm.money = nowMoney;
+
 		if(alexJoin){
 			sm.alex = alexStatus;
 		}
@@ -169,6 +175,9 @@ public class Party : MonoBehaviour {
 		if(!sm.IsLoaded()){
 			sm.Load();
 		}
+
+		nowMoney = sm.money;
+
 		if(alexJoin){
 			alexStatus = sm.alex;
 			LoadCharaFromSave(alex.GetComponent<Player>(),sm.alex);
@@ -454,6 +463,10 @@ public class Party : MonoBehaviour {
 
 	void SetMark(Transform t,string UIName,bool b){
 		t.FindChild(UIName).FindChild("LeaderMark").GetComponent<Image>().enabled = b;
+	}
+
+	public void addMoney(int m){
+		nowMoney += m;
 	}
 
 	public void NotifyDeath(Player.Type type){

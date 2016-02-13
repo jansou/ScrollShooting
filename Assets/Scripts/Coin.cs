@@ -10,6 +10,8 @@ public class Coin : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		transform.Translate(-Time.deltaTime*1,0,0);
+
 		sprite.Rotate(0,Time.deltaTime*150,0);
 	}
 }

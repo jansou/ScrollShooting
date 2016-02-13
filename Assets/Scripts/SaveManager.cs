@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SaveManager : MonoBehaviour {
 	const string stagePref = "ArrivedStage";
+	const string moneyPref ="NowMoney";
 	const string alexPref = "Alex";
 	const string guylusPref = "Guylus";
 	const string nelyPref = "Nely";
@@ -21,6 +22,8 @@ public class SaveManager : MonoBehaviour {
 	public Status nely;
 	public Status rinmaru;
 	public Status medhu;
+
+	public int money;
 
 	bool loaded = false;
 	public bool IsLoaded(){
@@ -62,7 +65,9 @@ public class SaveManager : MonoBehaviour {
 	}
 	public void Load(){
         if(!isDebug) arrivedStage = PlayerPrefs.GetInt(stagePref,0);
-		
+
+		money = PlayerPrefs.GetInt(moneyPref,0);
+
 		alex = GetStatus(alexPref);
 		guylus = GetStatus(guylusPref);
 		nely = GetStatus(nelyPref);
@@ -94,6 +99,8 @@ public class SaveManager : MonoBehaviour {
 
 	public void SaveData(){
 		PlayerPrefs.SetInt(stagePref,arrivedStage);
+		PlayerPrefs.SetInt(moneyPref,money);
+
 
 		SetStatus(alex,alexPref);
 		SetStatus(guylus,guylusPref);
