@@ -303,6 +303,7 @@ MonoBehaviour:
   isPlayMode: 0
   DamageSE: {fileID: 8300000, guid: 1c8fa9ad5f845154aaa84ba7f56a103e, type: 3}
   levelUpSE: {fileID: 8300000, guid: 3e38a380b05973c4c930f9821f8e33ee, type: 3}
+  GetCoinSE: {fileID: 8300000, guid: c0f1fb36c307f4c408865eaa62282cdf, type: 3}
 --- !u!114 &11462958
 MonoBehaviour:
   m_ObjectHideFlags: 1

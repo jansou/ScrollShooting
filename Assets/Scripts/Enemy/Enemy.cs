@@ -106,12 +106,23 @@ public class Enemy : MonoBehaviour
             //爆発
             spaceship.Explosion();
 
-			GameObject o = Instantiate(Resources.Load("Coin"),transform.position,Quaternion.identity) as GameObject;
-			o.GetComponent<Coin>().point = money;
+			//GameObject o = Instantiate(Resources.Load("Coin"),transform.position,Quaternion.identity) as GameObject;
+			//o.GetComponent<Coin>().point = money;
 
+            for (int i = 0; i < money;++i )
+            {
+                Vector3 pos = transform.position;
+                float max = 0.3f;
+                float min = -0.3f;
+                float x = Random.Range(min, max);
+                pos.x += x;
+                float y = Random.Range(min, max);
+                pos.y += y;
+                Instantiate(Resources.Load("Coin"), pos, Quaternion.identity);
+            }
 
-            //エネミーの削除
-            Destroy(gameObject);
+                //エネミーの削除
+                Destroy(gameObject);
         }
         else
         {

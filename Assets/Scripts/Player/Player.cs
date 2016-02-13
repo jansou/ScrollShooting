@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
     public AudioClip DamageSE;
     AudioSource audioSource;
     public AudioClip levelUpSE;
+    public AudioClip GetCoinSE;
 
 	IEnumerator Start()
 	{
@@ -221,6 +222,7 @@ public class Player : MonoBehaviour
 		//コイン取得
 		if(c.tag == "Coin"){
 			transform.parent.GetComponent<Party>().addMoney(c.GetComponent<Coin>().point);
+            audioSource.PlayOneShot(GetCoinSE);
 			Destroy(c.gameObject);
 			return;
 		}
