@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class Party : MonoBehaviour {
 
@@ -401,6 +402,7 @@ public class Party : MonoBehaviour {
         transform.position = pos;
     }
 
+
 	public void ChangeFormation(){
 		if(formation == Formation.Alex){
 			SetFormation(Formation.Guylus);
@@ -418,6 +420,7 @@ public class Party : MonoBehaviour {
 			SetFormation(Formation.Alex);
 		}
 	}
+
 
     public void addExp(int point)
     {
@@ -448,4 +451,61 @@ public class Party : MonoBehaviour {
 			medhuStatus = GetCharaStatus(medhu.GetComponent<Player>());
 		}
     }
+
+	void SetMark(Transform t,string UIName,bool b){
+		t.FindChild(UIName).FindChild("LeaderMark").GetComponent<Image>().enabled = b;
+	}
+
+	public void NotifyDeath(Player.Type type){
+		bool changeForm = false;
+		switch(type){
+		case Player.Type.Alex:
+			changeForm = formation == Formation.Alex;
+			break;
+		case Player.Type.Guylus:
+			changeForm = formation == Formation.Guylus;
+			break;
+		case Player.Type.Nely:
+			changeForm = formation == Formation.Nely;
+			break;
+		case Player.Type.Rinmaru:
+			changeForm = formation == Formation.Rinmaru;
+			break;
+		case Player.Type.Medhu:
+			changeForm = formation == Formation.Medhu;
+			break;
+		}
+
+
+
+		if(changeForm){
+			Transform t = GameObject.Find("Players").transform;
+			SetMark (t,"1stPlayer",false);
+			SetMark (t,"2ndPlayer",false);
+			SetMark (t,"3rdPlayer",false);
+			SetMark (t,"4thPlayer",false);
+			SetMark (t,"5thPlayer",false);
+
+			if(alex && type != Player.Type.Alex){
+				SetMark (t,"1stPlayer",true);
+				SetFormation(Formation.Alex);
+			}
+			else if(guylus && type != Player.Type.Guylus){
+				SetMark (t,"2ndPlayer",true);
+				SetFormation(Formation.Guylus);
+			}
+			else if(nely && type != Player.Type.Nely){
+				SetMark (t,"3rdPlayer",true);
+				SetFormation(Formation.Nely);
+			}
+			else if(rinmaru && type != Player.Type.Rinmaru){
+				SetMark (t,"4thPlayer",true);
+				SetFormation(Formation.Rinmaru);
+			}
+			else if(medhu && type != Player.Type.Medhu){
+				SetMark (t,"5thPlayer",true);
+				SetFormation(Formation.Medhu);
+			}
+		}
+	}
 }

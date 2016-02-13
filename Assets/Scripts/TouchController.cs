@@ -19,7 +19,6 @@ public class TouchController : MonoBehaviour {
 		}
 
 		if(Input.GetMouseButtonDown(0)){
-			Debug.Log ("down");
 			center = Input.mousePosition;
 			//mobileStick.transform.position = center;
 			joystick.SetStartPos(center);

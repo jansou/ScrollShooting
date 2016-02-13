@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
 
 		shotposition = transform.GetChild(0);
 
+		GameObject.Find(playerUIName).GetComponent<Button>().interactable = true;
         //HPgage関連
 		SetUIWindowColor(new Color32(255,255,255,255));
 		nearHpRenderer = transform.FindChild("HP_Gage").FindChild("HP").GetComponent<PlayerHP_Render>();
@@ -217,6 +218,12 @@ public class Player : MonoBehaviour
 		//レイヤー名を取得
 		string layerName = LayerMask.LayerToName (c.gameObject.layer);
 
+		//コイン取得
+		if(c.tag == "Coin"){
+			Destroy (c.gameObject);
+			return;
+		}
+
 		if (layerName == "Bullet(Enemy)" || layerName == "Enemy") 
 		{
             //ダメージ音
@@ -266,6 +273,9 @@ public class Player : MonoBehaviour
 			Destroy(gameObject);
 
 			SetUIWindowColor(new Color32(255,59,59,255));
+			GameObject.Find(playerUIName).GetComponent<Button>().interactable = false;
+
+			transform.parent.GetComponent<Party>().NotifyDeath(type);
 		}
 		else
 		{
