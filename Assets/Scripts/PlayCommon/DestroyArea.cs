@@ -28,7 +28,7 @@ public class DestroyArea : MonoBehaviour {
 		if(c.tag == "PlayerBullet"){
 			Destroy(c.transform.parent.gameObject);
 		}
-		else if(c.tag == "EnemyBullet" || c.tag == "Enemy"){
+		else if(c.tag == "EnemyBullet" || c.tag == "Enemy" || c.tag == "Coin"){
 			Destroy (c.gameObject);
 		}
 	}
