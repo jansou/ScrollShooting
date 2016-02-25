@@ -469,6 +469,26 @@ public class Party : MonoBehaviour {
 		nowMoney += m;
 	}
 
+	public void UseItemToMember(ItemType item,int num){
+		switch(num){
+		case 0:
+			alex.GetComponent<Player>().UseItem(item);
+			break;
+		case 1:
+			guylus.GetComponent<Player>().UseItem(item);
+			break;
+		case 2:
+			nely.GetComponent<Player>().UseItem(item);
+			break;
+		case 3:
+			rinmaru.GetComponent<Player>().UseItem(item);
+			break;
+		case 4:
+			medhu.GetComponent<Player>().UseItem(item);
+			break;
+		}
+	}
+
 	public void NotifyDeath(Player.Type type){
 		bool changeForm = false;
 		switch(type){

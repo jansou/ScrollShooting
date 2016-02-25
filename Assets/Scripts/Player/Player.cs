@@ -295,6 +295,7 @@ public class Player : MonoBehaviour
     {
 		hp = Mathf.Min(hp+recover,maxHP);
 		hpRenderer.SetHP(hp);
+		hpText.text = hp.ToString()+"/"+maxHP.ToString();
 	}
 
 	public void addExp(int point)
@@ -318,6 +319,20 @@ public class Player : MonoBehaviour
 			hpText.text = hp.ToString()+"/"+maxHP.ToString();
 		}
 		
+	}
+
+	public void UseItem(ItemType item){
+		switch(item){
+		case ItemType.NormalHerb:
+			recoveryHP(30);
+			FindObjectOfType<MessageWindow>().showMessage("HPがかいふくした！");
+			break;
+		case ItemType.NiceHerb:
+			recoveryHP(80);
+			FindObjectOfType<MessageWindow>().showMessage("HPがかいふくした！");
+			break;
+
+		}
 	}
 
 	int nextLevel()

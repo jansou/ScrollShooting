@@ -286,26 +286,51 @@ public class Manager : MonoBehaviour
 	void SetMark(Transform t,string UIName,bool b){
 		GameObject.Find("Players").transform.FindChild(UIName).FindChild("LeaderMark").GetComponent<Image>().enabled = b;
 	}
-
-	int selectnum;
+	
+	int selectnum = -1; // -1..選択していない
 	public void SelectCharacter(int num){
 		if(usingItem){
-			selectnum = num;
-			Transform playerUIs = GameObject.Find("Players").transform;
-			if(joinAlex){
-				playerUIs.FindChild("1stPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 0);
+			//２回押された
+			if(selectnum == num){
+				ItemWindowManager iwm = FindObjectOfType<ItemWindowManager>();
+				ItemType type = iwm.selectType;
+
+				if(type != ItemType.None){
+					createdParty.GetComponent<Party>().UseItemToMember(type,num);
+
+					Time.timeScale = 1;
+					itemWindow.SetActive(false);
+					usingItem = false;
+
+					iwm.ResetPanel();
+					selectnum = -1;
+
+					Transform playerUIs = GameObject.Find("Players").transform;
+					playerUIs.FindChild("1stPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+					playerUIs.FindChild("2ndPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+					playerUIs.FindChild("3rdPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+					playerUIs.FindChild("4thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+					playerUIs.FindChild("5thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+				}
 			}
-			if(joinGuylus){
-				playerUIs.FindChild("2ndPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 1);
-			}
-			if(joinNely){
-				playerUIs.FindChild("3rdPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 2);
-			}
-			if(joinRinmaru){
-				playerUIs.FindChild("4thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 3);
-			}
-			if(joinMedhu){
-				playerUIs.FindChild("5thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 4);
+			else{
+				selectnum = num;
+				Transform playerUIs = GameObject.Find("Players").transform;
+				if(joinAlex){
+					playerUIs.FindChild("1stPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 0);
+				}
+				if(joinGuylus){
+					playerUIs.FindChild("2ndPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 1);
+				}
+				if(joinNely){
+					playerUIs.FindChild("3rdPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 2);
+				}
+				if(joinRinmaru){
+					playerUIs.FindChild("4thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 3);
+				}
+				if(joinMedhu){
+					playerUIs.FindChild("5thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 4);
+				}
 			}
 		}
 		else{

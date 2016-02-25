@@ -4,7 +4,8 @@ using System.Collections;
 public enum ItemType{
 	NormalHerb,
 	NiceHerb,
-	Orb
+	Orb,
+	None
 };
 
 public class ItemData : MonoBehaviour {
