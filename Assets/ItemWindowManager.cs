@@ -7,7 +7,7 @@ public class ItemWindowManager : MonoBehaviour {
 	public Transform content;
 	public Text bottomText;
 
-	public ItemType selectType;
+	public ItemType selectType = ItemType.None;
 	// Use this for initialization
 	void Start () {
 		GameObject o = Resources.Load("niceherb") as GameObject;
@@ -19,6 +19,19 @@ public class ItemWindowManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void ResetPanel(){
+		//ボタンの色を設定
+		for(int i=0; i<content.childCount; ++i){
+			ColorBlock cb = content.GetChild(i).GetComponent<Button>().colors;
+			cb.normalColor = new Color32(0,0,0,0);
+			cb.highlightedColor = new Color32(0,0,0,0);
+			content.GetChild(i).GetComponent<Button>().colors = cb;
+		}
+		selectType = ItemType.None;
+
+		bottomText.text = "アイテムを選んでください";
 	}
 
 	public void CreatePanelByData(ItemData data){
@@ -41,6 +54,7 @@ public class ItemWindowManager : MonoBehaviour {
 				cb.highlightedColor = new Color32(0,0,0,0);
 				content.GetChild(i).GetComponent<Button>().colors = cb;
 			}
+
 			ColorBlock cblock = o.GetComponent<Button>().colors;
 			cblock.normalColor = Color.white;
 			cblock.highlightedColor = Color.white;
