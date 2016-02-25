@@ -65,7 +65,7 @@ public class StandGameManager : MonoBehaviour
         {
             if (state == 1)
             {
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(1.0f);
 
                 audioSource.PlayOneShot(SE);
                 before.sprite = after;
@@ -85,7 +85,7 @@ public class StandGameManager : MonoBehaviour
             if (state == 2)
             {
 
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(1.0f);
 
                 state += 1;
 
