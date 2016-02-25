@@ -17,10 +17,13 @@ public class Manager : MonoBehaviour
 
 	public GameObject pause;
 
+	private GameObject itemWindow;
+
     //闘技場用
     public bool isArcade=false;
 
 	bool paused = false;
+	bool usingItem = false;
 
     public bool joinAlex = false;
     public bool joinGuylus = false;
@@ -53,6 +56,7 @@ public class Manager : MonoBehaviour
 		clear=GameObject.Find("ClearCanvas");
 		pause=GameObject.Find("PauseCanvas");
 		gameover=GameObject.Find("GameOverCanvas");
+		itemWindow = GameObject.Find("ItemCanvas");
 
 		Transform playerUIs = GameObject.Find("Players").transform;
 
@@ -69,6 +73,8 @@ public class Manager : MonoBehaviour
 		gameover.SetActive(false);
 		clear.SetActive(false);
 		pause.SetActive(false);
+
+		itemWindow.SetActive(false);
 
 		GameStart();
 	}
@@ -112,6 +118,7 @@ public class Manager : MonoBehaviour
         //audioSource.Stop(gameoverSE);
 		GameStart();
 	}
+	
 
 	public void GameOver()
 	{
@@ -260,8 +267,50 @@ public class Manager : MonoBehaviour
 		}
 	}
 
+	public void GameUseItem()
+	{
+		if(usingItem)
+		{
+			Time.timeScale = 1;
+			itemWindow.SetActive(false);
+			usingItem = false;
+		}
+		else
+		{
+			Time.timeScale = 0;
+			itemWindow.SetActive(true);
+			usingItem = true;
+		}
+	}
+
 	void SetMark(Transform t,string UIName,bool b){
 		GameObject.Find("Players").transform.FindChild(UIName).FindChild("LeaderMark").GetComponent<Image>().enabled = b;
+	}
+
+	int selectnum;
+	public void SelectCharacter(int num){
+		if(usingItem){
+			selectnum = num;
+			Transform playerUIs = GameObject.Find("Players").transform;
+			if(joinAlex){
+				playerUIs.FindChild("1stPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 0);
+			}
+			if(joinGuylus){
+				playerUIs.FindChild("2ndPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 1);
+			}
+			if(joinNely){
+				playerUIs.FindChild("3rdPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 2);
+			}
+			if(joinRinmaru){
+				playerUIs.FindChild("4thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 3);
+			}
+			if(joinMedhu){
+				playerUIs.FindChild("5thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = (num == 4);
+			}
+		}
+		else{
+			SetPartyForm(num);
+		}
 	}
 
 	public void SetPartyForm(int formnum)
