@@ -47,7 +47,7 @@ public class BulletManager : MonoBehaviour {
         RockBullet,
 	};
 
-	public void Shot(Transform origin, int shotPower,int shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
+	public void Shot(Transform origin, int shotPower,float shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
 	{
 		GameObject b = bullet;
 		switch(type){

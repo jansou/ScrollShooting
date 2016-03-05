@@ -62,12 +62,28 @@ public class RockGoblin : MonoBehaviour
             //common.Shot(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
             //common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.AllowBullet, 2, 20);
 
-            common.Shot(s1, 30, power, speed, BulletManager.BulletType.RockBullet);
-   
+            //common.Shot(s1, 30, power, speed, BulletManager.BulletType.RockBullet);
+
+			ShotThrowAim(s1,pt,power,speed,BulletManager.BulletType.RockBullet);
             yield return new WaitForSeconds(spaceship.shotDelay);
         }
 
     }
+
+	public void ShotThrowAim(Transform origin,Transform aim, int shotPower,int shotSpeed, BulletManager.BulletType type){
+		if(aim){
+			Vector3 d = aim.position - transform.position;
+			Vector3 v = Vector3.zero;
+			v.x = d.x / 2;
+			v.y = d.y / 2 + 0.5f * 2 * 3f;
+			//v.y = d.y / 10;
+			origin.localRotation = Quaternion.FromToRotation(Vector3.up,v);
+			spaceship.Shot(origin,shotPower,v.magnitude,type);
+		}
+		else{
+			common.Shot (origin,90,shotPower,shotSpeed,type);
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {

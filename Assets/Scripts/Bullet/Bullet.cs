@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
 {
 
 	//弾のスピード
-	public int speed = 10;
+	public float speed = 10;
 	// Use this for initialization
 
 	//ゲームオブジェクト生成から削除するまでの時間
