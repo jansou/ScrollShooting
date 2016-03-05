@@ -11,6 +11,7 @@ public class Harubadia : MonoBehaviour
 
     //SE関係
     public AudioClip shootSE;
+    public AudioClip shootSE2;
     //public AudioClip skillSE;
     AudioSource audioSource;
 
@@ -35,7 +36,7 @@ public class Harubadia : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 
         StartCoroutine("Stop");
-        StartCoroutine("Attack1");
+        
 
         yield break;
 	}
@@ -43,11 +44,13 @@ public class Harubadia : MonoBehaviour
     IEnumerator Stop()
     {
         //yield return new WaitForSeconds(1.0f);
-        while (this.transform.position.x > 2.0f)
+        while (this.transform.position.x >4.0f)//4.0がちょうど画面はじ
         { yield return new WaitForSeconds(1.0f); }
 
         //audioSource.PlayOneShot(shootSE);
         enemy.MoveStop();
+        spaceship.speed *= 2;
+        StartCoroutine("Attack1");
         //enemy.MoveAim(transform.position, pt.position, 4);
         yield return null;
     }
@@ -57,7 +60,14 @@ public class Harubadia : MonoBehaviour
 
         while (true)
         {
-            audioSource.PlayOneShot(shootSE);
+
+            AimRun();
+
+            yield return new WaitForSeconds(0.5f);
+
+            enemy.MoveStop();
+
+            audioSource.PlayOneShot(shootSE2);
             //common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
             //common.Shot(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
             //common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.AllowBullet, 2, 20);
@@ -66,10 +76,20 @@ public class Harubadia : MonoBehaviour
             common.Shot(s1, 60 + 30, power, speed, BulletManager.BulletType.SlashBullet);
             common.Shot(s1, 120 + 30, power, speed, BulletManager.BulletType.SlashBullet);
 
-            yield return new WaitForSeconds(spaceship.shotDelay);
+            yield return new WaitForSeconds(1.0f);
         }
 
     }
+
+    void AimRun()
+    {
+		if(pt){
+        	audioSource.PlayOneShot(shootSE);
+        	
+			enemy.MoveAim(transform.position,pt.position,4);
+		}
+        
+	}
 
 	// Update is called once per frame
 	void Update () {
