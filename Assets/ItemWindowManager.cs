@@ -18,24 +18,52 @@ public class ItemWindowManager : MonoBehaviour {
 	HomeItemWindowManager homeManager;
 	// Use this for initialization
 	void Start () {
+		//ホーム用
+		homeManager = FindObjectOfType<HomeItemWindowManager>();
+
+		CreatePanels();
+	}
+
+	void CreatePanels(){
 		//持ち物
 		if(displayType == DisplayType.HasItem){
-			CreateByItemName("normalherb");
+			SaveManager sm = FindObjectOfType<SaveManager>();
+			SaveManager.ItemNumInfo items = sm.itemNumInfo;
+			if(items.normalHerb > 0){
+				CreateByItemName("normalherb",items.normalHerb);
+			}
+			if(items.niceHerb> 0){
+				CreateByItemName("niceHerb",items.niceHerb);
+			}
+			if(items.greatHerb> 0){
+				CreateByItemName("greatHerb",items.greatHerb);
+			}
+			if(items.lifeOrb> 0){
+				CreateByItemName("lifeOrb",items.lifeOrb);
+			}
+			if(items.greatLifeOrb> 0){
+				CreateByItemName("greatLifeOrb",items.greatLifeOrb);
+			}
 		}
 		//お店
 		else{
-			CreateByItemName("normalherb");
-			CreateByItemName("niceherb");
-			CreateByItemName("greatherb");
+			CreateByItemName("normalherb",0);
+			CreateByItemName("niceherb",0);
+			CreateByItemName("greatherb",0);
 		}
-
-		//ホーム用
-		homeManager = FindObjectOfType<HomeItemWindowManager>();
 	}
 
-	void CreateByItemName(string itemName){
+	//持ち物が増減した時にパネルを再生成
+	public void RecreatePanel(){
+		for(int i=0; i<content.childCount; ++i){
+			Destroy(content.GetChild(i).gameObject);
+		}
+		CreatePanels();
+	}
+
+	void CreateByItemName(string itemName,int num){
 		GameObject o = Resources.Load(itemName) as GameObject;
-		CreatePanelByData(o.GetComponent<ItemData>());
+		CreatePanelByData(o.GetComponent<ItemData>(),num);
 	}
 	
 	// Update is called once per frame
@@ -60,8 +88,8 @@ public class ItemWindowManager : MonoBehaviour {
 		}
 	}
 	
-	public void CreatePanelByData(ItemData data){
-		GameObject o = CreatePanel(data);
+	public void CreatePanelByData(ItemData data,int num){
+		GameObject o = CreatePanel(data,num);
 
 		o.GetComponent<Button>().onClick.AddListener(() => {
 			selectType = data.type;
@@ -69,7 +97,7 @@ public class ItemWindowManager : MonoBehaviour {
 
 			//ホーム画面なら
 			if(homeManager){
-				homeManager.changePrice(data.price);
+				homeManager.ChangeItem(data);
 			}
 
 			ResetColor();
@@ -80,11 +108,12 @@ public class ItemWindowManager : MonoBehaviour {
 			o.GetComponent<Button>().colors = cblock;
 		});
 	}
-	GameObject CreatePanel(ItemData data){
+	GameObject CreatePanel(ItemData data,int num){
 		GameObject o = Instantiate(panel);
 		Transform t = o.transform;
 		t.FindChild("NameText").GetComponent<Text>().text = data.itemname;
-		t.FindChild("NumberText").GetComponent<Text>().text = "X1";
+		string numstr = num > 0 ? "X" + num.ToString() : "";
+		t.FindChild("NumberText").GetComponent<Text>().text = numstr;
 		t.FindChild("Image").GetComponent<Image>().sprite = data.image;
 		t.SetParent(content);
 		t.localScale = new Vector3(1,1,1);

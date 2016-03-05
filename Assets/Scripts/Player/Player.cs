@@ -331,7 +331,13 @@ public class Player : MonoBehaviour
 			recoveryHP(80);
 			FindObjectOfType<MessageWindow>().showMessage("HPがかいふくした！");
 			break;
-
+		case ItemType.GreatHerb:
+			recoveryHP(200);
+			FindObjectOfType<MessageWindow>().showMessage("HPがかいふくした！");
+			break;
+		default:
+			FindObjectOfType<MessageWindow>().showMessage("そのアイテムはまだ存在していません！");
+			break;
 		}
 	}
 

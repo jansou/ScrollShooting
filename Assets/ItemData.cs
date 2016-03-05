@@ -4,7 +4,9 @@ using System.Collections;
 public enum ItemType{
 	NormalHerb,
 	NiceHerb,
-	Orb,
+	GreatHerb,
+	LifeOrb,
+	GreatLifeOrb,
 	None
 };
 
