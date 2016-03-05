@@ -303,6 +303,26 @@ public class Manager : MonoBehaviour
 				if(type != ItemType.None){
 					createdParty.GetComponent<Party>().UseItemToMember(type,num);
 
+					SaveManager sm = FindObjectOfType<SaveManager>();
+					switch(type){
+					case ItemType.NormalHerb:
+						--sm.itemNumInfo.normalHerb;
+						break;
+					case ItemType.NiceHerb:
+						--sm.itemNumInfo.niceHerb;
+						break;
+					case ItemType.GreatHerb:
+						--sm.itemNumInfo.greatHerb;
+						break;
+					case ItemType.LifeOrb:
+						--sm.itemNumInfo.lifeOrb;
+						break;
+					case ItemType.GreatLifeOrb:
+						--sm.itemNumInfo.greatLifeOrb;
+						break;
+					}
+					iwm.RecreatePanel();
+
 					Time.timeScale = 1;
 					itemWindow.SetActive(false);
 					usingItem = false;

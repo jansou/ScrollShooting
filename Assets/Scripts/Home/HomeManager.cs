@@ -119,7 +119,7 @@ public class HomeManager : MonoBehaviour
     void OnGUI()
     {
 
-        if (tapHit() == "ContinueButton" && state != 0)//それぞれのボタンを設定する
+        if (tapHit() == "ContinueButton" && state != 0 && itemShopCanvas.enabled == false)//それぞれのボタンを設定する
         {
             selectnum = FindObjectOfType<SaveManager>().arrivedStage;
 			GameStart();
@@ -129,6 +129,9 @@ public class HomeManager : MonoBehaviour
 	public void GotoShop(){
 		itemShopCanvas.enabled = true;
 		FindObjectOfType<HomeItemWindowManager>().InitWindow();
+	}
+	public void ReturnFromShop(){
+		itemShopCanvas.enabled = false;
 	}
 
 	public void ReturnTitle()
