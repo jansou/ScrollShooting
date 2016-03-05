@@ -22,6 +22,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stage04.unity
   - enabled: 1
+    path: Assets/Stage05.unity
+  - enabled: 1
+    path: Assets/Stage06.unity
+  - enabled: 1
     path: Assets/Stage.unity
   - enabled: 1
     path: Assets/StageEX.unity
