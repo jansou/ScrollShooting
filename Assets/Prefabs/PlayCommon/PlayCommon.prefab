@@ -6311,6 +6311,7 @@ MonoBehaviour:
   grandSlash: {fileID: 122868, guid: 36cb8be924cce8843a0774fd40c9d294, type: 2}
   darknessCore: {fileID: 173366, guid: 5b515b4d0a2a54f45a8a25bb513e058c, type: 2}
   darkChaser: {fileID: 129436, guid: 2b7ac93986869634ba7c30beaa5cfa85, type: 2}
+  rockBullet: {fileID: 182144, guid: 5e41a5cca5701aa49bdc809ae7ac5977, type: 2}
 --- !u!114 &11485744
 MonoBehaviour:
   m_ObjectHideFlags: 1

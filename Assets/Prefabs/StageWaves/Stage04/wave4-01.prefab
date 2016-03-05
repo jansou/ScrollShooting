@@ -42,11 +42,9 @@ MonoBehaviour:
   enemies:
   - {fileID: 166304, guid: 9ed18ed50a3448a4eaa3213e9b4952aa, type: 2}
   - {fileID: 197102, guid: 61144ccf2d2d531478969f0cc72d3d5b, type: 2}
-  - {fileID: 166304, guid: 9ed18ed50a3448a4eaa3213e9b4952aa, type: 2}
   enemypositions:
   - {x: 4, y: 1, z: 0}
   - {x: 5, y: 0, z: 0}
-  - {x: 6, y: -1, z: 0}
   isBoss: 0
   useSpecialBGM: 0
 --- !u!1001 &100100000
