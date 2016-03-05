@@ -37,9 +37,13 @@ public class HomeManager : MonoBehaviour
 
 	bool firstSelect = true;// for SelectStage's sound
 
+	public Canvas itemShopCanvas;
+
 	// Use this for initialization
 	void Start () 
 	{
+		itemShopCanvas.enabled = false;
+
         //SE関係
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = BGM;
@@ -121,6 +125,11 @@ public class HomeManager : MonoBehaviour
 			GameStart();
         }
     }
+	
+	public void GotoShop(){
+		itemShopCanvas.enabled = true;
+		FindObjectOfType<HomeItemWindowManager>().InitWindow();
+	}
 
 	public void ReturnTitle()
 	{

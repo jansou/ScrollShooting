@@ -269,6 +269,11 @@ public class Manager : MonoBehaviour
 
 	public void GameUseItem()
 	{
+		//スタート中,クリア中なら何もしない
+		if(title.activeSelf == true || clear.activeSelf == true){
+			return;
+		}
+
 		if(usingItem)
 		{
 			Time.timeScale = 1;
