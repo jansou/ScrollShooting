@@ -8,7 +8,7 @@ public class BossDemo : MonoBehaviour {
 
     public int power=2;
     public int shotSpeed = 3;
-    private int count=0;
+    //private int count=0;
 
 	Transform s2;
 	Transform pt;

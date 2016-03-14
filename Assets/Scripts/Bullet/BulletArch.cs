@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BulletArch : MonoBehaviour {
     //Transform pt;
-	Rigidbody2D rigid;
-	float spd;
+	//Rigidbody2D rigid;
+	//float spd;
 
     /// <summary>
     public Transform Target;
@@ -26,8 +26,8 @@ public class BulletArch : MonoBehaviour {
     void Start()
     {
         //pt = FindObjectOfType<Party>().transform;
-        rigid = GetComponent<Rigidbody2D>();
-        spd = GetComponent<Bullet>().speed;
+        //rigid = GetComponent<Rigidbody2D>();
+        //spd = GetComponent<Bullet>().speed;
 
         Target = FindObjectOfType<Party>().transform;
         Projectile = transform;

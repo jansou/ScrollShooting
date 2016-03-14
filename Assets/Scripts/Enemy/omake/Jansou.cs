@@ -10,7 +10,7 @@ public class Jansou : MonoBehaviour {
     public int speed = 2;
 	
 	Transform s2;
-	Transform pt;
+	//Transform pt;
 	
 	//SE関係
 	public AudioClip shootSE;
@@ -31,7 +31,7 @@ public class Jansou : MonoBehaviour {
 		//
 		
 		s2 = common.CreateShotPosition();
-		pt = FindObjectOfType<Party>().transform;
+		//pt = FindObjectOfType<Party>().transform;
 		
 		FindObjectOfType<MessageWindow>().showMessage("メテオ");
 		
@@ -72,8 +72,8 @@ public class Jansou : MonoBehaviour {
             {
                 audioSource.PlayOneShot(shootSE);
 
-                int a = Random.Range(0, 6);
-                float face = (a % 2 == 0) ? 1.0f : -1.0f;
+               // int a = Random.Range(0, 6);
+                //float face = (a % 2 == 0) ? 1.0f : -1.0f;
                 //face = (a % 3 == 0) ? 0.5f : face;
 
                 for (int n = 0; n < 6; ++n)

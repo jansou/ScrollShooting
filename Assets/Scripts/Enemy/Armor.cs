@@ -15,7 +15,7 @@ public class Armor : MonoBehaviour
     AudioSource audioSource;
 
     Transform s1;
-    Transform pt;
+    //Transform pt;
 
 	IEnumerator Start () 
     {
@@ -30,7 +30,7 @@ public class Armor : MonoBehaviour
         //
 
 		s1 = common.CreateShotPosition();
-        pt = FindObjectOfType<Party>().transform;
+        //pt = FindObjectOfType<Party>().transform;
 
 		yield return new WaitForEndOfFrame();
 

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TalkEvent : MonoBehaviour {
-	Spaceship spaceship;
+	//Spaceship spaceship;
 	EnemyCommon common;
     Enemy enemy;
 
@@ -23,7 +23,7 @@ public class TalkEvent : MonoBehaviour {
     // Use this for initialization
 	IEnumerator Start () 
     {
-		spaceship = GetComponent<Spaceship> ();
+		//spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
         enemy = GetComponent<Enemy>();
 		common.Init();
