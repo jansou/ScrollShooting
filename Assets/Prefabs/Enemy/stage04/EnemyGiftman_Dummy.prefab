@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
-  point: 200
+  point: 50
   touchDamage: 1
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
@@ -264,10 +264,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 106748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe36dcb052aa016498db5bdca94f0d51, type: 3}
+  m_Script: {fileID: 11500000, guid: b1de1760e54b6d447991adfb98f42b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 2
+  shotSpeed: 1
   shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
 --- !u!114 &11432436

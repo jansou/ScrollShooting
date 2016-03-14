@@ -57,6 +57,15 @@ public class EnemyCommon : MonoBehaviour {
 			Shot (origin,90,shotPower,shotSpeed,type);
 		}
 	}
+
+    public void ShotStoneFall(Transform origin, int shotPower, int shotSpeed, BulletManager.BulletType type)
+    {
+        for(int i=0;i<5;++i)
+        {
+            origin.localPosition = new Vector3(Random.Range(-3.0f, 3.0f), i, origin.localPosition.z);
+            spaceship.Shot(origin, shotPower, shotSpeed, type);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
