@@ -36,7 +36,6 @@ public class RockGoblin : MonoBehaviour
 
         StartCoroutine("Stop");
         StartCoroutine("Attack1");
-
         yield break;
 	}
 
@@ -49,6 +48,7 @@ public class RockGoblin : MonoBehaviour
         //audioSource.PlayOneShot(shootSE);
         enemy.MoveStop();
         //enemy.MoveAim(transform.position, pt.position, 4);
+        
         yield return null;
     }
 
