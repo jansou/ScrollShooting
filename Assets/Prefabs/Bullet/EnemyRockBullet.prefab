@@ -12,7 +12,6 @@ GameObject:
   - 114: {fileID: 11463306}
   - 50: {fileID: 5075194}
   - 58: {fileID: 5816542}
-  - 114: {fileID: 11456164}
   m_Layer: 11
   m_Name: EnemyRockBullet
   m_TagString: EnemyBullet
@@ -60,23 +59,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .140868038
---- !u!114 &11456164
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182144}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0909676bd1976d247bb19103366d94f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  firingAngle: 30
-  gravity: 9.80000019
-  Projectile: {fileID: 0}
-  Vx: 0
-  Vy: 0
 --- !u!114 &11463306
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = DamageSE;
         //
+        spaceship.GetAnimator().SetTrigger("Stand");//Standアニメーションを行う
 
 		//canShotがfalseの場合、ここでコルーチンを終了させる
 		if (spaceship.canShot == false) 
