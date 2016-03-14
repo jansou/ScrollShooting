@@ -95,11 +95,14 @@ public class Player : MonoBehaviour
 		hpText.text = hp.ToString()+"/"+maxHP.ToString();
 		levelText.text = "Lv" + level.ToString();
 
+		/*
+
 		while(isPlayMode == false){
 			yield return new WaitForEndOfFrame();
 		}
 
 		yield return new WaitForEndOfFrame();// for SpaceShip.Start()
+
 
 		while (isPlayMode == true) 
 		{
@@ -110,13 +113,15 @@ public class Player : MonoBehaviour
 
 			yield return new WaitForSeconds(spaceship.shotDelay);
 		}
+		*/
+		yield return null;
 	}
 
 	public void SetFormation(Party.Formation form){
 		formation = form;
 	}
 
-	void Attack(){
+	public void Attack(){
 		switch(formation){
 		case Party.Formation.Alex:
 			shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
@@ -289,6 +294,11 @@ public class Player : MonoBehaviour
 		nearHpRenderer.SetHP(hp);
 		hpRenderer.SetHP(hp);
 		hpText.text = hp.ToString()+"/"+maxHP.ToString();
+	}
+
+	public void RecoverPanel(){
+		SetUIWindowColor(new Color32(255,255,255,255));
+		GameObject.Find(playerUIName).GetComponent<Button>().interactable = true;
 	}
 
     public void recoveryHP(int recover)

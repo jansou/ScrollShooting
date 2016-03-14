@@ -3569,7 +3569,7 @@ MonoBehaviour:
   panel: {fileID: 183646, guid: 30d9cc91e9f6a334b86c82d8c5783eb9, type: 2}
   content: {fileID: 22408168}
   bottomText: {fileID: 11405754}
-  selectType: 0
+  selectType: 5
   displayType: 0
 --- !u!114 &11414220
 MonoBehaviour:

@@ -136,6 +136,8 @@ public class Party : MonoBehaviour {
         SetFormation(formation);
 
 		LoadPartyFromSave();
+
+		StartCoroutine("ShotRoutine");
     }
 	public void SaveParty(){
 		SaveManager sm = FindObjectOfType<SaveManager>();
@@ -218,7 +220,6 @@ public class Party : MonoBehaviour {
     {
 		GameObject o = (GameObject)Instantiate(chara);
 		o.transform.SetParent(transform);
-        
 		return o;
 	}
 
@@ -228,6 +229,36 @@ public class Party : MonoBehaviour {
 				Debug.Log ("[Party.cs]All HP 1");
 				transform.GetChild(i).GetComponent<Player>().hp = 1;
 			}
+		}
+	}
+
+	IEnumerator ShotRoutine(){
+		while(isPlayMode == false){
+			yield return new WaitForEndOfFrame();
+		}
+		
+		yield return new WaitForEndOfFrame();// for SpaceShip.Start()
+		
+		while (isPlayMode == true) 
+		{
+			if(alex){
+				alex.GetComponent<Player>().Attack();
+			}
+			if(guylus){
+				guylus.GetComponent<Player>().Attack();
+			}
+			if(nely){
+				nely.GetComponent<Player>().Attack();
+			}
+			if(rinmaru){
+				rinmaru.GetComponent<Player>().Attack();
+			}
+			if(medhu){
+				medhu.GetComponent<Player>().Attack();
+			}
+			GetComponent<AudioSource>().Play();
+			
+			yield return new WaitForSeconds(0.5f);
 		}
 	}
 	// Update is called once per frame
@@ -290,6 +321,7 @@ public class Party : MonoBehaviour {
 				AlexPos4,//new Vector3(-0.6f,0,0)
                 
 			};
+			GetComponent<AudioSource>().clip = alex.GetComponent<AudioSource>().clip;
 			break;
 		case Formation.Guylus:
 			positions = new Vector3[]{
@@ -299,6 +331,7 @@ public class Party : MonoBehaviour {
 				GuylusPos3 ,//new Vector3(-0.2f,-0.5f,0),
 				GuylusPos4 ,//new Vector3(-0.6f,0,0)
 			};
+			GetComponent<AudioSource>().clip = guylus.GetComponent<AudioSource>().clip;
 			break;
 		case Formation.Nely:
 			positions = new Vector3[]{
@@ -308,6 +341,7 @@ public class Party : MonoBehaviour {
 				NelyPos3,//new Vector3(-0.1f,-0.5f,0),
 				NelyPos4,//new Vector3(-0.5f,-0.2f,0)
 			};
+			GetComponent<AudioSource>().clip = nely.GetComponent<AudioSource>().clip;
 			break;
 		case Formation.Rinmaru:
             positions = //RinmaruPositions;
@@ -319,6 +353,7 @@ public class Party : MonoBehaviour {
 				RinmaruPos3,//new Vector3(0,0,0),
 				RinmaruPos4,//new Vector3(-0.4f,-0.4f,0)
 			};
+			GetComponent<AudioSource>().clip = rinmaru.GetComponent<AudioSource>().clip;
              
 			break;
 		case Formation.Medhu:
@@ -329,6 +364,7 @@ public class Party : MonoBehaviour {
 				MedhuPos3,//new Vector3(-0.3f,-0.3f,0),
 				MedhuPos4,//new Vector3(0.4f,0,0)
 			};
+			GetComponent<AudioSource>().clip = medhu.GetComponent<AudioSource>().clip;
 			break;
 		}
 
@@ -444,6 +480,7 @@ public class Party : MonoBehaviour {
             player.addExp(point);
         }
 
+
 		if(alex){
 			alexStatus = GetCharaStatus(alex.GetComponent<Player>());
 		}
@@ -461,6 +498,7 @@ public class Party : MonoBehaviour {
 		}
     }
 
+
 	void SetMark(Transform t,string UIName,bool b){
 		t.FindChild(UIName).FindChild("LeaderMark").GetComponent<Image>().enabled = b;
 	}
@@ -470,46 +508,186 @@ public class Party : MonoBehaviour {
 	}
 
 	public void UseItemToMember(ItemType item,int num){
+		GameObject member = MemberByNum(num);
+		member.GetComponent<Player>().UseItem(item);
+	}
+
+	GameObject MemberByNum(int num){
 		switch(num){
 		case 0:
-			alex.GetComponent<Player>().UseItem(item);
-			break;
+			return alex;
 		case 1:
-			guylus.GetComponent<Player>().UseItem(item);
-			break;
+			return guylus;
 		case 2:
-			nely.GetComponent<Player>().UseItem(item);
-			break;
+			return nely;
 		case 3:
-			rinmaru.GetComponent<Player>().UseItem(item);
-			break;
+			return rinmaru;
 		case 4:
-			medhu.GetComponent<Player>().UseItem(item);
-			break;
+			return medhu;
+		default:
+			return null;
+		}
+	}
+	GameObject PrefabByNum(int num){
+		switch(num){
+		case 0:
+			return alexPrefab;
+		case 1:
+			return guylusPrefab;
+		case 2:
+			return nelyPrefab;
+		case 3:
+			return rinmaruPrefab;
+		case 4:
+			return medhuPrefab;
+		default:
+			return null;
+		}
+	}
+	SaveManager.Status StatusByNum(SaveManager sm,int num){
+		switch(num){
+		case 0:
+			return sm.alex;
+		case 1:
+			return sm.guylus;
+		case 2:
+			return sm.nely;
+		case 3:
+			return sm.rinmaru;
+		case 4:
+			return sm.medhu;
+		default:
+			return sm.alex;
 		}
 	}
 
-	public void NotifyDeath(Player.Type type){
-		bool changeForm = false;
+	public bool CanUseItem(ItemType item,int num){
+		if(item == ItemType.GreatLifeOrb){
+			return 
+				(alexJoin && alex==null) || 
+				(guylusJoin && guylus==null) || 
+				(nelyJoin && nely==null) || 
+				(rinmaruJoin && rinmaru==null) || 
+				(medhuJoin && medhu==null);
+		}
+		else{
+			GameObject member = MemberByNum(num);
+			return CanUseItemToObject(item,member);
+		}
+	}
+	bool CanUseItemToObject(ItemType item,GameObject member){
+		switch(item){
+		case ItemType.NormalHerb:
+		case ItemType.NiceHerb:
+		case ItemType.GreatHerb:
+			return member != null;
+		case ItemType.LifeOrb:
+			return member == null;
+		default:
+			return false;
+		}
+	}
+
+	public void UseReviveItemToAll(){
+		if(alexJoin && alex == false){
+			UseReviveItemToMember(ItemType.LifeOrb,0);
+		}
+		if(guylusJoin && guylus == false){
+			UseReviveItemToMember(ItemType.LifeOrb,1);
+		}
+		if(nelyJoin && nely == false){
+			UseReviveItemToMember(ItemType.LifeOrb,2);
+		}
+		if(rinmaruJoin && rinmaru == false){
+			UseReviveItemToMember(ItemType.LifeOrb,3);
+		}
+		if(medhuJoin && medhu == false){
+			UseReviveItemToMember(ItemType.LifeOrb,4);
+		}
+	}
+
+	public void UseReviveItemToMember(ItemType item,int num){
+		SaveManager sm = FindObjectOfType<SaveManager>();
+		GameObject member = MemberByNum(num);
+
+		if(member){
+			Debug.LogError("まだ生きているメンバーです");
+		}
+		else{
+			member = CreateMember(PrefabByNum(num));
+			Player p = member.GetComponent<Player>();
+			LoadCharaFromSave(p,StatusByNum(sm,num));
+			p.RecoverPanel();
+			p.isPlayMode = true;
+
+			switch(num){
+			case 0:
+				alex = member;
+				break;
+			case 1:
+				guylus = member;
+				break;
+			case 2:
+				nely = member;
+				break;
+			case 3:
+				rinmaru = member;
+				break;
+			case 4:
+				medhu = member;
+				break;
+
+			}
+
+			Player.Type t = TypeByNum(num);
+			if(t == Player.Type.Guylus){
+				shieldObject = transform.FindChild("Guylus(Clone)").FindChild("shield").gameObject;
+			}
+			if(t == Player.Type.Medhu){
+				recoveryObject = transform.FindChild("Medhu(Clone)").FindChild("recoveryField").gameObject;
+			}
+		}
+		SetFormation(formation);
+	}
+
+	Player.Type TypeByNum(int num){
+		switch(num){
+		case 0:
+			return Player.Type.Alex;
+		case 1:
+			return Player.Type.Guylus;
+		case 2:
+			return Player.Type.Nely;
+		case 3:
+			return Player.Type.Rinmaru;
+		case 4:
+			return Player.Type.Medhu;
+		default:
+			return Player.Type.Alex;
+		}
+	}
+
+	Formation FormationByType(Player.Type type){
 		switch(type){
 		case Player.Type.Alex:
-			changeForm = formation == Formation.Alex;
-			break;
+			return Formation.Alex;
 		case Player.Type.Guylus:
-			changeForm = formation == Formation.Guylus;
-			break;
+			return Formation.Guylus;
 		case Player.Type.Nely:
-			changeForm = formation == Formation.Nely;
-			break;
+			return Formation.Nely;
 		case Player.Type.Rinmaru:
-			changeForm = formation == Formation.Rinmaru;
-			break;
+			return Formation.Rinmaru;
 		case Player.Type.Medhu:
-			changeForm = formation == Formation.Medhu;
-			break;
+			return Formation.Medhu;
+		default:
+			return Formation.Alex;
 		}
+	}
 
-
+	//メンバーが倒れたらフォーメーションを強制変更
+	public void NotifyDeath(Player.Type type){
+		bool changeForm = false;
+		changeForm = formation == FormationByType(type);
 
 		if(changeForm){
 			Transform t = GameObject.Find("Players").transform;

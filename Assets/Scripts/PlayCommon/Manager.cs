@@ -209,29 +209,24 @@ public class Manager : MonoBehaviour
 			CreateParty();
 		}
 		StartCoroutine("AppearParty");
-
-
-		//createdParty = (GameObject)Instantiate (party, party.transform.position, party.transform.rotation);
 	}
 
     void CreateParty()
     {
-        //
-        //
         createdParty = (GameObject)Instantiate(party, party.transform.position, party.transform.rotation);
 
-        //
-        createdParty.GetComponent<Party>().isUndead = isUndead;
-        createdParty.GetComponent<Party>().isArcade = isArcade;
-        //
+		Party p = createdParty.GetComponent<Party>();
 
-        createdParty.GetComponent<Party>().alexJoin = joinAlex;
-        createdParty.GetComponent<Party>().guylusJoin = joinGuylus;
-        createdParty.GetComponent<Party>().nelyJoin = joinNely;
-        createdParty.GetComponent<Party>().rinmaruJoin = joinRinmaru;
-        createdParty.GetComponent<Party>().medhuJoin = joinMedhu;
+        p.isUndead = isUndead;
+		p.isArcade = isArcade;
 
-        createdParty.GetComponent<Party>().SetMember();
+		p.alexJoin = joinAlex;
+		p.guylusJoin = joinGuylus;
+		p.nelyJoin = joinNely;
+		p.rinmaruJoin = joinRinmaru;
+		p.medhuJoin = joinMedhu;
+
+		p.SetMember();
 
 		SetPartyForm(0);
     }
@@ -267,6 +262,28 @@ public class Manager : MonoBehaviour
 		}
 	}
 
+	//全体使用のテイテム時にItemWindowManagerから呼び出す
+	public void NotifyUseAll(){
+		selectnum = 5;
+		Transform playerUIs = GameObject.Find("Players").transform;
+		playerUIs.FindChild("1stPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = true;
+		playerUIs.FindChild("2ndPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = true;
+		playerUIs.FindChild("3rdPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = true;
+		playerUIs.FindChild("4thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = true;
+		playerUIs.FindChild("5thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = true;
+	}
+	public void NotifyUseOne(){
+		if(selectnum == 5){
+			Transform playerUIs = GameObject.Find("Players").transform;
+			playerUIs.FindChild("1stPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("2ndPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("3rdPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("4thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("5thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			selectnum = -1;
+		}
+	}
+
 	public void GameUseItem()
 	{
 		//スタート中,クリア中なら何もしない
@@ -276,32 +293,86 @@ public class Manager : MonoBehaviour
 
 		if(usingItem)
 		{
+			Transform playerUIs = GameObject.Find("Players").transform;
+			playerUIs.FindChild("1stPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("2ndPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("3rdPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("4thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			playerUIs.FindChild("5thPlayer").FindChild("whiteImage").GetComponent<Image>().enabled = false;
+			selectnum = -1;
+			FindObjectOfType<ItemWindowManager>().ResetPanel();
+
+			playerUIs.FindChild("1stPlayer").GetComponent<Button>().interactable = alexButtonInteractable;
+			playerUIs.FindChild("2ndPlayer").GetComponent<Button>().interactable = guylusButtonInteractable;
+			playerUIs.FindChild("3rdPlayer").GetComponent<Button>().interactable = nelyButtonInteractable;
+			playerUIs.FindChild("4thPlayer").GetComponent<Button>().interactable = rinmaruButtonInteractable;
+			playerUIs.FindChild("5thPlayer").GetComponent<Button>().interactable = medhuButtonInteractable;
+
+			//メインに戻る
 			Time.timeScale = 1;
 			itemWindow.SetActive(false);
 			usingItem = false;
 		}
 		else
 		{
+			//アイテム使用画面へ
 			Time.timeScale = 0;
 			itemWindow.SetActive(true);
 			usingItem = true;
+
+			Transform playerUIs = GameObject.Find("Players").transform;
+			alexButtonInteractable = playerUIs.FindChild("1stPlayer").GetComponent<Button>().interactable;
+			guylusButtonInteractable = playerUIs.FindChild("2ndPlayer").GetComponent<Button>().interactable;
+			nelyButtonInteractable = playerUIs.FindChild("3rdPlayer").GetComponent<Button>().interactable;
+			rinmaruButtonInteractable = playerUIs.FindChild("4thPlayer").GetComponent<Button>().interactable;
+			medhuButtonInteractable = playerUIs.FindChild("5thPlayer").GetComponent<Button>().interactable;
+
+			playerUIs.FindChild("1stPlayer").GetComponent<Button>().interactable = true;
+			playerUIs.FindChild("2ndPlayer").GetComponent<Button>().interactable = true;
+			playerUIs.FindChild("3rdPlayer").GetComponent<Button>().interactable = true;
+			playerUIs.FindChild("4thPlayer").GetComponent<Button>().interactable = true;
+			playerUIs.FindChild("5thPlayer").GetComponent<Button>().interactable = true;
+
 		}
 	}
 
 	void SetMark(Transform t,string UIName,bool b){
 		GameObject.Find("Players").transform.FindChild(UIName).FindChild("LeaderMark").GetComponent<Image>().enabled = b;
 	}
+
+	bool alexButtonInteractable;
+	bool guylusButtonInteractable;
+	bool nelyButtonInteractable;
+	bool rinmaruButtonInteractable;
+	bool medhuButtonInteractable;
 	
-	int selectnum = -1; // -1..選択していない
+	int selectnum = -1; // -1..選択していない, 5..全体
 	public void SelectCharacter(int num){
 		if(usingItem){
-			//２回押された
-			if(selectnum == num){
+			//同キャラが２回押された
+			if(selectnum == num || selectnum == 5){
 				ItemWindowManager iwm = FindObjectOfType<ItemWindowManager>();
 				ItemType type = iwm.selectType;
 
-				if(type != ItemType.None){
-					createdParty.GetComponent<Party>().UseItemToMember(type,num);
+				Party p = createdParty.GetComponent<Party>();
+
+				if(type != ItemType.None && p.CanUseItem(type,num)){
+					switch(type){
+					case ItemType.NormalHerb:
+					case ItemType.NiceHerb:
+					case ItemType.GreatHerb:
+						p.UseItemToMember(type,num);
+						break;
+					case ItemType.LifeOrb:
+						p.UseReviveItemToMember(type,num);
+						break;
+					case ItemType.GreatLifeOrb:
+						p.UseReviveItemToAll();
+						break;
+					default:
+						FindObjectOfType<MessageWindow>().showMessage("まだ存在しないアイテムです。");
+						break;
+					}
 
 					SaveManager sm = FindObjectOfType<SaveManager>();
 					switch(type){
@@ -375,6 +446,7 @@ public class Manager : MonoBehaviour
 		if(createdParty)
         {
 			Party.Formation form = Party.Formation.Alex;
+			string uiName = "1stPlayer";
 
             //陣形変更SE
             audioSource.PlayOneShot(tapSE);
@@ -383,25 +455,26 @@ public class Manager : MonoBehaviour
             {
 			case 0:
 				form = Party.Formation.Alex;
-				SetMark (t,"1stPlayer",true);
+				uiName = "1stPlayer";
 				break;
 			case 1:
 				form = Party.Formation.Guylus;
-				SetMark (t,"2ndPlayer",true);
+				uiName = "2ndPlayer";
 				break;
 			case 2:
 				form = Party.Formation.Nely;
-				SetMark (t,"3rdPlayer",true);
+				uiName = "3rdPlayer";
 				break;
 			case 3:
 				form = Party.Formation.Rinmaru;
-				SetMark (t,"4thPlayer",true);
+				uiName = "4thPlayer";
 				break;
 			case 4:
 				form = Party.Formation.Medhu;
-				SetMark (t,"5thPlayer",true);
+				uiName = "5thPlayer";
 				break;
 			}
+			SetMark (t,uiName,true);
 			createdParty.GetComponent<Party>().SetFormation(form);
 		}
 	}
