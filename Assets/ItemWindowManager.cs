@@ -16,10 +16,13 @@ public class ItemWindowManager : MonoBehaviour {
 	public DisplayType displayType = DisplayType.HasItem;
 
 	HomeItemWindowManager homeManager;
+	Manager mainManager;
 	// Use this for initialization
 	void Start () {
 		//ホーム用
 		homeManager = FindObjectOfType<HomeItemWindowManager>();
+		//メイン用
+		mainManager = FindObjectOfType<Manager>();
 
 		CreatePanels();
 	}
@@ -33,17 +36,20 @@ public class ItemWindowManager : MonoBehaviour {
 				CreateByItemName("normalherb",items.normalHerb);
 			}
 			if(items.niceHerb> 0){
-				CreateByItemName("niceHerb",items.niceHerb);
+				CreateByItemName("niceherb",items.niceHerb);
 			}
 			if(items.greatHerb> 0){
-				CreateByItemName("greatHerb",items.greatHerb);
+				CreateByItemName("greatherb",items.greatHerb);
 			}
 			if(items.lifeOrb> 0){
-				CreateByItemName("lifeOrb",items.lifeOrb);
+				CreateByItemName("lifeorb",items.lifeOrb);
 			}
 			if(items.greatLifeOrb> 0){
-				CreateByItemName("greatLifeOrb",items.greatLifeOrb);
+				CreateByItemName("greatlifeorb",items.greatLifeOrb);
 			}
+
+			CreateByItemName("lifeorb",items.lifeOrb);
+			CreateByItemName("greatlifeorb",items.niceHerb);
 		}
 		//お店
 		else{
@@ -98,6 +104,16 @@ public class ItemWindowManager : MonoBehaviour {
 			//ホーム画面なら
 			if(homeManager){
 				homeManager.ChangeItem(data);
+			}
+			if(mainManager){
+				switch(data.type){
+				case ItemType.GreatLifeOrb:
+					mainManager.NotifyUseAll();
+					break;
+				default:
+					mainManager.NotifyUseOne();
+					break;
+				}
 			}
 
 			ResetColor();
