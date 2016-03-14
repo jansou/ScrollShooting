@@ -295,12 +295,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 186070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3303357b56bb7ae439dc68317a7be5de, type: 3}
+  m_Script: {fileID: 11500000, guid: a88c7818819f20f4bbc76ef9a16b09f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 4
   speed: 2
   shootSE: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
+  shootSE2: {fileID: 0}
 --- !u!114 &11454460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,7 +363,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1643576185
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e7302467cb63ba34bb8ddbf53a0e7e58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24de4f50a5d7b784d9c6db2ef0427459, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: 0}
 --- !u!212 &21296598
 SpriteRenderer:

@@ -16,7 +16,6 @@ GameObject:
   - 114: {fileID: 11431742}
   - 114: {fileID: 11443646}
   - 82: {fileID: 8259688}
-  - 114: {fileID: 11474616}
   - 58: {fileID: 5894778}
   m_Layer: 9
   m_Name: EnemyGiftman_Dummy
@@ -310,18 +309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ddd9630bae58049a155d51e87bf5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11474616
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f600dd5ff6bb548bea87ecf3f423bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
 --- !u!212 &21208622
 SpriteRenderer:
   m_ObjectHideFlags: 1
