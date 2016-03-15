@@ -49,7 +49,7 @@ public class HipoAngel : MonoBehaviour
 
         //audioSource.PlayOneShot(shootSE);
         enemy.MoveStop();
-        spaceship.speed *= 2;
+        //spaceship.speed *= 2;
         StartCoroutine("Attack1");
         //enemy.MoveAim(transform.position, pt.position, 4);
         yield return null;
@@ -72,10 +72,11 @@ public class HipoAngel : MonoBehaviour
             //common.Shot(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
             //common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.AllowBullet, 2, 20);
 
-            common.Shot(s1, 30, power, speed, BulletManager.BulletType.SlashBullet);
-            common.Shot(s1, 60 + 30, power, speed, BulletManager.BulletType.SlashBullet);
-            common.Shot(s1, 120 + 30, power, speed, BulletManager.BulletType.SlashBullet);
-
+            common.Shot(s1, 0, power, speed, BulletManager.BulletType.SlashBullet);
+            common.Shot(s1, 90, power, speed, BulletManager.BulletType.SlashBullet);
+            common.Shot(s1, 180, power, speed, BulletManager.BulletType.SlashBullet);
+            common.Shot(s1, 270, power, speed, BulletManager.BulletType.SlashBullet);
+            
             yield return new WaitForSeconds(1.0f);
         }
 

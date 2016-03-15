@@ -11,8 +11,8 @@ public class GoriraAngel : MonoBehaviour
 
     //SE関係
     public AudioClip shootSE;
-    public AudioClip shootSE2;
-    //public AudioClip skillSE;
+    //public AudioClip shootSE2;
+    public AudioClip skillSE;
     AudioSource audioSource;
 
     Transform s1;
@@ -49,7 +49,7 @@ public class GoriraAngel : MonoBehaviour
 
         //audioSource.PlayOneShot(shootSE);
         enemy.MoveStop();
-        spaceship.speed *= 2;
+        //spaceship.speed *= 2;
         StartCoroutine("Attack1");
         //enemy.MoveAim(transform.position, pt.position, 4);
         yield return null;
@@ -67,14 +67,16 @@ public class GoriraAngel : MonoBehaviour
 
             enemy.MoveStop();
 
-            audioSource.PlayOneShot(shootSE2);
+            audioSource.PlayOneShot(shootSE);
+            common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.BananaSlash);
+
             //common.ShotAim(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
             //common.Shot(s1, pt, power, speed, BulletManager.BulletType.SlashBullet);
             //common.ShotAimNway(s1, pt, power, speed, BulletManager.BulletType.AllowBullet, 2, 20);
 
-            common.Shot(s1, 30, power, speed, BulletManager.BulletType.SlashBullet);
-            common.Shot(s1, 60 + 30, power, speed, BulletManager.BulletType.SlashBullet);
-            common.Shot(s1, 120 + 30, power, speed, BulletManager.BulletType.SlashBullet);
+            //common.Shot(s1, 30, power, speed, BulletManager.BulletType.SlashBullet);
+            //common.Shot(s1, 60 + 30, power, speed, BulletManager.BulletType.SlashBullet);
+            //common.Shot(s1, 120 + 30, power, speed, BulletManager.BulletType.SlashBullet);
 
             yield return new WaitForSeconds(1.0f);
         }
@@ -84,7 +86,7 @@ public class GoriraAngel : MonoBehaviour
     void AimRun()
     {
 		if(pt){
-        	audioSource.PlayOneShot(shootSE);
+        	audioSource.PlayOneShot(skillSE);
         	
 			enemy.MoveAim(transform.position,pt.position,4);
 		}

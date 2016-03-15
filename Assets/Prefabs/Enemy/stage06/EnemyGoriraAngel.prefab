@@ -300,8 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 4
   speed: 2
-  shootSE: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
-  shootSE2: {fileID: 0}
+  shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
+  skillSE: {fileID: 8300000, guid: 1e97a0ba59d18d148938c29fe1ab4382, type: 3}
 --- !u!114 &11491026
 MonoBehaviour:
   m_ObjectHideFlags: 1
