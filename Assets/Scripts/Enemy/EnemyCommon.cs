@@ -32,6 +32,17 @@ public class EnemyCommon : MonoBehaviour {
 		origin.localRotation = Quaternion.Euler(0,0,rotate);
 		spaceship.Shot(origin,shotPower,shotSpeed,type,offsetx,offsety);
 	}
+
+	public void ShotNWay(Transform origin, int rotate, int shotPower, int shotSpeed=2, BulletManager.BulletType type = BulletManager.BulletType.Normal,int way = 1,int spread = 0,float offsetx=0,float offsety=0){
+		for(int i=0; i<way; ++i){
+			int r = rotate + spread * (i - (way/2));
+			if(way % 2 == 0){
+				r += spread /2;
+			}
+			Shot (origin,r,shotPower,shotSpeed,type,offsetx,offsety);
+		}
+	}
+
 	public void ShotAim(Transform origin,Transform aim, int shotPower,int shotSpeed, BulletManager.BulletType type){
 		if(aim){
 			Vector3 v = aim.position - transform.position;
@@ -58,6 +69,16 @@ public class EnemyCommon : MonoBehaviour {
 		}
 	}
 
+	//メッセージウィンドウに表示
+	public void ShowWindowMessage(string str){
+		FindObjectOfType<MessageWindow>().showMessage(str);
+	}
+
+	//スキル発動用のチカチカ
+	public void SetFlicker(){
+		spaceship.GetAnimator().SetTrigger("Skill");
+	}
+
     public void ShotStoneFall(Transform origin, int shotPower, int shotSpeed, BulletManager.BulletType type)
     {
         for(int i=0;i<5;++i)
@@ -66,6 +87,8 @@ public class EnemyCommon : MonoBehaviour {
             spaceship.Shot(origin, shotPower, 0, type);
         }
     }
+
+
 	
 	// Update is called once per frame
 	void Update () {

@@ -53,11 +53,7 @@ public class Enemy : MonoBehaviour
     //機体の移動
     public void Move(Vector2 direction)
     {
-        //GetComponent<Rigidbody2D>().velocity = direction * speed;
-        //GetComponent<Rigidbody2D>().velocity = direction * spaceship.speed;
-        //GetComponent<Rigidbody2D>().velocity = direction * spaceship.speed;
         GetComponent<Rigidbody2D>().velocity = direction * spaceship.speed;
-        //Debug.Log("direction:" + direction + ", spaceship: " + spaceship.speed + "move:" + direction * spaceship.speed);
     }
 
 	public void MoveAim(Vector3 from, Vector3 to, float speed){
@@ -143,6 +139,15 @@ public class Enemy : MonoBehaviour
 		
 		//エネミーの削除
 		Destroy(gameObject);
+	}
+
+	public IEnumerator MoveByTime(Vector3 pos, float time)
+	{
+		//3..何故か指定位置近くにつく適当な係数
+		float d = Vector3.Distance(pos,transform.position) * 3;
+		MoveAim(transform.position,pos,d/time);
+		yield return new WaitForSeconds(time);
+		MoveStop();
 	}
 
     public int getTouchDamage() { return touchDamage; }
