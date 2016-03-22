@@ -271,11 +271,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 125874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e05da89b2c50a48b0b5c6beadeeb34, type: 3}
+  m_Script: {fileID: 11500000, guid: 21bacbdde9a7afc489b52afe539eef99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 4
   speed: 2
+  une: {fileID: 162286, guid: 8afd9976b68b4a94487caf0e8842b585, type: 2}
   shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
   skillSE: {fileID: 8300000, guid: 1e97a0ba59d18d148938c29fe1ab4382, type: 3}
 --- !u!114 &11463964
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  hp: 100
   point: 70
   touchDamage: 4
   shotPower: 4

@@ -66,7 +66,7 @@ GameObject:
   - 114: {fileID: 11486990}
   - 82: {fileID: 8219630}
   m_Layer: 9
-  m_Name: EnemyUne
+  m_Name: EnemySkul
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.9216499, y: -7.14973974, z: 0}
+  m_LocalPosition: {x: 11.4415417, y: -2.84910011, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 495552}
@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: .159999996, z: 0}
+  m_LocalPosition: {x: -0, y: .209999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449378}
@@ -249,12 +249,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 162286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7c669156cd06a408486d358d9ef607, type: 3}
+  m_Script: {fileID: 11500000, guid: a165f796f5877af4ca0820aeb3e5c866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 4
   speed: 2
-  shootSE: {fileID: 8300000, guid: 1ba32e732ce972e4c9201fae1ffc578b, type: 3}
+  shootSE: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
+  skillSE: {fileID: 0}
 --- !u!114 &11427292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f179a24527454a498cbdda57a6198f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .100000001
+  speed: .300000012
   shotDelay: 1.5
   bullet: {fileID: 112916, guid: ca3973d7f597a18478aca1a714d6f6e1, type: 2}
   canShot: 1
@@ -362,7 +363,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1643576185
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1cc4e45cd637f7141ab6cc6fe08b31c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8b4d2e22d59cb3459155de1fec9fc06, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: 0}
 --- !u!212 &21291374
 SpriteRenderer:
