@@ -446,18 +446,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
-      propertyPath: joinRinmaru
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
-      propertyPath: joinMedhu
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22459742, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
   m_IsPrefabParent: 0
