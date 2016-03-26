@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     //ヒットポイント
     public int hp = 1;
+	int maxHP = 0;
 
     // スコアのポイント
     public int point = 100;
@@ -36,6 +37,8 @@ public class Enemy : MonoBehaviour
 
         //Debug.Log("right:" + transform.right + ", up:" + transform.up);
         Move(transform.right*-1);
+
+		maxHP = hp;
 
         //SE関係
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -139,6 +142,12 @@ public class Enemy : MonoBehaviour
 		
 		//エネミーの削除
 		Destroy(gameObject);
+	}
+
+	public void RecoveryHP(int p){
+		if(maxHP != 0){
+			hp = Mathf.Min(maxHP,hp+p);
+		}
 	}
 
 	public IEnumerator MoveByTime(Vector3 pos, float time)

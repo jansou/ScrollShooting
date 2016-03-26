@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
+  hp: 500
   point: 200
   touchDamage: 1
   shotPower: 4
@@ -285,12 +285,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 153952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fa304df399d0f48b5bd36a8c3b1121, type: 3}
+  m_Script: {fileID: 11500000, guid: 43624ba230a663a4b9ea8a68b0105b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 2
+  shotSpeed: 3
   shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
+  summonSlime: {fileID: 190576, guid: 645805e9700547c4cbaa8291fd6e014d, type: 2}
+  summonMonkey: {fileID: 162286, guid: ef63ba1aefcf53c47b7d2e224f7d9d46, type: 2}
+  summonBlossom: {fileID: 186070, guid: ad7d2f2b595c9cd4c8a896b6c603709a, type: 2}
+  summonBossMonkey: {fileID: 136724, guid: d5fbea67c26e3094994dd33285d29422, type: 2}
+  summonForestSpirit: {fileID: 129022, guid: 9d0c82a37d106f644aa8f8f2a2422cf2, type: 2}
+  summonRecoveryField: {fileID: 111902, guid: f696305621fb4cb499a1f319d2b467f2, type: 2}
 --- !u!114 &11476636
 MonoBehaviour:
   m_ObjectHideFlags: 1

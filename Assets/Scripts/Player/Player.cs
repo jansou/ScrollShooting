@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
     public int exp=0;
 
-	Party.Formation formation = Party.Formation.Alex;
+	public Party.Formation formation = Party.Formation.Alex;
 
     public bool isUndead = false;
 

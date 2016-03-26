@@ -170,6 +170,15 @@ public class Manager : MonoBehaviour
 		StartCoroutine("LeaveParty");
 	}
 
+	void DeleteTagObjects(string tagName){
+		GameObject[] os;
+		os = GameObject.FindGameObjectsWithTag(tagName);
+		foreach (GameObject o in os)
+		{
+			Destroy(o);
+		}
+	}
+
 	void GameStart()
 	{
         //ゲーム開始のSE
@@ -177,28 +186,10 @@ public class Manager : MonoBehaviour
 
         FindObjectOfType<BGMManager>().SetStageBGM();
 
-        //delete enemy bullet
-        GameObject[] enemyBullets;
-        enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
-        foreach (GameObject enemyBullet in enemyBullets)
-        {
-            Destroy(enemyBullet);
-        }
-
-        //delete player bullet
-        GameObject[] playerBullets;
-        playerBullets = GameObject.FindGameObjectsWithTag("PlayerBullet");
-        foreach (GameObject playerBullet in playerBullets)
-        {
-            Destroy(playerBullet);
-        }
-
-		GameObject[] enemies;
-		enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		foreach (GameObject enemy in enemies)
-		{
-			Destroy(enemy);
-		}
+		DeleteTagObjects("EnemyBullet");
+		DeleteTagObjects("PlayerBullet");
+		DeleteTagObjects("Enemy");
+		DeleteTagObjects("Coin");
 		FindObjectOfType<Emitter>().ResetWave();
 
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する

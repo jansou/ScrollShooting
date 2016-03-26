@@ -11,6 +11,8 @@ public class BossMonkey : MonoBehaviour {
 	Transform s2;
 	Transform pt;
 
+	public bool isNormalEnemy = false;//雑魚として扱う場合にチェック
+
     //SE関係
     public AudioClip shootSE;
     public AudioClip skillSE;
@@ -31,8 +33,6 @@ public class BossMonkey : MonoBehaviour {
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
-		FindObjectOfType<MessageWindow>().showMessage("メテオ");
-
 		yield return new WaitForEndOfFrame();
 
         StartCoroutine("Stop");
@@ -44,7 +44,9 @@ public class BossMonkey : MonoBehaviour {
 
     IEnumerator Stop()
     {
-        FindObjectOfType<MessageWindow>().showMessage("ボスザル");
+        if(!isNormalEnemy){
+			FindObjectOfType<MessageWindow>().showMessage("ボスザル");
+		}
         yield return new WaitForSeconds(2);
         enemy.MoveStop();
     }
@@ -63,7 +65,9 @@ public class BossMonkey : MonoBehaviour {
 
             //audioSource.clip = skillSE;
             audioSource.PlayOneShot(skillSE);
-            FindObjectOfType<MessageWindow>().showMessage("バナナラッシュ！");
+			if(!isNormalEnemy){
+            	FindObjectOfType<MessageWindow>().showMessage("バナナラッシュ！");
+			}
 
 			spaceship.GetAnimator().SetTrigger("Skill");
 			yield return new WaitForSeconds(0.5f);

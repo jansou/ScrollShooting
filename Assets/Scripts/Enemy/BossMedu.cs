@@ -19,9 +19,15 @@ public class BossMedu : MonoBehaviour {
     AudioSource audioSource;
 
     //召喚するやつ
-    public GameObject soldier;
-    public GameObject archer;
-    public GameObject armor;
+	public GameObject summonSlime;
+	public GameObject summonMonkey;
+	public GameObject summonBlossom;
+	public GameObject summonBossMonkey;
+	public GameObject summonForestSpirit;
+
+	public GameObject summonRecoveryField;
+
+	int maxHP = 0;
 	
 	// Use this for initialization
 	IEnumerator Start () {
@@ -38,17 +44,18 @@ public class BossMedu : MonoBehaviour {
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
-		FindObjectOfType<MessageWindow>().showMessage("メテオ");
+		maxHP = enemy.hp;
 
 		yield return new WaitForEndOfFrame();
 
-        FindObjectOfType<MessageWindow>().showMessage("ジェネラル！");
+        FindObjectOfType<MessageWindow>().showMessage("メデュ");
 
         StartCoroutine("Stop");
         yield return new WaitForSeconds(3.0f);
 		StartCoroutine("Attack1");
 		//StartCoroutine("Attack2");
 
+		//StartCoroutine ("TestAttack");
 		yield break;
 	}
 
@@ -64,124 +71,127 @@ public class BossMedu : MonoBehaviour {
         yield return null;
     }
 
+	IEnumerator TestAttack()
+	{
+		while(true){
+			s2.position = new Vector3(Random.Range(-3.0f,0f),6.0f,0.0f);
+			common.Shot(s2,180,5,10,BulletManager.BulletType.RayBullet);
+			yield return new WaitForSeconds(1.0f);
+		}
+	}
+
 	IEnumerator Attack1()
     {//
-        spaceship.GetAnimator().SetTrigger("Skill");
-        audioSource.PlayOneShot(skillSE);
-        FindObjectOfType<MessageWindow>().showMessage("歩兵突撃！");
+		spaceship.GetAnimator().SetTrigger("Skill");
+		audioSource.PlayOneShot(skillSE);
+		FindObjectOfType<MessageWindow>().showMessage("スライム召喚");
+		while(enemy.hp > maxHP*4/5){
+			for(int i=0; i<2; ++i){
+				Vector3 c = transform.position;
+				float rx = c.x-0.2f;
+				float ry = Random.Range(c.y-1.5f,c.y+1.5f);
+	            Instantiate(summonSlime, new Vector3(rx,ry,0), Quaternion.identity);
+			}
+	        yield return new WaitForSeconds(1.0f);	        
+		}
 
-        for (int n = 0; n < 5; ++n)
-        {
-            float xoffset = 1.4f;
-            float yoffset = 1.0f;
-            Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
-            Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
-
-            //common.ShotAim(s2, pt, power, shotSpeed, BulletManager.BulletType.BananaSlash);
-
-            //shotDelay秒待つ
-            yield return new WaitForSeconds(1.5f);
-        }
-
-        spaceship.GetAnimator().SetTrigger("Skill");
-        audioSource.PlayOneShot(skillSE);
-        FindObjectOfType<MessageWindow>().showMessage("弓兵、構え！");
-
-        {
-            float xoffset = 1.4f;
-            float yoffset = 1.0f;
-            Instantiate(archer, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
-            //Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(archer, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
-
-        }
-
-        yield return new WaitForSeconds(2.0f);
+		spaceship.GetAnimator().SetTrigger("Skill");
+		audioSource.PlayOneShot(skillSE);
+		FindObjectOfType<MessageWindow>().showMessage("植物召喚");
+		while(enemy.hp > maxHP*3/5){
+			Vector3 c = transform.position;
+			Instantiate(summonBlossom,c+new Vector3(-0.5f,0.8f,0),Quaternion.identity);
+			Instantiate(summonBlossom,c+new Vector3(-0.5f,-0.8f,0),Quaternion.identity);
+			Instantiate(summonBlossom,c+new Vector3(0.5f,1.5f,0),Quaternion.identity);
+			Instantiate(summonBlossom,c+new Vector3(0.5f,-1.5f,0),Quaternion.identity);
+			yield return new WaitForSeconds(4.0f);
+		}
 
         //以下ループ行動
 		while (true) 
 		{
-            if(count == 2)
+			if (!GameObject.Find("EnemyBossForestSpiritR(Clone)"))
+			{
+				spaceship.GetAnimator().SetTrigger("Skill");
+				audioSource.PlayOneShot(skillSE);
+				FindObjectOfType<MessageWindow>().showMessage("精霊召喚");
+			
+				//Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
+				Instantiate(summonForestSpirit,transform.position+new Vector3(-0.5f,0,0) , Quaternion.identity);
+				//Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+				yield return new WaitForSeconds(3.0f);
+			}
+            else if(count == 2)
             {
                // while(true)
                 {
                     spaceship.GetAnimator().SetTrigger("Skill");
                     audioSource.PlayOneShot(skillSE);
-                    FindObjectOfType<MessageWindow>().showMessage("力を貯めている…");
+                    FindObjectOfType<MessageWindow>().showMessage("チャージ");
 
-                    yield return new WaitForSeconds(5.0f);
+                    yield return new WaitForSeconds(4.0f);
 
                     spaceship.GetAnimator().SetTrigger("Skill");
                     audioSource.PlayOneShot(skillSE);
-                    FindObjectOfType<MessageWindow>().showMessage("剛烈剣!!!");
-                    
-                    common.ShotAim(s2, pt, power, 3, BulletManager.BulletType.GrandSlash);
-                    
-                    audioSource.PlayOneShot(shootSE);
+                    FindObjectOfType<MessageWindow>().showMessage("レイ");
 
+					for(int i=0; i<5; ++i){
+						audioSource.PlayOneShot(shootSE);
+						s2.position = new Vector3(Random.Range(-3.0f,0f),6.0f,0.0f);
+						common.Shot(s2,180,5,10,BulletManager.BulletType.RayBullet);
+						yield return new WaitForSeconds(1.0f);
+					}
                     count = 0;
 
                     yield return new WaitForSeconds(2.0f);
                 }
             }
-            else if (!GameObject.Find("EnemyArmor(Clone)")
-                && !GameObject.Find("EnemyArmorZero(Clone)"))
+            else if (!GameObject.Find("EnemyBossMonkeyR(Clone)"))
             {
                 spaceship.GetAnimator().SetTrigger("Skill");
                 audioSource.PlayOneShot(skillSE);
-                FindObjectOfType<MessageWindow>().showMessage("重騎士、前へ！");
-
-                float xoffset = 1.4f;
-                float yoffset = 0.3f;
-                Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
-                //Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
-                Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
-            }
-            else if (!GameObject.Find("EnemyArcher(Clone)")
-                && !GameObject.Find("EnemyArcherZero(Clone)"))
-            {
-                spaceship.GetAnimator().SetTrigger("Skill");
-                audioSource.PlayOneShot(skillSE);
-                FindObjectOfType<MessageWindow>().showMessage("弓兵、構え！");
+                FindObjectOfType<MessageWindow>().showMessage("巨大猿召喚");
 
                 {
                     float xoffset = 1.4f;
                     float yoffset = 1.0f;
-                    Instantiate(archer, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
+                    Instantiate(summonBossMonkey, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
                     //Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
-                    Instantiate(archer, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
-
-                }
-
-                
+                    Instantiate(summonBossMonkey, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+				}
+				yield return new WaitForSeconds(3.0f);
             }
             else
             {
+				/*
                 spaceship.GetAnimator().SetTrigger("Skill");
                 audioSource.PlayOneShot(skillSE);
-                FindObjectOfType<MessageWindow>().showMessage("歩兵突撃！");
+                FindObjectOfType<MessageWindow>().showMessage("猿召喚");
 
                 for (int n = 0; n < 5; ++n)
                 {
                     float xoffset = 1.4f;
                     float yoffset = 1.0f;
-                    Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
-                    Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
-                    Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+                    Instantiate(summonMonkey, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
+					Instantiate(summonMonkey, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
+					Instantiate(summonMonkey, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
 
                     //common.ShotAim(s2, pt, power, shotSpeed, BulletManager.BulletType.BananaSlash);
 
                     //shotDelay秒待つ
                     yield return new WaitForSeconds(1.5f);
                 }
+                */
+				spaceship.GetAnimator().SetTrigger("Skill");
+				FindObjectOfType<MessageWindow>().showMessage("リカバリーフィ－ルド");
+				GameObject o = (GameObject)Instantiate(summonRecoveryField,transform.position,Quaternion.identity);
+				//o.GetComponent<Enemy>().Move(new Vector2(Random.Range(-2.0f,2.0f),Random.Range(-2.0f,2.0f)));
+
+				yield return new WaitForSeconds(5.0f);
 
                 ++count;
             }
-
-            yield return new WaitForSeconds(2.0f);
-
-          
+ 
 		}
 	}
     /*

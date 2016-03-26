@@ -17,7 +17,6 @@ GameObject:
   - 114: {fileID: 11413300}
   - 114: {fileID: 11449024}
   - 82: {fileID: 8210372}
-  - 114: {fileID: 11417722}
   m_Layer: 9
   m_Name: EnemyBossForestSpiritR
   m_TagString: Enemy
@@ -254,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 2
+  isNormalEnemy: 1
   shootSE: {fileID: 8300000, guid: 00fabb9103505cb43862a0df012e2667, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   shootSE2: {fileID: 8300000, guid: f495be74c91b8f844bb27fca4ceb9c4b, type: 3}
@@ -268,18 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d364f3f6041bfaf4e83b7af4ef122da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11417722
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f600dd5ff6bb548bea87ecf3f423bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
 --- !u!114 &11425240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
+  hp: 400
   point: 200
   touchDamage: 1
   shotPower: 4

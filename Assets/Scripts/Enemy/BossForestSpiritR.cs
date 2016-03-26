@@ -8,6 +8,7 @@ public class BossForestSpiritR : MonoBehaviour
     Enemy enemy;
 	
     public int power=2;
+	public bool isNormalEnemy = false;
 
 	Transform s2;
 	Transform pt;
@@ -33,8 +34,6 @@ public class BossForestSpiritR : MonoBehaviour
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
-		FindObjectOfType<MessageWindow>().showMessage("メテオ");
-
 		yield return new WaitForEndOfFrame();
 
         StartCoroutine("Stop");
@@ -46,7 +45,9 @@ public class BossForestSpiritR : MonoBehaviour
 
     IEnumerator Stop()
     {
-        FindObjectOfType<MessageWindow>().showMessage("森の精霊");
+        if(!isNormalEnemy){
+			FindObjectOfType<MessageWindow>().showMessage("森の精霊");
+		}
         yield return new WaitForSeconds(2);
         enemy.MoveStop();
     }
@@ -65,9 +66,11 @@ public class BossForestSpiritR : MonoBehaviour
             }
             
 
-
-            FindObjectOfType<MessageWindow>().showMessage("コガラシ！");
-            audioSource.PlayOneShot(skillSE);
+			if(!isNormalEnemy){
+	            FindObjectOfType<MessageWindow>().showMessage("コガラシ！");
+			}
+			
+			audioSource.PlayOneShot(skillSE);
 
 			spaceship.GetAnimator().SetTrigger("Skill");
 			yield return new WaitForSeconds(0.5f);

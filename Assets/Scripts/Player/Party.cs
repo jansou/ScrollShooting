@@ -256,7 +256,9 @@ public class Party : MonoBehaviour {
 			if(medhu){
 				medhu.GetComponent<Player>().Attack();
 			}
-			GetComponent<AudioSource>().Play();
+			if(formation != Formation.Medhu){
+				GetComponent<AudioSource>().Play();
+			}
 			
 			yield return new WaitForSeconds(0.5f);
 		}

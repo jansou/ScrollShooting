@@ -47,15 +47,14 @@ public class ItemWindowManager : MonoBehaviour {
 			if(items.greatLifeOrb> 0){
 				CreateByItemName("greatlifeorb",items.greatLifeOrb);
 			}
-
-			CreateByItemName("lifeorb",items.lifeOrb);
-			CreateByItemName("greatlifeorb",items.niceHerb);
 		}
 		//お店
 		else{
 			CreateByItemName("normalherb",0);
 			CreateByItemName("niceherb",0);
 			CreateByItemName("greatherb",0);
+			CreateByItemName("lifeorb",0);
+			CreateByItemName("greatlifeorb",0);
 		}
 	}
 

@@ -354,6 +354,7 @@ MonoBehaviour:
   hp: 10
   shotPower: 1
   exp: 0
+  formation: 0
   isUndead: 0
   playerUIName: 5thPlayer
   init: 0
@@ -375,7 +376,7 @@ MonoBehaviour:
   speed: 5
   shotDelay: .5
   bullet: {fileID: 124870, guid: 6cff7765def03ad47a6be5a69742c948, type: 2}
-  canShot: 0
+  canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
   bulletManager: {fileID: 0}
 --- !u!114 &11497192

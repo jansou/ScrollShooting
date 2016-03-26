@@ -50,7 +50,6 @@ GameObject:
   - 114: {fileID: 11455824}
   - 114: {fileID: 11410772}
   - 82: {fileID: 8200042}
-  - 114: {fileID: 11457260}
   m_Layer: 9
   m_Name: EnemyBossMonkeyR
   m_TagString: Enemy
@@ -264,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
+  hp: 150
   point: 200
   touchDamage: 1
   shotPower: 4
@@ -300,20 +299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 2
+  isNormalEnemy: 1
   shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
---- !u!114 &11457260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f600dd5ff6bb548bea87ecf3f423bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
 --- !u!114 &11482154
 MonoBehaviour:
   m_ObjectHideFlags: 1

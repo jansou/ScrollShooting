@@ -13,6 +13,9 @@ public class RecoveryField : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Time.timeScale == 0){
+			return;
+		}
 		if(frame == recoveryInterval){
 			for(int i=0; i<party.transform.childCount; ++i){
 				party.transform.GetChild(i).GetComponent<Player>().recoveryHP(1);
