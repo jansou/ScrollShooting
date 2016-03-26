@@ -115,16 +115,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - {fileID: 109814, guid: b36c13b7565d9bb4da6e5c14c3c5e917, type: 2}
+  - {fileID: 196444, guid: 3f848a3a04c7f984b9e696ade0c2b2f9, type: 2}
+  - {fileID: 170122, guid: c1a9d625655f72b47bede411f3fe72a1, type: 2}
+  - {fileID: 119084, guid: 7b7ca00fa60c15340bd8b8feedc3b662, type: 2}
+  - {fileID: 123052, guid: 6d0bfbfebc6d81c42af1e74b0290134a, type: 2}
+  - {fileID: 193608, guid: a7c9b90f4e5e9c64ca3d35978c46af6f, type: 2}
   - {fileID: 163362, guid: 38785435a3db151488d3cafe309f9b16, type: 2}
-  - {fileID: 163362, guid: a9efd5301c7f3a3439d1013e337b25f2, type: 2}
-  - {fileID: 196444, guid: d82de34bab6764e41b3007886b7a6054, type: 2}
-  - {fileID: 170122, guid: b337ce07386e1e547a2a7948c38c9ec0, type: 2}
-  - {fileID: 119084, guid: 86765b6d0707ece44a0cf6693b3fb64c, type: 2}
-  - {fileID: 135924, guid: a581565292ca26448819a538d2d00ade, type: 2}
-  - {fileID: 124698, guid: c5b0c1c741fb8c040871a956275ee165, type: 2}
-  - {fileID: 181468, guid: 407c235bb3969004bb0d30b177d46a40, type: 2}
-  - {fileID: 179926, guid: 341fa54af1699ac40bf0a57539a06038, type: 2}
-  - {fileID: 186210, guid: afffb90f518124b45937ad53ab970030, type: 2}
+  - {fileID: 124698, guid: 066bfda5a383b6d419b577f03c003541, type: 2}
+  - {fileID: 181468, guid: e2a2f4abff58b9748ad8184fc2e3d14e, type: 2}
+  - {fileID: 189234, guid: c4b19d8f401a8364189f0aeaa36e3eef, type: 2}
+  - {fileID: 151956, guid: bc9da600c5065d143b5e179aa312d041, type: 2}
+  - {fileID: 179926, guid: be6cecff59fef0c4a9b786ea483aaf8b, type: 2}
+  - {fileID: 103694, guid: 635399a048a4d644baa2ad502eee5067, type: 2}
   currentWave: 0
   manager: {fileID: 0}
 --- !u!4 &269916570
@@ -294,12 +297,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 138540, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
       propertyPath: m_Name
-      value: back_autumn
+      value: back_gate
       objectReference: {fileID: 0}
     - target: {fileID: 2391302, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b48ebd9af48e5e04ea2fa26b1963cbbb, type: 2}
+      objectReference: {fileID: 2100000, guid: 0d3a71398cfe5be42a3e72d9286eced8, type: 2}
     - target: {fileID: 11420664, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
       propertyPath: speed
       value: 0
