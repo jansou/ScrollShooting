@@ -6313,6 +6313,7 @@ MonoBehaviour:
   darkChaser: {fileID: 129436, guid: 2b7ac93986869634ba7c30beaa5cfa85, type: 2}
   rockBullet: {fileID: 182144, guid: 5e41a5cca5701aa49bdc809ae7ac5977, type: 2}
   rayBullet: {fileID: 172524, guid: 70df717244224f642abe1d71015d2308, type: 2}
+  boneBullet: {fileID: 110438, guid: 6f5de6b3a9bcaa442ae6db02a8f83269, type: 2}
 --- !u!114 &11485744
 MonoBehaviour:
   m_ObjectHideFlags: 1

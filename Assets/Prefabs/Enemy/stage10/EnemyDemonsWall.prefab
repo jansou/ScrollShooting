@@ -117,8 +117,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.4674511, y: -7.42367744, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.71000004, y: -.129999995, z: 0}
+  m_LocalScale: {x: 1.73206389, y: 1.73206389, z: 1.73206389}
   m_Children:
   - {fileID: 456730}
   m_Father: {fileID: 0}
@@ -306,13 +306,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 108532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88c7818819f20f4bbc76ef9a16b09f3, type: 3}
+  m_Script: {fileID: 11500000, guid: f6699ed4994da4a4cbc9628c018f5a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 4
-  speed: 2
-  shootSE: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
-  shootSE2: {fileID: 0}
 --- !u!212 &21203272
 SpriteRenderer:
   m_ObjectHideFlags: 1
