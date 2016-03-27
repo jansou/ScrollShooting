@@ -46,9 +46,10 @@ GameObject:
   - 114: {fileID: 11423378}
   - 114: {fileID: 11404788}
   - 60: {fileID: 6047940}
-  - 114: {fileID: 11452732}
   - 114: {fileID: 11419938}
   - 82: {fileID: 8238214}
+  - 114: {fileID: 11446728}
+  - 114: {fileID: 11427982}
   m_Layer: 9
   m_Name: EnemyBossDragon
   m_TagString: Enemy
@@ -117,8 +118,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.0958452, y: -3.54570103, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.43448591, y: -.852937937, z: 0}
+  m_LocalScale: {x: -1.4282881, y: 1.4282881, z: 1.4282881}
   m_Children:
   - {fileID: 458826}
   m_Father: {fileID: 0}
@@ -151,10 +152,12 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: .122161865, y: .162532806}
-      - {x: -.164642334, y: .162532806}
-      - {x: -.165161133, y: -.145130157}
-      - {x: .125579834, y: -.146434784}
+    - - {x: .160627902, y: .441411287}
+      - {x: -.529405177, y: .372316062}
+      - {x: -.289657205, y: -.27020964}
+      - {x: -.309408456, y: -.443241566}
+      - {x: .17806159, y: -.558529794}
+      - {x: .539089382, y: -.271449327}
 --- !u!82 &8238214
 AudioSource:
   m_ObjectHideFlags: 1
@@ -252,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  hp: 500
   point: 70
   touchDamage: 4
   shotPower: 4
@@ -287,7 +290,7 @@ MonoBehaviour:
   canShot: 1
   explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
   bulletManager: {fileID: 0}
---- !u!114 &11452732
+--- !u!114 &11427982
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -295,13 +298,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 186070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88c7818819f20f4bbc76ef9a16b09f3, type: 3}
+  m_Script: {fileID: 11500000, guid: fbe4ad253162b4949adbb9674c0d89fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 4
-  speed: 2
-  shootSE: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
-  shootSE2: {fileID: 0}
+--- !u!114 &11446728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f600dd5ff6bb548bea87ecf3f423bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 107580, guid: 877b64253fd3d5b49a10b802d8e6d4cd, type: 2}
 --- !u!114 &11454460
 MonoBehaviour:
   m_ObjectHideFlags: 1

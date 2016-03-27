@@ -20,6 +20,7 @@ public class BulletManager : MonoBehaviour {
     public GameObject rockBullet;
 	public GameObject rayBullet;
 	public GameObject boneBullet;
+	public GameObject fireStopBullet;
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +49,8 @@ public class BulletManager : MonoBehaviour {
 		DarkChaser,
         RockBullet,
 		RayBullet,
-		BoneBullet
+		BoneBullet,
+		FireStop
 	};
 
 	public void Shot(Transform origin, int shotPower,float shotSpeed=2, BulletType type = BulletType.Normal,float offsetx=0, float offsety=0)
@@ -108,6 +110,9 @@ public class BulletManager : MonoBehaviour {
 			break;
 		case BulletType.BoneBullet:
 			b = boneBullet;
+			break;
+		case BulletType.FireStop:
+			b = fireStopBullet;
 			break;
 		}
 

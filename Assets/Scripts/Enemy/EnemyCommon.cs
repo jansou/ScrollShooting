@@ -43,10 +43,12 @@ public class EnemyCommon : MonoBehaviour {
 		}
 	}
 
-	public void ShotAim(Transform origin,Transform aim, int shotPower,int shotSpeed, BulletManager.BulletType type){
+	public void ShotAim(Transform origin,Transform aim, int shotPower,int shotSpeed, BulletManager.BulletType type,int roffset = 0){
 		if(aim){
-			Vector3 v = aim.position - transform.position;
-			origin.localRotation = Quaternion.FromToRotation(Vector3.up,v);
+			Vector3 v = aim.position - origin.position;
+			Quaternion q = Quaternion.FromToRotation(Vector3.up,v);
+			origin.localRotation = Quaternion.Euler(q.eulerAngles.x,q.eulerAngles.y,q.eulerAngles.z+roffset);
+
 			spaceship.Shot(origin,shotPower,shotSpeed,type);
 		}
 		else{
@@ -55,7 +57,7 @@ public class EnemyCommon : MonoBehaviour {
 	}
 	public void ShotAimNway(Transform origin,Transform aim, int shotPower,int shotSpeed, BulletManager.BulletType type,int way=1, float spread=0){
 		if(aim){
-			Vector3 v = aim.position - transform.position;
+			Vector3 v = aim.position - origin.position;
 			Quaternion q = Quaternion.FromToRotation(Vector3.up,v);
 			 
 			for(int i=0; i<way; ++i){
