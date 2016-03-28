@@ -62,12 +62,11 @@ public class HomeManager : MonoBehaviour
 		}
 		Transform buttons = GameObject.Find("Content").transform;
 
-        for (int i = 2; sm.arrivedStage < i;++i )
+
+        for (int i = EXstageNum-1; sm.arrivedStage<i; --i)
         {
             setInvisible(buttons, "Stage"+i.ToString());
         }
-
-
 
         /*
 
@@ -87,7 +86,8 @@ public class HomeManager : MonoBehaviour
         StartCoroutine("FadeIn");
 	}
 
-	void setInvisible(Transform buttons,string buttonName){
+	void setInvisible(Transform buttons,string buttonName)
+    {
 		Transform b = buttons.FindChild(buttonName);
 		b.GetComponent<Button>().interactable = false;
 		b.GetComponentInChildren<Text>().text = "";

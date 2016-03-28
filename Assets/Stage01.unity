@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageBGM: {fileID: 8300000, guid: af2d47cd756f64b458bc85d7e612d536, type: 3}
   bossBGM: {fileID: 8300000, guid: 4327d1a326732774dada2bc01c59d116, type: 3}
+  specialBGM: {fileID: 0}
 --- !u!82 &791338836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -303,6 +304,14 @@ Prefab:
       propertyPath: isUndead
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: joinRinmaru
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: joinMedhu
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
   m_IsPrefabParent: 0
@@ -400,6 +409,7 @@ MonoBehaviour:
   - {fileID: 155598, guid: 5010a6939486e1948806743bb9b1bef9, type: 2}
   - {fileID: 165204, guid: bace32e5b9478844187b9357ad978575, type: 2}
   - {fileID: 165204, guid: 41f6728351eb3354d83eb344c51c7b38, type: 2}
+  currentWave: 0
   manager: {fileID: 0}
 --- !u!4 &1401079014
 Transform:
