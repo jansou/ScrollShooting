@@ -59,8 +59,9 @@ public class BossRinmaru : MonoBehaviour {
 
 	IEnumerator Attack1()
     {
-		while(true){
-			for(int i=0; i<7; ++i){
+        while (true)
+        {//enemy.MoveByTime(new Vector3(3.5f,Random.Range (1.0f,2.5f),0)場所,0.2f時間)
+			for(int i=0; i<7; ++i){//通常攻撃
 				Vector3 aimpos = new Vector3(Random.Range(0.5f,4.0f),Random.Range (-1.4f,3f),0);
 				yield return StartCoroutine(enemy.MoveByTime(aimpos,0.7f));
 				for(int j=0; j<2; ++j){
@@ -70,13 +71,14 @@ public class BossRinmaru : MonoBehaviour {
 				yield return new WaitForSeconds(0.5f);
 			}
 
-			if(enemy.hp < 150){
+			if(enemy.hp < 150){//連続切り
 				common.SetFlicker();
 				common.ShowWindowMessage("連続切り");
 				yield return StartCoroutine(enemy.MoveByTime(new Vector3(3.5f,0.6f,0),1.0f));
 				yield return new WaitForSeconds(0.5f);
 
-				for(int i=0; i<8; ++i){
+                for (int i = 0; i < 8; ++i)
+                {
 					yield return StartCoroutine(enemy.MoveByTime(new Vector3(3.5f,Random.Range (1.0f,2.5f),0),0.2f));
 					common.Shot(s2,90,10,8,BulletManager.BulletType.GrandSlash);
 					yield return new WaitForSeconds(0.3f);
@@ -87,7 +89,7 @@ public class BossRinmaru : MonoBehaviour {
 
 			}
 			else{
-				common.SetFlicker();
+				common.SetFlicker();//特技時の点滅
 				common.ShowWindowMessage("居合切り");
 				yield return new WaitForSeconds(1.5f);
 				yield return StartCoroutine(enemy.MoveByTime(pt.position + new Vector3(1f,0,0),0.2f));

@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 170900, guid: 28ea6d0a793fc75448a1af656378451b, type: 2}
-  - {fileID: 155598, guid: 962bfc23855c2cc4f8e4036c57d10374, type: 2}
+  - {fileID: 148410, guid: 4f15385acfbf1584e87026b6d8523c47, type: 2}
   - {fileID: 180922, guid: eda116a99516fba4b87efbcdf24c902b, type: 2}
   currentWave: 0
   manager: {fileID: 0}
