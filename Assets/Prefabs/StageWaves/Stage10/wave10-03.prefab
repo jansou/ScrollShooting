@@ -40,10 +40,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 186070, guid: b9afc151a27033a47bd2d60fc548ee4f, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 186070, guid: b9afc151a27033a47bd2d60fc548ee4f, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
   enemypositions:
   - {x: 3, y: 1, z: 0}
   - {x: 4, y: 2, z: 0}

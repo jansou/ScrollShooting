@@ -40,16 +40,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
-  - {fileID: 190576, guid: 77ef6a20ac13b4341a85164e3754c349, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 186070, guid: d2766b6c89dbb724e9a9919a8e591dc6, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  - {fileID: 162286, guid: 1a38e9c0d9a8a314b94f4078a5acc69f, type: 2}
+  - {fileID: 186070, guid: d2766b6c89dbb724e9a9919a8e591dc6, type: 2}
   enemypositions:
   - {x: 4, y: 1, z: 0}
   - {x: 4, y: -1, z: 0}
