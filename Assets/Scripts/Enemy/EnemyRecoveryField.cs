@@ -18,4 +18,7 @@ public class EnemyRecoveryField : MonoBehaviour {
 			col.GetComponent<Enemy>().RecoveryHP(1);
 		}
 	}
+	void OnTriggerEnter2D(Collider2D col){
+
+	}
 }
