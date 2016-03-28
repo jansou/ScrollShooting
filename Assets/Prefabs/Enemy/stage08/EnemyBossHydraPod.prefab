@@ -79,8 +79,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 270.911682, y: 56.3334389, z: 0}
-  m_LocalScale: {x: -2, y: 2, z: 1}
+  m_LocalPosition: {x: 527.737976, y: 80.3412323, z: 0}
+  m_LocalScale: {x: -2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 452118}
   m_Father: {fileID: 0}
@@ -92,8 +92,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: .360000014, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: .189999998, z: 0}
+  m_LocalScale: {x: 1, y: .400000006, z: 1}
   m_Children:
   - {fileID: 499104}
   - {fileID: 457148}
@@ -151,10 +151,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: .152431488, y: .424869061}
-      - {x: -.174732208, y: .424869061}
-      - {x: -.175252914, y: -.468005657}
-      - {x: .155849457, y: -.469309807}
+    - - {x: .274983734, y: -.00410461426}
+      - {x: .0227457695, y: .00270589208}
+      - {x: .0221964531, y: -.250114441}
+      - {x: .27158612, y: -.251419067}
 --- !u!82 &8201034
 AudioSource:
   m_ObjectHideFlags: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 1000
   point: 70
   touchDamage: 4
   shotPower: 4
@@ -295,12 +295,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 173794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21bacbdde9a7afc489b52afe539eef99, type: 3}
+  m_Script: {fileID: 11500000, guid: 4653903038aadd84a9ff9577a157bbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 4
   speed: 2
-  une: {fileID: 162286, guid: 8afd9976b68b4a94487caf0e8842b585, type: 2}
+  SwampMan: {fileID: 125874, guid: d33cf54c29fe1c441ad2adef75454510, type: 2}
+  Hydra: {fileID: 132136, guid: dc90b9448569f9e49b4dffd9f0654f89, type: 2}
   shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
   skillSE: {fileID: 8300000, guid: 1e97a0ba59d18d148938c29fe1ab4382, type: 3}
 --- !u!114 &11486202

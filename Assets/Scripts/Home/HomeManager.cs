@@ -17,11 +17,11 @@ public class HomeManager : MonoBehaviour
     public Sprite backCredit;
 
     //おまけステージの番号
-    public int EXstageNum=4;
+    public int EXstageNum=9;
     public int creditNum = 5;
 
-	int selectnum = 0;
-
+	int selectStageButtonNum = 0;
+    string selectTargetStageName = "Stage00";
     //Fade関連
     int alpha = 255;
 	public GameObject fadeObject;
@@ -61,20 +61,33 @@ public class HomeManager : MonoBehaviour
 			sm.Load();
 		}
 		Transform buttons = GameObject.Find("Content").transform;
-		if(sm.arrivedStage < 2){
-			setInvisible(buttons,"Stage2");
-		}
+
+
+        for (int i = EXstageNum-1; sm.arrivedStage<i; --i)
+        {
+            setInvisible(buttons, "Stage"+i.ToString());
+        }
+
+        /*
+
+            if (sm.arrivedStage < 2)
+            {
+                setInvisible(buttons, "Stage2");
+            }
 		if(sm.arrivedStage < 3){
 			setInvisible(buttons,"Stage3");
-		}
-        if (sm.arrivedStage < 4)
+		}....
+        */
+        if (sm.arrivedStage < EXstageNum)
         {
             setInvisible(buttons, "StageEX");
         }
+        
         StartCoroutine("FadeIn");
 	}
 
-	void setInvisible(Transform buttons,string buttonName){
+	void setInvisible(Transform buttons,string buttonName)
+    {
 		Transform b = buttons.FindChild(buttonName);
 		b.GetComponent<Button>().interactable = false;
 		b.GetComponentInChildren<Text>().text = "";
@@ -121,7 +134,7 @@ public class HomeManager : MonoBehaviour
 
         if (tapHit() == "ContinueButton" && state != 0 && itemShopCanvas.enabled == false)//それぞれのボタンを設定する
         {
-            selectnum = FindObjectOfType<SaveManager>().arrivedStage;
+            selectStageButtonNum = FindObjectOfType<SaveManager>().arrivedStage;
 			GameStart();
         }
     }
@@ -160,36 +173,40 @@ public class HomeManager : MonoBehaviour
 
 	void LoadStage(){
 
-        if (EXstageNum == selectnum)
+        if (EXstageNum == selectStageButtonNum)
         {
             Application.LoadLevel("StageEX");
 
         }
         else
         {
-            switch (selectnum)
+            Application.LoadLevel(selectTargetStageName);
+            /*
+            switch (selectStageButtonNum)
             {
                 case 0:
 
-                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    Application.LoadLevel("Stage0" + (selectTargetStageNum).ToString());
                     //Application.LoadLevel("Stage01");
                     break;
                 case 1:
-                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    Application.LoadLevel("Stage0" + (selectStageButtonNum).ToString());
                     //Application.LoadLevel("Stage02");
                     break;
                 case 2:
-                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    Application.LoadLevel("Stage0" + (selectStageButtonNum).ToString());
                     //Application.LoadLevel("Stage03");
                     break;
                 case 3:
-                    Application.LoadLevel("Stage0" + (selectnum).ToString());
+                    Application.LoadLevel("Stage0" + (selectStageButtonNum).ToString());
                     //Application.LoadLevel("Stage03");
                     break;
                 default:
                     Application.LoadLevel("Stage");
                     break;
+             
             }
+             */
         }
 	}
 
@@ -248,6 +265,11 @@ public class HomeManager : MonoBehaviour
         return "Stage" + (num).ToString();
 	}
 
+    public void SelectTargetStage(string name)
+    {
+        selectTargetStageName = name;
+    }
+
 	public void SelectStage(int num)
     {
 		if(firstSelect){
@@ -289,13 +311,12 @@ public class HomeManager : MonoBehaviour
         }
 
 		string textPath = GetStagePath(num);
-		string prevPath = GetStagePath(selectnum);
+		string prevPath = GetStagePath(selectStageButtonNum);
 
 		buttonContent.FindChild(prevPath).GetComponent<Image>().color = normalButtonColor;
 		buttonContent.FindChild(textPath).GetComponent<Image>().color = selectedButtonColor;
-		selectnum = num;
+		selectStageButtonNum = num;
 
-		//「遊び方」を選択した場合はボタン押せないように
 		if(num == creditNum){
 			GameObject.Find("startButton").GetComponent<Button>().interactable = false;
 		}

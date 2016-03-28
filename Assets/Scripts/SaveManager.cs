@@ -48,11 +48,39 @@ public class SaveManager : MonoBehaviour {
 
     public bool isDebug=false;
 
+    int getDefaultLevel(string prefName)//加入時のレベル
+    {
+        if (prefName == alexPref)
+        {
+            return 1;
+        }
+        if (prefName == guylusPref)
+        {
+            return 1;
+        }
+        if (prefName == nelyPref)
+        {
+            return 1;
+        }
+        if (prefName == rinmaruPref)
+        {
+            return 1;
+        }
+        if (prefName == medhuPref)
+        {
+            return 1;
+        }
+        return 1;
+    }
+    int getDefaultEXP(string prefName)
+    {
+        return (200 * (getDefaultLevel(prefName) * 2 - 1));
+    }
 
 	Status GetStatus(string prefName){
 		Status st;
-		st.level = PlayerPrefs.GetInt(GetLevelPref(prefName),1);
-		st.exp = PlayerPrefs.GetInt(GetExpPref(prefName),1);
+		st.level = PlayerPrefs.GetInt(GetLevelPref(prefName),getDefaultLevel(prefName));
+		st.exp = PlayerPrefs.GetInt(GetExpPref(prefName),getDefaultEXP(prefName));
 		st.isJoining = false;
 		return st;
 	}
@@ -118,7 +146,7 @@ public class SaveManager : MonoBehaviour {
 		guylus.isJoining = true;
 		nely.isJoining = arrivedStage >= 4;
 		rinmaru.isJoining = arrivedStage >= 6;
-		medhu.isJoining = arrivedStage >= 8;
+		medhu.isJoining = arrivedStage >= 6;
 
 		Debug.Log ("Loaded");
 		loaded = true;

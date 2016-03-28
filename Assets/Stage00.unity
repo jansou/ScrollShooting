@@ -292,6 +292,18 @@ Prefab:
       propertyPath: isUndead
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: joinRinmaru
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: joinMedhu
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: stageNumber
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
   m_IsPrefabParent: 0
@@ -381,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 121552, guid: 7369d0c4cbd45a34f9c7ca2b47a9c0ed, type: 2}
+  - {fileID: 120230, guid: 32c45058d0726ba47bd370c27b93108a, type: 2}
   - {fileID: 121552, guid: 7369d0c4cbd45a34f9c7ca2b47a9c0ed, type: 2}
   - {fileID: 190042, guid: 8a5db4f86703eb341b7787cc734748f6, type: 2}
   - {fileID: 141126, guid: 795b6724e2ac71b4d97779b6db537486, type: 2}
