@@ -60,7 +60,7 @@ public class SaveManager : MonoBehaviour {
         }
         if (prefName == nelyPref)
         {
-            return 1;
+            return 6;
         }
         if (prefName == rinmaruPref)
         {
@@ -130,7 +130,7 @@ public class SaveManager : MonoBehaviour {
 
 	}
 	public void Load(){
-        if(!isDebug) arrivedStage = PlayerPrefs.GetInt(stagePref,0);
+        if(!isDebug) arrivedStage = PlayerPrefs.GetInt(stagePref,1);
 
 		money = PlayerPrefs.GetInt(moneyPref,0);
 

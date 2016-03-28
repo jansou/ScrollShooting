@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.71000004, y: -.129999995, z: 0}
+  m_LocalPosition: {x: 528.503967, y: 79.6579514, z: 0}
   m_LocalScale: {x: 1.73206389, y: 1.73206389, z: 1.73206389}
   m_Children:
   - {fileID: 456730}
@@ -151,10 +151,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: .122161865, y: .162532806}
-      - {x: -.164642334, y: .162532806}
-      - {x: -.165161133, y: -.145130157}
-      - {x: .125579834, y: -.146434784}
+    - - {x: .287263423, y: 1.2239573}
+      - {x: -.954784393, y: 1.23574889}
+      - {x: -.967153072, y: -.947089195}
+      - {x: .644510269, y: -.948397398}
 --- !u!82 &8214044
 AudioSource:
   m_ObjectHideFlags: 1
@@ -263,9 +263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  hp: 10000
   point: 70
-  touchDamage: 4
+  touchDamage: 10
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
