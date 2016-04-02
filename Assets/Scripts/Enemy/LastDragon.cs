@@ -8,6 +8,8 @@ public class LastDragon : MonoBehaviour {
 	
 	Transform st;
 	Transform pt;
+
+	public GameObject sun;
 	
 	int maxHP;
 	// Use this for initialization
@@ -41,6 +43,10 @@ public class LastDragon : MonoBehaviour {
 
 	IEnumerator PrometeusFrame(){
 		common.ShowWindowMessage("プロメテウスの火");
+		GameObject g = (GameObject)Instantiate(sun,st.position,Quaternion.identity);
+		while(g){
+			yield return new WaitForEndOfFrame();
+		}
 		yield return new WaitForSeconds(4.0f);
 	}
 	IEnumerator GalaxyGate(){
@@ -110,7 +116,7 @@ public class LastDragon : MonoBehaviour {
 
 	//火を吐く（１回分)
 	IEnumerator FireBress(){
-		for(int i=0; i<50; ++i){
+		for(int i=0; i<40; ++i){
 			common.ShotAim(st,pt,3,Random.Range(4,7),BulletManager.BulletType.BlossomBullet,Random.Range(-3,3));
 			common.ShotAim(st,pt,3,Random.Range(2,4),BulletManager.BulletType.BlossomBullet,Random.Range(-10,10));
 			
