@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     //ヒットポイント
     public int hp = 1;
-	int maxHP = 0;
+	public int maxHP = 0;
 
     // スコアのポイント
     public int point = 100;
@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
 	// Use this for initialization
 	IEnumerator Start () 
 	{
+        maxHP = hp;
 		//Spaceshipコンポーネントを取得
 		spaceship = GetComponent<Spaceship> ();
 

@@ -40,17 +40,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 104652, guid: 77a22e90441f5ec4da805ac9d4f09981, type: 2}
-  - {fileID: 197102, guid: 61144ccf2d2d531478969f0cc72d3d5b, type: 2}
   - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
-  - {fileID: 166304, guid: 9ed18ed50a3448a4eaa3213e9b4952aa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
+  - {fileID: 106748, guid: e38bef0878761d446a3f1319fa14f2fa, type: 2}
   enemypositions:
   - {x: 3, y: 1, z: 0}
   - {x: 4, y: 1, z: 0}

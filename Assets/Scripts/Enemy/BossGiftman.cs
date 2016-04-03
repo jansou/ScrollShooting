@@ -7,14 +7,18 @@ public class BossGiftman : MonoBehaviour {
     Enemy enemy;
 
     public int power=2;
+    public int speed = 3;
 
 	Transform s2;
 	Transform pt;
 
     //SE関係
     public AudioClip shootSE;
+    public AudioClip shootSE2;
     public AudioClip skillSE;
     AudioSource audioSource;
+    public GameObject stone;
+    public GameObject gob;
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -44,48 +48,101 @@ public class BossGiftman : MonoBehaviour {
 
     IEnumerator Stop()
     {
-        FindObjectOfType<MessageWindow>().showMessage("ボスザル");
+        while (this.transform.position.x > 3.0f)
+        { yield return new WaitForSeconds(1.0f); }
+
+        FindObjectOfType<MessageWindow>().showMessage("岩の魔獣！");
         yield return new WaitForSeconds(2);
         enemy.MoveStop();
     }
 
-	IEnumerator Attack1(){//banana
-		while (true) 
-		{
-            for (int n=0; n<10;++n )
+    public void ShotThrowAim(Transform origin, Transform aim, int shotPower, int shotSpeed, BulletManager.BulletType type)
+    {
+        if (aim)
+        {
+            Vector3 d = aim.position - transform.position;
+            Vector3 v = Vector3.zero;
+            v.x = d.x / 2;
+            v.y = d.y / 2 + 0.5f * 2 * 3f;
+            //v.y = d.y / 10;
+            origin.localRotation = Quaternion.FromToRotation(Vector3.up, v);
+            spaceship.Shot(origin, shotPower, v.magnitude, type);
+           
+        }
+        else
+        {
+            common.Shot(origin, 90, shotPower, shotSpeed, type);
+        }
+    }
+
+	IEnumerator Attack1()
+    {
+        while (true)
+        {
+            for (int n = 0; n < 5; ++n)
             {
                 audioSource.PlayOneShot(shootSE);
-                common.ShotAim(s2, pt, power, 3, BulletManager.BulletType.BananaSlash);
-                
-                //shotDelay秒待つ
-                yield return new WaitForSeconds(spaceship.shotDelay);
+                ShotThrowAim(s2, pt, power, speed, BulletManager.BulletType.RockBullet);
+                yield return new WaitForSeconds(1.0f);
             }
 
-            //audioSource.clip = skillSE;
+            //
             audioSource.PlayOneShot(skillSE);
-            FindObjectOfType<MessageWindow>().showMessage("バナナラッシュ！");
+            FindObjectOfType<MessageWindow>().showMessage("グロロロロロ……");
+            spaceship.GetAnimator().SetTrigger("Skill");
 
-			spaceship.GetAnimator().SetTrigger("Skill");
-			yield return new WaitForSeconds(0.5f);
-
-            //バナナラッシュ
-            for (int m = 0; m < 2; ++m)
+            for (int i = 0; i < 5; ++i)
             {
-                for (int n = 0; n < 4; ++n)
+                audioSource.PlayOneShot(shootSE2);
+                common.ShotStoneFall(s2, speed, power, BulletManager.BulletType.RockBullet);
+                yield return new WaitForSeconds(1.0f);
+            }
+
+            yield return new WaitForSeconds(1.0f);
+
+            //if(enemy.hp<enemy.maxHP/2)
+            {
+                audioSource.PlayOneShot(skillSE);
+                FindObjectOfType<MessageWindow>().showMessage("ゴガガガガガガ……！");
+                spaceship.GetAnimator().SetTrigger("Skill");
+
+                for (int i = 0; i < 6; ++i)
                 {
-                    for (int i = 0; i < 6; ++i)
+                    float xoffset = 1.4f;
+                    float yoffset = Random.Range(-1.5f,1.5f);
+                    audioSource.PlayOneShot(shootSE2);
+                    if(i==2)
                     {
-                        audioSource.PlayOneShot(shootSE);
-                        common.Shot(s2, -45+ 75*m + 30 * i, power, 4 - n, BulletManager.BulletType.BananaSlash);
+                        Instantiate(gob, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+
                     }
+                    else
+                        Instantiate(stone, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+                    yield return new WaitForSeconds(1.5f);
 
                 }
-                yield return new WaitForSeconds(spaceship.shotDelay + 1.0f);
             }
 
-			//shotDelay秒待つ
-			yield return new WaitForSeconds(spaceship.shotDelay + 2.5f);
-		}
+            if(enemy.hp<enemy.maxHP/8)
+            {
+                audioSource.PlayOneShot(skillSE);
+                FindObjectOfType<MessageWindow>().showMessage("ドガアアアアアアアアッー！");
+                spaceship.GetAnimator().SetTrigger("Skill");
+                for(;;)
+                {
+                    audioSource.PlayOneShot(shootSE2);
+                    audioSource.PlayOneShot(shootSE);
+                    ShotThrowAim(s2, pt, power, speed, BulletManager.BulletType.RockBullet);
+                    audioSource.PlayOneShot(shootSE2);
+                    common.ShotStoneFall(s2, speed, power, BulletManager.BulletType.RockBullet);
+                    float xoffset = 1.4f;
+                    float yoffset = Random.Range(-1.5f, 1.5f);
+                    audioSource.PlayOneShot(shootSE2);
+                    Instantiate(stone, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+                    yield return new WaitForSeconds(1.5f);
+                }
+            }
+        }
 	}
     /*
 	IEnumerator Attack2(){//3way

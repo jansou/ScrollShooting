@@ -304,7 +304,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: joinMedhu
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: joinGuylus
@@ -380,6 +380,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11404900, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: isUndead
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: stageNumber
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

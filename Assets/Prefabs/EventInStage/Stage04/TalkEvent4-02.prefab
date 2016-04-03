@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   texts:
-  - "\u30A2\u30EC\u30AF\u300C\u306A\u3093\u3060\u3063\u305F\u3093\u3060\u3044\u307E\u306E\u300D"
+  - "\u30AC\u30A4\u30E9\u30B9\u300C\u3055\u3063\u304D\u306E\u5CA9\u3001\u5929\u4E95\u3092\u652F\u3048\u3066\u3044\u305F\u3093\u3060\u300D"
   - "\u30CD\u30EA\u30FC\u300C\u3053\u306E\u5148\u306B\u3082\u305F\u304F\u3055\u3093\u3042\u308B\u307F\u305F\u3044\u3067\u3059\u300D"
   - "\u30A2\u30EC\u30AF\u300C\u306A\u3093\u3060\u3063\u3066\uFF01\uFF1F\u300D"
 --- !u!114 &11464658
@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
+  maxHP: 0
   point: 100
   touchDamage: 1
   shotPower: 1

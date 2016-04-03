@@ -38,7 +38,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &162956
 GameObject:
   m_ObjectHideFlags: 1
@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 106748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.4384956, y: -3.24253225, z: 0}
-  m_LocalScale: {x: -1.83256745, y: 1.83256745, z: 1.83256745}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 449098}
   m_Father: {fileID: 0}
@@ -249,12 +249,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
-  point: 50
+  maxHP: 50
+  point: 0
   touchDamage: 1
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 0
 --- !u!114 &11431742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -385,7 +386,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1643576185
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 123ef76d7fa0a764794f5c6278ec50e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aedb5f99b9e3b994ca5bf417ea408962, type: 3}
   m_Color: {r: .501960814, g: .501960814, b: .501960814, a: 1}
 --- !u!1001 &100100000
 Prefab:

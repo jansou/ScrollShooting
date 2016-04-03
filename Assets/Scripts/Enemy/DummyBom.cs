@@ -36,9 +36,9 @@ public class DummyBom : MonoBehaviour {
 
 		yield return new WaitForEndOfFrame();
 
-        StartCoroutine("Stop");
+        //StartCoroutine("Stop");
 		
-		//StartCoroutine("Attack2");
+		StartCoroutine("Attack1");
 
 		yield break;
 	}
@@ -54,6 +54,7 @@ public class DummyBom : MonoBehaviour {
 
 	IEnumerator Attack1()
     {//
+        /*
         audioSource.PlayOneShot(skillSE);
         FindObjectOfType<MessageWindow>().showMessage("3");
         spaceship.GetAnimator().SetTrigger("Skill");
@@ -68,16 +69,22 @@ public class DummyBom : MonoBehaviour {
         FindObjectOfType<MessageWindow>().showMessage("1");
         spaceship.GetAnimator().SetTrigger("Skill");
         yield return new WaitForSeconds(2);
-
+        */
         //for (int i=0;i<5 ;++i )
+        while (true)
         {
-            audioSource.PlayOneShot(skillSE);
-            FindObjectOfType<MessageWindow>().showMessage("発破");
-            spaceship.GetAnimator().SetTrigger("Skill");
-            yield return new WaitForSeconds(0.5f);
-            common.ShotStoneFall(s2, shotSpeed, power, BulletManager.BulletType.RockBullet); 
+            if (enemy.hp < enemy.maxHP / 2)
+            {
+                //audioSource.PlayOneShot(skillSE);
+                FindObjectOfType<MessageWindow>().showMessage("崩落！");
+                //spaceship.GetAnimator().SetTrigger("Skill");
+                //yield return new WaitForSeconds(0.5f);
+                common.ShotStoneFall(s2, shotSpeed, power, BulletManager.BulletType.RockBullet);
+                enemy.ExplodeSelf();
+
+            }
+            yield return new WaitForSeconds(0);
         }
-        enemy.ExplodeSelf();
 	}
     /*
 	IEnumerator Attack2(){//3way

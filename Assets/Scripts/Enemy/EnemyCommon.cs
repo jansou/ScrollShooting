@@ -83,9 +83,9 @@ public class EnemyCommon : MonoBehaviour {
 
     public void ShotStoneFall(Transform origin, int shotPower, int shotSpeed, BulletManager.BulletType type)
     {
-        for(int i=0;i<5;++i)
+        for(int i=4;i<8;++i)
         {
-            origin.position = new Vector3(Random.Range(-3.0f, 3.0f), i, origin.localPosition.z);
+            origin.position = new Vector3(Random.Range(-4.0f, 3.0f), i, origin.localPosition.z);
             spaceship.Shot(origin, shotPower, 0, type);
         }
     }
