@@ -86,7 +86,7 @@ public class EnemyCommon : MonoBehaviour {
         for(int i=4;i<10;++i)
         {
             origin.position = new Vector3(Random.Range(-4.0f, 3.0f), i, origin.localPosition.z);
-            spaceship.Shot(origin, shotPower, 0, type);
+            spaceship.Shot(origin, shotPower, shotSpeed, type);
         }
     }
 

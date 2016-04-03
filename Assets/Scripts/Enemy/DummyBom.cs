@@ -79,7 +79,7 @@ public class DummyBom : MonoBehaviour {
                 FindObjectOfType<MessageWindow>().showMessage("崩落！");
                 //spaceship.GetAnimator().SetTrigger("Skill");
                 //yield return new WaitForSeconds(0.5f);
-                common.ShotStoneFall(s2, shotSpeed, power, BulletManager.BulletType.RockBullet);
+                common.ShotStoneFall(s2, power, shotSpeed, BulletManager.BulletType.RockBullet);
                 enemy.ExplodeSelf();
 
             }
