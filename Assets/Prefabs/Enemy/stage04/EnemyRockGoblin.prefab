@@ -288,13 +288,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
-  point: 70
+  hp: 40
+  maxHP: 0
+  point: 90
   touchDamage: 4
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 8
 --- !u!114 &11491680
 MonoBehaviour:
   m_ObjectHideFlags: 1
