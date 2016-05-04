@@ -98,8 +98,10 @@ public class Enemy : MonoBehaviour
 		Vector3 range = new Vector3(Random.Range(-0.1f,0.1f),Random.Range(-0.1f,0.1f),0);
 		FindObjectOfType<PopUp>().CreateText(transform.position+range,bullet.getDamage());
 
+		if(bullet.isPenetrate == false){
 		//弾の削除
 		Destroy (c.transform.parent.gameObject);
+		}
 
         //ヒットポイントが０以下で爆発
         if (hp <= 0)

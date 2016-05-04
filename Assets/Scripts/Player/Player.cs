@@ -154,33 +154,33 @@ public class Player : MonoBehaviour
 		case Party.Formation.Rinmaru:
 			if(type == Type.Rinmaru){
 				shotposition.rotation = Quaternion.AngleAxis(0,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 				shotposition.rotation = Quaternion.AngleAxis(90,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 				shotposition.rotation = Quaternion.AngleAxis(180,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 			}
 			else if(type == Type.Guylus){
 				shotposition.rotation = Quaternion.AngleAxis(45,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 			}
 			else if(type == Type.Medhu){
 				shotposition.rotation = Quaternion.AngleAxis(135,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 			}
 			else if(type == Type.Nely){
 				shotposition.rotation = Quaternion.AngleAxis(225,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 			}
 			else if(type == Type.Alex){
 				shotposition.rotation = Quaternion.AngleAxis(315,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 			}
 			else{
 				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
-				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PSlash);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 			}
 
             //yield return new WaitForSeconds(spaceship.shotDelay);

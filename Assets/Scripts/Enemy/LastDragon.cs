@@ -7,9 +7,11 @@ public class LastDragon : MonoBehaviour {
 	Enemy enemy;
 	
 	Transform st;
+	Transform st2;
 	Transform pt;
 
 	public GameObject sun;
+	public GameObject horizon;
 	
 	int maxHP;
 	// Use this for initialization
@@ -20,6 +22,7 @@ public class LastDragon : MonoBehaviour {
 		common.Init();
 		
 		st = common.CreateShotPosition();
+		st2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
 		//弾が口から出るように
@@ -31,6 +34,9 @@ public class LastDragon : MonoBehaviour {
 		
 		yield return StartCoroutine("Stop");
 
+		yield return StartCoroutine("StardustJourney");
+
+		/*本番用
 		yield return StartCoroutine(Attack(maxHP*4/5));
 		yield return StartCoroutine("PrometeusFrame");
 		yield return StartCoroutine(Attack(maxHP*3/5));
@@ -39,6 +45,7 @@ public class LastDragon : MonoBehaviour {
 		yield return StartCoroutine("PhenomenonHorizon");
 		yield return StartCoroutine(Attack(maxHP*1/5));
 		yield return StartCoroutine("StardustJourney");
+*/
 	}
 
 	IEnumerator PrometeusFrame(){
@@ -51,15 +58,50 @@ public class LastDragon : MonoBehaviour {
 	}
 	IEnumerator GalaxyGate(){
 		common.ShowWindowMessage("タンホイザーゲート");
+
 		yield return new WaitForSeconds(4.0f);
 	}
 	IEnumerator PhenomenonHorizon(){
 		common.ShowWindowMessage("事象の地平線");
+		GameObject g = (GameObject)Instantiate(horizon,st.position+new Vector3(-1.3f,0,0),Quaternion.identity);
+		while(g){
+			yield return new WaitForEndOfFrame();
+		}
 		yield return new WaitForSeconds(4.0f);
 	}
 	IEnumerator StardustJourney(){
+		st.position += new Vector3(1.5f,-0.5f,0);
 		common.ShowWindowMessage("スターダストジャーニー");
+		int range = 0;
+
+		//フリーズしたらこの２行を省く
+		StartCoroutine("RayRush");
+		StartCoroutine("ScatterStar");
+
+		while(true){
+			common.Shot(st,range,10,2,BulletManager.BulletType.StarChaser);
+			range += 20;
+			yield return new WaitForSeconds(0.4f);
+		}
 		yield return new WaitForSeconds(4.0f);
+	}
+	IEnumerator ScatterStar(){
+		while(true){
+			if(enemy.hp < maxHP * 1/8){
+				common.Shot(st,Random.Range (45,135),3,3,BulletManager.BulletType.StarBullet,0,0);
+				yield return new WaitForSeconds(0.1f);
+			}
+		}
+	}
+
+	IEnumerator RayRush(){
+		while(true){
+			if(enemy.hp < maxHP * 1/10){
+				st2.position = new Vector3(Random.Range(2,5),4,0);
+				common.Shot(st2,Random.Range (115,155),10,7,BulletManager.BulletType.RayBullet,0,0);
+				yield return new WaitForSeconds(1.3f);
+			}
+		}
 	}
 
 	IEnumerator Attack(int breakHP){
@@ -88,17 +130,6 @@ public class LastDragon : MonoBehaviour {
 		enemy.MoveStop();
 	}
 
-	IEnumerator Magne(){
-		while(true){
-		float time = 0.0f;
-		while(time < 5.0f){
-			pt.transform.Translate(1*Time.deltaTime,0,0);
-			time += Time.deltaTime;
-			yield return new WaitForEndOfFrame();
-		}
-			yield return new WaitForSeconds(3.0f);
-		}
-	}
 
 	IEnumerator DarkChaser(){
 		for(int i=0; i<8; ++i){

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 12036d079c1659749a8279f617384645
-timeCreated: 1457168501
+timeCreated: 1462375305
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
@@ -21,6 +21,10 @@ MonoImporter:
   - darknessCore: {fileID: 173366, guid: 5b515b4d0a2a54f45a8a25bb513e058c, type: 2}
   - darkChaser: {fileID: 129436, guid: 2b7ac93986869634ba7c30beaa5cfa85, type: 2}
   - rockBullet: {fileID: 182144, guid: 5e41a5cca5701aa49bdc809ae7ac5977, type: 2}
+  - rayBullet: {instanceID: 0}
+  - boneBullet: {instanceID: 0}
+  - fireStopBullet: {instanceID: 0}
+  - starBullet: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
