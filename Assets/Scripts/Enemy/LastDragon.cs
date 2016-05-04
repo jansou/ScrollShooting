@@ -34,18 +34,16 @@ public class LastDragon : MonoBehaviour {
 		
 		yield return StartCoroutine("Stop");
 
-		yield return StartCoroutine("StardustJourney");
 
-		/*本番用
+		//本番用
+
 		yield return StartCoroutine(Attack(maxHP*4/5));
 		yield return StartCoroutine("PrometeusFrame");
 		yield return StartCoroutine(Attack(maxHP*3/5));
-		yield return StartCoroutine("GalaxyGate");
-		yield return StartCoroutine(Attack(maxHP*2/5));
 		yield return StartCoroutine("PhenomenonHorizon");
-		yield return StartCoroutine(Attack(maxHP*1/5));
+		yield return StartCoroutine(Attack(maxHP*2/5));
 		yield return StartCoroutine("StardustJourney");
-*/
+
 	}
 
 	IEnumerator PrometeusFrame(){
@@ -63,7 +61,7 @@ public class LastDragon : MonoBehaviour {
 	}
 	IEnumerator PhenomenonHorizon(){
 		common.ShowWindowMessage("事象の地平線");
-		GameObject g = (GameObject)Instantiate(horizon,st.position+new Vector3(-1.3f,0,0),Quaternion.identity);
+		GameObject g = (GameObject)Instantiate(horizon,st.position+new Vector3(-0.3f,0,0),Quaternion.identity);
 		while(g){
 			yield return new WaitForEndOfFrame();
 		}
@@ -74,7 +72,6 @@ public class LastDragon : MonoBehaviour {
 		common.ShowWindowMessage("スターダストジャーニー");
 		int range = 0;
 
-		//フリーズしたらこの２行を省く
 		StartCoroutine("RayRush");
 		StartCoroutine("ScatterStar");
 
@@ -87,20 +84,16 @@ public class LastDragon : MonoBehaviour {
 	}
 	IEnumerator ScatterStar(){
 		while(true){
-			if(enemy.hp < maxHP * 1/8){
-				common.Shot(st,Random.Range (45,135),3,3,BulletManager.BulletType.StarBullet,0,0);
-				yield return new WaitForSeconds(0.1f);
-			}
+			common.Shot(st,Random.Range (45,135),3,3,BulletManager.BulletType.StarBullet,0,0);
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
 	IEnumerator RayRush(){
 		while(true){
-			if(enemy.hp < maxHP * 1/10){
-				st2.position = new Vector3(Random.Range(2,5),4,0);
-				common.Shot(st2,Random.Range (115,155),10,7,BulletManager.BulletType.RayBullet,0,0);
-				yield return new WaitForSeconds(1.3f);
-			}
+			st2.position = new Vector3(Random.Range(2,5),4,0);
+			common.Shot(st2,Random.Range (115,155),10,7,BulletManager.BulletType.RayBullet,0,0);
+			yield return new WaitForSeconds(1.3f);
 		}
 	}
 

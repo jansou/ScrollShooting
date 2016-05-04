@@ -26,7 +26,8 @@ public class TheHorizon : MonoBehaviour {
 
 		pt = FindObjectOfType<Party>().transform;
 
-		enemy.MoveStop();
+
+		StartCoroutine("MoveStop");
 		StartCoroutine("Magne");
 		StartCoroutine("Move");
 		int span = 0;
@@ -47,6 +48,13 @@ public class TheHorizon : MonoBehaviour {
 		}
 
 		yield return null;
+	}
+
+	IEnumerator MoveStop(){
+		while(transform.position.x > 0.0f){
+			yield return new WaitForEndOfFrame();
+		}
+		enemy.MoveStop();
 	}
 
 	IEnumerator Move(){
