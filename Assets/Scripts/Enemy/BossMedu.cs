@@ -84,7 +84,7 @@ public class BossMedu : MonoBehaviour {
     {//
 		spaceship.GetAnimator().SetTrigger("Skill");
 		audioSource.PlayOneShot(skillSE);
-		FindObjectOfType<MessageWindow>().showMessage("スライム召喚");
+		FindObjectOfType<MessageWindow>().showMessage("少女「リンマルにいじわるしないで！」");
 		while(enemy.hp > maxHP*4/5){
 			for(int i=0; i<2; ++i){
 				Vector3 c = transform.position;
@@ -92,20 +92,25 @@ public class BossMedu : MonoBehaviour {
 				float ry = Random.Range(c.y-1.5f,c.y+1.5f);
 	            Instantiate(summonSlime, new Vector3(rx,ry,0), Quaternion.identity);
 			}
-	        yield return new WaitForSeconds(1.0f);	        
+	        yield return new WaitForSeconds(3.5f);	        
 		}
 
 		spaceship.GetAnimator().SetTrigger("Skill");
 		audioSource.PlayOneShot(skillSE);
-		FindObjectOfType<MessageWindow>().showMessage("植物召喚");
+		FindObjectOfType<MessageWindow>().showMessage("少女「やめてったら！」");
 		while(enemy.hp > maxHP*3/5){
 			Vector3 c = transform.position;
 			Instantiate(summonBlossom,c+new Vector3(-0.5f,0.8f,0),Quaternion.identity);
 			Instantiate(summonBlossom,c+new Vector3(-0.5f,-0.8f,0),Quaternion.identity);
-			Instantiate(summonBlossom,c+new Vector3(0.5f,1.5f,0),Quaternion.identity);
-			Instantiate(summonBlossom,c+new Vector3(0.5f,-1.5f,0),Quaternion.identity);
-			yield return new WaitForSeconds(4.0f);
+			//Instantiate(summonBlossom,c+new Vector3(0.5f,1.5f,0),Quaternion.identity);
+			//Instantiate(summonBlossom,c+new Vector3(0.5f,-1.5f,0),Quaternion.identity);
+			yield return new WaitForSeconds(4.5f);
 		}
+
+        spaceship.GetAnimator().SetTrigger("Skill");
+        audioSource.PlayOneShot(skillSE);
+        FindObjectOfType<MessageWindow>().showMessage("少女「本気でおこったんだから！」");
+        yield return new WaitForSeconds(2.0f);
 
         //以下ループ行動
 		while (true) 
@@ -114,12 +119,15 @@ public class BossMedu : MonoBehaviour {
 			{
 				spaceship.GetAnimator().SetTrigger("Skill");
 				audioSource.PlayOneShot(skillSE);
-				FindObjectOfType<MessageWindow>().showMessage("精霊召喚");
+				FindObjectOfType<MessageWindow>().showMessage("少女「命の力よ！」");
 			
 				//Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
 				Instantiate(summonForestSpirit,transform.position+new Vector3(-0.5f,0,0) , Quaternion.identity);
-				//Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
-				yield return new WaitForSeconds(3.0f);
+                Instantiate(summonRecoveryField, transform.position + new Vector3(0, 1.0f, 0), Quaternion.identity);
+                //Instantiate(summonBlossom, c + new Vector3(-0.5f, -0.8f, 0), Quaternion.identity);
+
+                //Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+				yield return new WaitForSeconds(5.0f);
 			}
             else if(count == 2)
             {
@@ -146,6 +154,7 @@ public class BossMedu : MonoBehaviour {
                     yield return new WaitForSeconds(2.0f);
                 }
             }
+                /*
             else if (!GameObject.Find("EnemyBossMonkeyR(Clone)"))
             {
                 spaceship.GetAnimator().SetTrigger("Skill");
@@ -157,10 +166,10 @@ public class BossMedu : MonoBehaviour {
                     float yoffset = 1.0f;
                     Instantiate(summonBossMonkey, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
                     //Instantiate(soldier, new Vector3(transform.position.x + xoffset, transform.position.y, transform.position.z), Quaternion.identity);
-                    Instantiate(summonBossMonkey, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
+                    //Instantiate(summonBossMonkey, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
 				}
 				yield return new WaitForSeconds(3.0f);
-            }
+            }*/
             else
             {
 				/*
@@ -182,9 +191,9 @@ public class BossMedu : MonoBehaviour {
                     yield return new WaitForSeconds(1.5f);
                 }
                 */
-				spaceship.GetAnimator().SetTrigger("Skill");
-				FindObjectOfType<MessageWindow>().showMessage("リカバリーフィ－ルド");
-				GameObject o = (GameObject)Instantiate(summonRecoveryField,transform.position,Quaternion.identity);
+				//spaceship.GetAnimator().SetTrigger("Skill");
+				//FindObjectOfType<MessageWindow>().showMessage("リカバリーフィ－ルド");
+				//GameObject o = (GameObject)Instantiate(summonRecoveryField,transform.position,Quaternion.identity);
 				//o.GetComponent<Enemy>().Move(new Vector2(Random.Range(-2.0f,2.0f),Random.Range(-2.0f,2.0f)));
 
 				yield return new WaitForSeconds(5.0f);

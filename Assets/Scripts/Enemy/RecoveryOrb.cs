@@ -9,7 +9,7 @@ public class RecoveryOrb : MonoBehaviour {
 	IEnumerator Start () {
 		enemy = GetComponent<Enemy>();
 
-		enemy.Move(new Vector2(Random.Range(-2.0f,2.0f),Random.Range(-2.0f,2.0f)));
+		//enemy.Move(new Vector2(Random.Range(-2.0f,2.0f),Random.Range(-2.0f,2.0f)));
 		yield return new WaitForSeconds(2.0f);
 		enemy.MoveStop();
 	}

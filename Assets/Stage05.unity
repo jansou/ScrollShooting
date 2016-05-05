@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - {fileID: 148410, guid: 4f15385acfbf1584e87026b6d8523c47, type: 2}
   - {fileID: 170900, guid: 28ea6d0a793fc75448a1af656378451b, type: 2}
   - {fileID: 148410, guid: 4f15385acfbf1584e87026b6d8523c47, type: 2}
   - {fileID: 180922, guid: eda116a99516fba4b87efbcdf24c902b, type: 2}
@@ -293,6 +294,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5cd2688c136f45d44b755f489d2b6db5, type: 2}
+    - target: {fileID: 11420664, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
   m_IsPrefabParent: 0
@@ -757,6 +762,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
       propertyPath: isUndead
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: joinRinmaru
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418274, guid: 91b1d321280d5dd4199401f9092c0595, type: 2}
+      propertyPath: joinMedhu
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

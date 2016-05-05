@@ -249,14 +249,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 300
+  hp: 500
   maxHP: 0
   point: 400
   touchDamage: 1
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 50
 --- !u!114 &11416580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,9 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d13ee813580cf45acadab25927757c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 2
-  shotSpeed: 3
-  shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
+  power: 5
+  shotSpeed: 7
+  shootSE1: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
+  shootSE2: {fileID: 8300000, guid: 86b0de7d8e14edb488eff1a8be91474f, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
 --- !u!114 &11418180
 MonoBehaviour:
