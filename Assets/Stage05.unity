@@ -115,10 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 148410, guid: 4f15385acfbf1584e87026b6d8523c47, type: 2}
+  - {fileID: 137262, guid: 2d066239d865a8e4ab798f200bcdecc8, type: 2}
   - {fileID: 170900, guid: 28ea6d0a793fc75448a1af656378451b, type: 2}
   - {fileID: 148410, guid: 4f15385acfbf1584e87026b6d8523c47, type: 2}
-  - {fileID: 180922, guid: eda116a99516fba4b87efbcdf24c902b, type: 2}
+  - {fileID: 145728, guid: 862a5680ba5e92d42ac6a76d3ce94143, type: 2}
   currentWave: 0
   manager: {fileID: 0}
 --- !u!4 &269916570

@@ -84,7 +84,7 @@ public class BossMedu : MonoBehaviour {
     {//
 		spaceship.GetAnimator().SetTrigger("Skill");
 		audioSource.PlayOneShot(skillSE);
-		FindObjectOfType<MessageWindow>().showMessage("少女「リンマルにいじわるしないで！」");
+		FindObjectOfType<MessageWindow>().showMessage("メデュ「リンマルをいじめるな！」");
 		while(enemy.hp > maxHP*4/5){
 			for(int i=0; i<2; ++i){
 				Vector3 c = transform.position;
@@ -97,7 +97,7 @@ public class BossMedu : MonoBehaviour {
 
 		spaceship.GetAnimator().SetTrigger("Skill");
 		audioSource.PlayOneShot(skillSE);
-		FindObjectOfType<MessageWindow>().showMessage("少女「やめてったら！」");
+		FindObjectOfType<MessageWindow>().showMessage("メデュ「おこったんだから！」");
 		while(enemy.hp > maxHP*3/5){
 			Vector3 c = transform.position;
 			Instantiate(summonBlossom,c+new Vector3(-0.5f,0.8f,0),Quaternion.identity);
@@ -109,22 +109,35 @@ public class BossMedu : MonoBehaviour {
 
         spaceship.GetAnimator().SetTrigger("Skill");
         audioSource.PlayOneShot(skillSE);
-        FindObjectOfType<MessageWindow>().showMessage("少女「本気でおこったんだから！」");
+        FindObjectOfType<MessageWindow>().showMessage("少女「本気でだからね！」");
         yield return new WaitForSeconds(2.0f);
 
         //以下ループ行動
 		while (true) 
 		{
-			if (!GameObject.Find("EnemyBossForestSpiritR(Clone)"))
+            if (!GameObject.Find("EnemyBossForestSpiritR(Clone)") || !GameObject.Find("EnemyRecoveryOrb(Clone)"))
 			{
 				spaceship.GetAnimator().SetTrigger("Skill");
 				audioSource.PlayOneShot(skillSE);
-				FindObjectOfType<MessageWindow>().showMessage("少女「命の力よ！」");
+				//FindObjectOfType<MessageWindow>().showMessage("少女「命の力よ！」");
 			
 				//Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y - yoffset, transform.position.z), Quaternion.identity);
-				Instantiate(summonForestSpirit,transform.position+new Vector3(-0.5f,0,0) , Quaternion.identity);
-                Instantiate(summonRecoveryField, transform.position + new Vector3(0, 1.0f, 0), Quaternion.identity);
-                //Instantiate(summonBlossom, c + new Vector3(-0.5f, -0.8f, 0), Quaternion.identity);
+
+                if (!GameObject.Find("EnemyBossForestSpiritR(Clone)"))
+                {
+                    FindObjectOfType<MessageWindow>().showMessage("少女「森よ！」");
+                Instantiate(summonForestSpirit,transform.position+new Vector3(-1.0f,0,0) , Quaternion.identity);
+                }
+                else if (!GameObject.Find("EnemyRecoveryOrb(Clone)"))
+                {
+                    FindObjectOfType<MessageWindow>().showMessage("少女「命の力よ！」");
+                    if (Random.Range(0, 2) == 0)
+                    {
+
+                        Instantiate(summonRecoveryField, transform.position + new Vector3(-0.5f, 1.0f, 0), Quaternion.identity);
+                    }
+                    else Instantiate(summonRecoveryField, transform.position + new Vector3(-0.5f, -1.0f, 0), Quaternion.identity);
+                }              //Instantiate(summonBlossom, c + new Vector3(-0.5f, -0.8f, 0), Quaternion.identity);
 
                 //Instantiate(armor, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
 				yield return new WaitForSeconds(5.0f);

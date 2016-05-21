@@ -260,7 +260,7 @@ MonoBehaviour:
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 50
 --- !u!114 &11462616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 2
   shotSpeed: 3
-  shootSE: {fileID: 8300000, guid: 60044bc21852e6e46a4438c31b251079, type: 3}
+  shootSE: {fileID: 8300000, guid: 9b5607de199197a4f8fc88ea571ef010, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   summonSlime: {fileID: 190576, guid: 645805e9700547c4cbaa8291fd6e014d, type: 2}
   summonMonkey: {fileID: 162286, guid: ef63ba1aefcf53c47b7d2e224f7d9d46, type: 2}
