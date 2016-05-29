@@ -152,19 +152,46 @@ public class Player : MonoBehaviour
             //yield return new WaitForSeconds(spaceship.shotDelay);
 			break;
 		case Party.Formation.Rinmaru:
+                shotposition.rotation = Quaternion.AngleAxis(0,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                //shotposition.rotation = Quaternion.AngleAxis(45, Vector3.forward);
+                //spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
+				shotposition.rotation = Quaternion.AngleAxis(90,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                //shotposition.rotation = Quaternion.AngleAxis(135, Vector3.forward);
+                //spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
+				shotposition.rotation = Quaternion.AngleAxis(180,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                //shotposition.rotation = Quaternion.AngleAxis(225, Vector3.forward);
+                //spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
+				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
+				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                //shotposition.rotation = Quaternion.AngleAxis(315, Vector3.forward);
+                //spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
+                /*
 			if(type == Type.Rinmaru){
 				shotposition.rotation = Quaternion.AngleAxis(0,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                shotposition.rotation = Quaternion.AngleAxis(45, Vector3.forward);
+                spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
 				shotposition.rotation = Quaternion.AngleAxis(90,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                shotposition.rotation = Quaternion.AngleAxis(135, Vector3.forward);
+                spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
 				shotposition.rotation = Quaternion.AngleAxis(180,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                shotposition.rotation = Quaternion.AngleAxis(225, Vector3.forward);
+                spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
 				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                shotposition.rotation = Quaternion.AngleAxis(315, Vector3.forward);
+                spaceship.Shot(shotposition, shotPower, 10, BulletManager.BulletType.PRinmaru);
 			}
 			else if(type == Type.Guylus){
+                
 				shotposition.rotation = Quaternion.AngleAxis(45,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
+                
 			}
 			else if(type == Type.Medhu){
 				shotposition.rotation = Quaternion.AngleAxis(135,Vector3.forward);
@@ -182,7 +209,7 @@ public class Player : MonoBehaviour
 				shotposition.rotation = Quaternion.AngleAxis(270,Vector3.forward);
 				spaceship.Shot(shotposition,shotPower,10,BulletManager.BulletType.PRinmaru);
 			}
-
+                */
             //yield return new WaitForSeconds(spaceship.shotDelay);
 			break;
 		case Party.Formation.Medhu:
