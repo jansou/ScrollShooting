@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
+  maxHP: 0
   point: 100
   touchDamage: 1
   shotPower: 1
@@ -215,7 +216,7 @@ MonoBehaviour:
   texts:
   - "\u30A2\u30EC\u30AF\u300C\u56F2\u307E\u308C\u305F\uFF01\u300D"
   - "\u30CD\u30EA\u30FC\u300C\u5F8C\u308D\u304B\u3089\u6765\u307E\u3059\uFF01\u300D"
-  - "\u30EA\u30F3\u30DE\u30EB\u300C\u307F\u306A\u3055\u3093\u3001\u50D5\u306E\u307E\u308F\u308A\u306B\u96C6\u307E\u3063\u3066\u304F\u3060\u3055\u3044\uFF01\u300D"
+  - "\u30EA\u30F3\u30DE\u30EB\u300C\u8FD1\u3065\u304F\u3084\u3064\u306F\u65AC\u308B\u306E\u307F\uFF01\u300D"
 --- !u!212 &21277306
 SpriteRenderer:
   m_ObjectHideFlags: 1
