@@ -42,7 +42,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 182910, guid: dce21cee3ce99bb428cec12396d5d0a8, type: 2}
   enemypositions:
-  - {x: 3, y: 0, z: 0}
+  - {x: 5, y: 0, z: 0}
   isBoss: 0
   useSpecialBGM: 0
 --- !u!1001 &100100000

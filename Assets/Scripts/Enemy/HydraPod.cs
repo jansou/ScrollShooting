@@ -84,9 +84,9 @@ public class HydraPod: MonoBehaviour
             //common.Shot(s1, 120 + 30, power, speed, BulletManager.BulletType.SlashBullet);
 
             Instantiate(SwampMan, transform.position + new Vector3(1.0f, 1.0f, 0f), Quaternion.identity);
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(7.0f);
             Instantiate(SwampMan, transform.position + new Vector3(1.0f, -1.0f, 0f), Quaternion.identity);
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(7.0f);
         }
 
     }
@@ -94,6 +94,8 @@ public class HydraPod: MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+
+
         if(preEnemyHP != enemy.hp)
         {
             Instantiate(Hydra, transform.position - new Vector3(0.1f, 0.1f, 0f), Quaternion.identity);
