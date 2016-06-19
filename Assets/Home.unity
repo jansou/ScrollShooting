@@ -7031,7 +7031,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11441030, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Stage08
+      value: Stage07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
