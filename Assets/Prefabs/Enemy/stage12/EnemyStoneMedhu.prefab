@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ead586a61b1a93419d58c54c10a4d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healTimingCount: 5
 --- !u!114 &11433606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,12 +376,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 400
-  point: 50
+  maxHP: 0
+  point: 0
   touchDamage: 1
   shotPower: 3
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 0
 --- !u!212 &21205642
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -431,7 +433,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1643576185
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 020b9653956e4b947a0b84512d0f2eea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fedba020874ee0341aabfd14fa2b8dcc, type: 3}
   m_Color: {r: .501960814, g: .501960814, b: .501960814, a: 1}
 --- !u!212 &21249966
 SpriteRenderer:

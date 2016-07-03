@@ -275,6 +275,7 @@ MonoBehaviour:
   stoneNely: {fileID: 152636, guid: e72b25cc79d5bf44bb6d9c239342ad60, type: 2}
   stoneRinmaru: {fileID: 110100, guid: 4f202bbc33494f6419052a3f9a867931, type: 2}
   stoneMedhu: {fileID: 188764, guid: d88cbf69d48c146459af2da86cae2bb1, type: 2}
+  skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
 --- !u!114 &11446502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,7 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1000
+  hp: 2000
+  maxHP: 0
   point: 70
   touchDamage: 4
   shotPower: 4

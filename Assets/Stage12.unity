@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 121244, guid: 333b8fca08b4a864d83e12930578ff60, type: 2}
+  - {fileID: 179926, guid: 8e6cdcd0a2fba6c4abb3ca47c14e1a6e, type: 2}
   - {fileID: 179926, guid: 8e6cdcd0a2fba6c4abb3ca47c14e1a6e, type: 2}
   currentWave: 0
   manager: {fileID: 0}
@@ -291,7 +291,7 @@ Prefab:
     - target: {fileID: 2391302, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b48ebd9af48e5e04ea2fa26b1963cbbb, type: 2}
+      objectReference: {fileID: 2100000, guid: ab839a63be4febb4684f256f15a2eb8b, type: 2}
     - target: {fileID: 11420664, guid: 23cd517867a419b4b99b270e81a4995a, type: 2}
       propertyPath: speed
       value: 0
@@ -387,10 +387,18 @@ Prefab:
     - target: {fileID: 2393376, guid: 600d8269192ddea4286065cecc6414b5, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6e515529ad482e74fa71161259c94c9e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4fe1d1ba838fbb143b5d7c3594d1b427, type: 2}
     - target: {fileID: 186616, guid: 600d8269192ddea4286065cecc6414b5, type: 2}
       propertyPath: m_Name
       value: bar_sunset
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393376, guid: 600d8269192ddea4286065cecc6414b5, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11498934, guid: 600d8269192ddea4286065cecc6414b5, type: 2}
+      propertyPath: speed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 600d8269192ddea4286065cecc6414b5, type: 2}

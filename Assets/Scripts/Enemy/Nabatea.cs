@@ -17,13 +17,20 @@ public class Nabatea : MonoBehaviour {
 
 	GameObject[] stones;
 
+    public AudioClip skillSE;
+    AudioSource audioSource;
+
 	// Use this for initialization
 	IEnumerator Start () {
 		spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
 		enemy = GetComponent<Enemy>();
 		common.Init();
-		
+
+        //
+        audioSource = gameObject.GetComponent<AudioSource>();
+        //
+
 		st = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
@@ -31,6 +38,8 @@ public class Nabatea : MonoBehaviour {
 		
 		yield return StartCoroutine("Stop");
 
+        audioSource.PlayOneShot(skillSE);
+        FindObjectOfType<MessageWindow>().showMessage("「星霜の記憶」");
 		stones = new GameObject[5];
 		stones[0] = (GameObject)Instantiate(stoneAlex,transform.position,Quaternion.identity);
 		stones[1] = (GameObject)Instantiate(stoneGuylus,transform.position,Quaternion.identity);
