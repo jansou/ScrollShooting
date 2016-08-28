@@ -276,6 +276,8 @@ MonoBehaviour:
   stoneRinmaru: {fileID: 110100, guid: 4f202bbc33494f6419052a3f9a867931, type: 2}
   stoneMedhu: {fileID: 188764, guid: d88cbf69d48c146459af2da86cae2bb1, type: 2}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
+  shotPower: 10
+  stateCount: 0
 --- !u!114 &11446502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,12 +325,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2000
   maxHP: 0
-  point: 70
+  point: 0
   touchDamage: 4
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 0
 --- !u!212 &21260988
 SpriteRenderer:
   m_ObjectHideFlags: 1

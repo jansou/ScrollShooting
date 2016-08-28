@@ -41,7 +41,7 @@ public class LastDragon : MonoBehaviour {
 		yield return StartCoroutine("PrometeusFrame");
 		yield return StartCoroutine(Attack(maxHP*3/5));
 		yield return StartCoroutine("PhenomenonHorizon");
-		yield return StartCoroutine(Attack(maxHP*2/5));
+		yield return StartCoroutine(Attack(maxHP*1/5));
 		yield return StartCoroutine("StardustJourney");
 
 	}
@@ -60,7 +60,7 @@ public class LastDragon : MonoBehaviour {
 		yield return new WaitForSeconds(4.0f);
 	}
 	IEnumerator PhenomenonHorizon(){
-		common.ShowWindowMessage("事象の地平線");
+		common.ShowWindowMessage("次元の逆流");
 		GameObject g = (GameObject)Instantiate(horizon,st.position+new Vector3(-0.3f,0,0),Quaternion.identity);
 		while(g){
 			yield return new WaitForEndOfFrame();
@@ -69,7 +69,7 @@ public class LastDragon : MonoBehaviour {
 	}
 	IEnumerator StardustJourney(){
 		st.position += new Vector3(1.5f,-0.5f,0);
-		common.ShowWindowMessage("スターダストジャーニー");
+		common.ShowWindowMessage("ミルキーウェイ");
 		int range = 0;
 
 		StartCoroutine("RayRush");

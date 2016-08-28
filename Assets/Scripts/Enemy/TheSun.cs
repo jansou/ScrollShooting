@@ -28,7 +28,9 @@ public class TheSun : MonoBehaviour {
 
 		for(int i=0; i<100; ++i){
 			common.Shot(st,Random.Range(0,360),5,3,BulletManager.BulletType.BlossomBullet,0,0);
-			yield return new WaitForSeconds(0.2f);
+            common.Shot(st, Random.Range(0, 360), 5, 3, BulletManager.BulletType.BlossomBullet, 0, 0);
+            common.Shot(st, Random.Range(0, 360), 5, 3, BulletManager.BulletType.BlossomBullet, 0, 0);
+            yield return new WaitForSeconds(0.2f);
 			normalScale += 0.5f/100;
 		}
 		enemy.ExplodeSelf();

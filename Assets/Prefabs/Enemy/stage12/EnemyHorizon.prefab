@@ -250,12 +250,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2000
   maxHP: 0
-  point: 70
+  point: 0
   touchDamage: 4
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 0
 --- !u!114 &11439974
 MonoBehaviour:
   m_ObjectHideFlags: 1

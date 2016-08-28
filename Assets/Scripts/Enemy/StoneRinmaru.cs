@@ -8,6 +8,7 @@ public class StoneRinmaru : MonoBehaviour {
 	
 	Transform st;
 	Transform pt;
+    public int shotPower = 5;
 	
 	// Use this for initialization
 	IEnumerator  Start () {
@@ -28,7 +29,7 @@ public class StoneRinmaru : MonoBehaviour {
 		while(true){
 			yield return new WaitForSeconds(4.0f);
 			for(int i=0; i<20; ++i){
-				common.ShotNWay(st,90+i*10,5,7,BulletManager.BulletType.SlashBullet,4,90);
+				common.ShotNWay(st,90+i*10,shotPower,7,BulletManager.BulletType.SlashBullet,4,90);
 				yield return new WaitForSeconds(0.2f);
 			}
 			yield return new WaitForSeconds(9.0f);

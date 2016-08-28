@@ -8,6 +8,7 @@ public class StoneAlex : MonoBehaviour {
 	
 	Transform st;
 	Transform pt;
+    public int shotPower = 5;
 
 	// Use this for initialization
 	IEnumerator  Start () {
@@ -27,7 +28,7 @@ public class StoneAlex : MonoBehaviour {
 	IEnumerator Attack(){
 		while(true){
 			for(int i=0; i<10; ++i){
-				common.ShotNWay(st,90,5,3,BulletManager.BulletType.SlashBullet,3,30);
+				common.ShotNWay(st,90,shotPower,3,BulletManager.BulletType.SlashBullet,3,30);
 				yield return new WaitForSeconds(0.5f);
 			}
 			yield return new WaitForSeconds(5.0f);

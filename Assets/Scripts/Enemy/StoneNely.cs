@@ -8,7 +8,8 @@ public class StoneNely : MonoBehaviour {
 	
 	Transform st;
 	Transform pt;
-	
+    public int shotPower = 5;
+
 	// Use this for initialization
 	IEnumerator  Start () {
 		spaceship = GetComponent<Spaceship> ();
@@ -27,7 +28,7 @@ public class StoneNely : MonoBehaviour {
 	IEnumerator Attack(){
 		while(true){
 			for(int i=0; i<5; ++i){
-				common.Shot(st,90,5,2,BulletManager.BulletType.DarkChaser);
+				common.Shot(st,90,shotPower,2,BulletManager.BulletType.DarkChaser);
 				yield return new WaitForSeconds(1.0f);
 			}
 			yield return new WaitForSeconds(7.0f);

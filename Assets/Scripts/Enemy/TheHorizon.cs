@@ -60,7 +60,7 @@ public class TheHorizon : MonoBehaviour {
 	IEnumerator Move(){
 		float d=0;
 		while(true){
-			transform.rotation = Quaternion.Euler(0,0,60 * Mathf.Cos(d));
+			transform.rotation = Quaternion.Euler(0,0,90 * Mathf.Cos(d));
 			d += 0.5f * Time.deltaTime;
 			yield return new WaitForEndOfFrame();
 		}
