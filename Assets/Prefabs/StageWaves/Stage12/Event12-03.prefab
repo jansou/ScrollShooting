@@ -45,6 +45,9 @@ MonoBehaviour:
   - {x: 3, y: 1, z: 0}
   isBoss: 0
   useSpecialBGM: 0
+  stopBGM: 1
+  changeSpecialBG: 0
+  changeNormalBG: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

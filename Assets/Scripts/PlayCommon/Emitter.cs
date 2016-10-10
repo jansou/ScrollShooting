@@ -48,6 +48,19 @@ public class Emitter : MonoBehaviour
             {
                 FindObjectOfType<BGMManager>().SetSpecialBGM();
             }
+            if (waveInfo.stopBGM)
+            {
+                FindObjectOfType<BGMManager>().StopBGM();
+            }
+
+            if (waveInfo.changeNormalBG)
+            {
+                FindObjectOfType<BGManager>().ChangeNormalBG();
+            }
+            if (waveInfo.changeSpecialBG)
+            {
+                FindObjectOfType<BGManager>().ChangeSpacialBG();
+            }
             //else FindObjectOfType<BGMManager>().SetStageBGM();
 
 			//Waveの子要素のEnemyが全て削除されるまで待機する

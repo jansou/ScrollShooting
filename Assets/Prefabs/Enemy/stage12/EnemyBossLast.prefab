@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2000
   maxHP: 0
-  point: 0
+  point: 2000
   touchDamage: 4
   shotPower: 4
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}

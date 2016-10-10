@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPower: 8
+  shootSE1: {fileID: 8300000, guid: 3d2273df88ec80a43b803051197c9580, type: 3}
 --- !u!114 &11433808
 MonoBehaviour:
   m_ObjectHideFlags: 1

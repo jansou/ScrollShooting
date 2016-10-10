@@ -10,6 +10,10 @@ public class StoneNely : MonoBehaviour {
 	Transform pt;
     public int shotPower = 5;
 
+    public AudioClip shootSE1;
+
+    AudioSource audioSource;
+
 	// Use this for initialization
 	IEnumerator  Start () {
 		spaceship = GetComponent<Spaceship> ();
@@ -19,7 +23,9 @@ public class StoneNely : MonoBehaviour {
 		
 		st = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
-		
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+
 		yield return new WaitForSeconds(2.0f);
 		
 		StartCoroutine("Attack");
@@ -28,6 +34,8 @@ public class StoneNely : MonoBehaviour {
 	IEnumerator Attack(){
 		while(true){
 			for(int i=0; i<5; ++i){
+                audioSource.PlayOneShot(shootSE1);
+
 				common.Shot(st,90,shotPower,2,BulletManager.BulletType.DarkChaser);
 				yield return new WaitForSeconds(1.0f);
 			}

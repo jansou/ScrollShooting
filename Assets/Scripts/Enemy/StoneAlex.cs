@@ -10,12 +10,20 @@ public class StoneAlex : MonoBehaviour {
 	Transform pt;
     public int shotPower = 5;
 
+    public AudioClip shootSE1;
+
+    AudioSource audioSource;
+
 	// Use this for initialization
 	IEnumerator  Start () {
 		spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
 		enemy = GetComponent<Enemy>();
 		common.Init();
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+
 		
 		st = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
@@ -28,6 +36,8 @@ public class StoneAlex : MonoBehaviour {
 	IEnumerator Attack(){
 		while(true){
 			for(int i=0; i<10; ++i){
+                audioSource.PlayOneShot(shootSE1);
+
 				common.ShotNWay(st,90,shotPower,3,BulletManager.BulletType.SlashBullet,3,30);
 				yield return new WaitForSeconds(0.5f);
 			}

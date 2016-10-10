@@ -8,6 +8,9 @@ public class WaveInfo : MonoBehaviour
     private bool isDestroyed = false;
     public bool isBoss = false;
     public bool useSpecialBGM=false;
+    public bool stopBGM = false;
+    public bool changeSpecialBG = false;
+    public bool changeNormalBG = false;
 
 	// Use this for initialization
 	void Start () 

@@ -44,7 +44,10 @@ MonoBehaviour:
   enemypositions:
   - {x: 4, y: 0, z: 0}
   isBoss: 0
-  useSpecialBGM: 0
+  useSpecialBGM: 1
+  stopBGM: 0
+  changeSpecialBG: 1
+  changeNormalBG: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
