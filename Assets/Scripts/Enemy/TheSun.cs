@@ -12,13 +12,20 @@ public class TheSun : MonoBehaviour {
 	float normalScale = 0.5f;
 	float time = 0.0f;
 
+    //SE関係
+    public AudioClip shootSE1;
+    AudioSource audioSource;
+
 	// Use this for initialization
 	IEnumerator Start () {
 		spaceship = GetComponent<Spaceship> ();
 		common = GetComponent<EnemyCommon>();
 		enemy = GetComponent<Enemy>();
 		common.Init();
-		
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
+
 		st = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
@@ -27,6 +34,8 @@ public class TheSun : MonoBehaviour {
 		enemy.MoveStop();
 
 		for(int i=0; i<100; ++i){
+            audioSource.PlayOneShot(shootSE1);
+
 			common.Shot(st,Random.Range(0,360),5,3,BulletManager.BulletType.BlossomBullet,0,0);
             common.Shot(st, Random.Range(0, 360), 5, 3, BulletManager.BulletType.BlossomBullet, 0, 0);
             common.Shot(st, Random.Range(0, 360), 5, 3, BulletManager.BulletType.BlossomBullet, 0, 0);

@@ -277,6 +277,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sun: {fileID: 100452, guid: a7ca88e779ff3d94daa1602791e16fe1, type: 2}
   horizon: {fileID: 176962, guid: 05b7d565d1c28f94c8f32bfedf2f876d, type: 2}
+  shootSE1: {fileID: 8300000, guid: 1ba32e732ce972e4c9201fae1ffc578b, type: 3}
+  shootSE2: {fileID: 8300000, guid: 9b5607de199197a4f8fc88ea571ef010, type: 3}
+  shootSE3: {fileID: 8300000, guid: 7548bea6bfe68bf4abc0494f9b721a7d, type: 3}
+  shootSE4: {fileID: 8300000, guid: f495be74c91b8f844bb27fca4ceb9c4b, type: 3}
+  skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
 --- !u!114 &11426524
 MonoBehaviour:
   m_ObjectHideFlags: 1

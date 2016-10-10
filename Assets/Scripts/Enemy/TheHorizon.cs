@@ -11,6 +11,9 @@ public class TheHorizon : MonoBehaviour {
 
 	Transform pt;
 
+    //SE関係
+    public AudioClip shootSE1;
+    AudioSource audioSource;
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -18,6 +21,9 @@ public class TheHorizon : MonoBehaviour {
 		common = GetComponent<EnemyCommon>();
 		enemy = GetComponent<Enemy>();
 		common.Init();
+
+        //SE関係
+        audioSource = gameObject.GetComponent<AudioSource>();
 
 		st = common.CreateShotPosition();
 		st.position = st.position + new Vector3(0,-1.7f,0);
@@ -33,6 +39,7 @@ public class TheHorizon : MonoBehaviour {
 		int span = 0;
 		while(true)
 		{
+            audioSource.PlayOneShot(shootSE1);
 			if(span % 5 == 0){
 				int range = 50;
 				common.Shot(st,Random.Range(-range,range),3,2,BulletManager.BulletType.StarBullet);
