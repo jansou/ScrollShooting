@@ -756,8 +756,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .911764681, g: .632085979, b: .0848883986, a: 1}
-  m_Sprite: {fileID: 0}
+  m_Color: {r: .867647052, g: .622928381, b: .523140132, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7978cb2d10b1c6c468babe5231f1323a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -873,7 +873,7 @@ RectTransform:
   - {fileID: 854942043}
   - {fileID: 1849407761}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2001,7 +2001,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 474716298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106709}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2011,7 +2011,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 45.0999985, y: -1.90729997e-06}
-  m_SizeDelta: {x: 38.0999985, y: 51.4000015}
+  m_SizeDelta: {x: 40, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &474716300
 MonoBehaviour:
@@ -2079,8 +2079,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: .661764741, b: 0, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 976ffa16fa8b5ea4db708b9c145b69fe, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2144,8 +2144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .188032493, g: .378803283, b: .529411793, a: 1}
-  m_Sprite: {fileID: 0}
+  m_Color: {r: .941176534, g: .937254965, b: .937254965, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3b5573b49ba96334e9f56d9e216d7ea9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2429,6 +2429,11 @@ MonoBehaviour:
   back1: {fileID: 21300000, guid: b9a59113e235eb149b7b3e30bc436881, type: 3}
   back2: {fileID: 21300000, guid: 1db4090a333140e46aa2d777bf73a177, type: 3}
   back3: {fileID: 21300000, guid: ff9b5a6819b1d684992944c936b76169, type: 3}
+  back4: {fileID: 21300000, guid: 026dcd887cbf23f43803208777442de8, type: 3}
+  back5: {fileID: 21300000, guid: e6393aee0d5b67a43bb0846d8b6f4c3b, type: 3}
+  back6: {fileID: 21300000, guid: 81c42be19e444c14e92e7291003f7a0b, type: 3}
+  back7: {fileID: 21300000, guid: 17345fd11ff824f489331755a2a07090, type: 3}
+  back8: {fileID: 21300000, guid: 51dd239e49220804ab299d1848c25664, type: 3}
   backEX: {fileID: 21300000, guid: 51dd239e49220804ab299d1848c25664, type: 3}
   backCredit: {fileID: 21300000, guid: c9276baad0c63b44ba7872b2e2a2ae2d, type: 3}
   EXstageNum: 9
@@ -2708,7 +2713,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707180810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .00617059367, y: .00617059274, z: .707079947, w: .707079828}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2718,7 +2723,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -47, y: 0}
-  m_SizeDelta: {x: 37.7000008, y: 51.4000015}
+  m_SizeDelta: {x: 40, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &707180812
 MonoBehaviour:
@@ -2786,8 +2791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: .661764741, b: 0, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 976ffa16fa8b5ea4db708b9c145b69fe, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4225,7 +4230,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11441030, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11441030, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_Interactable
@@ -6770,7 +6775,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!224 &1798972548 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22445806, guid: 44c11dbc7ad2445469c6b96931a27097,
@@ -7833,7 +7838,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11441030, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Stage10
+      value: Stage06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3c6ba3c0369e554886327c9d6b55b92, type: 2}

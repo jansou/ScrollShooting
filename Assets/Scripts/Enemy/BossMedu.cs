@@ -109,7 +109,7 @@ public class BossMedu : MonoBehaviour {
 
         spaceship.GetAnimator().SetTrigger("Skill");
         audioSource.PlayOneShot(skillSE);
-        FindObjectOfType<MessageWindow>().showMessage("少女「本気でだからね！」");
+        FindObjectOfType<MessageWindow>().showMessage("少女「ほんきだからね！」");
         yield return new WaitForSeconds(2.0f);
 
         //以下ループ行動

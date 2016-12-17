@@ -40,11 +40,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 124210, guid: 5c2f7e04405e73745ae8d2127e5bfb64, type: 2}
+  - {fileID: 169470, guid: 2a98eaa4314e2bc4a943352dfe29345f, type: 2}
   enemypositions:
   - {x: 8, y: .5, z: 0}
   isBoss: 0
   useSpecialBGM: 0
+  stopBGM: 0
+  changeSpecialBG: 0
+  changeNormalBG: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

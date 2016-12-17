@@ -13,6 +13,11 @@ public class HomeManager : MonoBehaviour
     public Sprite back1;
     public Sprite back2;
 	public Sprite back3;
+    public Sprite back4;
+    public Sprite back5;
+    public Sprite back6;
+    public Sprite back7;
+    public Sprite back8;
 	public Sprite backEX;
     public Sprite backCredit;
 
@@ -304,6 +309,22 @@ public class HomeManager : MonoBehaviour
                 case 3:
                     stageBack.sprite = back3;
                     break;
+                case 4:
+                    stageBack.sprite = back4;
+                    break;
+                case 5:
+                    stageBack.sprite = back5;
+                    break;
+                case 6:
+                    stageBack.sprite = back6;
+                    break;
+                case 7:
+                    stageBack.sprite = back7;
+                    break;
+                case 8:
+                    stageBack.sprite = back8;
+                    break;
+
                 default:
                     stageBack.sprite = back1;
                     break;
