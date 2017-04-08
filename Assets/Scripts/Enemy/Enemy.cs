@@ -115,20 +115,30 @@ public class Enemy : MonoBehaviour
 			//GameObject o = Instantiate(Resources.Load("Coin"),transform.position,Quaternion.identity) as GameObject;
 			//o.GetComponent<Coin>().point = money;
 
-            for (int i = 0; i < money;++i )
-            {
-                Vector3 pos = transform.position;
-                float max = 0.3f;
-                float min = -0.3f;
-                float x = Random.Range(min, max);
-                pos.x += x;
-                float y = Random.Range(min, max);
-                pos.y += y;
-                Instantiate(Resources.Load("Coin"), pos, Quaternion.identity);
-            }
-
-                //エネミーの削除
-                Destroy(gameObject);
+			//コインを撒く
+			int m = money;
+			while(m > 0){
+				Vector3 pos = transform.position;
+				float max = 0.3f;
+				float min = -0.3f;
+				float x = Random.Range(min, max);
+				pos.x += x;
+				float y = Random.Range(min, max);
+				pos.y += y;
+				
+				if (m - 10 > 0)
+				{
+					Instantiate(Resources.Load("BigCoin"), pos, Quaternion.identity);
+					m -= 10;
+				}
+				else
+				{
+					Instantiate(Resources.Load("Coin"), pos, Quaternion.identity);
+					--m;
+				}
+			}
+            //エネミーの削除
+            Destroy(gameObject);
         }
         else
         {
