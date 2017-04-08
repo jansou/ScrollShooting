@@ -224,10 +224,20 @@ public class Party : MonoBehaviour {
 	}
 
 	void debug(){
+		//味方を全員HP1に
 		if(Input.GetKeyDown(KeyCode.R)){
 			for(int i=0; i<transform.childCount; ++i){
-				Debug.Log ("[Party.cs]All HP 1");
+				Debug.Log ("[Party.cs]All Party HP 1");
 				transform.GetChild(i).GetComponent<Player>().hp = 1;
+			}
+		}
+		//敵を全員HP1に
+		if(Input.GetKeyDown(KeyCode.A)){
+			for(int i=0; i<transform.childCount; ++i){
+				Debug.Log ("[Party.cs]All Enemy HP 1");
+				foreach(var enemy in FindObjectsOfType<Enemy>()){
+					enemy.hp = 1;
+				}
 			}
 		}
 	}
