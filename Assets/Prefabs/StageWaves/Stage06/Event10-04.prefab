@@ -42,9 +42,12 @@ MonoBehaviour:
   enemies:
   - {fileID: 192016, guid: 1d80b418b67993c4584c9298aa91388d, type: 2}
   enemypositions:
-  - {x: 3, y: 0, z: 0}
+  - {x: 5, y: 0, z: 0}
   isBoss: 0
   useSpecialBGM: 0
+  stopBGM: 0
+  changeSpecialBG: 0
+  changeNormalBG: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
