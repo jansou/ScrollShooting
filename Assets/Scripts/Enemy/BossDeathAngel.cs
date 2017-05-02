@@ -74,6 +74,8 @@ public class BossDeathAngel : MonoBehaviour {
 
 		StartCoroutine("Attack1");
 
+		StartCoroutine("Talk");
+
 		while(true){
 			for(int i=0; i<10; ++i){
 				Vector3 rp = transform.position + new Vector3(Random.Range(-2.0f,1.0f),Random.Range(-2.0f,2.0f),0);
@@ -103,6 +105,15 @@ public class BossDeathAngel : MonoBehaviour {
 			}
 			yield return new WaitForEndOfFrame();
 		}
+	}
+
+	IEnumerator Talk(){
+		spaceship.GetAnimator().SetTrigger("Skill");
+		FindObjectOfType<MessageWindow>().showMessage("死霊の壁");
+		yield return new WaitForSeconds (10.0f);
+		FindObjectOfType<MessageWindow>().showMessage("アレク「後ろからゾンビ達が近づいてくる！」");
+		yield return new WaitForSeconds (2);
+		FindObjectOfType<MessageWindow>().showMessage("メデュ「あいつらに触ったらやばいよ！気を付けて！」");
 	}
 	
 	IEnumerator Attack1()
