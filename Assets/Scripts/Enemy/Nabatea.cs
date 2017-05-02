@@ -90,7 +90,7 @@ public class Nabatea : MonoBehaviour {
                 stones[1] = (GameObject)Instantiate(stoneGuylus, transform.position, Quaternion.identity);
                 stones[2] = (GameObject)Instantiate(stoneAlex, transform.position, Quaternion.identity);
                 stones[3] = (GameObject)Instantiate(stoneRinmaru, transform.position, Quaternion.identity);
-                stones[4] = (GameObject)Instantiate(stoneAlex, transform.position, Quaternion.identity);
+                stones[4] = (GameObject)Instantiate(stoneGuylus, transform.position, Quaternion.identity);
 
                 stateCount += 1;
             }
