@@ -115,7 +115,7 @@ public class Manager : MonoBehaviour
 
 	public void GameRestart()
 	{
-        //audioSource.Stop(gameoverSE);
+        audioSource.Stop();
 		GameStart();
 	}
 	
