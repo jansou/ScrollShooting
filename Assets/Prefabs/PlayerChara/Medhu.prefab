@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   party: {fileID: 0}
   frame: 0
-  recoveryInterval: 60
+  recoveryInterval: 30
 --- !u!114 &11461974
 MonoBehaviour:
   m_ObjectHideFlags: 1
