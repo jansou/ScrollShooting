@@ -281,11 +281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ca1667132c906428e24dab7ca49f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 4
+  power: 10
   shotSpeed: 3
   shootSE: {fileID: 8300000, guid: fa037a111f196594780f66f51a4f7ded, type: 3}
-  skillSE: {fileID: 0}
-  summonZonbie: {fileID: 190576, guid: 2090a9a6ee90f414592f5b5c023707cb, type: 2}
+  skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
+  summonZonbie: {fileID: 191752, guid: 612b903dd55a3d347bcc9aa19be8293e, type: 2}
   summonZonbieWall: {fileID: 108532, guid: 4994c904f64e1674abee93774c7d3109, type: 2}
 --- !u!114 &11472492
 MonoBehaviour:

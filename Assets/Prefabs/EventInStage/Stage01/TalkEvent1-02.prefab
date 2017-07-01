@@ -183,10 +183,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
+  maxHP: 0
   point: 100
   touchDamage: 1
   shotPower: 1
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
+  coin: {fileID: 0}
+  money: 10
 --- !u!114 &11459878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,7 +216,7 @@ MonoBehaviour:
   texts:
   - "\u30AC\u30A4\u30E9\u30B9\u300C\u601D\u3063\u305F\u3088\u308A\u591A\u3044\u306A\u300D"
   - "\u30AC\u30A4\u30E9\u30B9\u300C\u30A2\u30EC\u30AF\u3001\u5371\u306A\u304F\u306A\u3063\u305F\u3089\u300D"
-  - "\u30AC\u30A4\u30E9\u30B9\u300C\u4FFA\u306E\u5F8C\u308D\u306B\u96A0\u308C\u308B\u3093\u3060\u305E\u300D"
+  - "\u30AC\u30A4\u30E9\u30B9\u300C\u9663\u5F62\u3092\u5909\u3048\u308B\u3093\u3060\u305E\u300D"
 --- !u!212 &21251280
 SpriteRenderer:
   m_ObjectHideFlags: 1
