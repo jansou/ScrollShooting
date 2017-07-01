@@ -24,6 +24,7 @@ public class HomeManager : MonoBehaviour
     //おまけステージの番号
     public int EXstageNum=9;
     public int creditNum = 5;
+	public int resetNum; //データ消去
 
 	int selectStageButtonNum = 0;
     string selectTargetStageName = "Stage00";
@@ -266,6 +267,10 @@ public class HomeManager : MonoBehaviour
         {
             return "Credit";
         }
+		if (num == resetNum)
+		{
+			return "Reset";
+		}
 
         return "Stage" + (num).ToString();
 	}
@@ -289,7 +294,7 @@ public class HomeManager : MonoBehaviour
         {
             stageBack.sprite = backEX;
         }
-        else if (creditNum == num)
+        else if (creditNum == num || resetNum == num)
         {
             stageBack.sprite = backCredit;
         }
@@ -338,12 +343,14 @@ public class HomeManager : MonoBehaviour
 		buttonContent.FindChild(textPath).GetComponent<Image>().color = selectedButtonColor;
 		selectStageButtonNum = num;
 
-		if(num == creditNum){
+		if(num == creditNum || num == resetNum){
 			GameObject.Find("startButton").GetComponent<Button>().interactable = false;
 		}
 		else{
 			GameObject.Find("startButton").GetComponent<Button>().interactable = true;
 		}
+
+		GameObject.Find("resetButton").GetComponent<Image>().enabled = (num == resetNum);
 
 		tasset = (TextAsset)Resources.Load(textPath);
 		if(tasset){
@@ -352,5 +359,13 @@ public class HomeManager : MonoBehaviour
 		else{
 			stageText.text = "テキストが存在していません。";
 		}
+	}
+
+	//リセットボタン
+	public void GameReset()
+	{
+		PlayerPrefs.DeleteAll();
+		FindObjectOfType<SaveManager> ().Load ();
+		Application.LoadLevel ("Home");
 	}
 }
