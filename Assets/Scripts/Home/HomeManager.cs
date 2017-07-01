@@ -45,6 +45,8 @@ public class HomeManager : MonoBehaviour
 
 	public Canvas itemShopCanvas;
 
+	public GameObject resetButton;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -350,7 +352,7 @@ public class HomeManager : MonoBehaviour
 			GameObject.Find("startButton").GetComponent<Button>().interactable = true;
 		}
 
-		GameObject.Find("resetButton").GetComponent<Image>().enabled = (num == resetNum);
+		resetButton.SetActive(num == resetNum);
 
 		tasset = (TextAsset)Resources.Load(textPath);
 		if(tasset){
