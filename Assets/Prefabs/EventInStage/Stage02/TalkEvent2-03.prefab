@@ -168,8 +168,8 @@ MonoBehaviour:
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   texts:
   - "\u30AC\u30A4\u30E9\u30B9\u300C\u4ECA\u306E\u3067\u6700\u5F8C\u307F\u305F\u3044\u3060\u306A\u300D"
-  - "\u30A2\u30EC\u30AF\u300C\u3042\u3001\u3042\u305D\u3053\u306B\u5973\u306E\u5B50\u304C\u5012\u308C\u3066\u308B\u300D"
-  - "\u30A2\u30EC\u30AF\u300C\u52A9\u3051\u306B\u884C\u3053\u3046\u300D"
+  - "\u30A2\u30EC\u30AF\u300C\u3042\u3001\u3042\u305D\u3053\u306B\u5973\u306E\u5B50\u304C\u5012\u308C\u3066\u308B\uFF01\u300D"
+  - "\u30A2\u30EC\u30AF\u300C\u52A9\u3051\u306B\u884C\u3053\u3046\uFF01\u300D"
 --- !u!114 &11471024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,10 +193,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
+  maxHP: 0
   point: 100
   touchDamage: 1
   shotPower: 1
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
+  coin: {fileID: 0}
+  money: 10
 --- !u!114 &11494216
 MonoBehaviour:
   m_ObjectHideFlags: 1
