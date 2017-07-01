@@ -287,7 +287,7 @@ MonoBehaviour:
   hp: 80
   maxHP: 0
   point: 80
-  touchDamage: 6
+  touchDamage: 10
   shotPower: 6
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}

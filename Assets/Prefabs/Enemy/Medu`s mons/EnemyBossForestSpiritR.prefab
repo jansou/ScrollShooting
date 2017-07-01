@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0f6ee845540b747ae932ecc2f6d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 2
+  power: 6
   isNormalEnemy: 1
   shootSE: {fileID: 8300000, guid: 00fabb9103505cb43862a0df012e2667, type: 3}
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
@@ -296,11 +296,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9fd4a09def2a2468f57b67ea9ea703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 70
+  hp: 100
   maxHP: 0
   point: 0
-  touchDamage: 1
-  shotPower: 2
+  touchDamage: 6
+  shotPower: 6
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
   money: 0
