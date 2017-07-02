@@ -44,6 +44,7 @@ public class HomeManager : MonoBehaviour
 	bool firstSelect = true;// for SelectStage's sound
 
 	public Canvas itemShopCanvas;
+	public Canvas resetCanvas;
 
 	public GameObject resetButton;
 
@@ -51,6 +52,7 @@ public class HomeManager : MonoBehaviour
 	void Start () 
 	{
 		itemShopCanvas.enabled = false;
+		resetCanvas.enabled = false;
 
         //SE関係
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -140,7 +142,7 @@ public class HomeManager : MonoBehaviour
     void OnGUI()
     {
 
-        if (tapHit() == "ContinueButton" && state != 0 && itemShopCanvas.enabled == false)//それぞれのボタンを設定する
+        if (tapHit() == "ContinueButton" && state != 0 && itemShopCanvas.enabled == false && resetCanvas.enabled == false)//それぞれのボタンを設定する
         {
             selectStageButtonNum = FindObjectOfType<SaveManager>().arrivedStage;
 			GameStart();
@@ -154,6 +156,15 @@ public class HomeManager : MonoBehaviour
 	public void ReturnFromShop(){
 		itemShopCanvas.enabled = false;
 	}
+
+	public void GotoReset(){
+		audioSource.PlayOneShot(tapSE);
+		resetCanvas.enabled = true;
+	}
+	public void ReturnFromReset(){
+		resetCanvas.enabled = false;
+	}
+
 
 	public void ReturnTitle()
 	{
