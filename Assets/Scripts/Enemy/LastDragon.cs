@@ -138,6 +138,9 @@ public class LastDragon : MonoBehaviour {
 
 	IEnumerator Attack(int breakHP){
 		while(true){
+			if(enemy.hp < breakHP){
+				yield break;
+			}
 			yield return StartCoroutine("FireBress");
 			yield return new WaitForSeconds(1.0f);
 			if(enemy.hp < breakHP){
