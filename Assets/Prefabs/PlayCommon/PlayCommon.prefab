@@ -3953,7 +3953,7 @@ MonoBehaviour:
   joinRinmaru: 1
   joinMedhu: 1
   stageNumber: 0
-  isUndead: 1
+  isUndead: 0
   tapSE: {fileID: 8300000, guid: 1987730595823184e9bc140f3343dd09, type: 3}
   gamestartSE: {fileID: 8300000, guid: 5e7cce28c2c2b7e4a94f560338ef9778, type: 3}
   gameclearSE: {fileID: 8300000, guid: 7a46fac2f22c0fa4ea143aa1c0392f16, type: 3}
