@@ -344,18 +344,20 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(levelUpSE);
 			FindObjectOfType<PopUp>().CreateLevelUpText(transform.position);
 
-            ++level;
-            shotPower = PowerByLevel(level);
-            maxHP = HPByLevel(level);
-            //体力全快
-            hp = maxHP;
-			nearHpRenderer.InitHP(maxHP);
-			hpRenderer.InitHP(maxHP);
-			expRenderer.InitEXP(preLevel(), exp, nextLevel());
-			levelText.text = "Lv" + level.ToString();
-			hpText.text = hp.ToString()+"/"+maxHP.ToString();
-		}
-		
+			while (exp >= nextLevel())
+			{
+	            ++level;
+	            shotPower = PowerByLevel(level);
+	            maxHP = HPByLevel(level);
+	            //体力全快
+	            hp = maxHP;
+				nearHpRenderer.InitHP(maxHP);
+				hpRenderer.InitHP(maxHP);
+				expRenderer.InitEXP(preLevel(), exp, nextLevel());
+				levelText.text = "Lv" + level.ToString();
+				hpText.text = hp.ToString()+"/"+maxHP.ToString();
+			}
+		}	
 	}
 
 	public void UseItem(ItemType item){
