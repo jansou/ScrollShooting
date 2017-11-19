@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemname: "\u3044\u3044\u3084\u304F\u305D\u3046"
   explanation: "HP\u304C80\u304B\u3044\u3075\u304F\u3059\u308B"
-  price: 150
+  price: 60
   image: {fileID: 21300000, guid: 2dc8745a54f5f944585949688ea271ac, type: 3}
   type: 1
 --- !u!1001 &100100000
