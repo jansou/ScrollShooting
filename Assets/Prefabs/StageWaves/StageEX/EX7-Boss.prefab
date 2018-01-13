@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 468782}
   - 114: {fileID: 11451678}
   m_Layer: 0
-  m_Name: EX1-Boss
+  m_Name: EX7-Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 157080, guid: 830e268e7404756478bd73bd1f8dda0b, type: 2}
+  - {fileID: 119456, guid: ba7904a1ca1e3bd49a8f782f492e90f2, type: 2}
   enemypositions:
   - {x: 4, y: .5, z: 0}
   isBoss: 0

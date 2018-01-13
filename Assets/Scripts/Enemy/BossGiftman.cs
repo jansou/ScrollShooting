@@ -35,7 +35,8 @@ public class BossGiftman : MonoBehaviour {
 		s2 = common.CreateShotPosition();
 		pt = FindObjectOfType<Party>().transform;
 
-		FindObjectOfType<MessageWindow>().showMessage("メテオ");
+		//FindObjectOfType<MessageWindow>().showMessage("メテオ");
+        FindObjectOfType<MessageWindow>().showMessage("岩の魔獣！");
 
 		yield return new WaitForEndOfFrame();
 
@@ -51,7 +52,7 @@ public class BossGiftman : MonoBehaviour {
         while (this.transform.position.x > 3.0f)
         { yield return new WaitForSeconds(1.0f); }
 
-        FindObjectOfType<MessageWindow>().showMessage("岩の魔獣！");
+        //FindObjectOfType<MessageWindow>().showMessage("岩の魔獣！");
         yield return new WaitForSeconds(2);
         enemy.MoveStop();
     }

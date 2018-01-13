@@ -1,48 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &101506
+--- !u!1 &165102
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 468782}
-  - 114: {fileID: 11451678}
+  - 4: {fileID: 425112}
+  - 114: {fileID: 11491198}
   m_Layer: 0
-  m_Name: EX1-Boss
+  m_Name: rest 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &468782
+--- !u!4 &425112
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101506}
+  m_GameObject: {fileID: 165102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.3232212, y: -2.0268364, z: 0}
+  m_LocalPosition: {x: 280.049744, y: -208.874878, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11451678
+--- !u!114 &11491198
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101506}
+  m_GameObject: {fileID: 165102}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f093de0aaabbaa04281eda050df92195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 157080, guid: 830e268e7404756478bd73bd1f8dda0b, type: 2}
+  - {fileID: 185360, guid: 24dc075d71eb8b846995615272ee948c, type: 2}
   enemypositions:
-  - {x: 4, y: .5, z: 0}
+  - {x: 8, y: .5, z: 0}
   isBoss: 0
   useSpecialBGM: 0
   stopBGM: 0
@@ -57,5 +57,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 101506}
+  m_RootGameObject: {fileID: 165102}
   m_IsPrefabParent: 1
