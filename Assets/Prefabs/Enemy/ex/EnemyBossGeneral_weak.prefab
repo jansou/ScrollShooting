@@ -323,12 +323,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 90
+  maxHP: 0
   point: 450
   touchDamage: 5
   shotPower: 20
   DamageSE: {fileID: 8300000, guid: 520c7e4907e6c714395460d85b4ccdab, type: 3}
   coin: {fileID: 0}
-  money: 10
+  money: 0
 --- !u!212 &21207848
 SpriteRenderer:
   m_ObjectHideFlags: 1
