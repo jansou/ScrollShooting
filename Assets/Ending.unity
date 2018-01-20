@@ -1425,16 +1425,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 120230, guid: 32c45058d0726ba47bd370c27b93108a, type: 2}
-  - {fileID: 121552, guid: 7369d0c4cbd45a34f9c7ca2b47a9c0ed, type: 2}
-  - {fileID: 190042, guid: 8a5db4f86703eb341b7787cc734748f6, type: 2}
-  - {fileID: 141126, guid: 795b6724e2ac71b4d97779b6db537486, type: 2}
-  - {fileID: 168052, guid: c11040c5f675fb84a999e08d7f1005db, type: 2}
-  - {fileID: 177088, guid: f9d74176e0a63444fa210cf08b87cf65, type: 2}
-  - {fileID: 115214, guid: 3f0dbf96f31725e45b6f66a9b1b71dff, type: 2}
-  - {fileID: 194428, guid: 135e514cff95c10479673a4b70247805, type: 2}
-  - {fileID: 138496, guid: 125ac4a8f99f8c745b7b9aba2140d8f4, type: 2}
-  - {fileID: 190124, guid: 2a6dfa2fb8e151548a3c77dbc72770a2, type: 2}
+  - {fileID: 178584, guid: 7522d515a13f4524c8652803aaf6c4a9, type: 2}
+  - {fileID: 150160, guid: cd7b30299b3951f44a2eab1111d3aa02, type: 2}
+  - {fileID: 101756, guid: cb91c20fb675b3d479d17efb851cdfea, type: 2}
+  - {fileID: 152590, guid: d84c42f80c244b549a9186a05f7e82e4, type: 2}
+  - {fileID: 148690, guid: fcea3a700749be64aae1ec2e840a6203, type: 2}
   currentWave: 0
   manager: {fileID: 0}
 --- !u!4 &242648162
@@ -4128,7 +4123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 06d63a49c18afe940bbe35fe5499dcbf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89771b4d95977c64bb7e3bb93e99e364, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7837,7 +7832,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: .5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
