@@ -84,7 +84,14 @@ public class Emitter : MonoBehaviour
 			{
 				manager.GameClear();
 				yield return new WaitForSeconds(3);
-				Application.LoadLevel("Home");
+
+				string sceneName = Application.loadedLevelName;
+				if (sceneName == "Stage12"){
+					Application.LoadLevel("Ending");
+				}
+				else{
+					Application.LoadLevel("Home");
+				}
 			}
             ///////
 		}
