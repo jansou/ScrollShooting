@@ -425,6 +425,8 @@ public class Manager : MonoBehaviour
 		}
 	}
 
+	private bool firstFormChange = true;
+
 	public void SetPartyForm(int formnum)
     {
 		Transform t = GameObject.Find("Players").transform;
@@ -440,7 +442,12 @@ public class Manager : MonoBehaviour
 			string uiName = "1stPlayer";
 
             //陣形変更SE
-            audioSource.PlayOneShot(tapSE);
+			if (firstFormChange){
+				firstFormChange = false;
+			}
+			else{
+	            audioSource.PlayOneShot(tapSE);
+			}
 
             switch(formnum)
             {
