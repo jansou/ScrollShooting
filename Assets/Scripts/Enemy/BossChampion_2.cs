@@ -112,7 +112,7 @@ public class BossChampion_2 : MonoBehaviour {
 			yield return new WaitForSeconds(1.0f);
             
             GameObject g = (GameObject)Instantiate(darksun, s2.position, Quaternion.identity); 
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(8f);
 		}
 		//common.ShotAim(s2, pt, power, 0, BulletManager.BulletType.CircleLeaf);
 	}
