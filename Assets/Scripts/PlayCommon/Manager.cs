@@ -365,23 +365,47 @@ public class Manager : MonoBehaviour
 						break;
 					}
 
-					SaveManager sm = FindObjectOfType<SaveManager>();
-					switch(type){
-					case ItemType.NormalHerb:
-						--sm.itemNumInfo.normalHerb;
-						break;
-					case ItemType.NiceHerb:
-						--sm.itemNumInfo.niceHerb;
-						break;
-					case ItemType.GreatHerb:
-						--sm.itemNumInfo.greatHerb;
-						break;
-					case ItemType.LifeOrb:
-						--sm.itemNumInfo.lifeOrb;
-						break;
-					case ItemType.GreatLifeOrb:
-						--sm.itemNumInfo.greatLifeOrb;
-						break;
+					ItemWindowManager.DisplayType displayType = iwm.displayType;
+
+					if (displayType == ItemWindowManager.DisplayType.EX) {
+						EXItem exItem = FindObjectOfType<EXItem>();
+						switch(type){
+						case ItemType.NormalHerb:
+							--exItem.normalHerbNum;
+							break;
+						case ItemType.NiceHerb:
+							--exItem.niceHerbNum;
+							break;
+						case ItemType.GreatHerb:
+							--exItem.greatHerbNum;
+							break;
+						case ItemType.LifeOrb:
+							--exItem.lifeOrbNum;
+							break;
+						case ItemType.GreatLifeOrb:
+							--exItem.greatLifeOrbNum;
+							break;
+						}
+					}
+					else {
+						SaveManager sm = FindObjectOfType<SaveManager>();
+						switch(type){
+						case ItemType.NormalHerb:
+							--sm.itemNumInfo.normalHerb;
+							break;
+						case ItemType.NiceHerb:
+							--sm.itemNumInfo.niceHerb;
+							break;
+						case ItemType.GreatHerb:
+							--sm.itemNumInfo.greatHerb;
+							break;
+						case ItemType.LifeOrb:
+							--sm.itemNumInfo.lifeOrb;
+							break;
+						case ItemType.GreatLifeOrb:
+							--sm.itemNumInfo.greatLifeOrb;
+							break;
+						}
 					}
 					iwm.RecreatePanel();
 

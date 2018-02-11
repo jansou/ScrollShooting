@@ -11,7 +11,8 @@ public class ItemWindowManager : MonoBehaviour {
 
 	public enum DisplayType{
 		HasItem,
-		Shop
+		Shop,
+		EX
 	}
 	public DisplayType displayType = DisplayType.HasItem;
 
@@ -29,23 +30,41 @@ public class ItemWindowManager : MonoBehaviour {
 
 	void CreatePanels(){
 		//持ち物
-		if(displayType == DisplayType.HasItem){
-			SaveManager sm = FindObjectOfType<SaveManager>();
+		if (displayType == DisplayType.HasItem) {
+			SaveManager sm = FindObjectOfType<SaveManager> ();
 			SaveManager.ItemNumInfo items = sm.itemNumInfo;
-			if(items.normalHerb > 0){
-				CreateByItemName("normalherb",items.normalHerb);
+			if (items.normalHerb > 0) {
+				CreateByItemName ("normalherb", items.normalHerb);
 			}
-			if(items.niceHerb> 0){
-				CreateByItemName("niceherb",items.niceHerb);
+			if (items.niceHerb > 0) {
+				CreateByItemName ("niceherb", items.niceHerb);
 			}
-			if(items.greatHerb> 0){
-				CreateByItemName("greatherb",items.greatHerb);
+			if (items.greatHerb > 0) {
+				CreateByItemName ("greatherb", items.greatHerb);
 			}
-			if(items.lifeOrb> 0){
-				CreateByItemName("lifeorb",items.lifeOrb);
+			if (items.lifeOrb > 0) {
+				CreateByItemName ("lifeorb", items.lifeOrb);
 			}
-			if(items.greatLifeOrb> 0){
-				CreateByItemName("greatlifeorb",items.greatLifeOrb);
+			if (items.greatLifeOrb > 0) {
+				CreateByItemName ("greatlifeorb", items.greatLifeOrb);
+			}
+		} else if (displayType == DisplayType.EX) {
+
+			EXItem exItem = FindObjectOfType<EXItem>();
+			if (exItem.normalHerbNum > 0) {
+				CreateByItemName ("normalherb", exItem.normalHerbNum);
+			}
+			if (exItem.niceHerbNum > 0) {
+				CreateByItemName ("niceherb", exItem.niceHerbNum);
+			}
+			if (exItem.greatHerbNum > 0) {
+				CreateByItemName ("greatherb", exItem.greatHerbNum);
+			}
+			if (exItem.lifeOrbNum > 0) {
+				CreateByItemName ("lifeorb", exItem.lifeOrbNum);
+			}
+			if (exItem.greatLifeOrbNum > 0) {
+				CreateByItemName ("greatlifeorb", exItem.greatLifeOrbNum);
 			}
 		}
 		//お店
