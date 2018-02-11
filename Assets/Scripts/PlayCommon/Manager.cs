@@ -41,6 +41,7 @@ public class Manager : MonoBehaviour
     public AudioClip gamestartSE;
     public AudioClip gameclearSE;
     public AudioClip gameoverSE;
+	public AudioClip recoverySE;
     AudioSource audioSource;
     ///
 
@@ -407,6 +408,9 @@ public class Manager : MonoBehaviour
 							break;
 						}
 					}
+
+					audioSource.PlayOneShot(recoverySE);
+
 					iwm.RecreatePanel();
 
 					Time.timeScale = 1;

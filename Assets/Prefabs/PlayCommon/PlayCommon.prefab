@@ -3958,6 +3958,7 @@ MonoBehaviour:
   gamestartSE: {fileID: 8300000, guid: 5e7cce28c2c2b7e4a94f560338ef9778, type: 3}
   gameclearSE: {fileID: 8300000, guid: 7a46fac2f22c0fa4ea143aa1c0392f16, type: 3}
   gameoverSE: {fileID: 8300000, guid: 10093cd2a85e4404698e3720aa7a75d3, type: 3}
+  recoverySE: {fileID: 8300000, guid: f7d9c6c037a1959489aaab17deaff741, type: 3}
 --- !u!114 &11419240
 MonoBehaviour:
   m_ObjectHideFlags: 1
