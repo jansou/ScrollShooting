@@ -198,10 +198,6 @@ MonoBehaviour:
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   texts:
   - "\u306A\u3093\u304B1"
-  - "\u306A\u3093\u304B2"
-  - "\u306A\u3093\u304B3"
-  - "\u306A\u3093\u304B\uFF14"
-  - "\u306A\u3093\u304B\uFF15"
 --- !u!114 &11497956
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -215,15 +215,6 @@ MonoBehaviour:
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   texts:
   - "\u30A2\u30EC\u30AF\u300C\u300D"
-  - "\u30AC\u30A4\u30E9\u30B9\u300C\u300D"
-  - "\u30CD\u30EA\u30FC\u300C\u300D"
-  - "\u30EA\u30F3\u30DE\u30EB\u300C\u300D"
-  - "\u30E1\u30C7\u30E5\u300C\u300D"
-  - "\u30EA\u30F3\u30DE\u30EB\u300C\u300D"
-  - "\u30CD\u30EA\u30FC\u300C\u300D"
-  - "\u30AC\u30A4\u30E9\u30B9\u300C\u300D"
-  - "\u30A2\u30EC\u30AF\u300C\u300D"
-  - "\u30E1\u30C7\u30E5\u300C\u300D"
 --- !u!212 &21276768
 SpriteRenderer:
   m_ObjectHideFlags: 1

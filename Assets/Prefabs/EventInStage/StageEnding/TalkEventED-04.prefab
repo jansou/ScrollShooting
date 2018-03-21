@@ -168,8 +168,6 @@ MonoBehaviour:
   skillSE: {fileID: 8300000, guid: f44a9866faf354a4486c5fa02b2fb496, type: 3}
   texts:
   - "\u30AF\u30EC\u30B8\u30C3\u30C81"
-  - "\u30AF\u30EC\u30B8\u30C3\u30C82"
-  - "\u30AF\u30EC\u30B8\u30C3\u30C83"
 --- !u!114 &11451326
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -41,25 +41,31 @@ public class Emitter : MonoBehaviour
 			wave.transform.parent=transform;
 
             WaveInfo waveInfo = wave.GetComponent<WaveInfo>();
-			if(waveInfo.isBoss){
+			if(waveInfo.isBoss)//ボスにチェックが付いていればボス用のＢＧＭを再生
+            {
 				FindObjectOfType<BGMManager>().SetBossBGM();
 			}
-            if (waveInfo.useSpecialBGM)
+            if (waveInfo.useSpecialBGM)//チェックがついていればボスＢＧＭ2のような溶け別なＢＧＭを流すのに使用
             {
                 FindObjectOfType<BGMManager>().SetSpecialBGM();
             }
-            if (waveInfo.stopBGM)
+            if (waveInfo.stopBGM)//再生中のＢＧＭを停止
             {
                 FindObjectOfType<BGMManager>().StopBGM();
             }
 
-            if (waveInfo.changeNormalBG)
+            if (waveInfo.changeNormalBG)//背景を開始時のものに戻す
             {
                 FindObjectOfType<BGManager>().ChangeNormalBG();
             }
-            if (waveInfo.changeSpecialBG)
+            if (waveInfo.changeSpecialBG)//背景を特別なものに変更
             {
                 FindObjectOfType<BGManager>().ChangeSpacialBG();
+            }
+
+            if (waveInfo.changeEDBGnum!=0)
+            {
+                FindObjectOfType<BGManager>().ChangeEDBG(waveInfo.changeEDBGnum);
             }
             //else FindObjectOfType<BGMManager>().SetStageBGM();
 

@@ -12,6 +12,9 @@ public class WaveInfo : MonoBehaviour
     public bool changeSpecialBG = false;
     public bool changeNormalBG = false;
 
+    //EDの切り替え用操作
+    public int changeEDBGnum = 0;
+
 	// Use this for initialization
 	void Start () 
     {
