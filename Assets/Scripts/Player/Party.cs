@@ -225,6 +225,15 @@ public class Party : MonoBehaviour {
 
 	void debug(){
 		//味方を全員HP1に
+		if(Input.GetKeyDown(KeyCode.S)){
+			for(int i=0; i<transform.childCount; ++i){
+				bool b = isPlayMode ? false : true;
+				Debug.Log ("[Party.cs] Stop→"+b);
+				SetPlayMode(b);
+			}
+		}
+
+		//味方を全員HP1に
 		if(Input.GetKeyDown(KeyCode.R)){
 			for(int i=0; i<transform.childCount; ++i){
 				Debug.Log ("[Party.cs]All Party HP 1");
@@ -249,27 +258,28 @@ public class Party : MonoBehaviour {
 		
 		yield return new WaitForEndOfFrame();// for SpaceShip.Start()
 		
-		while (isPlayMode == true) 
+		while (true) 
 		{
-			if(alex){
-				alex.GetComponent<Player>().Attack();
+			if (isPlayMode) {
+				if(alex){
+					alex.GetComponent<Player>().Attack();
+				}
+				if(guylus){
+					guylus.GetComponent<Player>().Attack();
+				}
+				if(nely){
+					nely.GetComponent<Player>().Attack();
+				}
+				if(rinmaru){
+					rinmaru.GetComponent<Player>().Attack();
+				}
+				if(medhu){
+					medhu.GetComponent<Player>().Attack();
+				}
+				if(formation != Formation.Medhu){
+					GetComponent<AudioSource>().Play();
+				}
 			}
-			if(guylus){
-				guylus.GetComponent<Player>().Attack();
-			}
-			if(nely){
-				nely.GetComponent<Player>().Attack();
-			}
-			if(rinmaru){
-				rinmaru.GetComponent<Player>().Attack();
-			}
-			if(medhu){
-				medhu.GetComponent<Player>().Attack();
-			}
-			if(formation != Formation.Medhu){
-				GetComponent<AudioSource>().Play();
-			}
-			
 			yield return new WaitForSeconds(0.5f);
 		}
 	}
