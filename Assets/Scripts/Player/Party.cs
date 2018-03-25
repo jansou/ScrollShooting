@@ -90,14 +90,17 @@ public class Party : MonoBehaviour {
 	public bool rinmaruJoin = true;
 	public bool medhuJoin = true;
 
-	public bool isPlayMode  =false; // true..start move and shot
-
+	private bool isPlayMode  =false; // true..start move and shot
 
 	int nowMoney = 0;
 
-	public void SetPlayMode(bool b){
+	public void SetPlayMode(bool b)
+    {
 		isPlayMode = b;
-		for(int i=0; i<transform.childCount; ++i){
+        Debug.Log("プレイモード→" + b);
+
+        for(int i=0; i<transform.childCount; ++i)
+        {
 			transform.GetChild(i).GetComponent<Player>().isPlayMode = b;
 		}
 	}
@@ -224,11 +227,14 @@ public class Party : MonoBehaviour {
 	}
 
 	void debug(){
-		//味方を全員HP1に
-		if(Input.GetKeyDown(KeyCode.S)){
-			for(int i=0; i<transform.childCount; ++i){
-				bool b = isPlayMode ? false : true;
-				Debug.Log ("[Party.cs] Stop→"+b);
+		//全員の行動を止める
+		if(Input.GetKeyDown(KeyCode.S))
+        {
+            bool b = isPlayMode ? false : true;
+            Debug.Log("[Party.cs] Stop→" + b);
+
+			for(int i=0; i<transform.childCount; ++i)
+            {
 				SetPlayMode(b);
 			}
 		}

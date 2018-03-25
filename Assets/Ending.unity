@@ -4398,6 +4398,7 @@ MonoBehaviour:
   gameover: {fileID: 0}
   pause: {fileID: 0}
   isArcade: 0
+  isPlayMode: 1
   joinAlex: 1
   joinGuylus: 1
   joinNely: 1

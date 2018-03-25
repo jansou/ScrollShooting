@@ -19,8 +19,11 @@ public class Manager : MonoBehaviour
 
 	private GameObject itemWindow;
 
-    //闘技場用
+    //闘技場用の設定を行うか
     public bool isArcade=false;
+
+    //プレイモードでないならプレイヤーは弾が撃てない
+    public bool isPlayMode = true;
 
 	bool paused = false;
 	bool usingItem = false;
@@ -34,7 +37,6 @@ public class Manager : MonoBehaviour
 
     //チュートリアル用の不死設定
     public bool isUndead=false;
-
 
     //SE関係
     public AudioClip tapSE;
@@ -78,6 +80,9 @@ public class Manager : MonoBehaviour
 		itemWindow.SetActive(false);
 
 		GameStart();
+
+        //Debug.Log("[Party.cs] Stop→" + b);
+        //createdParty.GetComponent<Party>().SetPlayMode(isPlayMode);
 	}
 	IEnumerator AppearParty(){
 		int f = 0;
@@ -87,7 +92,7 @@ public class Manager : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 		}
 		title.SetActive(false);
-		createdParty.GetComponent<Party>().SetPlayMode(true);
+		createdParty.GetComponent<Party>().SetPlayMode(isPlayMode);
 	}
 
 	IEnumerator LeaveParty(){
@@ -103,15 +108,13 @@ public class Manager : MonoBehaviour
 	
     void OnGUI()
     {
-
 		/*
         //ゲーム中ではなく、マウスクリックされたらtrueを返す。
         if (IsPlaying() == false && gameover.activeSelf == true && Event.current.type == EventType.MouseDown)
         {
 
         }
-        */
-        
+        */   
     }
 
 	public void GameRestart()
@@ -135,7 +138,6 @@ public class Manager : MonoBehaviour
         }
 		//ゲームオーバー時に、タイトルを表示する
 		gameover.SetActive (true);
-
 	}
 
 	public void GameExit(){
@@ -171,7 +173,8 @@ public class Manager : MonoBehaviour
 		StartCoroutine("LeaveParty");
 	}
 
-	void DeleteTagObjects(string tagName){
+	void DeleteTagObjects(string tagName)
+    {
 		GameObject[] os;
 		os = GameObject.FindGameObjectsWithTag(tagName);
 		foreach (GameObject o in os)
@@ -195,11 +198,12 @@ public class Manager : MonoBehaviour
 
         //ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
 		title.SetActive(true);
-		gameover.SetActive(false);
 
-		if(createdParty == null){
+		if(createdParty == null)
+        {
 			CreateParty();
 		}
+
 		StartCoroutine("AppearParty");
 	}
 
@@ -211,7 +215,6 @@ public class Manager : MonoBehaviour
 
         p.isUndead = isUndead;
 		p.isArcade = isArcade;
-
 		p.alexJoin = joinAlex;
 		p.guylusJoin = joinGuylus;
 		p.nelyJoin = joinNely;
@@ -221,6 +224,8 @@ public class Manager : MonoBehaviour
 		p.SetMember();
 
 		SetPartyForm(0);
+
+        gameover.SetActive(false);
     }
 
 	public bool IsPlaying()
